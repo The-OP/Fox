@@ -41,6 +41,8 @@ user_pref("browser.tabs.animate", false);
 
 // Отключает авто-отправку недопечатанного поискового запроса для формирования поисковых подсказок.
 user_pref("browser.search.suggest.enabled", false);
+// Отключает поиск через адресную строку без заданных поисковикам префиксов-кейвордов.
+user_pref("keyword.enabled", false);
 
 // Отключает автоматическое обновление поисковых движков.
 user_pref("browser.search.update", false);
