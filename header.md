@@ -51,7 +51,7 @@ Firefox сохраняет вкладки, закладки, историю, а�
 
 * [Classic Theme Restorer](https://addons.mozilla.org/ru/firefox/addon/classicthemerestorer/). Для нелюбителей Australis, и для тех, кто хочет вернуть старый внешний вид Лиса.
 
-* [Cookie Monster](https://addons.mozilla.org/ru/firefox/addon/cookie-monster/). Режет куки для сайтов, не внесенных в белый список.
+* [Cookie Monster](https://addons.mozilla.org/ru/firefox/addon/cookie-monster/). Режет cookies и DOM Storage для сайтов, не внесенных в белый список.
 
 * [FireGestures](https://addons.mozilla.org/ru/firefox/addon/firegestures/). Жесты мышью, мышиными кнопками, колесом и т.п.
 
