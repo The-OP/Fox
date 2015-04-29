@@ -6,19 +6,22 @@
 Также проблему может решить обновление видеодрайверов либо возврат к более старой версии. Или обновление самого Firefox до беты/откат к ESR.
 
 * **Q:** HTML5 на YouTube и все, что с ним связано (1080p, проблемы с проигрыванием, etc). <br>
-**A:** Попробуйте использовать последний стабильный Firefox и эти настройки about:config: <br>
+**A:** Попробуйте эти настройки about:config (только для Win32, под Linux MSE еще не допилили): <br>
 `media.mediasource.enabled -> true` <br>
 `media.mediasource.mp4.enabled -> true` <br>
 `media.mediasource.webm.enabled -> true` <br>
 `media.fragmented-mp4.enabled -> true`  <br>
 `media.fragmented-mp4.exposed -> true`
 
-* **Q:** Как вернуть старую поисковую строку с возможностью настройки поисковых префиксов-кейвордов (g Google, w Wikipedia, etc)? <br>
-**A:** `about:config -> browser.search.showOneOffButtons -> false` <br>
-Применяется только после перезапуска Firefox, в отличие от большинства настроек about:config. Кейворды настраиваются в пункте Manage Search Engines выпадающего меню поисковой строки.
+* **Q:** Как искать в разных поисковиках через адресную строку? <br>
+**A:** Используя префиксы-кейворды (g Google, w Wikipedia, etc), настраивающиеся в Preferences -> Search или в пункте Manage Search Engines выпадающего меню старой поисковой строки.
 
-* **Q:** Как отключить беспрефиксный поиск в Гугле (Яндексе) через адресную строку? <br>
+* **Q:** Как отключить беспрефиксный поиск в поисковике по умолчанию через адресную строку? <br>
 **A:** `about:config -> keyword.enabled -> false`
+
+* **Q:** Как вернуть старую поисковую строку? <br>
+**A:** `about:config -> browser.search.showOneOffButtons -> false` <br>
+Применяется только после перезапуска Firefox, в отличие от большинства настроек about:config.
 
 * **Q:** Как копировать ссылки c кириллическим текстом в исходном виде, не закодированном percent-encoding (%D0%9B%D0%B8%D1%81 -> Лис)? <br>
 **A:** `about:config -> network.standard-url.escape-utf8 -> false`
