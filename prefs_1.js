@@ -115,6 +115,10 @@ user_pref("datareporting.healthreport.documentServerURI", "");
 user_pref("toolkit.telemetry.enabled", false);
 user_pref("toolkit.telemetry.server", "");
 
+// Отключает предложения оценить работу Firefox и отправить пожертвования Mozilla.
+// https://wiki.mozilla.org/Advocacy/heartbeat
+user_pref("browser.selfsupport.url", "");
+
 // Отключает сбор статистики для оценки эффективности текущих значений DNS TTL.
 // Этот параметр убрали в Fx36.
 // user_pref("dns.ttl-experiment.enabled", false);

@@ -20,6 +20,15 @@ user_pref("social.whitelist", "");
 user_pref("social.share.activationPanelEnabled", false);
 user_pref("social.shareDirectory", "");
 
+// Отключает Reading List, портированный с версии для Android.
+// https://wiki.mozilla.org/CloudServices/Reading_List
+user_pref("reader.parse-on-load.enabled", false);
+user_pref("reader.parse-on-load.force-enabled", false);
+user_pref("browser.readinglist.enabled", false);
+user_pref("browser.readinglist.sidebarEverOpened", false);
+user_pref("readinglist.scheduler.enabled", false);
+user_pref("readinglist.server", "");
+
 // Отключает геолокацию через Гугл с присвоением уникального идентификатора и передачей им
 // информации о близлежащих точках доступа Wi-Fi.
 user_pref("geo.enabled", false);
@@ -49,6 +58,14 @@ user_pref("dom.vibrator.enabled", false);
 // Отключает события от акселерометра и других сенсоров.
 user_pref("device.sensors.enabled", false);
 
+// Отключает User Timing API - доступ к высокочастотному таймеру, при помощи которого может быть
+// осуществлено прослушивание процессорного кэша из непривилегированного JS-кода.
+// http://www.html5rocks.com/en/tutorials/webperformance/usertiming/
+// https://www.linux.org.ru/news/security/11541326
+// http://arxiv.org/pdf/1502.07373v2.pdf
+user_pref("dom.enable_user_timing", false);
+user_pref("dom.performance.enable_user_timing_logging", false);
+
 // Отключает Web Speech API, использующееся для распознавания и синтеза речи.
 user_pref("media.webspeech.recognition.enable", false);
 user_pref("media.webspeech.synth.enabled", false);
@@ -76,6 +93,7 @@ user_pref("media.getusermedia.screensharing.enabled", false);
 
 // Отключает Firefox Hello.
 user_pref("loop.enabled", false);
+user_pref("loop.screenshare.enabled", false);
 user_pref("loop.rooms.enabled", false);
 user_pref("loop.server", "");
 // Обнулять этот параметр нельзя, иначе отвалится восстановление сессии и некоторые другие функции.
@@ -86,6 +104,7 @@ user_pref("loop.feedback.baseUrl", "");
 
 // Отключает поддержку Encrypted Media Extensions (DRM для HTML5-видео).
 user_pref("media.eme.enabled", false);
+user_pref("media.eme.apiVisible", false);
 
 // Отключает загрузку бинарника H264-кодека от Cisco (будет использоваться GStreamer).
 user_pref("media.gmp-gmpopenh264.provider.enabled", false);
