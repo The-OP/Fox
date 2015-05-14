@@ -6,12 +6,13 @@
 Также проблему может решить обновление видеодрайверов либо возврат к более старой версии. Или обновление самого Firefox до беты/откат к ESR.
 
 * **Q:** HTML5 на YouTube и все, что с ним связано (1080p, проблемы с проигрыванием, etc). <br>
-**A:** Попробуйте эти настройки about:config (только для Win32, под Linux MSE еще не допилили): <br>
+**A:** Попробуйте эти настройки about:config (с 38 версии MSE в билдах под Linux работает, если включить): <br>
 `media.mediasource.enabled -> true` <br>
 `media.mediasource.mp4.enabled -> true` <br>
 `media.mediasource.webm.enabled -> true` <br>
 `media.fragmented-mp4.enabled -> true`  <br>
-`media.fragmented-mp4.exposed -> true`
+`media.fragmented-mp4.exposed -> true` <br>
+`media.fragmented-mp4.ffmpeg.enabled -> true # Для Linux-билдов`
 
 * **Q:** Как искать в разных поисковиках через адресную строку? <br>
 **A:** Используя префиксы-кейворды (g Google, w Wikipedia, etc), настраивающиеся в Preferences -> Search или в пункте Manage Search Engines выпадающего меню старой поисковой строки.
