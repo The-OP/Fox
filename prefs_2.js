@@ -108,7 +108,8 @@ user_pref("media.eme.apiVisible", false);
 
 // Отключает загрузку бинарника H264-кодека от Cisco (будет использоваться GStreamer).
 user_pref("media.gmp-gmpopenh264.provider.enabled", false);
-user_pref("media.gmp-gmpopenh264.autoupdatemedia.gmp-gmpopenh264.enabled", false);
+user_pref("media.gmp-gmpopenh264.autoupdate", false);
+user_pref("media.gmp-gmpopenh264.enabled", false);
 user_pref("media.gmp-manager.url", "");
 user_pref("media.gmp-manager.certs.1.commonName", "");
 user_pref("media.gmp-manager.certs.2.commonName", "");
