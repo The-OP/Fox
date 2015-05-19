@@ -13,7 +13,7 @@ user_pref("extensions.blocklist.itemURL", "");
 // https://wiki.mozilla.org/SecurityEngineering/Public_Key_Pinning
 user_pref("security.cert_pinning.enforcement_level", 2);
 
-// Отключает отправку отчета в Mozilla об ошибках в сертификатах сайтов.
+// Отключает предложения отправить в Mozilla отчеты об ошибках в сертификатах сайтов.
 // https://bugzilla.mozilla.org/show_bug.cgi?id=846489
 user_pref("security.ssl.errorReporting.enabled", false);
 user_pref("security.ssl.errorReporting.automatic", false);

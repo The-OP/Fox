@@ -22,12 +22,14 @@ user_pref("social.shareDirectory", "");
 
 // Отключает Reading List, портированный с версии для Android.
 // https://wiki.mozilla.org/CloudServices/Reading_List
-user_pref("reader.parse-on-load.enabled", false);
-user_pref("reader.parse-on-load.force-enabled", false);
 user_pref("browser.readinglist.enabled", false);
 user_pref("browser.readinglist.sidebarEverOpened", false);
 user_pref("readinglist.scheduler.enabled", false);
 user_pref("readinglist.server", "");
+// Отключает Reader View
+// https://wiki.mozilla.org/QA/Reader_view
+user_pref("reader.parse-on-load.enabled", false);
+user_pref("reader.parse-on-load.force-enabled", false);
 
 // Отключает геолокацию через Гугл с присвоением уникального идентификатора и передачей им
 // информации о близлежащих точках доступа Wi-Fi.

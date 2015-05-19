@@ -87,7 +87,7 @@ user_pref("beacon.enabled", false);
 // Отключает добавление в Speed Dial сайтов спонсоров Mozilla.
 user_pref("browser.newtabpage.directory.ping", "");
 user_pref("browser.newtabpage.directory.source", "");
-// Отключает рекламу сервисов от самой Mozilla (Sync, Hello, версий для Android) в about:home.
+// Отключает загрузку рекламы сервисов от самой Mozilla (Sync, Hello, версий для Android) в about:home.
 // https://wiki.mozilla.org/Websites/Snippets
 user_pref("browser.aboutHomeSnippets.updateUrl", "");
 
@@ -118,6 +118,19 @@ user_pref("toolkit.telemetry.server", "");
 // Отключает предложения оценить работу Firefox и отправить пожертвования Mozilla.
 // https://wiki.mozilla.org/Advocacy/heartbeat
 user_pref("browser.selfsupport.url", "");
+
+// Отключает автоматическую отправку отчетов в Mozilla об ошибках в сертификатах сайтов.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=846489
+user_pref("security.ssl.errorReporting.automatic", false);
+
+// Отключает интегрированную поддержку проприетарного сервиса закладок Pocket.
+// http://www.opennet.ru/opennews/art.shtml?num=42245
+// https://wiki.mozilla.org/QA/Pocket_integration
+user_pref("browser.pocket.enabled", false);
+user_pref("browser.pocket.api", "");
+user_pref("browser.pocket.site", "");
+user_pref("browser.pocket.oAuthConsumerKey", "");
+user_pref("browser.pocket.enabledLocales", "");
 
 // Отключает сбор статистики для оценки эффективности текущих значений DNS TTL.
 // Этот параметр убрали в Fx36.
