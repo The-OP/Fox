@@ -87,6 +87,7 @@ user_pref("beacon.enabled", false);
 // Отключает добавление в Speed Dial сайтов спонсоров Mozilla.
 user_pref("browser.newtabpage.directory.ping", "");
 user_pref("browser.newtabpage.directory.source", "");
+user_pref("browser.newtabpage.enhanced", false);
 // Отключает загрузку рекламы сервисов от самой Mozilla (Sync, Hello, версий для Android) в about:home.
 // https://wiki.mozilla.org/Websites/Snippets
 user_pref("browser.aboutHomeSnippets.updateUrl", "");
