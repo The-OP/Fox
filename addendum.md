@@ -1,7 +1,7 @@
 # Приложение к шапке официального лисотреда /s/
 Это дополнение к шапке для тех, кто хочет настроить свой браузер еще больше. Настройки для повышения производительности и отключения различных зондов, полезные дополнения, интересные ссылки и т.п.
 
-**Важное замечание**: Это памятка с интересными настройками и аддонами. Здесь пока (?) нет готового рецепта для максимальной анонимности. Если вы пришли за этим, проследуйте [сюда](https://anonymous-proxy-servers.net/en/jondofox.html) или [сюда](https://www.torproject.org/).
+**Важное замечание**: Это памятка с интересными настройками и аддонами. Здесь пока (?) нет готового рецепта для максимальной анонимности. Если вы пришли за этим, проследуйте [сюда](https://tails.boum.org/) или [сюда](https://www.torproject.org/).
 
 Стандартный дисклеймер раз: я включил краткие пояснения к каждой настройке и аддону, но если вы четко не понимаете за что они отвечают и что у вас может отвалиться в результате их установки, лучше не трогайте.
 
@@ -18,9 +18,10 @@
 * http://ip-check.info/
 * https://amiunique.org/
 * http://whoer.net/
+* http://browserspy.dk/ - не фингерпринтер, но показывает, как много информации можно извлечь из браузера. Обновляется редко.
 
 Статьи по теме:
-* [Как Tor Project борется с фингерпринтингом](http://geektimes.ru/post/244484/)
+* [Как Tor Project борется с фингерпринтингом](http://geektimes.ru/post/244484/) ([английская более свежая версия](https://www.sharelatex.com/github/repos/KOLANICH/Article-2015-Dull-captaincy-or-the-way-Tor-Project-fights-browser-fingerprinting/builds/44e474be624ca3bb65d1b1fbeb95abd1de8c5d13/raw/output.pdf))
 * [Флаги HSTS и их использование для фингерпринтинга](http://geektimes.ru/post/244065/)
 
 ## Настройки
@@ -41,7 +42,7 @@
 Применить эти настройки можно, дописав их в конец находящегося в профиле `prefs.js`, либо создав там же файл `user.js` и записав их в него. Но не забудьте, что вы это сделали, потому что записанные в `user.js` настройки будут откатываться на указанные там значения при каждом перезапуске браузера, даже если вы меняли их другими способами (about:config, Preferences, etc). Подробнее [здесь](http://kb.mozillazine.org/User.js_file).
 
 ## Аддоны
-* [HTTPS Everywhere](https://addons.mozilla.org/en-us/firefox/addon/https-everywhere/). Содержит список сайтов, поддерживающих как HTTP, так HTTPS, и автоматически меняет все HTTP-ссылки, ведующие к этим сайтам, на HTTPS. Аддон вернули на AMO, но на всякий случай - [ссылка](https://www.eff.org/https-everywhere/) на официальный сайт.
+* [HTTPS Everywhere](https://addons.mozilla.org/en-us/firefox/addon/https-everywhere/). Содержит список сайтов, поддерживающих как HTTP, так HTTPS, и автоматически меняет все HTTP-ссылки, ведующие к этим сайтам, на HTTPS. Аддон вернули на AMO, но на всякий случай - [ссылка](https://www.eff.org/https-everywhere/) на официальный сайт. Правила обновляются редко, актуальную версию правил можно получить [на GitHub](https://github.com/EFForg/https-everywhere), там же можно отправить новое правило.
 
 * [RefControl](https://addons.mozilla.org/firefox/addon/refcontrol/). Резалка рефереров. Можно тонко тюнить, а можно рубить только рефереры при переходе на другой домен (Block (3rd party)), оставляя внутридоменные, что просто, эффективно для 99% случаев и не ломает так много сайтов как полный запрет.
 
@@ -65,7 +66,7 @@
 
 * [NoRedirect](https://addons.mozilla.org/firefox/addon/noredirect/). Рубит редиректы по рэгэкспам source или destination.
 
-* [User Agent Switcher](https://addons.mozilla.org/firefox/addon/user-agent-switcher/)
+* [User Agent Switcher](https://addons.mozilla.org/firefox/addon/user-agent-switcher/) и [списки к нему](http://techpatterns.com/downloads/firefox/useragentswitcher.xml)
 
 * [Random Agent Spoofer](https://addons.mozilla.org/firefox/addon/random-agent-spoofer/). Меняет юзер-агенты по таймеру и с дополнительными фичами, препятствующими фингерпринтингу. Версия с GitHub имеет расширенную функциональность по сравнению с версией с AMO (см. описание на AMO).
 
