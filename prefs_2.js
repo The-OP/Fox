@@ -103,6 +103,7 @@ user_pref("loop.server", "");
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1073218
 // user_pref("loop.soft_start_hostname", "127.0.0.1");
 user_pref("loop.feedback.baseUrl", "");
+user_pref("loop.debug.twoWayMediaTelemetry", false);
 
 // Отключает поддержку Encrypted Media Extensions (DRM для HTML5-видео).
 user_pref("media.eme.enabled", false);
