@@ -14,6 +14,8 @@ user_pref("network.proxy.socks_remote_dns", true);
 // back/forward. Уменьшение снизит потребление памяти.
 user_pref("browser.sessionhistory.max_total_viewers", 2);
 // Также немного уменьшает потребление памяти.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=805855
+// https://bugzilla.mozilla.org/show_bug.cgi?id=850607
 user_pref("memory.free_dirty_pages", true);
 
 // Использовать локаль из general.useragent.locale, а не установленную в ОС.
@@ -85,6 +87,8 @@ user_pref("browser.send_pings", false);
 user_pref("beacon.enabled", false);
 
 // Отключает добавление в Speed Dial сайтов спонсоров Mozilla.
+// После отключения следует удалить directoryLinks.json в about:cache -> <директория на уровень выше cache2>,
+// чтобы уже загруженная реклама не показывалась -- https://support.mozilla.org/en-US/questions/1030849
 user_pref("browser.newtabpage.directory.ping", "");
 user_pref("browser.newtabpage.directory.source", "");
 user_pref("browser.newtabpage.enhanced", false);
@@ -141,6 +145,9 @@ user_pref("network.allow-experiments", false);
 user_pref("experiments.enabled", false);
 user_pref("experiments.supported", false);
 user_pref("experiments.manifest.uri", "");
+
+// Отключает автообновление стилей Stylish -- https://userstyles.org/help/stylish_firefox
+user_pref("extensions.stylish.updatesEnabled", false);
 
 // Запрещает попапам отключать элементы окон браузера.
 user_pref("dom.popup_maximum", 5);
