@@ -5,6 +5,7 @@ user_pref("dom.max_script_run_time", 30);
 
 // Активное использование Куклоскрипта вместе с недельными аптаймами может вызывать переполнение
 // дефолтного пятимегабайтного session storage.
+// https://github.com/SthephanShinkufag/Dollchan-Extension-Tools/issues/748
 user_pref("dom.storage.default_quota", 10240);
 
 // Для сверхбольших сессий.
@@ -19,5 +20,3 @@ user_pref("browser.cache.memory.max_entry_size", 52428);
 user_pref("browser.cache.disk.enable", false);
 user_pref("browser.cache.disk.capacity", 0);
 user_pref("browser.cache.disk_cache_ssl", false);
-
-
