@@ -10,6 +10,9 @@ user_pref("network.http.pipelining.ssl", true);
 // Делать DNS-запросы через прокси (если указан).
 user_pref("network.proxy.socks_remote_dns", true);
 
+// Более информативная страница показа ошибок в сертификатах сайтов.
+user_pref("browser.xul.error_pages.expert_bad_cert", true);
+
 // Количество страниц, которые держатся в памяти уже в виде DOM виде для быстрого перехода по
 // back/forward. Уменьшение снизит потребление памяти.
 user_pref("browser.sessionhistory.max_total_viewers", 2);
@@ -63,7 +66,7 @@ user_pref("network.security.ports.banned", "4444,9050,9051");
 // Отключает Google Safebrowsing. Раньше можно было еще не отключать, пока они только отдавали базу
 // хэшей малварных URL и браузер сверялся с локальной копией. Но сейчас Гугл заставляет посылать хэш 
 // каждого загружаемого пользователем файла (якобы для проверки на вирусы), что уже совершенно
-// неприемлемо. Желающие могут установить себе подписку Malware Domains для Adblock Plus, которая
+// неприемлемо. Желающие могут установить себе подписку Malware Domains для uBlock Origin, которая
 // включает в себя URL из Safebrowsing и не следит за пользователем.
 user_pref("browser.safebrowsing.enabled", false);
 user_pref("browser.safebrowsing.malware.enabled", false);
@@ -148,6 +151,9 @@ user_pref("experiments.manifest.uri", "");
 
 // Отключает автообновление стилей Stylish -- https://userstyles.org/help/stylish_firefox
 user_pref("extensions.stylish.updatesEnabled", false);
+
+// Открывать попапы во вкладках вместо отдельных окон.
+user_pref("browser.link.open_newwindow.restriction", 0);
 
 // Запрещает попапам отключать элементы окон браузера.
 user_pref("dom.popup_maximum", 5);
