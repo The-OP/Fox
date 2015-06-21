@@ -1,3 +1,7 @@
+// Отключает автообновления и редиректы страниц, происходящие через <meta http-equiv="refresh">
+// (редиректы через HTTP 3xx не отключает) -- http://kb.mozillazine.org/Accessibility.blockautorefresh
+user_pref("accessibility.blockautorefresh", true);
+
 // https://github.com/The-OP/Fox/issues/8
 user_pref("dom.max_chrome_script_run_time", 600);
 
