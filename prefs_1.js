@@ -172,3 +172,8 @@ user_pref("dom.disable_window_open_feature.scrollbars", true);
 user_pref("dom.disable_window_open_feature.status", true);
 user_pref("dom.disable_window_open_feature.titlebar", true);
 user_pref("dom.disable_window_open_feature.toolbar", true);
+
+// Отключает возможность соединения с устройством на Firefox OS для отладки по Wi-Fi.
+// https://wiki.mozilla.org/DevTools/WiFi_Debugging
+user_pref("devtools.remote.wifi.scan", false);
+user_pref("devtools.remote.wifi.visible", false);
