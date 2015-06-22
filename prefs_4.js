@@ -6,10 +6,6 @@ user_pref("browser.cache.memory.enable", false);
 user_pref("media.cache_size", 0);
 user_pref("image.cache.size", 0);
 
-// Отключает проверку на отзыв сертификата через OCSP-сервер при установке шифрованного соединения.
-user_pref("security.OCSP.enabled", 0);
-user_pref("security.OCSP.require", false);
-
 // Полностью отключает WebGL.
 user_pref("webgl.disabled", true);
 
@@ -71,3 +67,15 @@ user_pref("media.webm.enabled", false);
 user_pref("media.raw.enabled", false);
 user_pref("media.wave.enabled", false);
 user_pref("media.apple.mp3.enabled", false);
+
+// Отключает проверку на отзыв сертификата через OCSP-сервер при установке шифрованного соединения.
+user_pref("security.OCSP.enabled", 0);
+user_pref("security.OCSP.require", false);
+
+// Отключает автоматическую установку обновлений аддонов.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=701987
+user_pref("extensions.update.autoUpdateDefault", false);
+// Отключает периодическую проверку обновлений аддонов.
+user_pref("extensions.update.enabled", false);
+user_pref("extensions.update.url", "");
+user_pref("extensions.update.background.url", "");
