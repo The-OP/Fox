@@ -122,7 +122,12 @@ user_pref("media.gmp-manager.certs.1.commonName", "");
 user_pref("media.gmp-manager.certs.2.commonName", "");
 
 // Отключает автоматическое обновление браузера.
+// https://developer.mozilla.org/en-US/Firefox/Enterprise_deployment
 user_pref("app.update.auto", false);
 user_pref("app.update.enabled", false);
-user_pref("app.update.mode", 0);
 user_pref("app.update.service.enabled", false);
+// https://bugzilla.mozilla.org/show_bug.cgi?id=885641#c61
+user_pref("app.update.checkInstallTime", false);
+user_pref("app.update.url", "");
+user_pref("app.update.silent", false);
+user_pref("app.update.staging.enabled", false);
