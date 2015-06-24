@@ -3,7 +3,7 @@
 * **Шапка**
   * [FAQ](header.md#faq)
   * [Аддоны](header.md#Аддоны)
-* [Приложение](header.md#Приложение)
+* [Приложение](addendum.md)
   * [Настройки about:config](addendum.md#Настройки-aboutconfig)
   * [Продвинутые аддоны](addendum.md#Продвинутые-аддоны)
   * [Интересные ссылки](addendum.md#Интересные-ссылки)
