@@ -186,6 +186,12 @@ user_pref("security.ssl3.dhe_dss_aes_128_sha", false);
 user_pref("security.ssl3.dhe_rsa_aes_128_sha", false);
 user_pref("security.ssl3.dhe_rsa_aes_256_sha", false);
 user_pref("security.ssl3.dhe_rsa_des_ede3_sha", false);
+// Для Firefox 31 еще и это нужно:
+user_pref("security.ssl3.dhe_dss_aes_256_sha", false);
+user_pref("security.ssl3.dhe_rsa_camellia_128_sha", false);
+user_pref("security.ssl3.dhe_rsa_camellia_256_sha", false);
+user_pref("security.ssl3.dhe_dss_camellia_128_sha", false);
+user_pref("security.ssl3.dhe_dss_camellia_256_sha", false);
 
 // "As of 2015, there is speculation that some state cryptologic agencies may possess the capability
 // to break RC4 even when used in the TLS protocol. Mozilla and Microsoft recommend disabling
