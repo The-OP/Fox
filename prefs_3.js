@@ -13,14 +13,6 @@ user_pref("security.ssl.errorReporting.enabled", false);
 user_pref("security.ssl.errorReporting.automatic", false);
 user_pref("security.ssl.errorReporting.url", "");
 
-// "As of 2015, there is speculation that some state cryptologic agencies may possess the capability
-// to break RC4 even when used in the TLS protocol. Mozilla and Microsoft recommend disabling
-// RC4 where possible." -- https://en.wikipedia.org/wiki/RC4
-user_pref("security.ssl3.ecdhe_ecdsa_rc4_128_sha", false);
-user_pref("security.ssl3.ecdhe_rsa_rc4_128_sha", false);
-user_pref("security.ssl3.rsa_rc4_128_md5", false);
-user_pref("security.ssl3.rsa_rc4_128_sha", false);
-
 // Блокировка загрузки незащищенного содержимого на HTTPS-страницах.
 user_pref("security.mixed_content.block_active_content", true);
 user_pref("security.mixed_content.block_display_content", true);
@@ -53,7 +45,7 @@ user_pref("media.mediasource.webm.enabled", false);
 // Отключает Audio Data API (от которого уже отказались в пользу Web Audio API).
 user_pref("media.audio_data.enabled", false);
 
-// Отключает загружаемые сайтами шрифты.
+// Отключает загружаемые сайтами шрифты. Ломает кнопки uBlock.
 user_pref("gfx.downloadable_fonts.enabled", false);
 user_pref("gfx.downloadable_fonts.woff2.enabled", false);
 
@@ -71,8 +63,8 @@ user_pref("network.proxy.no_proxies_on", "");
 // Отключение дискового кэширования. Анализируя время загрузки страницы, можно узнать, посещал ли
 // пользователь этот сайт. Если посещал - часть файлов будет взята из кэша, что отразится на времени.
 // https://en.wikipedia.org/wiki/HTTP_ETag
-user_pref("browser.cache.disk.capacity", 0);
 user_pref("browser.cache.disk.enable", false);
+user_pref("browser.cache.disk.capacity", 0);
 user_pref("browser.cache.disk.smart_size.enabled", false);
 user_pref("browser.cache.disk_cache_ssl", false);
 user_pref("browser.cache.offline.capacity", 0);

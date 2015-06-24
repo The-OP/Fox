@@ -101,6 +101,8 @@ user_pref("browser.aboutHomeSnippets.updateUrl", "");
 
 // Отключает автоматическое открытие вкладки с описанием изменений в новой версии после обновления.
 user_pref("browser.startup.homepage_override.mstone", "ignore");
+// Отключает приветственную страницу при первом запуске браузера с новым профилем.
+user_pref("startup.homepage_welcome_url","");
 
 // Отключает показ AMO при входе в Add-ons Manager.
 user_pref("extensions.webservice.discoverURL", "");
@@ -177,3 +179,18 @@ user_pref("dom.disable_window_open_feature.toolbar", true);
 // https://wiki.mozilla.org/DevTools/WiFi_Debugging
 user_pref("devtools.remote.wifi.scan", false);
 user_pref("devtools.remote.wifi.visible", false);
+
+// Отключает шифры уязвимые к Logjam. Вытащено отсюда: https://addons.mozilla.org/en-US/firefox/addon/disable-dhe/
+// Firefox 39 will include changes that will increase the minimum strength of keys to 1024 bits.
+user_pref("security.ssl3.dhe_dss_aes_128_sha", false);
+user_pref("security.ssl3.dhe_rsa_aes_128_sha", false);
+user_pref("security.ssl3.dhe_rsa_aes_256_sha", false);
+user_pref("security.ssl3.dhe_rsa_des_ede3_sha", false);
+
+// "As of 2015, there is speculation that some state cryptologic agencies may possess the capability
+// to break RC4 even when used in the TLS protocol. Mozilla and Microsoft recommend disabling
+// RC4 where possible." -- https://en.wikipedia.org/wiki/RC4
+user_pref("security.ssl3.ecdhe_ecdsa_rc4_128_sha", false);
+user_pref("security.ssl3.ecdhe_rsa_rc4_128_sha", false);
+user_pref("security.ssl3.rsa_rc4_128_md5", false);
+user_pref("security.ssl3.rsa_rc4_128_sha", false);
