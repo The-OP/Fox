@@ -194,3 +194,5 @@ user_pref("security.ssl3.ecdhe_ecdsa_rc4_128_sha", false);
 user_pref("security.ssl3.ecdhe_rsa_rc4_128_sha", false);
 user_pref("security.ssl3.rsa_rc4_128_md5", false);
 user_pref("security.ssl3.rsa_rc4_128_sha", false);
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1138882
+user_pref("security.tls.unrestricted_rc4_fallback", false);
