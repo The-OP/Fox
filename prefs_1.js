@@ -35,7 +35,8 @@ user_pref("network.http.speculative-parallel-limit", 0);
 user_pref("middlemouse.contentLoadURL", false);
 
 // Отключает переход назад в истории по бэкспейсу.
-user_pref("browser.backspace_action", 0);
+// http://kb.mozillazine.org/Browser.backspace_action
+user_pref("browser.backspace_action", 2);
 
 // Отключает полупрозрачную превьюшку таба, болтающуюся при его перетаскивании около курсора, и
 // мешающую перетащить его в нужное место.
