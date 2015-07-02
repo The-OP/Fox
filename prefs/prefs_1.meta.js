@@ -1,3 +1,8 @@
+#ifndef FX
+// Это метафайл. Он не предназначен для копирования в user.js напрямую - отсюда генерируются файлы
+// с настройками для соотвествующей версии Firefox.
+#endif
+
 // Минимальный интервал в миллисекундах для записи изменений в сессии на диск. Дефолтные 15 секунд -
 // маловато, особенно для мегабайтных сессий.
 user_pref("browser.sessionstore.interval", 60000);
@@ -88,7 +93,7 @@ user_pref("browser.safebrowsing.updateURL", "");
 // подписками и является менее эффективным (т.к. основан на списке от Disconnect).
 // https://support.mozilla.org/en-US/kb/tracking-protection-firefox
 // https://wiki.mozilla.org/Polaris
-user_pref("privacy.trackingprotection.enabled",  false);
+user_pref("privacy.trackingprotection.enabled", false);
 user_pref("browser.trackingprotection.updateURL", "");
 user_pref("browser.trackingprotection.gethashURL", "");
 
@@ -189,18 +194,20 @@ user_pref("dom.disable_window_open_feature.toolbar", true);
 user_pref("devtools.remote.wifi.scan", false);
 user_pref("devtools.remote.wifi.visible", false);
 
-// Отключает шифры уязвимые к Logjam. Вытащено отсюда: https://addons.mozilla.org/en-US/firefox/addon/disable-dhe/
-// Firefox 39 will include changes that will increase the minimum strength of keys to 1024 bits.
-user_pref("security.ssl3.dhe_dss_aes_128_sha", false);
-user_pref("security.ssl3.dhe_rsa_aes_128_sha", false);
-user_pref("security.ssl3.dhe_rsa_aes_256_sha", false);
-user_pref("security.ssl3.dhe_rsa_des_ede3_sha", false);
-// Для Firefox 31 еще и это нужно:
-user_pref("security.ssl3.dhe_dss_aes_256_sha", false);
-user_pref("security.ssl3.dhe_rsa_camellia_128_sha", false);
-user_pref("security.ssl3.dhe_rsa_camellia_256_sha", false);
-user_pref("security.ssl3.dhe_dss_camellia_128_sha", false);
-user_pref("security.ssl3.dhe_dss_camellia_256_sha", false);
+#if FX < 3900
+	// Отключает шифры уязвимые к Logjam. Вытащено отсюда: https://addons.mozilla.org/en-US/firefox/addon/disable-dhe/
+	// Firefox 39 will include changes that will increase the minimum strength of keys to 1024 bits.
+	user_pref("security.ssl3.dhe_dss_aes_128_sha", false);
+	user_pref("security.ssl3.dhe_rsa_aes_128_sha", false);
+	user_pref("security.ssl3.dhe_rsa_aes_256_sha", false);
+	user_pref("security.ssl3.dhe_rsa_des_ede3_sha", false);
+	// Для Firefox 31 еще и это нужно:
+	user_pref("security.ssl3.dhe_dss_aes_256_sha", false);
+	user_pref("security.ssl3.dhe_rsa_camellia_128_sha", false);
+	user_pref("security.ssl3.dhe_rsa_camellia_256_sha", false);
+	user_pref("security.ssl3.dhe_dss_camellia_128_sha", false);
+	user_pref("security.ssl3.dhe_dss_camellia_256_sha", false);
+#endif
 
 // "As of 2015, there is speculation that some state cryptologic agencies may possess the capability
 // to break RC4 even when used in the TLS protocol. Mozilla and Microsoft recommend disabling
