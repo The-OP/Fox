@@ -84,6 +84,14 @@ user_pref("browser.safebrowsing.reportPhishURL", "");
 user_pref("browser.safebrowsing.reportURL", "");
 user_pref("browser.safebrowsing.updateURL", "");
 
+// Отключает мозилловский анти-трекинговый список, который дублирует функции uBlock с соответствующими
+// подписками и является менее эффективным (т.к. основан на списке от Disconnect).
+// https://support.mozilla.org/en-US/kb/tracking-protection-firefox
+// https://wiki.mozilla.org/Polaris
+user_pref("privacy.trackingprotection.enabled",  false);
+user_pref("browser.trackingprotection.updateURL", "");
+user_pref("browser.trackingprotection.gethashURL", "");
+
 // Отключает <a ping>, которые отправляют запрос по отдельному указанному адресу (с целью трекинга)
 // при нажатии на ссылку.
 user_pref("browser.send_pings", false);
