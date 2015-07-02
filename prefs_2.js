@@ -111,6 +111,7 @@ user_pref("loop.debug.twoWayMediaTelemetry", false);
 // Отключает поддержку Encrypted Media Extensions (DRM для HTML5-видео).
 user_pref("media.eme.enabled", false);
 user_pref("media.eme.apiVisible", false);
+user_pref("media.gmp-eme-adobe.enabled", false);
 
 // Отключает загрузку бинарника H264-кодека от Cisco (будет использоваться GStreamer).
 user_pref("media.gmp-gmpopenh264.provider.enabled", false);
