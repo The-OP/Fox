@@ -90,6 +90,7 @@ user_pref("browser.safebrowsing.updateURL", "");
 // https://support.mozilla.org/en-US/kb/tracking-protection-firefox
 // https://wiki.mozilla.org/Polaris
 user_pref("privacy.trackingprotection.enabled", false);
+user_pref("privacy.trackingprotection.pbmode.enabled", false);
 user_pref("browser.trackingprotection.updateURL", "");
 user_pref("browser.trackingprotection.gethashURL", "");
 
