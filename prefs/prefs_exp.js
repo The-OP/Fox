@@ -1,3 +1,11 @@
+// Отключает замеры производительности аддонов каждые 15 секунд. Эти замеры сами могут являться
+// причиной тормозов браузера. Включено по умолчанию пока только на Nightly. Результаты показываются
+// в Add-on Manager в виде: “[Add-on Name] might be making [Firefox version] run slowly”.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1071880#c8
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1071880#c67
+// https://mxr.mozilla.org/mozilla-central/source/toolkit/components/perfmonitoring/AddonWatcher.jsm#82
+user_pref("browser.addon-watch.interval", -1);
+
 // Отключает автообновления и редиректы страниц, происходящие через <meta http-equiv="refresh">
 // (редиректы через HTTP 3xx не отключает) -- http://kb.mozillazine.org/Accessibility.blockautorefresh
 user_pref("accessibility.blockautorefresh", true);

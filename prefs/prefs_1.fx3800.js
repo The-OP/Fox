@@ -135,6 +135,8 @@ user_pref("datareporting.healthreport.about.reportUrl", "");
 user_pref("datareporting.healthreport.documentServerURI", "");
 user_pref("toolkit.telemetry.enabled", false);
 user_pref("toolkit.telemetry.server", "");
+user_pref("toolkit.telemetry.archive.enabled", false);
+user_pref("toolkit.telemetry.unified", false);
 
 // Отключает предложения оценить работу Firefox и отправить пожертвования Mozilla.
 // https://wiki.mozilla.org/Advocacy/heartbeat
@@ -185,6 +187,14 @@ user_pref("dom.disable_window_open_feature.scrollbars", true);
 user_pref("dom.disable_window_open_feature.status", true);
 user_pref("dom.disable_window_open_feature.titlebar", true);
 user_pref("dom.disable_window_open_feature.toolbar", true);
+
+// Отключает автоматическое скачивание и установку ADB Helper и аддона для удаленной отладки мобильных
+// браузеров при первом запуске WebIDE. Ручная установка через меню WebIDE все еще будет работать.
+// https://developer.mozilla.org/en-US/docs/Tools/Valence
+user_pref("devtools.webide.autoinstallADBHelper", false);
+user_pref("devtools.webide.autoinstallFxdtAdapters", false);
+// Отключает авто-подсоединение к предыдущему отлаживаемому устройству/эмулятору при запуске WebIDE.
+user_pref("devtools.webide.autoConnectRuntime", false);
 
 // Отключает возможность соединения с устройством на Firefox OS для отладки по Wi-Fi.
 // https://wiki.mozilla.org/DevTools/WiFi_Debugging

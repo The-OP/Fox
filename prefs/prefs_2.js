@@ -122,6 +122,22 @@ user_pref("media.gmp-manager.url", "");
 user_pref("media.gmp-manager.certs.1.commonName", "");
 user_pref("media.gmp-manager.certs.2.commonName", "");
 
+// Полностью отключает WebIDE, убирает его кнопку и из меню Developer Tools.
+user_pref("devtools.webide.enabled", false);
+user_pref("devtools.appmanager.enabled", false);
+user_pref("devtools.webide.enableLocalRuntime", false);
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1056923
+user_pref("devtools.webide.widget.autoinstall", false);
+user_pref("devtools.webide.widget.enabled", false);
+user_pref("devtools.webide.widget.inNavbarByDefault", false);
+user_pref("devtools.webide.adaptersAddonURL", "");
+user_pref("devtools.webide.adbAddonURL", "");
+user_pref("devtools.webide.addonsURL", "");
+user_pref("devtools.webide.addonsURL_cache", "");
+user_pref("devtools.webide.simulatorAddonsURL", "");
+user_pref("devtools.webide.templatesURL", "");
+user_pref("devtools.webide.templatesURL_cache", "");
+
 // Отключает автоматическое обновление браузера.
 // https://developer.mozilla.org/en-US/Firefox/Enterprise_deployment
 user_pref("app.update.auto", false);
@@ -132,3 +148,5 @@ user_pref("app.update.checkInstallTime", false);
 user_pref("app.update.url", "");
 user_pref("app.update.silent", false);
 user_pref("app.update.staging.enabled", false);
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1080406
+user_pref("app.update.badge", false);
