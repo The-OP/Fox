@@ -138,6 +138,23 @@ user_pref("devtools.webide.simulatorAddonsURL", "");
 user_pref("devtools.webide.templatesURL", "");
 user_pref("devtools.webide.templatesURL_cache", "");
 
+// Отключает распространенные плагины. Рекомендуется их вообще удалять, т.к., как показывает практика,
+// плагины - самые дырявые компоненты браузера.
+user_pref("plugin.default.state", 0);
+user_pref("plugin.defaultXpi.state", 0);
+user_pref("plugin.state.flash", 0);
+user_pref("plugin.state.java", 0);
+// Отключает все плагины (только для Windows-билдов) -- http://kb.mozillazine.org/Plugin_scanning
+user_pref("plugin.scan.plid.all", false);
+// http://kb.mozillazine.org/Issues_related_to_plugins#Plugin_location
+user_pref("plugins.load_appdir_plugins", false);
+// https://support.mozilla.org/en-US/questions/833109
+user_pref("plugins.update.url", "");
+// http://kb.mozillazine.org/Pfs.datasource.url
+user_pref("pfs.datasource.url", "");
+user_pref("security.xpconnect.plugin.unrestricted", false);
+user_pref("application.use_ns_plugin_finder", false);
+
 // Отключает автоматическое обновление браузера.
 // https://developer.mozilla.org/en-US/Firefox/Enterprise_deployment
 user_pref("app.update.auto", false);
