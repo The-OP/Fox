@@ -7,7 +7,10 @@ user_pref("media.cache_size", 0);
 user_pref("image.cache.size", 0);
 
 // Полностью отключает WebGL.
+// http://www.contextis.com/resources/blog/webgl-new-dimension-browser-exploitation/
 user_pref("webgl.disabled", true);
+user_pref("webgl.force-enabled", false);
+user_pref("pdfjs.enableWebGL", false);
 
 // Отключает попытки страниц развернуть себя на весь экран.
 user_pref("full-screen-api.enabled", false);

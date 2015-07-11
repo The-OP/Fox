@@ -30,9 +30,13 @@ user_pref("memory.free_dirty_pages", true);
 user_pref("intl.locale.matchOS", false);
 
 // Отключает предзагрузку ссылок, на которые по мнению браузера вы собираетесь кликнуть.
+// https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ
 user_pref("network.prefetch-next", false);
 // И предрезолвинг их доменов тоже.
+// https://developer.mozilla.org/en-US/docs/Web/HTTP/Controlling_DNS_prefetching
 user_pref("network.dns.disablePrefetch", true);
+// https://mxr.mozilla.org/mozilla-esr38/source/dom/html/nsHTMLDNSPrefetch.cpp#64
+user_pref("network.dns.disablePrefetchFromHTTPS", true);
 // И предконнект к хостам.
 user_pref("network.http.speculative-parallel-limit", 0);
 
@@ -53,14 +57,16 @@ user_pref("browser.tabs.animate", false);
 // Отключает авто-отправку недопечатанного поискового запроса для формирования поисковых подсказок.
 user_pref("browser.search.suggest.enabled", false);
 // Отключает поиск через адресную строку без заданных поисковикам префиксов-кейвордов.
+// http://kb.mozillazine.org/Keyword.enabled
 user_pref("keyword.enabled", false);
 
 // Отключает автоматическое обновление поисковых движков.
 user_pref("browser.search.update", false);
 
-// Отключает Predictor (быший Seer) - механизм, запоминающий связи между доменами, с которых
-// запрашивается контент для того или иного URL (например основным доменом и CDN со статикой),
-// и при следующем подкючении заранее коннектящийся ко всем CDN. 
+// Отключает Predictor (быший Seer) - механизм, запоминающий связи между хостами, с которых
+// запрашивается контент для того или иного URL (например, основным хостом и хостом со статикой),
+// и при следующем подключении заранее соединяющийся со всеми хостами, которые понадобятся.
+// https://wiki.mozilla.org/Privacy/Reviews/Necko
 user_pref("network.predictor.enabled", false);
 // network.predictor.max-db-size нужно устанавливать в 0, иначе в профиле появляется БД посещенных
 // сайтов, несмотря на отключенный network.predictor.enabled.
@@ -97,16 +103,20 @@ user_pref("privacy.trackingprotection.enabled", false);
 user_pref("privacy.trackingprotection.pbmode.enabled", false);
 user_pref("browser.trackingprotection.updateURL", "");
 user_pref("browser.trackingprotection.gethashURL", "");
+user_pref("browser.polaris.enabled", false);
 
 // Отключает <a ping>, которые отправляют запрос по отдельному указанному адресу (с целью трекинга)
-// при нажатии на ссылку.
+// при нажатии на ссылку. -- http://kb.mozillazine.org/Browser.send_pings
 user_pref("browser.send_pings", false);
 // Отключает sendBeacon() - API для отправки статистики перед выгрузкой страницы.
+// https://developer.mozilla.org/en-US/docs/Web/API/navigator.sendBeacon
 user_pref("beacon.enabled", false);
 
-// Отключает добавление в Speed Dial сайтов спонсоров Mozilla.
+// Отключает добавление в Speed Dial сайтов спонсоров Mozilla и сбор статистики кликов по ним.
 // После отключения следует удалить directoryLinks.json в about:cache -> <директория на уровень выше cache2>,
 // чтобы уже загруженная реклама не показывалась -- https://support.mozilla.org/en-US/questions/1030849
+// https://wiki.mozilla.org/Tiles
+// https://gecko.readthedocs.org/en/latest/browser/browser/DirectoryLinksProvider.html
 user_pref("browser.newtabpage.directory.ping", "");
 user_pref("browser.newtabpage.directory.source", "");
 user_pref("browser.newtabpage.enhanced", false);
@@ -204,6 +214,12 @@ user_pref("devtools.webide.autoConnectRuntime", false);
 // https://wiki.mozilla.org/DevTools/WiFi_Debugging
 user_pref("devtools.remote.wifi.scan", false);
 user_pref("devtools.remote.wifi.visible", false);
+
+// Отключает SSDP, нужный для обнаружения телевизоров и реализации функции Send Video To Device в
+// Firefox для Android. Десктопный Firefox тоже почему-то посылал соответствующие мультикаст-запросы.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1111967
+// https://support.mozilla.org/en-US/kb/use-firefox-android-send-videos-chromecast
+user_pref("browser.casting.enabled", false);
 
 #if FX < 3900
 	// Отключает шифры уязвимые к Logjam. Вытащено отсюда: https://addons.mozilla.org/en-US/firefox/addon/disable-dhe/

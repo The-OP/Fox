@@ -18,6 +18,7 @@ user_pref("security.mixed_content.block_active_content", true);
 user_pref("security.mixed_content.block_display_content", true);
 
 // Отключает периодическую загрузку списка вредоносных разрешений с AMO.
+// http://kb.mozillazine.org/Extensions.blocklist.enabled
 user_pref("extensions.blocklist.enabled", false);
 user_pref("extensions.blocklist.url", "");
 user_pref("extensions.blocklist.detailsURL", "");

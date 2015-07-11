@@ -33,6 +33,7 @@ user_pref("reader.parse-on-load.force-enabled", false);
 
 // Отключает геолокацию через Гугл с присвоением уникального идентификатора и передачей им
 // информации о близлежащих точках доступа Wi-Fi.
+// http://www.mozilla.org/en-US/firefox/geolocation/
 user_pref("geo.enabled", false);
 user_pref("geo.wifi.logging.enabled", false);
 user_pref("geo.wifi.uri", "");
@@ -50,8 +51,10 @@ user_pref("dom.disable_beforeunload", true);
 // Отключает Network Information API, которым можно узнать информацию о типе подключения к Интернету.
 user_pref("dom.netinfo.enabled", false);
 // Отключает передачу браузером информации о времени начала и окончания загрузки страницы.
+// https://wiki.mozilla.org/Security/Reviews/Firefox/NavigationTimingAPI
 user_pref("dom.enable_performance", false);
 // Запрещает отслеживать состояние батареи.
+// https://developer.mozilla.org/en-US/docs/Web/API/BatteryManager
 user_pref("dom.battery.enabled", false);
 // Отключает ImageCapture API для снятия изображения с веб-камеры.
 user_pref("dom.imagecapture.enabled", false);
@@ -60,8 +63,17 @@ user_pref("dom.imagecapture.enabled", false);
 user_pref("dom.enable_resource_timing", false);
 // Отключает Vibration API.
 user_pref("dom.vibrator.enabled", false);
-// Отключает события от акселерометра и других сенсоров.
+// Отключает события от акселерометра и других сенсоров. -- https://wiki.mozilla.org/Sensor_API
 user_pref("device.sensors.enabled", false);
+// Отключает события от геймпада. -- http://www.w3.org/TR/gamepad/
+user_pref("dom.gamepad.enabled", false);
+user_pref("dom.gamepad.non_standard_events.enabled", false);
+// Отключает поддержку устройств виртуальной реальности.
+// https://developer.mozilla.org/en-US/Firefox/Releases/36#Interfaces.2FAPIs.2FDOM
+user_pref("dom.vr.enabled", false);
+// Отключает API для телефонных звонков, использующийся в Firefox OS.
+// https://wiki.mozilla.org/WebAPI/Security/WebTelephony
+user_pref("dom.telephony.enabled", false);
 
 // Отключает User Timing API - доступ к высокочастотному таймеру, при помощи которого может быть
 // осуществлено прослушивание процессорного кэша из непривилегированного JS-кода.
@@ -72,6 +84,8 @@ user_pref("dom.enable_user_timing", false);
 user_pref("dom.performance.enable_user_timing_logging", false);
 
 // Отключает Web Speech API, использующееся для распознавания и синтеза речи.
+// https://wiki.mozilla.org/HTML5_Speech_API
+// https://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html
 user_pref("media.webspeech.recognition.enable", false);
 user_pref("media.webspeech.synth.enabled", false);
 
@@ -88,6 +102,7 @@ user_pref("media.peerconnection.use_document_iceservers", false);
 
 // Отключает getUserMedia API, который используется для записи звука с микрофона, изображения с
 // вебкамеры и screen sharing (доступ другого компьютера к порции экрана). Ломает Firefox Hello.
+// https://mozilla.github.io/webrtc-landing/gum_test.html
 user_pref("media.navigator.enabled", false);
 user_pref("media.navigator.video.enabled", false);
 user_pref("media.navigator.permission.disabled", false);
@@ -138,7 +153,7 @@ user_pref("devtools.webide.simulatorAddonsURL", "");
 user_pref("devtools.webide.templatesURL", "");
 user_pref("devtools.webide.templatesURL_cache", "");
 
-// Отключает распространенные плагины. Рекомендуется их вообще удалять, т.к., как показывает практика,
+// Отключает распространенные плагины. Рекомендуется их вообще удалять, ибо, как показывает практика,
 // плагины - самые дырявые компоненты браузера.
 user_pref("plugin.default.state", 0);
 user_pref("plugin.defaultXpi.state", 0);
@@ -152,6 +167,7 @@ user_pref("plugins.load_appdir_plugins", false);
 user_pref("plugins.update.url", "");
 // http://kb.mozillazine.org/Pfs.datasource.url
 user_pref("pfs.datasource.url", "");
+// Запрещает яваскриптам обращаться к плагинам.
 user_pref("security.xpconnect.plugin.unrestricted", false);
 user_pref("application.use_ns_plugin_finder", false);
 
