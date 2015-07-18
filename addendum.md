@@ -58,6 +58,8 @@
 
 * [NoRedirect](https://addons.mozilla.org/firefox/addon/noredirect/). Рубит редиректы по рэгэкспам source или destination.
 
+* [HttpFox](https://addons.mozilla.org/firefox/addon/httpfox/). Мониторит все HTTP-запросы браузера. Показывает заголовки, параметры GET/POST и статус запроса (в т.ч. был ли он выполнен, взят из кэша, или отменен (NS_BINDING_ABORTED) самим браузером/другим аддоном).
+
 * [User Agent Switcher](https://addons.mozilla.org/firefox/addon/user-agent-switcher/) и [списки к нему](http://techpatterns.com/downloads/firefox/useragentswitcher.xml).
 
 * [Random Agent Spoofer](https://addons.mozilla.org/firefox/addon/random-agent-spoofer/). Меняет юзер-агенты по таймеру и с дополнительными фичами, препятствующими фингерпринтингу. Версия с GitHub имеет расширенную функциональность по сравнению с версией с AMO (см. описание на AMO).

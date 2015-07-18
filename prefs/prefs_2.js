@@ -5,7 +5,7 @@ user_pref("browser.newtabpage.enabled", false);
 user_pref("browser.fixup.alternate.enabled", false);
 
 // Отключает автодетект изменения состояния сетевого подключения и связанную с ним самодеятельность
-// вроде рефреша DNS-кэша.
+// вроде рефреша DNS-кэша. -- https://bugzilla.mozilla.org/show_bug.cgi?id=939318
 user_pref("network.notify.changed", false);
 
 // Отключает сбор статистики производительности декодирования HTML5-видео.
@@ -31,8 +31,8 @@ user_pref("readinglist.server", "");
 user_pref("reader.parse-on-load.enabled", false);
 user_pref("reader.parse-on-load.force-enabled", false);
 
-// Отключает геолокацию через Гугл с присвоением уникального идентификатора и передачей им
-// информации о близлежащих точках доступа Wi-Fi.
+// Отключает геолокацию через сервисы Гугла с присвоением клиентскому компьютеру уникального
+// идентификатора и передачей в Гугл информации о близлежащих точках доступа Wi-Fi.
 // http://www.mozilla.org/en-US/firefox/geolocation/
 user_pref("geo.enabled", false);
 user_pref("geo.wifi.logging.enabled", false);
@@ -46,9 +46,10 @@ user_pref("browser.search.geoip.url", "");
 // https://w3c.github.io/clipboard-apis/#clipboard-event-interfaces
 user_pref("dom.event.clipboardevents.enabled", false);
 // Отключает событие beforeunload, на которое некоторые страницы ставят сообщения
-// вроде: "Эта страница просит вас подтвердить, что вы хотите уйти"
+// вроде: "Эта страница просит вас подтвердить, что вы хотите уйти."
 user_pref("dom.disable_beforeunload", true);
 // Отключает Network Information API, которым можно узнать информацию о типе подключения к Интернету.
+// https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API
 user_pref("dom.netinfo.enabled", false);
 // Отключает передачу браузером информации о времени начала и окончания загрузки страницы.
 // https://wiki.mozilla.org/Security/Reviews/Firefox/NavigationTimingAPI
@@ -57,13 +58,17 @@ user_pref("dom.enable_performance", false);
 // https://developer.mozilla.org/en-US/docs/Web/API/BatteryManager
 user_pref("dom.battery.enabled", false);
 // Отключает ImageCapture API для снятия изображения с веб-камеры.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=888177
+// https://bugzilla.mozilla.org/show_bug.cgi?id=916643
 user_pref("dom.imagecapture.enabled", false);
 // Отключает Resource Timing API (получение информации о том, с какой скоростью обрабатываются
-// элементы сайта).
+// элементы сайта). -- https://bugzilla.mozilla.org/show_bug.cgi?id=1002855
 user_pref("dom.enable_resource_timing", false);
-// Отключает Vibration API.
+// Отключает Vibration API. -- https://developer.mozilla.org/en-US/docs/Web/Guide/API/Vibration
 user_pref("dom.vibrator.enabled", false);
-// Отключает события от акселерометра и других сенсоров. -- https://wiki.mozilla.org/Sensor_API
+// Отключает события от акселерометра и других сенсоров.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=740473
+// https://wiki.mozilla.org/Sensor_API
 user_pref("device.sensors.enabled", false);
 // Отключает события от геймпада. -- http://www.w3.org/TR/gamepad/
 user_pref("dom.gamepad.enabled", false);
@@ -92,6 +97,8 @@ user_pref("media.webspeech.synth.enabled", false);
 // Запрещает поддержку протокола WebRTC, текущая реализация которого позволяет незаметно для
 // пользователя получить список IP-адресов в его локальной сети. А также узнать ваш реальный IP
 // за прокси/Tor/VPN. Ломает Firefox Hello.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=959893
+// http://habrahabr.ru/post/215071/
 user_pref("media.peerconnection.enabled", false);
 user_pref("media.peerconnection.identity.enabled", false);
 user_pref("media.peerconnection.video.enabled", false);
@@ -101,7 +108,8 @@ user_pref("media.peerconnection.default_iceservers", "");
 user_pref("media.peerconnection.use_document_iceservers", false);
 
 // Отключает getUserMedia API, который используется для записи звука с микрофона, изображения с
-// вебкамеры и screen sharing (доступ другого компьютера к порции экрана). Ломает Firefox Hello.
+// вебкамеры и screen sharing (доступ удаленного компьютера к порции экрана). Ломает Firefox Hello.
+// https://stackoverflow.com/questions/13616449/screen-sharing-with-webrtc
 // https://mozilla.github.io/webrtc-landing/gum_test.html
 user_pref("media.navigator.enabled", false);
 user_pref("media.navigator.video.enabled", false);
@@ -110,6 +118,10 @@ user_pref("media.getusermedia.browser.enabled", false);
 user_pref("media.getusermedia.screensharing.allow_on_old_platforms", false);
 user_pref("media.getusermedia.screensharing.allowed_domains", "");
 user_pref("media.getusermedia.screensharing.enabled", false);
+// http://stackoverflow.com/questions/29291275/navigator-getusermedia-mutes-partially-the-other-sounds-of-the-computer
+user_pref("media.getusermedia.aec_enabled", false);
+user_pref("media.getusermedia.agc_enabled", false);
+user_pref("media.getusermedia.noise_enabled", false);
 
 // Отключает Firefox Hello.
 user_pref("loop.enabled", false);

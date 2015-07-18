@@ -8,13 +8,14 @@ user_pref("network.http.pipelining", true);
 user_pref("network.http.proxy.pipelining", true);
 user_pref("network.http.pipelining.ssl", true);
 
-// Делать DNS-запросы через прокси (если указан).
+// Если указан SOCKS5-прокси, делать DNS-запросы через него, а не напрямую со своего IP.
+// http://kb.mozillazine.org/Network.proxy.socks_remote_dns
 user_pref("network.proxy.socks_remote_dns", true);
 
 // Более информативная страница показа ошибок в сертификатах сайтов.
 user_pref("browser.xul.error_pages.expert_bad_cert", true);
 
-// Количество страниц, которые держатся в памяти уже в виде DOM виде для быстрого перехода по
+// Количество страниц, которые держатся в памяти уже в виде DOM для быстрого перехода по
 // back/forward. Уменьшение снизит потребление памяти.
 user_pref("browser.sessionhistory.max_total_viewers", 2);
 // Также немного уменьшает потребление памяти.
@@ -28,15 +29,18 @@ user_pref("intl.locale.matchOS", false);
 // Отключает предзагрузку ссылок, на которые по мнению браузера вы собираетесь кликнуть.
 // https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ
 user_pref("network.prefetch-next", false);
-// И предрезолвинг их доменов тоже.
+// И предварительный резолвинг их доменов тоже.
 // https://developer.mozilla.org/en-US/docs/Web/HTTP/Controlling_DNS_prefetching
 user_pref("network.dns.disablePrefetch", true);
 // https://mxr.mozilla.org/mozilla-esr38/source/dom/html/nsHTMLDNSPrefetch.cpp#64
 user_pref("network.dns.disablePrefetchFromHTTPS", true);
-// И предконнект к хостам.
+// И предварительный коннект к хостам.
+// https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_prefetching
+// https://bugzilla.mozilla.org/show_bug.cgi?id=814169
 user_pref("network.http.speculative-parallel-limit", 0);
 
-// Отключает загрузку URL из буфера обмена по нажатию на колесо в Linux.
+// Отключает загрузку URL из буфера обмена по нажатию на колесо в Linux, которая мешает при
+// промахах мимо ссылок и случайных кликах по колесу.
 user_pref("middlemouse.contentLoadURL", false);
 
 // Отключает переход назад в истории по бэкспейсу.
@@ -50,7 +54,8 @@ user_pref("nglayout.enable_drag_images", false);
 // Отключает притормаживающую на окнах с многими вкладками анимацию открытия и закрытия табов. 
 user_pref("browser.tabs.animate", false);
 
-// Отключает авто-отправку недопечатанного поискового запроса для формирования поисковых подсказок.
+// Отключает автоматическую отправку поисковику недопечатанного запроса по мере его набора,
+// используемую для формирования поисковых подсказок.
 user_pref("browser.search.suggest.enabled", false);
 // Отключает поиск через адресную строку без заданных поисковикам префиксов-кейвордов.
 // http://kb.mozillazine.org/Keyword.enabled
@@ -76,6 +81,7 @@ user_pref("network.security.ports.banned", "4444,9050,9051");
 // каждого загружаемого пользователем файла (якобы для проверки на вирусы), что уже совершенно
 // неприемлемо. Желающие могут установить себе подписку Malware Domains для uBlock Origin, которая
 // включает в себя URL из Safebrowsing и не следит за пользователем.
+// https://blog.mozilla.org/security/2014/07/23/improving-malware-detection-in-firefox/
 user_pref("browser.safebrowsing.enabled", false);
 user_pref("browser.safebrowsing.malware.enabled", false);
 user_pref("browser.safebrowsing.downloads.enabled", false);
@@ -121,6 +127,7 @@ user_pref("browser.newtabpage.enhanced", false);
 user_pref("browser.aboutHomeSnippets.updateUrl", "");
 
 // Отключает автоматическое открытие вкладки с описанием изменений в новой версии после обновления.
+// http://kb.mozillazine.org/Browser.startup.homepage_override.mstone
 user_pref("browser.startup.homepage_override.mstone", "ignore");
 // Отключает приветственную страницу при первом запуске браузера с новым профилем.
 user_pref("startup.homepage_welcome_url","");
@@ -128,6 +135,7 @@ user_pref("startup.homepage_welcome_url","");
 // Отключает показ AMO при входе в Add-ons Manager.
 user_pref("extensions.webservice.discoverURL", "");
 // Отключает посылку статистики при обновлении аддонов.
+// https://wiki.mozilla.org/Extension_Manager:Update_Checking
 user_pref("extensions.getAddons.cache.enabled", false);
 
 // Отключает отправку информации о падениях браузера в Mozilla.
@@ -181,12 +189,15 @@ user_pref("extensions.stylish.updatesEnabled", false);
 user_pref("browser.link.open_newwindow.restriction", 0);
 
 // Запрещает попапам отключать элементы окон браузера.
+// http://kb.mozillazine.org/Dom.popup_maximum
 user_pref("dom.popup_maximum", 5);
 user_pref("dom.disable_open_during_load", true);
 user_pref("dom.allow_scripts_to_close_windows", false);
+// http://kb.mozillazine.org/JavaScript#JavaScript_settings_in_Firefox_23_and_above
 user_pref("dom.disable_window_move_resize", true);
 user_pref("dom.disable_window_flip", true);
 user_pref("dom.disable_window_status_change", true);
+// http://kb.mozillazine.org/Prevent_websites_from_disabling_new_window_features
 user_pref("dom.disable_window_open_feature.close", true);
 user_pref("dom.disable_window_open_feature.location", true);
 user_pref("dom.disable_window_open_feature.menubar", true);

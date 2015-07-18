@@ -1,4 +1,5 @@
 // Отключает API для системных уведомлений из веб-приложений.
+// https://developer.mozilla.org/en-US/docs/Web/API/Notification/Using_Web_Notifications
 user_pref("dom.webnotifications.enabled", false);
 // Не дает страницам перехватывать и блокировать обращения к контекстному меню. Ломает Google Docs.
 user_pref("dom.event.contextmenu.enabled", false);
@@ -18,14 +19,15 @@ user_pref("security.mixed_content.block_active_content", true);
 user_pref("security.mixed_content.block_display_content", true);
 
 // Отключает периодическую загрузку списка вредоносных разрешений с AMO.
+// https://addons.mozilla.org/firefox/blocked/
 // http://kb.mozillazine.org/Extensions.blocklist.enabled
 user_pref("extensions.blocklist.enabled", false);
 user_pref("extensions.blocklist.url", "");
 user_pref("extensions.blocklist.detailsURL", "");
 user_pref("extensions.blocklist.itemURL", "");
 
-// Отключает проигрывание в браузере не эмбеднутых аудио и видео при переходе по ссылке
-// на .webm/.mp3/etc
+// Отключает проигрывание в браузере не эмбеднутых аудио и видео при переходе по прямой ссылке
+// на .webm/.mp3/etc. Вместо проигрывания вызовется сохранение файла.
 user_pref("media.play-stand-alone", false);
 
 // Отключает Web Video Text Tracks (субтитры для тега video).
@@ -44,6 +46,7 @@ user_pref("media.mediasource.mp4.enabled", false);
 user_pref("media.mediasource.webm.enabled", false);
 
 // Отключает Audio Data API (от которого уже отказались в пользу Web Audio API).
+// https://wiki.mozilla.org/Audio_Data_API
 user_pref("media.audio_data.enabled", false);
 
 // Отключает загружаемые сайтами шрифты. Ломает кнопки uBlock.
