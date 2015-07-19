@@ -138,8 +138,10 @@ user_pref("startup.homepage_welcome_url","");
 
 // Отключает показ AMO при входе в Add-ons Manager.
 user_pref("extensions.webservice.discoverURL", "");
+
 // Отключает посылку статистики при обновлении аддонов.
 // https://wiki.mozilla.org/Extension_Manager:Update_Checking
+// https://bugzilla.mozilla.org/show_bug.cgi?id=635115
 user_pref("extensions.getAddons.cache.enabled", false);
 
 // Отключает отправку информации о падениях браузера в Mozilla.

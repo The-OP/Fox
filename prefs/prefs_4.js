@@ -16,7 +16,7 @@ user_pref("webgl.disabled", true);
 user_pref("webgl.force-enabled", false);
 user_pref("pdfjs.enableWebGL", false);
 
-// Отключает попытки страниц развернуть себя на весь экран.
+// Отключает попытки страниц развернуть себя на весь экран и соответствующую кнопку в HTML5-плеерах.
 // https://developer.mozilla.org/en-US/docs/DOM/Using_fullscreen_mode
 user_pref("full-screen-api.enabled", false);
 user_pref("full-screen-api.pointer-lock.enabled", false);

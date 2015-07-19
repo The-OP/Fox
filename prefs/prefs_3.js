@@ -26,6 +26,11 @@ user_pref("extensions.blocklist.url", "");
 user_pref("extensions.blocklist.detailsURL", "");
 user_pref("extensions.blocklist.itemURL", "");
 
+// Preferences -> Search -> Add more search engines...
+user_pref("browser.search.searchEnginesURL", "");
+// Edit Control -> Context Menu -> Languages -> Add dictionaries...
+user_pref("browser.dictionaries.download.url", "");
+
 // Отключает проигрывание в браузере не эмбеднутых аудио и видео при переходе по прямой ссылке
 // на .webm/.mp3/etc. Вместо проигрывания вызовется сохранение файла.
 user_pref("media.play-stand-alone", false);
