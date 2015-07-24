@@ -38,8 +38,20 @@ user_pref("reader.parse-on-load.force-enabled", false);
 user_pref("geo.enabled", false);
 user_pref("geo.wifi.logging.enabled", false);
 user_pref("geo.wifi.uri", "");
+
+// Отключает геолокацию для применения региональных настроек поиска. Геолокация запрашивается один раз,
+// после чего код страны сохранится в browser.search.countryCode в виде строки "US", "RU", etc. Она не будет
+// производиться, если код страны уже в browser.search.countryCode или очищен необходимый для нее URL.
+// https://mxr.mozilla.org/mozilla-esr38/source/toolkit/components/search/nsSearchService.js?rev=0f8338121472#520
+// https://mxr.mozilla.org/mozilla-esr38/source/toolkit/components/search/nsSearchService.js?rev=0f8338121472#593
+user_pref("browser.search.countryCode", "US");
 user_pref("browser.search.geoip.timeout", 0);
 user_pref("browser.search.geoip.url", "");
+// Эта настройка не отключает XHR геолокации, а только применение региональных настроек.
+user_pref("browser.search.geoSpecificDefaults", false);
+// Нужно очищать вместе с browser.search.geoip.url.
+// https://mxr.mozilla.org/mozilla-beta/source/toolkit/components/search/nsSearchService.js?rev=5657e76d4ee5#746
+user_pref("browser.search.geoSpecificDefaults.url", "");
 
 // Отключает Clipboard Events, которые позволяют страницам узнавать какая их часть была скопирована в буфер
 // обмена, подменять скопированное, перехватывать вставку из буфера и реагировать на нее особым образом
