@@ -8,7 +8,8 @@ user_pref("browser.fixup.alternate.enabled", false);
 // вроде рефреша DNS-кэша. -- https://bugzilla.mozilla.org/show_bug.cgi?id=939318
 user_pref("network.notify.changed", false);
 
-// Отключает сбор статистики производительности декодирования HTML5-видео.
+// Отключает сбор статистики производительности декодирования HTML5-видео (Show Statistics
+// в контекстном меню плеера). -- https://bugzilla.mozilla.org/show_bug.cgi?id=654550
 user_pref("media.video_stats.enabled", false);
 
 // Отключает Social API и новую кнопку для перепостов в соцсети.
@@ -79,6 +80,28 @@ user_pref("dom.vr.enabled", false);
 // Отключает API для телефонных звонков, использующийся в Firefox OS.
 // https://wiki.mozilla.org/WebAPI/Security/WebTelephony
 user_pref("dom.telephony.enabled", false);
+// Отключает Presentation API, использующийся для взаимодействия веб-страниц с проектором.
+// https://w3c.github.io/presentation-api/
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1080474
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1148149
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1158029
+user_pref("dom.presentation.enabled", false);
+user_pref("dom.presentation.tcp_server.debug", false);
+
+// Отключает Push API, позволяющий веб-приложениям регистрировать идентификатор на сервере Мозиллы,
+// чтобы сайт приложения оставлял там уведомления, которые пользователь получит, когда выйдет онлайн.
+// https://developer.mozilla.org/en-US/docs/Web/API/Push_API
+// https://wiki.mozilla.org/Security/Reviews/Push_API
+// https://wiki.mozilla.org/Privacy/Reviews/Push_API
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1038811
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1153499
+user_pref("dom.push.enabled", false);
+user_pref("dom.push.serverURL", "");
+user_pref("dom.push.userAgentID", "");
+// https://mxr.mozilla.org/mozilla-beta/source/modules/libpref/init/all.js?rev=e549349b8d66#4237
+user_pref("dom.push.connection.enabled", false);
+user_pref("dom.push.adaptive.enabled", false);
+user_pref("dom.push.udp.wakeupEnabled", false);
 
 // Отключает User Timing API - доступ к высокочастотному таймеру, при помощи которого может быть
 // осуществлено прослушивание процессорного кэша из непривилегированного JS-кода.
@@ -134,6 +157,7 @@ user_pref("loop.server", "");
 // user_pref("loop.soft_start_hostname", "127.0.0.1");
 user_pref("loop.feedback.baseUrl", "");
 user_pref("loop.debug.twoWayMediaTelemetry", false);
+user_pref("loop.contextInConversations.enabled", false);
 
 // Отключает поддержку Encrypted Media Extensions (DRM для HTML5-видео).
 user_pref("media.eme.enabled", false);
@@ -173,6 +197,10 @@ user_pref("plugin.state.flash", 0);
 user_pref("plugin.state.java", 0);
 // Отключает все плагины (только для Windows-билдов) -- http://kb.mozillazine.org/Plugin_scanning
 user_pref("plugin.scan.plid.all", false);
+// Отключает все плагины. Именно пробел, а не пустая строка. Пустая строка значит "разрешены все".
+// https://mxr.mozilla.org/mozilla-esr38/source/dom/plugins/base/nsPluginHost.h?rev=0f8338121472#174
+// https://mxr.mozilla.org/mozilla-esr38/source/dom/plugins/base/nsPluginHost.cpp?rev=0f8338121472#2505
+user_pref("plugin.allowed_types", " ");
 // http://kb.mozillazine.org/Issues_related_to_plugins#Plugin_location
 user_pref("plugins.load_appdir_plugins", false);
 // https://support.mozilla.org/en-US/questions/833109

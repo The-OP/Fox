@@ -32,7 +32,7 @@ user_pref("network.prefetch-next", false);
 // И предварительный резолвинг их доменов тоже.
 // https://developer.mozilla.org/en-US/docs/Web/HTTP/Controlling_DNS_prefetching
 user_pref("network.dns.disablePrefetch", true);
-// https://mxr.mozilla.org/mozilla-esr38/source/dom/html/nsHTMLDNSPrefetch.cpp#64
+// https://mxr.mozilla.org/mozilla-esr38/source/dom/html/nsHTMLDNSPrefetch.cpp?rev=96e6f9392598#64
 user_pref("network.dns.disablePrefetchFromHTTPS", true);
 // И предварительный коннект к хостам.
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_prefetching
@@ -156,6 +156,7 @@ user_pref("datareporting.healthreport.documentServerURI", "");
 user_pref("toolkit.telemetry.enabled", false);
 user_pref("toolkit.telemetry.server", "");
 user_pref("toolkit.telemetry.archive.enabled", false);
+// https://wiki.mozilla.org/Unified_Telemetry
 user_pref("toolkit.telemetry.unified", false);
 
 // Отключает предложения оценить работу Firefox и отправить пожертвования Mozilla.
@@ -186,6 +187,9 @@ user_pref("experiments.manifest.uri", "");
 
 // Отключает автообновление стилей Stylish -- https://userstyles.org/help/stylish_firefox
 user_pref("extensions.stylish.updatesEnabled", false);
+
+// Отключает список рекомендуемых тем в Customize -> Themes.
+user_pref("lightweightThemes.recommendedThemes", "");
 
 // Открывать попапы во вкладках вместо отдельных окон.
 user_pref("browser.link.open_newwindow.restriction", 0);
@@ -223,6 +227,25 @@ user_pref("devtools.webide.autoConnectRuntime", false);
 // https://wiki.mozilla.org/DevTools/WiFi_Debugging
 user_pref("devtools.remote.wifi.scan", false);
 user_pref("devtools.remote.wifi.visible", false);
+
+// Отключает команду screenshot --imgur, которая автоматически загружает сделанный скриншот на Imgur.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=992386
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1173158
+// https://mxr.mozilla.org/mozilla-beta/source/toolkit/devtools/gcli/commands/screenshot.js?rev=ab89cbfcd3e6#382
+user_pref("devtools.gcli.imgurClientID", "");
+user_pref("devtools.gcli.imgurUploadURL", "");
+
+// Отключает скачивание и показ подсказок для свойств CSS с developer.mozilla.org в Developer Tools.
+// https://mxr.mozilla.org/mozilla-beta/source/browser/devtools/styleinspector/test/browser_ruleview_context-menu-show-mdn-docs-03.js?rev=7f005a3c9f9d#5
+// https://mxr.mozilla.org/mozilla-beta/source/browser/devtools/styleinspector/rule-view.js?rev=14b2376c96fa#1538
+// https://mxr.mozilla.org/mozilla-beta/source/browser/devtools/shared/widgets/MdnDocsWidget.js?rev=7f005a3c9f9d#5
+user_pref("devtools.inspector.mdnDocsTooltip.enabled", false);
+
+// Отключает рекламу Firefox Developer Edition в Developer Tools.
+// https://mxr.mozilla.org/mozilla-esr38/source/browser/devtools/shared/doorhanger.js?rev=0f8338121472#17
+user_pref("devtools.devedition.promo.enabled", false);
+user_pref("devtools.devedition.promo.shown", true);
+user_pref("devtools.devedition.promo.url", "");
 
 // Отключает SSDP, нужный для обнаружения телевизоров и реализации функции Send Video To Device в
 // Firefox для Android. Десктопный Firefox тоже почему-то посылал соответствующие мультикаст-запросы.

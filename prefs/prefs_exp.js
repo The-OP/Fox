@@ -3,7 +3,7 @@
 // в Add-on Manager в виде: “[Add-on Name] might be making [Firefox version] run slowly”.
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1071880#c8
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1071880#c67
-// https://mxr.mozilla.org/mozilla-central/source/toolkit/components/perfmonitoring/AddonWatcher.jsm#82
+// https://mxr.mozilla.org/mozilla-central/source/toolkit/components/perfmonitoring/AddonWatcher.jsm?rev=ca96c76db6a2#82
 user_pref("browser.addon-watch.interval", -1);
 
 // Отключает автообновления и редиректы страниц, происходящие через <meta http-equiv="refresh">

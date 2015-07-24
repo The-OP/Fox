@@ -18,6 +18,11 @@ user_pref("security.ssl.errorReporting.url", "");
 user_pref("security.mixed_content.block_active_content", true);
 user_pref("security.mixed_content.block_display_content", true);
 
+// Разрешить запрос HTTP-аунтефикации при загрузке только самого документа, но не его ресурсов.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=647010
+// https://mxr.mozilla.org/mozilla-beta/source/modules/libpref/init/all.js?rev=e549349b8d66#1717
+user_pref("network.auth.allow-subresource-auth", 0);
+
 // Отключает периодическую загрузку списка вредоносных разрешений с AMO.
 // https://addons.mozilla.org/firefox/blocked/
 // http://kb.mozillazine.org/Extensions.blocklist.enabled
@@ -26,10 +31,13 @@ user_pref("extensions.blocklist.url", "");
 user_pref("extensions.blocklist.detailsURL", "");
 user_pref("extensions.blocklist.itemURL", "");
 
+// Отключает переход по URL при нажатии на соответствующие элементы управления:
 // Preferences -> Search -> Add more search engines...
 user_pref("browser.search.searchEnginesURL", "");
 // Edit Control -> Context Menu -> Languages -> Add dictionaries...
 user_pref("browser.dictionaries.download.url", "");
+// Customize -> Themes -> Get More Themes
+user_pref("lightweightThemes.getMoreURL", "");
 
 // Отключает проигрывание в браузере не эмбеднутых аудио и видео при переходе по прямой ссылке
 // на .webm/.mp3/etc. Вместо проигрывания вызовется сохранение файла.

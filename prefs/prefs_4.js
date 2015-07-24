@@ -75,6 +75,9 @@ user_pref("media.apple.mp3.enabled", false);
 user_pref("security.OCSP.enabled", 0);
 user_pref("security.OCSP.require", false);
 
+// Отключает автоматическое обновление тем оформления.
+user_pref("lightweightThemes.update.enabled", false);
+
 // Отключает автоматическую установку обновлений аддонов.
 // https://bugzilla.mozilla.org/show_bug.cgi?id=701987
 user_pref("extensions.update.autoUpdateDefault", false);
