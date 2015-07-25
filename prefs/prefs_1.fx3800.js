@@ -139,7 +139,7 @@ user_pref("beacon.enabled", false);
 // https://gecko.readthedocs.org/en/latest/browser/browser/DirectoryLinksProvider.html
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_tiles
 user_pref("browser.newtabpage.directory.ping", "");
-// Firefox не проверяет эту опцию на пустую строку и начинает ругаться в консоль, если она пустая.
+// Firefox не проверяет эту опцию на пустую строку и XHR начинает ругаться в консоль, если она пустая.
 user_pref("browser.newtabpage.directory.source", "data:application/json,{}");
 user_pref("browser.newtabpage.enhanced", false);
 // Отключает загрузку рекламы сервисов от самой Mozilla (Sync, Hello, версий для Android) в about:home.
