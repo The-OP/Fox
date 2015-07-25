@@ -28,15 +28,17 @@ user_pref("intl.locale.matchOS", false);
 
 // Отключает предзагрузку ссылок, на которые по мнению браузера вы собираетесь кликнуть.
 // https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ
+// https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_link-prefetching
 user_pref("network.prefetch-next", false);
 // И предварительный резолвинг их доменов тоже.
 // https://developer.mozilla.org/en-US/docs/Web/HTTP/Controlling_DNS_prefetching
+// https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_dns-prefetching
 user_pref("network.dns.disablePrefetch", true);
 // https://mxr.mozilla.org/mozilla-esr38/source/dom/html/nsHTMLDNSPrefetch.cpp?rev=96e6f9392598#64
 user_pref("network.dns.disablePrefetchFromHTTPS", true);
 // И предварительный коннект к хостам.
-// https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_prefetching
 // https://bugzilla.mozilla.org/show_bug.cgi?id=814169
+// https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_speculative-pre-connections
 user_pref("network.http.speculative-parallel-limit", 0);
 
 // Отключает загрузку URL из буфера обмена по нажатию на колесо в Linux, которая мешает при
@@ -62,6 +64,7 @@ user_pref("browser.search.suggest.enabled", false);
 user_pref("keyword.enabled", false);
 
 // Отключает автоматическое обновление поисковых движков.
+// https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_auto-update-checking
 user_pref("browser.search.update", false);
 
 // Отключает Predictor (бывший Seer) - механизм, запоминающий связи между хостами, с которых
@@ -82,10 +85,13 @@ user_pref("network.security.ports.banned", "4444,9050,9051");
 // неприемлемо. Желающие могут установить себе подписку Malware Domains для uBlock Origin, которая
 // включает в себя URL из Safebrowsing и не следит за пользователем.
 // https://blog.mozilla.org/security/2014/07/23/improving-malware-detection-in-firefox/
+// https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_anti-phishing-list-updating
 user_pref("browser.safebrowsing.enabled", false);
+// https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_anti-malware-list-updating
 user_pref("browser.safebrowsing.malware.enabled", false);
 user_pref("browser.safebrowsing.downloads.enabled", false);
 user_pref("browser.safebrowsing.downloads.remote.enabled", false);
+// https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_anti-malware-list-updating
 user_pref("browser.safebrowsing.appRepURL", "");
 user_pref("browser.safebrowsing.gethashURL", "");
 user_pref("browser.safebrowsing.malware.reportURL", "");
@@ -119,33 +125,34 @@ user_pref("beacon.enabled", false);
 // чтобы уже загруженная реклама не показывалась -- https://support.mozilla.org/en-US/questions/1030849
 // https://wiki.mozilla.org/Tiles
 // https://gecko.readthedocs.org/en/latest/browser/browser/DirectoryLinksProvider.html
+// https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_tiles
 user_pref("browser.newtabpage.directory.ping", "");
 user_pref("browser.newtabpage.directory.source", "");
 user_pref("browser.newtabpage.enhanced", false);
 // Отключает загрузку рекламы сервисов от самой Mozilla (Sync, Hello, версий для Android) в about:home.
 // https://wiki.mozilla.org/Websites/Snippets
+// https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_snippets
 user_pref("browser.aboutHomeSnippets.updateUrl", "");
 
 // Отключает автоматическое открытие вкладки с описанием изменений в новой версии после обновления.
 // http://kb.mozillazine.org/Browser.startup.homepage_override.mstone
+// https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_whats-new-page
 user_pref("browser.startup.homepage_override.mstone", "ignore");
 // Отключает приветственную страницу при первом запуске браузера с новым профилем.
-user_pref("startup.homepage_welcome_url","");
+user_pref("startup.homepage_welcome_url", "");
 
-// Отключает показ AMO при входе в Add-ons Manager.
+// Отключает показ AMO при входе в Add-ons Manager на вкладку Get Add-ons.
+// https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_add-on-list-prefetching
 user_pref("extensions.webservice.discoverURL", "");
 
 // Отключает посылку статистики при обновлении аддонов.
 // https://wiki.mozilla.org/Extension_Manager:Update_Checking
 // https://bugzilla.mozilla.org/show_bug.cgi?id=635115
+// https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_add-on-metadata-updating
 user_pref("extensions.getAddons.cache.enabled", false);
 
-// Отключает отправку информации о падениях браузера в Mozilla.
-user_pref("breakpad.reportURL", "");
-user_pref("dom.ipc.plugins.flash.subprocess.crashreporter.enabled", false);
-user_pref("dom.ipc.plugins.reportCrashURL", false);
-
 // Отключает телеметрию.
+// https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_diagnostics
 user_pref("datareporting.healthreport.service.enabled", false);
 user_pref("datareporting.healthreport.uploadEnabled", false);
 user_pref("datareporting.policy.dataSubmissionEnabled", false);
@@ -158,6 +165,10 @@ user_pref("toolkit.telemetry.server", "");
 user_pref("toolkit.telemetry.archive.enabled", false);
 // https://wiki.mozilla.org/Unified_Telemetry
 user_pref("toolkit.telemetry.unified", false);
+// Отключает отправку информации о падениях браузера в Mozilla (about:crashes).
+user_pref("breakpad.reportURL", "");
+user_pref("dom.ipc.plugins.flash.subprocess.crashreporter.enabled", false);
+user_pref("dom.ipc.plugins.reportCrashURL", false);
 
 // Отключает предложения оценить работу Firefox и отправить пожертвования Mozilla.
 // https://wiki.mozilla.org/Advocacy/heartbeat
@@ -251,6 +262,7 @@ user_pref("devtools.devedition.promo.url", "");
 // Firefox для Android. Десктопный Firefox тоже почему-то посылал соответствующие мультикаст-запросы.
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1111967
 // https://support.mozilla.org/en-US/kb/use-firefox-android-send-videos-chromecast
+// https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_send-video-to-device
 user_pref("browser.casting.enabled", false);
 
 // "As of 2015, there is speculation that some state cryptologic agencies may possess the capability

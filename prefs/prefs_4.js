@@ -72,6 +72,7 @@ user_pref("media.wave.enabled", false);
 user_pref("media.apple.mp3.enabled", false);
 
 // Отключает проверку на отзыв сертификата через OCSP-сервер при установке шифрованного соединения.
+// https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_secure-website-certificates
 user_pref("security.OCSP.enabled", 0);
 user_pref("security.OCSP.require", false);
 
@@ -80,6 +81,7 @@ user_pref("lightweightThemes.update.enabled", false);
 
 // Отключает автоматическую установку обновлений аддонов.
 // https://bugzilla.mozilla.org/show_bug.cgi?id=701987
+// https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_auto-update-checking
 user_pref("extensions.update.autoUpdateDefault", false);
 // Отключает периодическую проверку обновлений аддонов.
 user_pref("extensions.update.enabled", false);

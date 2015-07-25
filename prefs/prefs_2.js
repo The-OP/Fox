@@ -34,18 +34,19 @@ user_pref("reader.parse-on-load.force-enabled", false);
 
 // Отключает геолокацию через сервисы Гугла с присвоением клиентскому компьютеру уникального
 // идентификатора и передачей в Гугл информации о близлежащих точках доступа Wi-Fi.
-// http://www.mozilla.org/en-US/firefox/geolocation/
+// https://www.mozilla.org/en-US/firefox/geolocation/
 user_pref("geo.enabled", false);
 user_pref("geo.wifi.logging.enabled", false);
 user_pref("geo.wifi.uri", "");
 
 // Отключает геолокацию для применения региональных настроек поиска. Геолокация запрашивается один раз,
 // после чего код страны сохранится в browser.search.countryCode в виде строки "US", "RU", etc. Она не будет
-// производиться, если код страны уже в browser.search.countryCode или очищен необходимый для нее URL.
+// производиться, если код страны уже в browser.search.countryCode или если очищен необходимый для нее URL.
 // https://mxr.mozilla.org/mozilla-esr38/source/toolkit/components/search/nsSearchService.js?rev=0f8338121472#520
 // https://mxr.mozilla.org/mozilla-esr38/source/toolkit/components/search/nsSearchService.js?rev=0f8338121472#593
 user_pref("browser.search.countryCode", "US");
 user_pref("browser.search.geoip.timeout", 0);
+// https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_geolocation-for-default-search-engine
 user_pref("browser.search.geoip.url", "");
 // Эта настройка не отключает XHR геолокации, а только применение региональных настроек.
 user_pref("browser.search.geoSpecificDefaults", false);
@@ -134,6 +135,7 @@ user_pref("media.webspeech.synth.enabled", false);
 // за прокси/Tor/VPN. Ломает Firefox Hello.
 // https://bugzilla.mozilla.org/show_bug.cgi?id=959893
 // http://habrahabr.ru/post/215071/
+// https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_webrtc
 user_pref("media.peerconnection.enabled", false);
 user_pref("media.peerconnection.identity.enabled", false);
 user_pref("media.peerconnection.video.enabled", false);
@@ -159,6 +161,7 @@ user_pref("media.getusermedia.agc_enabled", false);
 user_pref("media.getusermedia.noise_enabled", false);
 
 // Отключает Firefox Hello.
+// https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_firefox-hello
 user_pref("loop.enabled", false);
 user_pref("loop.screenshare.enabled", false);
 user_pref("loop.rooms.enabled", false);
@@ -177,9 +180,10 @@ user_pref("media.eme.apiVisible", false);
 user_pref("media.gmp-eme-adobe.enabled", false);
 
 // Отключает загрузку бинарника H264-кодека от Cisco (будет использоваться GStreamer).
-user_pref("media.gmp-gmpopenh264.provider.enabled", false);
+// https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_openh264-codec
 user_pref("media.gmp-gmpopenh264.autoupdate", false);
 user_pref("media.gmp-gmpopenh264.enabled", false);
+user_pref("media.gmp-gmpopenh264.provider.enabled", false);
 user_pref("media.gmp-provider.enabled", false);
 user_pref("media.gmp-manager.url", "");
 user_pref("media.gmp-manager.certs.1.commonName", "");
@@ -225,6 +229,7 @@ user_pref("application.use_ns_plugin_finder", false);
 
 // Отключает автоматическое обновление браузера.
 // https://developer.mozilla.org/en-US/Firefox/Enterprise_deployment
+// https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_auto-update-checking
 user_pref("app.update.auto", false);
 user_pref("app.update.enabled", false);
 user_pref("app.update.service.enabled", false);

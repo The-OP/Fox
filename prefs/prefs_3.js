@@ -26,6 +26,7 @@ user_pref("network.auth.allow-subresource-auth", 0);
 // Отключает периодическую загрузку списка вредоносных разрешений с AMO.
 // https://addons.mozilla.org/firefox/blocked/
 // http://kb.mozillazine.org/Extensions.blocklist.enabled
+// https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_blocklist-updating
 user_pref("extensions.blocklist.enabled", false);
 user_pref("extensions.blocklist.url", "");
 user_pref("extensions.blocklist.detailsURL", "");

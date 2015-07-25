@@ -73,6 +73,7 @@
 * [Yet Another Remove It Permanently](https://addons.mozilla.org/firefox/addon/yarip/). Баннерорезка с поддержкой XPath. Для тех случаев, когда CSS-селекторов не хватает.
 
 ## Интересные ссылки
+* [Release Notes](https://www.mozilla.org/firefox/notes) и [Developer Release Notes](https://developer.mozilla.org/en-US/Firefox/Releases).
 * [Здесь](http://kb.mozillazine.org/About:config_entries) и [здесь](http://kb.mozillazine.org/Category:Preferences) приведены подробные описания настроек, жаль, не всех.
 * [Блог](https://cat-in-136.github.io/tags.html#tag_pref%20diff) автора аддона Configuration Mania, который выкладывает diff между дефолтными конфигами предыдущей и новой версии Firefox.
 * [Неплохой обзор от Mozilla](https://support.mozilla.org/en-US/kb/how-stop-firefox-automatically-making-connections) с описаниями механизмов, из-за которых Firefox может инициировать соединения без прямого приказа пользователя. Настройки для отключения подобной самодеятельности есть здесь, в разделе "Настройки".
