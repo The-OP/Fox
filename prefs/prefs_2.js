@@ -195,6 +195,13 @@ user_pref("media.gmp-manager.certs.1.issuerName", "");
 user_pref("media.gmp-manager.certs.2.commonName", "");
 user_pref("media.gmp-manager.certs.2.issuerName", "");
 
+// https://github.com/The-OP/Fox/issues/25
+// https://mxr.mozilla.org/mozilla-esr38/source/toolkit/modules/GMPUtils.jsm?rev=0f8338121472#84
+// https://mxr.mozilla.org/mozilla-esr38/source/toolkit/modules/GMPInstallManager.jsm?rev=0f8338121472#384
+// https://mxr.mozilla.org/mozilla-esr38/source/toolkit/modules/GMPInstallManager.jsm?rev=0f8338121472#337
+user_pref("media.gmp-manager.lastCheck", 1437696000); // 2015-07-24, 00:00 UTC
+user_pref("media.gmp-manager.secondsBetweenChecks", 630720000); // 20 лет.
+
 // Полностью отключает WebIDE, убирает его кнопку и из меню Developer Tools.
 user_pref("devtools.webide.enabled", false);
 user_pref("devtools.appmanager.enabled", false);
