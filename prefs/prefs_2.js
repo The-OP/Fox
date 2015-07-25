@@ -180,14 +180,20 @@ user_pref("media.eme.apiVisible", false);
 user_pref("media.gmp-eme-adobe.enabled", false);
 
 // Отключает загрузку бинарника H264-кодека от Cisco (будет использоваться GStreamer).
+// https://mxr.mozilla.org/mozilla-esr38/source/toolkit/modules/GMPUtils.jsm?rev=0f8338121472#70
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_openh264-codec
 user_pref("media.gmp-gmpopenh264.autoupdate", false);
 user_pref("media.gmp-gmpopenh264.enabled", false);
 user_pref("media.gmp-gmpopenh264.provider.enabled", false);
 user_pref("media.gmp-provider.enabled", false);
 user_pref("media.gmp-manager.url", "");
+// https://mxr.mozilla.org/mozilla-esr38/source/modules/libpref/init/all.js?rev=0f8338121472#4496
+user_pref("media.gmp-manager.cert.requireBuiltIn", true);
+user_pref("media.gmp-manager.cert.checkAttributes", true);
 user_pref("media.gmp-manager.certs.1.commonName", "");
+user_pref("media.gmp-manager.certs.1.issuerName", "");
 user_pref("media.gmp-manager.certs.2.commonName", "");
+user_pref("media.gmp-manager.certs.2.issuerName", "");
 
 // Полностью отключает WebIDE, убирает его кнопку и из меню Developer Tools.
 user_pref("devtools.webide.enabled", false);

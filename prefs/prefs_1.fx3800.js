@@ -113,6 +113,18 @@ user_pref("browser.trackingprotection.updateURL", "");
 user_pref("browser.trackingprotection.gethashURL", "");
 user_pref("browser.polaris.enabled", false);
 
+// Вообще не регистрировать таблицы Safebrowsing и Tracking Protection в URL Classifier, пусть даже
+// в отключенном виде и с пустыми URL для обновления.
+// https://mxr.mozilla.org/mozilla-release/source/toolkit/components/url-classifier/SafeBrowsing.jsm?rev=6f3151d4ff03
+// https://mxr.mozilla.org/mozilla-release/source/toolkit/components/url-classifier/nsIUrlListManager.idl?rev=326bab27cc3c#29
+// https://mxr.mozilla.org/mozilla-release/source/toolkit/components/url-classifier/content/listmanager.js?rev=76c0924aea88#88
+user_pref("urlclassifier.malwareTable", "");
+user_pref("urlclassifier.phishTable", "");
+user_pref("urlclassifier.downloadBlockTable", "");
+user_pref("urlclassifier.downloadAllowTable", "");
+user_pref("urlclassifier.trackingTable", "");
+user_pref("urlclassifier.disallow_completions", "");
+
 // Отключает <a ping>, которые отправляют запрос по отдельному указанному адресу (с целью трекинга)
 // при нажатии на ссылку. -- http://kb.mozillazine.org/Browser.send_pings
 user_pref("browser.send_pings", false);
@@ -127,7 +139,8 @@ user_pref("beacon.enabled", false);
 // https://gecko.readthedocs.org/en/latest/browser/browser/DirectoryLinksProvider.html
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_tiles
 user_pref("browser.newtabpage.directory.ping", "");
-user_pref("browser.newtabpage.directory.source", "");
+// Firefox не проверяет эту опцию на пустую строку и начинает ругаться в консоль, если она пустая.
+user_pref("browser.newtabpage.directory.source", "data:application/json,{}");
 user_pref("browser.newtabpage.enhanced", false);
 // Отключает загрузку рекламы сервисов от самой Mozilla (Sync, Hello, версий для Android) в about:home.
 // https://wiki.mozilla.org/Websites/Snippets
@@ -140,6 +153,10 @@ user_pref("browser.aboutHomeSnippets.updateUrl", "");
 user_pref("browser.startup.homepage_override.mstone", "ignore");
 // Отключает приветственную страницу при первом запуске браузера с новым профилем.
 user_pref("startup.homepage_welcome_url", "");
+// Отключает показ URL с описанием функций, связанных с Windows 10, у пользователей последней.
+// https://mxr.mozilla.org/mozilla-beta/source/browser/components/nsBrowserContentHandler.js?rev=883275447631#546
+user_pref("browser.usedOnWindows10", true);
+user_pref("browser.usedOnWindows10.introURL", "");
 
 // Отключает показ AMO при входе в Add-ons Manager на вкладку Get Add-ons.
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_add-on-list-prefetching
