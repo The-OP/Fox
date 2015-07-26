@@ -16,14 +16,15 @@
 3) 1 и 2 вместе.  <br>
 Также проблему может решить обновление видеодрайверов либо возврат к более старой версии. Или обновление самого Firefox до беты/откат к ESR.
 
-* **Q:** HTML5 на YouTube и все, что с ним связано (1080p, проблемы с проигрыванием, etc). <br>
-**A:** Попробуйте эти настройки about:config (с 38 версии MSE в билдах под Linux работает, если включить): <br>
+* **Q:** HTML5 на YouTube, VK и все, что с ним связано (1080p, проблемы с проигрыванием, etc). <br>
+**A:** Должны быть включены нижеприведенные настройки в about:config. В Linux-билдах MSE по умолчанию отключены, но работают, начиная с Firefox 38, если их вручную включить и установить GStreamer с плагинами (-good и -bad, точные название пакетов зависят от дистрибутива). <br>
 `media.mediasource.enabled -> true` <br>
 `media.mediasource.mp4.enabled -> true` <br>
 `media.mediasource.webm.enabled -> true` <br>
 `media.fragmented-mp4.enabled -> true`  <br>
 `media.fragmented-mp4.exposed -> true` <br>
-`media.fragmented-mp4.ffmpeg.enabled -> true # Для Linux-билдов`
+`media.fragmented-mp4.ffmpeg.enabled -> true # Для Linux-билдов` <br>
+`media.gstreamer.enabled -> true # Для Linux-билдов`
 
 * **Q:** Как искать в разных поисковиках через адресную строку? <br>
 **A:** Используя префиксы-кейворды (g Google, w Wikipedia, etc), настраивающиеся в Preferences -> Search или в пункте Manage Search Engines выпадающего меню старой поисковой строки.
