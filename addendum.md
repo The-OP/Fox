@@ -25,7 +25,7 @@
 2. [Настройки](prefs/prefs_2.js), ломающие не особо нужную функциональность.
 3. [Настройки](prefs/prefs_3.js), ломающие нужную некоторым функциональность.
 4. [Настройки](prefs/prefs_4.js), еще больше ломающие функциональность. Их отключают либо для повышения безопасности, либо для повышения анонимности. А также все, что не подошло в первые три категории.
-5. [Настройки](prefs/prefs_exp.js) для энтузиастов. Ничего особо не ломают, но рассчитаны на тех, кто использует браузер нетривиально и/или под большими нагрузками. Всем остальным не рекомендуются.
+5. [Настройки](prefs/prefs_exp.js) для энтузиастов. Ничего особо не ломают, но рассчитаны на тех, кто использует браузер нетривиальными способами.
 
 **Не следует** бездумно копировать себе все целиком из четвертой категории. Внимательно посмотрите и решите, что именно вам нужно. Из второй - можно, но все же рекомендуется прочитать перед этим.
 
@@ -36,7 +36,7 @@
 ## Продвинутые аддоны
 * [HTTPS Everywhere](https://addons.mozilla.org/en-us/firefox/addon/https-everywhere/). Содержит список сайтов, поддерживающих как HTTP, так HTTPS, и автоматически меняет все HTTP-ссылки, ведущие к этим сайтам, на HTTPS. Аддон вернули на AMO, но на всякий случай - [ссылка](https://www.eff.org/https-everywhere/) на официальный сайт. Правила обновляются редко, актуальную версию правил можно получить [на GitHub](https://github.com/EFForg/https-everywhere), там же можно отправить новое правило.
 
-* [RefControl](https://addons.mozilla.org/firefox/addon/refcontrol/). Резалка рефереров. Можно тонко тюнить, а можно рубить только рефереры при переходе на другой домен (Block (3rd party)), оставляя внутридоменные, что просто, эффективно для 99% случаев и не ломает так много сайтов как полный запрет.
+* [RefControl](https://addons.mozilla.org/firefox/addon/refcontrol/). Резалка [рефереров](https://en.wikipedia.org/wiki/HTTP_Referer). Можно тонко тюнить, а можно рубить только рефереры при переходе на другой домен (Block (3rd party)), оставляя внутридоменные, что просто, эффективно для 99% случаев и не ломает так много сайтов как полный запрет.
 
 * [CleanLinks](https://addons.mozilla.org/firefox/addon/clean-links/). Чистит ссылки от редирект-префиксов Гугла и т.п. Имеет белый список как доменов, так и рэгэкспов, чтобы пропускать ссылки со всякими нужными префиксами вроде auth, ServiceLogin и т.п.
 
@@ -46,7 +46,7 @@
 
 * [Self-Destructing Cookies](https://addons.mozilla.org/firefox/addon/self-destructing-cookies/). Самоуничтожение кук после закрытия всех вкладок с соответствующим сайтом. Может быть удобнее чем полная блокировка.
 
-* [BetterPrivacy](https://addons.mozilla.org/firefox/addon/betterprivacy/). Менее актуально с понижением числа пользователей Flash, но все же. Уничтожает [LSO](https://en.wikipedia.org/wiki/Local_shared_object), которые не может уничтожить сам браузер при очистке кук.
+* [BetterPrivacy](https://addons.mozilla.org/firefox/addon/betterprivacy/). Менее актуально с понижением числа пользователей Flash, но все же. Уничтожает [LSO](https://en.wikipedia.org/wiki/Local_shared_object), которые не может заблокировать или уничтожить сам браузер.
 
 * [RequestPolicy](https://addons.mozilla.org/firefox/addon/requestpolicy/). Резалка кросс-доменных запросов. Более надежная, но уже не обновляющаяся. Можно (и рекомендуется самим автором) использовать в связке с NoScript.
 
@@ -54,11 +54,11 @@
 
 * [Policeman](https://addons.mozilla.org/firefox/addon/policeman/). Еще одна резалка кросс-доменных запросов. Более удобная, более фичастая и активно развивающаяся. Но пока есть некоторые шероховатости, например с file -> file и file -> web. Из фич, которые есть в RequestPolicy, тут нет Request Log (решается сторонними аддонами вроде HttpFox) и блокировки редиректов с домена на домен, если они не в белом списке (решается NoRedirect в некотором роде, но менее удобно). **UPD:** Блокировку редиректов запилили в 0.19 версии, ждем на AMO. **UPD:** К сожалению, похоже что аддон прекратил развиваться.
 
-* [uMatrix](https://addons.mozilla.org/firefox/addon/umatrix/). Самая многофункциональная из резалок кросс-доменных запросов. Как и Policeman может блокировать запросы в зависимости от типа контента, но обладает более удобным интерфейсом. Также умеет блокировать скрипты, куки и HTML5-видео. Документацию еще не перенесли целиком из старого проекта, на котором основан uMatrix, так что если что непонятно, смотреть не только [здесь](https://github.com/gorhill/uMatrix/wiki), но и [здесь](https://github.com/gorhill/httpswitchboard/wiki).
+* [uMatrix](https://addons.mozilla.org/firefox/addon/umatrix/). Самая многофункциональная из резалок кросс-доменных запросов. Как и Policeman может блокировать запросы в зависимости от типа контента, но обладает более удобным интерфейсом. Также умеет блокировать XHR (отдельно от обычных запросов), скрипты, куки, рефереры, плагины, медиа (HTML5 аудио и видео) и вебсокеты ([только на Firefox](https://code.google.com/p/chromium/issues/detail?id=129353)). Документацию еще не перенесли целиком из старого проекта, на котором основан uMatrix, так что если что непонятно, смотреть не только [здесь](https://github.com/gorhill/uMatrix/wiki), но и [здесь](https://github.com/gorhill/httpswitchboard/wiki).
 
-	* <sub>Алгоритм блокирования кук несколько отличается от того, что у Cookie Monster и Cookie Controller - первые два не дают сайтам устанавливать куки, а uMatrix дает ставить, но не дает читать (сайт при этом думает, что они не установлены). Также uMatrix не умеет контролировать DOM Storage, а только периодически его очищать.</sub>
+	* <sub>Алгоритм блокирования кук несколько отличается от того, что у Cookie Monster и Cookie Controller - первые два не дают сайтам устанавливать куки, а uMatrix дает ставить, но не дает читать, убирая из всех HTTP-запросов заголовок Cookie (но при этом через document.cookie установленные куки все еще видны), а через некоторое время - подчищает. Также в отличие от CM/CC, uMatrix не умеет запрещать писать в DOM Storage, а может только периодически его очищать.</sub>
 
-* [NoRedirect](https://addons.mozilla.org/firefox/addon/noredirect/). Рубит редиректы по рэгэкспам source или destination.
+* [NoRedirect](https://addons.mozilla.org/firefox/addon/noredirect/). Рубит редиректы по рэгэкспам исходного или целевого URL.
 
 * [HttpFox](https://addons.mozilla.org/firefox/addon/httpfox/). Мониторит все HTTP-запросы браузера. Показывает заголовки, параметры GET/POST и статус запроса (в т.ч. был ли он выполнен, взят из кэша, или отменен (NS_BINDING_ABORTED) самим браузером/другим аддоном).
 
@@ -77,9 +77,9 @@
 ## Интересные ссылки
 * [Release Notes](https://www.mozilla.org/firefox/notes) и [Developer Release Notes](https://developer.mozilla.org/en-US/Firefox/Releases).
 * [Здесь](http://kb.mozillazine.org/About:config_entries) и [здесь](http://kb.mozillazine.org/Category:Preferences) приведены подробные описания настроек, жаль, не всех.
-* [Блог](https://cat-in-136.github.io/tags.html#tag_pref%20diff) автора аддона Configuration Mania, который выкладывает diff между дефолтными конфигами предыдущей и новой версии Firefox.
+* [Блог](https://cat-in-136.github.io/tags.html#tag_pref%20diff) автора аддона Configuration Mania, который выкладывает разницу между дефолтными конфигами предыдущей и новой версии Firefox.
 * [Неплохой обзор от Mozilla](https://support.mozilla.org/en-US/kb/how-stop-firefox-automatically-making-connections) с описаниями механизмов, из-за которых Firefox может инициировать соединения без прямого приказа пользователя. Настройки для отключения подобной самодеятельности есть здесь, в разделе "Настройки".
-* [Evercookie](http://samy.pl/evercookie/). Собирательное название для техник засовывания трекинг-идентификаторов в разные труднодоступные места помимо cookies, LSO и DOM Storage.
+* [Evercookie](http://samy.pl/evercookie/). Собирательное название для техник помещения трекинг-идентификаторов в разные труднодоступные места помимо cookies, LSO и DOM Storage.
 * Фингерпринтинг
   * Такие методы обнаружения, для которых не требуется запись уникального идентификатора на машину пользователя.
   * Проверить себя на уникальность отпечатка можно на следующих ресурсах:
@@ -88,5 +88,5 @@
     * https://amiunique.org/
     * http://whoer.net/
   * Статьи по теме:
-    * [Как Tor Project борется с фингерпринтингом](http://geektimes.ru/post/244484/) (более свежая [английская версия статьи](https://www.sharelatex.com/github/repos/KOLANICH/Article-2015-Dull-captaincy-or-the-way-Tor-Project-fights-browser-fingerprinting/builds/44e474be624ca3bb65d1b1fbeb95abd1de8c5d13/raw/output.pdf)).
-    * [Флаги HSTS и их использование для фингерпринтинга](http://geektimes.ru/post/244065/)
+    * [Как Tor Project борется с фингерпринтингом](https://geektimes.ru/post/244484/) (более свежая [английская версия статьи](https://www.sharelatex.com/github/repos/KOLANICH/Article-2015-Dull-captaincy-or-the-way-Tor-Project-fights-browser-fingerprinting/builds/44e474be624ca3bb65d1b1fbeb95abd1de8c5d13/raw/output.pdf)).
+    * [Флаги HSTS и их использование для фингерпринтинга](https://geektimes.ru/post/244065/)
