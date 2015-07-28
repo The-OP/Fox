@@ -81,7 +81,7 @@ user_pref("network.proxy.no_proxies_on", "");
 // Отключение дискового кэширования. Анализируя время загрузки страницы, можно узнать, посещал ли
 // пользователь этот сайт. Если посещал - часть файлов будет взята из кэша, что отразится на времени.
 // Еще проще и надежнее определяется наличие файлов в кэше по значениям заголовков If-Modified-Since
-// и If-None-Match (https://en.wikipedia.org/wiki/HTTP_ETag), которые также они могут быть использованы
+// и If-None-Match (https://en.wikipedia.org/wiki/HTTP_ETag), которые также могут быть использованы
 // и для прямого трекинга (отдавая пользователям файл с уникальным Last-Modified и/или ETag).
 user_pref("browser.cache.disk.enable", false);
 user_pref("browser.cache.disk.capacity", 0);

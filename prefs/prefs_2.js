@@ -54,7 +54,7 @@ user_pref("browser.search.geoSpecificDefaults", false);
 // https://mxr.mozilla.org/mozilla-beta/source/toolkit/components/search/nsSearchService.js?rev=5657e76d4ee5#746
 user_pref("browser.search.geoSpecificDefaults.url", "");
 
-// Отключает Clipboard Events, которые позволяют страницам узнавать какая их часть была скопирована в буфер
+// Отключает Clipboard Events, которые позволяют страницам узнавать, какая их часть была скопирована в буфер
 // обмена, подменять скопированное, перехватывать вставку из буфера и реагировать на нее особым образом
 // (например загружать находящуюся в буфере обмена картинку в сообщение почты или чата).
 // https://w3c.github.io/clipboard-apis/#clipboard-event-interfaces
@@ -179,7 +179,7 @@ user_pref("media.eme.enabled", false);
 user_pref("media.eme.apiVisible", false);
 user_pref("media.gmp-eme-adobe.enabled", false);
 
-// Отключает загрузку бинарника H264-кодека от Cisco (будет использоваться GStreamer).
+// Отключает загрузку бинарника H.264-кодека от Cisco (будет использоваться GStreamer).
 // https://mxr.mozilla.org/mozilla-esr38/source/toolkit/modules/GMPUtils.jsm?rev=0f8338121472#70
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_openh264-codec
 user_pref("media.gmp-gmpopenh264.autoupdate", false);

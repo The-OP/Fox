@@ -282,8 +282,9 @@ user_pref("devtools.devedition.promo.url", "");
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_send-video-to-device
 user_pref("browser.casting.enabled", false);
 
-// Отключает шифры уязвимые к Logjam. Вытащено отсюда: https://addons.mozilla.org/en-US/firefox/addon/disable-dhe/
-// Firefox 39 will include changes that will increase the minimum strength of keys to 1024 bits.
+// Отключает шифры, уязвимые к Logjam. Настройки взяты из официального аддона от Mozilla.
+// "Firefox 39 and Firefox ESR 38.0.2 will include changes that will increase the minimum
+// strength of keys to 1024 bits." -- https://addons.mozilla.org/en-US/firefox/addon/disable-dhe/
 user_pref("security.ssl3.dhe_dss_aes_128_sha", false);
 user_pref("security.ssl3.dhe_rsa_aes_128_sha", false);
 user_pref("security.ssl3.dhe_rsa_aes_256_sha", false);
