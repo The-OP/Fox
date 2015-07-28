@@ -80,10 +80,33 @@ user_pref("network.proxy.no_proxies_on", "");
 
 // Отключение дискового кэширования. Анализируя время загрузки страницы, можно узнать, посещал ли
 // пользователь этот сайт. Если посещал - часть файлов будет взята из кэша, что отразится на времени.
-// https://en.wikipedia.org/wiki/HTTP_ETag
+// Еще проще и надежнее определяется наличие файлов в кэше по значениям заголовков If-Modified-Since
+// и If-None-Match (https://en.wikipedia.org/wiki/HTTP_ETag), которые также они могут быть использованы
+// и для прямого трекинга (отдавая пользователям файл с уникальным Last-Modified и/или ETag).
 user_pref("browser.cache.disk.enable", false);
 user_pref("browser.cache.disk.capacity", 0);
 user_pref("browser.cache.disk.smart_size.enabled", false);
 user_pref("browser.cache.disk_cache_ssl", false);
 user_pref("browser.cache.offline.capacity", 0);
 user_pref("browser.cache.offline.enable", false);
+
+// Отключает Indexed DB API, позволяющий скриптам хранить информацию в БД SQLite на компьютере
+// пользователя. Объем Indexed DB может значительно превышать объем DOM Storage.
+// https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API
+//
+// "IndexedDB is completely disabled in private browsing mode." -- 
+// 	https://wiki.mozilla.org/Security/Reviews/Firefox4/IndexedDB_Security_Review
+// Проверить это  можно на примере из MDN, здесь: https://mdn.github.io/to-do-notifications/index.html
+// В обычном окне пример покажет "Database initialised.", в приватном - "Error loading database.", плюс
+// сообщения "TypeError: db is undefined" в консоли.
+//
+// Также в обычном окне использование Indexed DB сайтом можно увидеть через Page Permissions
+// (about:permissions) -> Maintain Offline Storage и очистить там же (Block, равно как и Ask, почему-то
+// не работает, по крайней мере в Fx39).
+//
+// UPD: Начиная с Firefox 35 отключение Indexed DB может сломать многие аддоны:
+// 	http://www.ghacks.net/2015/01/16/fix-add-ons-not-working-in-firefox-35/
+// 	https://adblockplus.org/forum/viewtopic.php?t=27375&start=15
+// UPD: Вышеописанный баг исправили, теперь эта настройка действует только на страницы, и браузер
+// с аддонами не ломает -- https://bugzilla.mozilla.org/show_bug.cgi?id=1079355
+user_pref("dom.indexedDB.enabled", false);

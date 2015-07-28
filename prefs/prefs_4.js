@@ -1,14 +1,12 @@
 // Полное отключение кэширования. Анализируя время загрузки страницы, можно узнать, посещал ли
 // пользователь этот сайт. Если посещал - часть файлов будет взята из кэша, что отразится на времени.
-// https://en.wikipedia.org/wiki/HTTP_ETag
+// Еще проще и надежнее определяется наличие файлов в кэше по значениям заголовков If-Modified-Since
+// и If-None-Match (https://en.wikipedia.org/wiki/HTTP_ETag), которые также они могут быть использованы
+// и для прямого трекинга (отдавая пользователям файл с уникальным Last-Modified и/или ETag).
 user_pref("network.http.use-cache", false);
 user_pref("browser.cache.memory.enable", false);
 user_pref("media.cache_size", 0);
 user_pref("image.cache.size", 0);
-// UPD: Начиная с Firefox 35 отключение indexedDB может сломать многие аддоны:
-// http://www.ghacks.net/2015/01/16/fix-add-ons-not-working-in-firefox-35/
-// https://adblockplus.org/forum/viewtopic.php?t=27375&start=15
-// user_pref("dom.indexedDB.enabled", false);
 
 // Полностью отключает WebGL.
 // http://www.contextis.com/resources/blog/webgl-new-dimension-browser-exploitation/
