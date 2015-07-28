@@ -48,7 +48,7 @@ user_pref("javascript.options.ion.content", false);
 user_pref("javascript.options.typeinference", false);
 user_pref("javascript.options.asmjs", false);
 user_pref("noscript.forbidMedia", true);
-user_pref("media.webaudio.enabled", false );
+user_pref("media.webaudio.enabled", false);
 // Третий уровень - отключение JIT-компилятора, SVG и обработку JavaScript только для HTTPS.
 user_pref("javascript.options.baselinejit.content", false);
 user_pref("gfx.font_rendering.graphite.enabled", false);
