@@ -31,6 +31,23 @@ user_pref("readinglist.server", "");
 // https://wiki.mozilla.org/QA/Reader_view
 user_pref("reader.parse-on-load.enabled", false);
 user_pref("reader.parse-on-load.force-enabled", false);
+// При каждом изменении window.location значение сравнивается с этой настройкой, чтобы начать UI-тур
+// по режиму чтения. Значение этого параметра используется как регэксп без проверки на пустую строку,
+// поэтому обнулять его нельзя. Вместо этого используем регэксп, возвращающий для любой строки false.
+// https://mxr.mozilla.org/mozilla-release/source/browser/components/uitour/UITour.jsm?rev=e5d6dc48f6de#348
+// https://mxr.mozilla.org/mozilla-release/source/browser/base/content/browser.js?rev=cebe7cad65a2#4224
+user_pref("browser.uitour.readerViewTrigger", ".^");
+
+// Отключает UI-тур по возможностям Australis, Hello и т.п. Эти настроки влияют на UITour.onPageEvent()
+// и не действуют на тур по Reader View, который вызывается напрямую через UITour.onLocationChange().
+// https://www.mozilla.org/en-US/firefox/39.0/tour/
+// https://wiki.mozilla.org/Ui_tour/Test_Plan
+// https://mxr.mozilla.org/mozilla-release/source/browser/components/uitour/content-UITour.js?rev=aee871513001#12
+// https://mxr.mozilla.org/mozilla-release/source/browser/components/nsBrowserGlue.js?rev=5e03a12dd57e#2943
+// https://mxr.mozilla.org/mozilla-release/source/browser/components/uitour/UITour.jsm?rev=e5d6dc48f6de#364
+user_pref("browser.uitour.enabled", false);
+user_pref("browser.uitour.url", "");
+user_pref("browser.uitour.themeOrigin", "");
 
 // Отключает геолокацию через сервисы Гугла с присвоением клиентскому компьютеру уникального
 // идентификатора и передачей в Гугл информации о близлежащих точках доступа Wi-Fi.
@@ -194,7 +211,6 @@ user_pref("media.gmp-manager.certs.1.commonName", "");
 user_pref("media.gmp-manager.certs.1.issuerName", "");
 user_pref("media.gmp-manager.certs.2.commonName", "");
 user_pref("media.gmp-manager.certs.2.issuerName", "");
-
 // https://github.com/The-OP/Fox/issues/25
 // https://mxr.mozilla.org/mozilla-esr38/source/toolkit/modules/GMPUtils.jsm?rev=0f8338121472#84
 // https://mxr.mozilla.org/mozilla-esr38/source/toolkit/modules/GMPInstallManager.jsm?rev=0f8338121472#384
