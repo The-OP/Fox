@@ -27,7 +27,7 @@
 `media.gstreamer.enabled -> true # Для Linux-билдов`
 
 * **Q:** Как искать в разных поисковиках через адресную строку? <br>
-**A:** Используя префиксы-кейворды (g Google, w Wikipedia, etc), настраивающиеся в Preferences -> Search или в пункте Manage Search Engines выпадающего меню старой поисковой строки.
+**A:** Используя префиксы-кейворды (g Google, w Wikipedia, etc), настраивающиеся в Preferences -> Search (даблкликом по ячейкам второй колонки) или в пункте Manage Search Engines выпадающего меню старой поисковой строки.
 
 * **Q:** Как отключить беспрефиксный поиск в поисковике по умолчанию через адресную строку? <br>
 **A:** `about:config -> keyword.enabled -> false`
