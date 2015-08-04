@@ -94,7 +94,7 @@ user_pref("browser.cache.offline.enable", false);
 // пользователя. Объем Indexed DB может значительно превышать объем DOM Storage.
 // https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API
 //
-// "IndexedDB is completely disabled in private browsing mode." -- 
+// "IndexedDB is completely disabled in private browsing mode." --
 // 	https://wiki.mozilla.org/Security/Reviews/Firefox4/IndexedDB_Security_Review
 // Проверить это  можно на примере из MDN, здесь: https://mdn.github.io/to-do-notifications/index.html
 // В обычном окне пример покажет "Database initialised.", в приватном - "Error loading database.", плюс
