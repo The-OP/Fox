@@ -59,6 +59,7 @@ user_pref("browser.tabs.animate", false);
 // Отключает автоматическую отправку поисковику недопечатанного запроса по мере его набора,
 // используемую для формирования поисковых подсказок.
 user_pref("browser.search.suggest.enabled", false);
+user_pref("browser.urlbar.suggest.searches", false);
 // Отключает поиск через адресную строку без заданных поисковикам префиксов-кейвордов.
 // http://kb.mozillazine.org/Keyword.enabled
 user_pref("keyword.enabled", false);
