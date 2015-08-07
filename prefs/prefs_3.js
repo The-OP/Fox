@@ -52,6 +52,7 @@ user_pref("webgl.disable-extensions", true);
 user_pref("webgl.min_capability_mode", true);
 
 // Отключает встроенный просмотрщик PDF.
+// https://blog.mozilla.org/security/2015/08/06/firefox-exploit-found-in-the-wild/
 user_pref("pdfjs.disabled", true);
 
 // Отключает Media Source Extensions. Ломает некоторые кодеки на YouTube.
