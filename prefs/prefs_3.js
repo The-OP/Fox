@@ -51,9 +51,6 @@ user_pref("media.webvtt.enabled", false);
 user_pref("webgl.disable-extensions", true);
 user_pref("webgl.min_capability_mode", true);
 
-// Отключает встроенный просмотрщик PDF.
-user_pref("pdfjs.disabled", true);
-
 // Отключает Media Source Extensions. Ломает некоторые кодеки на YouTube.
 user_pref("media.mediasource.enabled", false);
 user_pref("media.mediasource.mp4.enabled", false);

@@ -256,6 +256,12 @@ user_pref("pfs.datasource.url", "");
 user_pref("security.xpconnect.plugin.unrestricted", false);
 user_pref("application.use_ns_plugin_finder", false);
 
+// Отключает встроенный просмотрщик PDF, в котором частенько находят уязвимости.
+// https://blog.mozilla.org/security/2015/08/06/firefox-exploit-found-in-the-wild/
+// https://news.ycombinator.com/item?id=10021376
+user_pref("pdfjs.disabled", true);
+user_pref("pdfjs.enableWebGL", false);
+
 // Отключает автоматическое обновление браузера.
 // https://developer.mozilla.org/en-US/Firefox/Enterprise_deployment
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_auto-update-checking
