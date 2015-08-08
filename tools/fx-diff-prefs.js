@@ -1,4 +1,4 @@
-#!/usr/bin/phantomjs
+#!/usr/bin/env phantomjs
 
 var fs = require('fs');
 var sys = require('system');
