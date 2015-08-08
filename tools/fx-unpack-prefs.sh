@@ -12,7 +12,7 @@ elif [ "$fxext" = "bz2" ]; then
 	dest_dir=./${1%.tar.bz2}
 	subdir=firefox
 	mkdir -p "$dest_dir"
-	tar -C "$dest_dir" -xaf "$1" "$subdir/omni.ja" "$subdir/browser/omni.ja" "$subdir/webapprt/omni.ja"
+	tar -C "$dest_dir" -xjf "$1" "$subdir/omni.ja" "$subdir/browser/omni.ja" "$subdir/webapprt/omni.ja"
 elif [ "$fxext" = "exe" ]; then
 	dest_dir=./${1%.exe}
 	subdir=core
