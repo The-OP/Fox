@@ -43,13 +43,13 @@ user_pref("browser.startup.homepage_override.buildID", "20100101");
 // Первый уровень подразумевает отключение opentype в коде отображения шрифтов.
 user_pref("gfx.font_rendering.opentype_svg.enabled", false);
 // Второй уровень - отключение WebAudio и asm.js.
-user_pref("javascript.options.ion.content", false);
+user_pref("javascript.options.ion", false);
 user_pref("javascript.options.typeinference", false);
 user_pref("javascript.options.asmjs", false);
 user_pref("noscript.forbidMedia", true);
 user_pref("media.webaudio.enabled", false);
 // Третий уровень - отключение JIT-компилятора, SVG и обработку JavaScript только для HTTPS.
-user_pref("javascript.options.baselinejit.content", false);
+user_pref("javascript.options.baselinejit", false);
 user_pref("gfx.font_rendering.graphite.enabled", false);
 // Наивысший уровень - отключение внешних шрифтов, JavaScript и всех кодеков.
 // Отключение внешних шрифтов. На выбор одна из настроек:
@@ -67,6 +67,7 @@ user_pref("media.webm.enabled", false);
 user_pref("media.raw.enabled", false);
 user_pref("media.wave.enabled", false);
 user_pref("media.apple.mp3.enabled", false);
+user_pref("media.apple.mp4.enabled", false);
 
 // Отключает проверку на отзыв сертификата через OCSP-сервер при установке шифрованного соединения.
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_secure-website-certificates

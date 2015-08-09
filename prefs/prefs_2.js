@@ -54,7 +54,13 @@ user_pref("browser.uitour.themeOrigin", "");
 // https://www.mozilla.org/en-US/firefox/geolocation/
 user_pref("geo.enabled", false);
 user_pref("geo.wifi.logging.enabled", false);
+// https://mxr.mozilla.org/mozilla-esr38/source/dom/system/NetworkGeolocationProvider.js?rev=7bc0140f0bfe#488
 user_pref("geo.wifi.uri", "");
+// https://mxr.mozilla.org/mozilla-esr38/source/dom/system/NetworkGeolocationProvider.js?rev=7bc0140f0bfe#21
+// https://mxr.mozilla.org/mozilla-esr38/source/dom/system/NetworkGeolocationProvider.js?rev=7bc0140f0bfe#233
+user_pref("geo.wifi.scan", false);
+user_pref("geo.cell.scan", false);
+user_pref("geo.wifi.timeToWaitBeforeSending", 630720000); // 20 лет.
 
 // Отключает геолокацию для применения региональных настроек поиска. Геолокация запрашивается один раз,
 // после чего код страны сохранится в browser.search.countryCode в виде строки "US", "RU", etc. Она не будет
@@ -190,11 +196,23 @@ user_pref("loop.server", "");
 user_pref("loop.feedback.baseUrl", "");
 user_pref("loop.debug.twoWayMediaTelemetry", false);
 user_pref("loop.contextInConversations.enabled", false);
+user_pref("loop.contacts.gravatars.promo", false);
+user_pref("loop.contacts.gravatars.show", false);
+user_pref("loop.gettingStarted.url", "");
+user_pref("loop.learnMoreUrl", "");
+user_pref("loop.legal.ToS_url", "");
+user_pref("loop.legal.privacy_url", "");
+user_pref("loop.oauth.google.redirect_uri", "");
+user_pref("loop.oauth.google.scope", "");
+user_pref("loop.seenToS", "unseen");
+user_pref("loop.showPartnerLogo", false);
+user_pref("loop.support_url", "");
 
 // Отключает поддержку Encrypted Media Extensions (DRM для HTML5-видео).
 user_pref("media.eme.enabled", false);
 user_pref("media.eme.apiVisible", false);
 user_pref("media.gmp-eme-adobe.enabled", false);
+user_pref("media.gmp-eme-adobe.autoupdate", false);
 
 // Отключает загрузку бинарника H.264-кодека от Cisco (будет использоваться GStreamer).
 // https://mxr.mozilla.org/mozilla-esr38/source/toolkit/modules/GMPUtils.jsm?rev=0f8338121472#70
