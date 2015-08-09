@@ -23,7 +23,7 @@ user_pref("security.mixed_content.block_display_content", true);
 // https://mxr.mozilla.org/mozilla-beta/source/modules/libpref/init/all.js?rev=e549349b8d66#1717
 user_pref("network.auth.allow-subresource-auth", 0);
 
-// Отключает периодическую загрузку списка вредоносных разрешений с AMO.
+// Отключает периодическую загрузку списка вредоносных расширений с AMO.
 // https://addons.mozilla.org/firefox/blocked/
 // http://kb.mozillazine.org/Extensions.blocklist.enabled
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_blocklist-updating
