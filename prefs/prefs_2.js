@@ -4,6 +4,15 @@ user_pref("browser.newtabpage.enabled", false);
 // Отключает угадывание доменного имени при помощи подстановки www и разных TLD.
 user_pref("browser.fixup.alternate.enabled", false);
 
+// Отключает запоминание истории форм (Preferences -> Privacy -> Remember search and form history).
+// Если она раньше была включена в этом профиле, следует вручную удалить файл formhistory.sqlite.
+// Firefox хранит историю введенного в формы, ассоциируя текст только с атрибутом name input-элемента,
+// куда этот текст был введен, без привязки к домену, на котором была форма. Из-за этого в выпадающей
+// подсказке истории форм одного сайта могут появиться элементы, введенные на совершенно другом,
+// если у того другого input был с таким же атрибутом name (например, распространенный "email").
+user_pref("browser.formfill.enable", false);
+user_pref("browser.formfill.saveHttpsForms", false);
+
 // Отключает автодетект изменения состояния сетевого подключения и связанную с ним самодеятельность
 // вроде рефреша DNS-кэша. -- https://bugzilla.mozilla.org/show_bug.cgi?id=939318
 user_pref("network.notify.changed", false);
