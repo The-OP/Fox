@@ -75,6 +75,14 @@ user_pref("network.http.spdy.enabled.v3-1", false);
 // принтеров через CUPS и прочих устройств
 user_pref("network.proxy.no_proxies_on", "");
 
+// Отключает Offline App Cache.
+// Демо можно посмотреть тут: http://appcache.offline.technology/demo/index.html мониторя
+// использование через about:cache -> appcache и меняя настройки.
+// http://www.w3.org/TR/offline-webapps/
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Using_the_application_cache
+user_pref("browser.cache.offline.enable", false);
+user_pref("browser.cache.offline.capacity", 0);
+
 // Отключение дискового кэширования. Анализируя время загрузки страницы, можно узнать, посещал ли
 // пользователь этот сайт. Если посещал - часть файлов будет взята из кэша, что отразится на времени.
 // Еще проще и надежнее определяется наличие файлов в кэше по значениям заголовков If-Modified-Since
@@ -84,8 +92,6 @@ user_pref("browser.cache.disk.enable", false);
 user_pref("browser.cache.disk.capacity", 0);
 user_pref("browser.cache.disk.smart_size.enabled", false);
 user_pref("browser.cache.disk_cache_ssl", false);
-user_pref("browser.cache.offline.capacity", 0);
-user_pref("browser.cache.offline.enable", false);
 
 // Отключает Indexed DB API, позволяющий скриптам хранить информацию в БД SQLite на компьютере
 // пользователя. Объем Indexed DB может значительно превышать объем DOM Storage.

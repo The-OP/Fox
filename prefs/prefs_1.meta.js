@@ -248,6 +248,16 @@ user_pref("dom.disable_window_open_feature.status", true);
 user_pref("dom.disable_window_open_feature.titlebar", true);
 user_pref("dom.disable_window_open_feature.toolbar", true);
 
+// Запрещает сайтам использовать Offline App Cache без разрешения. Список разрешенных сайтов
+// управляется через Preferences -> Advanced -> Network -> Offline Web Content and User Data.
+// Демо можно посмотреть тут: http://appcache.offline.technology/demo/index.html мониторя
+// использование через about:cache -> appcache и меняя настройки.
+// http://www.w3.org/TR/offline-webapps/
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Using_the_application_cache
+// https://mxr.mozilla.org/mozilla-esr38/source/browser/base/content/browser.js?rev=ae7fbd79941b#6020
+user_pref("browser.offline-apps.notify", true);
+user_pref("offline-apps.allow_by_default", false);
+
 // Отключает автоматическое скачивание и установку ADB Helper и аддона для удаленной отладки мобильных
 // браузеров при первом запуске WebIDE. Ручная установка через меню WebIDE все еще будет работать.
 // https://developer.mozilla.org/en-US/docs/Tools/Valence
