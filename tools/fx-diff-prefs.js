@@ -16,11 +16,11 @@ function qs(arg) {
 
 	// Prefs in browser/* override prefs in greprefs.js
 	var files = ['greprefs.js',
-		'defaults/pref/services-sync.js', 
+		'defaults/pref/services-sync.js',
 		'browser/defaults/preferences/firefox.js',
 		'browser/defaults/preferences/firefox-branding.js',
 		'browser/defaults/preferences/firefox-l10n.js',
-		'browser/defaults/preferences/webide-prefs.js',
+		'browser/defaults/preferences/webide-prefs.js', // Introduced in Firefox 33
 		'webapprt/defaults/preferences/prefs.js'];
 	var prefs = [];
 	var page = webPage.create();
