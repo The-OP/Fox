@@ -183,10 +183,12 @@ user_pref("media.peerconnection.use_document_iceservers", false);
 user_pref("media.navigator.enabled", false);
 user_pref("media.navigator.video.enabled", false);
 user_pref("media.navigator.permission.disabled", false);
+// https://mxr.mozilla.org/mozilla-esr38/source/dom/media/MediaManager.cpp?rev=7bc0140f0bfe#1659
 user_pref("media.getusermedia.browser.enabled", false);
-user_pref("media.getusermedia.screensharing.allow_on_old_platforms", false);
-user_pref("media.getusermedia.screensharing.allowed_domains", "");
 user_pref("media.getusermedia.screensharing.enabled", false);
+user_pref("media.getusermedia.screensharing.allow_on_old_platforms", false);
+// https://mxr.mozilla.org/mozilla-esr38/source/dom/media/MediaManager.cpp?rev=7bc0140f0bfe#135
+user_pref("media.getusermedia.screensharing.allowed_domains", "");
 // http://stackoverflow.com/questions/29291275/navigator-getusermedia-mutes-partially-the-other-sounds-of-the-computer
 user_pref("media.getusermedia.aec_enabled", false);
 user_pref("media.getusermedia.agc_enabled", false);
@@ -229,6 +231,7 @@ user_pref("media.gmp-eme-adobe.autoupdate", false);
 user_pref("media.gmp-gmpopenh264.autoupdate", false);
 user_pref("media.gmp-gmpopenh264.enabled", false);
 user_pref("media.gmp-gmpopenh264.provider.enabled", false);
+user_pref("media.fragmented-mp4.gmp.enabled", false);
 user_pref("media.gmp-provider.enabled", false);
 user_pref("media.gmp-manager.url", "");
 // https://mxr.mozilla.org/mozilla-esr38/source/modules/libpref/init/all.js?rev=0f8338121472#4496

@@ -68,6 +68,9 @@ user_pref("media.raw.enabled", false);
 user_pref("media.wave.enabled", false);
 user_pref("media.apple.mp3.enabled", false);
 user_pref("media.apple.mp4.enabled", false);
+user_pref("media.windows-media-foundation.enabled", false);
+user_pref("media.windows-media-foundation.use-dxva", false);
+user_pref("media.directshow.enabled", false);
 
 // Отключает проверку на отзыв сертификата через OCSP-сервер при установке шифрованного соединения.
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_secure-website-certificates
