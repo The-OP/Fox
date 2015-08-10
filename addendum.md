@@ -66,10 +66,10 @@
 
 * [Random Agent Spoofer](https://addons.mozilla.org/firefox/addon/random-agent-spoofer/). Меняет юзер-агенты по таймеру и с дополнительными фичами, препятствующими фингерпринтингу. Версия с GitHub имеет расширенную функциональность по сравнению с версией с AMO (см. описание на AMO).
 
-* [HTTP UserAgent Cleaner](https://addons.mozilla.org/firefox/addon/http-useragent-cleaner/). Еще один продвинутый аддон для противодействия фингерпринтингу. Позволяет не только менять юзер-агент, но и заблокировать другие каналы утечки опознавательной информации. Более новые версии находятся на [офсайте](http://fxprivacy.8vs.ru/).
+* [HTTP UserAgent Cleaner](http://fxprivacy.8vs.ru/). Еще один продвинутый аддон для противодействия фингерпринтингу. Позволяет не только менять юзер-агент, но и заблокировать другие каналы утечки опознавательной информации. Аддон убрали с AMO.
 
 * [Privacy Badger](https://addons.mozilla.org/firefox/addon/privacy-badger-firefox/). Аналог Ghostery от EFF. Актуально для тех, кто хочет поставить и забыть, чтоб оно там автоматом боролось с трекингом.
-	
+
 	* <sub>Часто спрашивают, чем плох Ghostery. Во-первых, он принадлежит маркетинговой компании, собирающей [статистику](https://addons.mozilla.org/en-US/firefox/addon/ghostery/privacy/) с wannabe-анонимусов. Во-вторых - распространяется под [проприетарной лицензией](https://addons.mozilla.org/en-US/firefox/addon/ghostery/license/5.4.1). Но самое главное то, что он бесполезен, если уже используется баннерорезка с анти-трекерными подписками и какой-нибудь аддон для контроля/очистки кук. См. [исследование Стэнфорда](http://cyberlaw.stanford.edu/node/6730), сравнивающее баннерорезки с Ghostery по эффективности. Если уж вам очень сильно хочется автоматического все-в-одном комбайна, подобного Ghostery - используйте Privacy Badger от Electronic Frontier Foundation, распространяющийся под свободной лицензией.</sub>
 
 * [Yet Another Remove It Permanently](https://addons.mozilla.org/firefox/addon/yarip/). Баннерорезка с поддержкой XPath. Для тех случаев, когда CSS-селекторов не хватает.
