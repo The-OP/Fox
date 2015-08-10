@@ -18,9 +18,6 @@ user_pref("webgl.force-enabled", false);
 user_pref("full-screen-api.enabled", false);
 user_pref("full-screen-api.pointer-lock.enabled", false);
 
-// Отключает Web Audio API.
-user_pref("media.webaudio.enabled", false);
-
 // Отключает декодирование мультимедиа через GStreamer.
 user_pref("media.gstreamer.enabled", false);
 
@@ -31,7 +28,6 @@ user_pref("general.appversion.override", "5.0 (Windows)");
 user_pref("general.oscpu.override", "Windows NT 6.1");
 user_pref("general.platform.override", "Win32");
 user_pref("general.useragent.override", "Mozilla/5.0 (Windows NT 6.1; rv:38.0) Gecko/20100101 Firefox/38.0");
-user_pref("general.productSub.override", "20100101");
 user_pref("general.buildID.override", "20100101");
 user_pref("browser.startup.homepage_override.buildID", "20100101");
 
@@ -44,10 +40,9 @@ user_pref("browser.startup.homepage_override.buildID", "20100101");
 user_pref("gfx.font_rendering.opentype_svg.enabled", false);
 // Второй уровень - отключение WebAudio и asm.js.
 user_pref("javascript.options.ion", false);
-user_pref("javascript.options.typeinference", false);
 user_pref("javascript.options.asmjs", false);
+// Настройки media.webaudio.enabled больше не существует, поэтому только так.
 user_pref("noscript.forbidMedia", true);
-user_pref("media.webaudio.enabled", false);
 // Третий уровень - отключение JIT-компилятора, SVG и обработку JavaScript только для HTTPS.
 user_pref("javascript.options.baselinejit", false);
 user_pref("gfx.font_rendering.graphite.enabled", false);

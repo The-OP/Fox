@@ -198,12 +198,7 @@ user_pref("media.getusermedia.noise_enabled", false);
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_firefox-hello
 user_pref("loop.enabled", false);
 user_pref("loop.screenshare.enabled", false);
-user_pref("loop.rooms.enabled", false);
 user_pref("loop.server", "");
-// Обнулять этот параметр нельзя, иначе отвалится восстановление сессии и некоторые другие функции.
-// UPD: Этот параметр и код, который от него зависел, убрали в Fx36 --
-// https://bugzilla.mozilla.org/show_bug.cgi?id=1073218
-// user_pref("loop.soft_start_hostname", "127.0.0.1");
 user_pref("loop.feedback.baseUrl", "");
 user_pref("loop.debug.twoWayMediaTelemetry", false);
 user_pref("loop.contextInConversations.enabled", false);
@@ -230,7 +225,6 @@ user_pref("media.gmp-eme-adobe.autoupdate", false);
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_openh264-codec
 user_pref("media.gmp-gmpopenh264.autoupdate", false);
 user_pref("media.gmp-gmpopenh264.enabled", false);
-user_pref("media.gmp-gmpopenh264.provider.enabled", false);
 user_pref("media.fragmented-mp4.gmp.enabled", false);
 user_pref("media.gmp-provider.enabled", false);
 user_pref("media.gmp-manager.url", "");

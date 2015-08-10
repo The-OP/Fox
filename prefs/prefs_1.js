@@ -72,9 +72,6 @@ user_pref("browser.search.update", false);
 // и при следующем подключении заранее соединяющийся со всеми хостами, которые понадобятся.
 // https://wiki.mozilla.org/Privacy/Reviews/Necko
 user_pref("network.predictor.enabled", false);
-// network.predictor.max-db-size нужно устанавливать в 0, иначе в профиле появляется БД посещенных
-// сайтов, несмотря на отключенный network.predictor.enabled.
-user_pref("network.predictor.max-db-size", 0);
 
 // Запрещает сайтам установку соединений на критически важные порты, занятые I2P и Tor.
 user_pref("network.security.ports.banned", "4444,9050,9051");
@@ -173,8 +170,6 @@ user_pref("extensions.getAddons.cache.enabled", false);
 user_pref("datareporting.healthreport.service.enabled", false);
 user_pref("datareporting.healthreport.uploadEnabled", false);
 user_pref("datareporting.policy.dataSubmissionEnabled", false);
-user_pref("datareporting.policy.dataSubmissionPolicyAccepted", false);
-user_pref("datareporting.policy.dataSubmissionPolicyBypassAcceptance", false);
 user_pref("datareporting.healthreport.about.reportUrl", "");
 user_pref("datareporting.healthreport.documentServerURI", "");
 user_pref("toolkit.telemetry.enabled", false);
@@ -204,9 +199,6 @@ user_pref("browser.pocket.site", "");
 user_pref("browser.pocket.oAuthConsumerKey", "");
 user_pref("browser.pocket.enabledLocales", "");
 
-// Отключает сбор статистики для оценки эффективности текущих значений DNS TTL.
-// Этот параметр убрали в Fx36.
-// user_pref("dns.ttl-experiment.enabled", false);
 // Отключает остальные эксперименты Mozilla над пользователем.
 user_pref("network.allow-experiments", false);
 user_pref("experiments.enabled", false);
