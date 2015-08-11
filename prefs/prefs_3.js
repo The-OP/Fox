@@ -82,6 +82,18 @@ user_pref("network.proxy.no_proxies_on", "");
 // https://developer.mozilla.org/en-US/docs/Web/HTML/Using_the_application_cache
 user_pref("browser.cache.offline.enable", false);
 user_pref("browser.cache.offline.capacity", 0);
+// Запрос разрешения на использование бесполезен при отключенном Offline App Cache, но все равно
+// будет появляться, если его не отключить этой настройкой.
+// https://mxr.mozilla.org/mozilla-esr38/source/browser/base/content/browser.js?rev=ae7fbd79941b#6020
+user_pref("browser.offline-apps.notify", false);
+// Эта настройка тоже нужна тут, иначе у всех сайтов по умолчанию будет permission "offline-app", и при
+// попытке воспользоваться Offline App Cache, они будут появляться в списке Preferences -> Advanced ->
+// Network -> Offline Web Content and User Data, хоть и не смогут ничего хранить в выключенном кэше.
+// https://mxr.mozilla.org/mozilla-esr38/source/uriloader/prefetch/nsOfflineCacheUpdateService.cpp?rev=dd257f17530c#649
+// https://mxr.mozilla.org/mozilla-esr38/source/dom/base/nsContentSink.cpp?rev=dd257f17530c#1056
+// https://mxr.mozilla.org/mozilla-esr38/source/dom/base/nsContentUtils.cpp?rev=5be76431120a#1709
+// https://mxr.mozilla.org/mozilla-esr38/source/uriloader/prefetch/nsOfflineCacheUpdateService.cpp?rev=dd257f17530c#744
+user_pref("offline-apps.allow_by_default", false);
 
 // Отключение дискового кэширования. Анализируя время загрузки страницы, можно узнать, посещал ли
 // пользователь этот сайт. Если посещал - часть файлов будет взята из кэша, что отразится на времени.

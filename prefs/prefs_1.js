@@ -235,14 +235,23 @@ user_pref("dom.disable_window_open_feature.status", true);
 user_pref("dom.disable_window_open_feature.titlebar", true);
 user_pref("dom.disable_window_open_feature.toolbar", true);
 
-// Запрещает сайтам использовать Offline App Cache без разрешения. Список разрешенных сайтов
-// управляется через Preferences -> Advanced -> Network -> Offline Web Content and User Data.
+// Запрещает сайтам использовать Offline App Cache без разрешения пользователя. Список разрешенных
+// сайтов управляется через Preferences -> Advanced -> Network -> Offline Web Content and User Data.
 // Демо можно посмотреть тут: http://appcache.offline.technology/demo/index.html мониторя
 // использование через about:cache -> appcache и меняя настройки.
 // http://www.w3.org/TR/offline-webapps/
 // https://developer.mozilla.org/en-US/docs/Web/HTML/Using_the_application_cache
 // https://mxr.mozilla.org/mozilla-esr38/source/browser/base/content/browser.js?rev=ae7fbd79941b#6020
 user_pref("browser.offline-apps.notify", true);
+// Эта настройка по умолчанию включена и дает всем сайтам permission "offline-app", так что
+// без ее отключения browser.offline-apps.notify _абсолютно бесполезна_, вопреки ее названию
+// ("Tell me when a website asks to store data for offline use"), а также тому, что написано про нее в
+// KB MozillaZine и некоторых других источниках. С отключением offline-apps.allow_by_default, этот
+// permission будет ставиться только при подтверждении пользователем (проверено в Firefox 38.2.0 и 40.0).
+// https://mxr.mozilla.org/mozilla-esr38/source/uriloader/prefetch/nsOfflineCacheUpdateService.cpp?rev=dd257f17530c#649
+// https://mxr.mozilla.org/mozilla-esr38/source/dom/base/nsContentSink.cpp?rev=dd257f17530c#1056
+// https://mxr.mozilla.org/mozilla-esr38/source/dom/base/nsContentUtils.cpp?rev=5be76431120a#1709
+// https://mxr.mozilla.org/mozilla-esr38/source/uriloader/prefetch/nsOfflineCacheUpdateService.cpp?rev=dd257f17530c#744
 user_pref("offline-apps.allow_by_default", false);
 
 // Отключает автоматическое скачивание и установку ADB Helper и аддона для удаленной отладки мобильных
