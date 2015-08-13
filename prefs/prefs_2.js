@@ -1,3 +1,7 @@
+// Позволяет устанавливать неподписанные аддоны.
+// https://wiki.mozilla.org/Addons/Extension_Signing
+user_pref("xpinstall.signatures.required", false);
+
 // Отключает Speed Dial, потребляющий процессорное время и замедляющий открытие новых вкладок.
 user_pref("browser.newtabpage.enabled", false);
 
@@ -194,10 +198,17 @@ user_pref("media.getusermedia.aec_enabled", false);
 user_pref("media.getusermedia.agc_enabled", false);
 user_pref("media.getusermedia.noise_enabled", false);
 
+// Отключает видеозахват с элемента canvas.
+// https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/captureStream
+// http://www.w3.org/TR/mediacapture-fromelement/
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1169126
+user_pref("canvas.capturestream.enabled", false);
+
 // Отключает Firefox Hello.
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_firefox-hello
 user_pref("loop.enabled", false);
 user_pref("loop.screenshare.enabled", false);
+user_pref("loop.textChat.enabled", false);
 user_pref("loop.server", "");
 user_pref("loop.feedback.baseUrl", "");
 user_pref("loop.debug.twoWayMediaTelemetry", false);
@@ -285,6 +296,30 @@ user_pref("application.use_ns_plugin_finder", false);
 // https://news.ycombinator.com/item?id=10021376
 user_pref("pdfjs.disabled", true);
 user_pref("pdfjs.enableWebGL", false);
+
+// Отключает CSS Font Loading API, предназначенный для динамической подгрузки шрифтов из скриптов.
+// https://developer.mozilla.org/en-US/docs/Web/API/CSSFontLoading_API
+// https://drafts.csswg.org/css-font-loading/
+user_pref("layout.css.font-loading-api.enabled", false);
+
+// Отключает Cache API (Cache Storage), представляющее из себя еще одно хранилище на компьютере
+// пользователя, куда скрипты могут складывать информацию. Оно является частью спецификации
+// Service Workers, но может быть использовано и без них (через window.caches). Кроме того, писать
+// туда можно не только кэшированные ответы из сети, но и произвольные данные. В отличие от
+// DOM Storage, Cache Storage _не_ очищается при Clear Recent History, а его содержимое не видно в
+// Developer Tools, about:cache и вообще где-либо в интерфейсе браузера. Находится оно в профиле
+// по такому пути: storage/default/<домен>/cache/caches.sqlite
+// https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage
+// https://bugzilla.mozilla.org/show_bug.cgi?id=940273
+// http://www.w3.org/TR/service-workers/#cache-objects
+user_pref("dom.caches.enabled", false);
+
+// Запрещает расширение WebGL, позволяющее узнать модель видеокарты пользователя и ее драйвер.
+// https://www.mail-archive.com/dev-platform@lists.mozilla.org/msg14121.html
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1171228
+// https://mxr.mozilla.org/mozilla-beta/source/dom/canvas/WebGLContextState.cpp?rev=8cf5636886f0#195
+// https://mxr.mozilla.org/mozilla-beta/source/dom/canvas/WebGLContextExtensions.cpp?rev=8cf5636886f0#99
+user_pref("webgl.disable-debug-renderer-info", true);
 
 // Отключает автоматическое обновление браузера.
 // https://developer.mozilla.org/en-US/Firefox/Enterprise_deployment

@@ -99,6 +99,9 @@ user_pref("browser.safebrowsing.reportMalwareURL", "");
 user_pref("browser.safebrowsing.reportPhishURL", "");
 user_pref("browser.safebrowsing.reportURL", "");
 user_pref("browser.safebrowsing.updateURL", "");
+user_pref("browser.safebrowsing.reportPhishMistakeURL", "");
+user_pref("browser.safebrowsing.reportPhishURL", "");
+user_pref("browser.safebrowsing.reportMalwareMistakeURL", "");
 
 // Отключает мозилловский анти-трекинговый список, который дублирует функции uBlock с соответствующими
 // подписками и является менее эффективным (т.к. основан на списке от Disconnect).

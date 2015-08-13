@@ -55,6 +55,8 @@ user_pref("webgl.min_capability_mode", true);
 user_pref("media.mediasource.enabled", false);
 user_pref("media.mediasource.mp4.enabled", false);
 user_pref("media.mediasource.webm.enabled", false);
+user_pref("media.mediasource.format-reader", false);
+user_pref("media.mediasource.format-reader.mp4", false);
 
 // Отключает Audio Data API (от которого уже отказались в пользу Web Audio API).
 // https://wiki.mozilla.org/Audio_Data_API
