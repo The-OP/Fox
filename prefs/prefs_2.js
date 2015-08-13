@@ -292,6 +292,7 @@ user_pref("security.xpconnect.plugin.unrestricted", false);
 user_pref("application.use_ns_plugin_finder", false);
 
 // Отключает встроенный просмотрщик PDF, в котором частенько находят уязвимости.
+// http://habrahabr.ru/company/eset/blog/264619/
 // https://blog.mozilla.org/security/2015/08/06/firefox-exploit-found-in-the-wild/
 // https://news.ycombinator.com/item?id=10021376
 user_pref("pdfjs.disabled", true);
