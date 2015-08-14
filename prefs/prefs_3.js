@@ -117,9 +117,11 @@ user_pref("browser.cache.disk_cache_ssl", false);
 // В обычном окне пример покажет "Database initialised.", в приватном - "Error loading database.", плюс
 // сообщения "TypeError: db is undefined" в консоли.
 //
-// Также в обычном окне использование Indexed DB сайтом можно увидеть через Page Permissions
-// (about:permissions) -> Maintain Offline Storage и очистить там же (Block, равно как и Ask, почему-то
-// не работает, по крайней мере в Fx39).
+// Также в обычном окне использование Indexed DB сайтом можно увидеть через Page Info -> Permissions
+// (но _не_ в about:permissions) -> Maintain Offline Storage и очистить там же. Block, равно как и Ask,
+// почему-то не работает для отдельных сайтов (протестировано в Fx39). В about:permissions -> All Sites,
+// Block _работает_ - при его выборе просто выставляется dom.indexedDB.enabled в false.
+// Находится Indexed DB в профиле, по такому пути: storage/default/<домен>/idb/
 //
 // UPD: Начиная с Firefox 35 отключение Indexed DB может сломать многие аддоны:
 // 	http://www.ghacks.net/2015/01/16/fix-add-ons-not-working-in-firefox-35/
@@ -127,6 +129,7 @@ user_pref("browser.cache.disk_cache_ssl", false);
 // UPD: Вышеописанный баг исправили, теперь эта настройка действует только на страницы, и браузер
 // с аддонами не ломает -- https://bugzilla.mozilla.org/show_bug.cgi?id=1079355
 user_pref("dom.indexedDB.enabled", false);
+user_pref("dom.indexedDB.experimental", false);
 
 // Настройки для HTTP-заголовка Referer (а также DOM-свойства document.referrer), содержащего URL,
 // с которого пользователь перешел по ссылке или запросил ресурс. Используется некоторыми сайтами

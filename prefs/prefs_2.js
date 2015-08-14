@@ -186,6 +186,7 @@ user_pref("media.peerconnection.use_document_iceservers", false);
 // https://mozilla.github.io/webrtc-landing/gum_test.html
 user_pref("media.navigator.enabled", false);
 user_pref("media.navigator.video.enabled", false);
+// https://mxr.mozilla.org/mozilla-esr38/source/dom/media/MediaManager.cpp?rev=7bc0140f0bfe#1587
 user_pref("media.navigator.permission.disabled", false);
 // https://mxr.mozilla.org/mozilla-esr38/source/dom/media/MediaManager.cpp?rev=7bc0140f0bfe#1659
 user_pref("media.getusermedia.browser.enabled", false);
@@ -308,8 +309,10 @@ user_pref("layout.css.font-loading-api.enabled", false);
 // Service Workers, но может быть использовано и без них (через window.caches). Кроме того, писать
 // туда можно не только кэшированные ответы из сети, но и произвольные данные. В отличие от
 // DOM Storage, Cache Storage _не_ очищается при Clear Recent History, а его содержимое не видно в
-// Developer Tools, about:cache и вообще где-либо в интерфейсе браузера. Находится оно в профиле
-// по такому пути: storage/default/<домен>/cache/caches.sqlite
+// Developer Tools или about:cache. Через интерфейс самого браузера увидеть его использование
+// можно только в Page Info -> Permissions (но _не_ в about:permissions) -> Maintain Offline Storage
+// и очистить там же (пункт общий с Indexed DB, и очищает их тоже вместе).
+// Находится Cache Storage в профиле, по такому пути: storage/default/<домен>/cache/
 // https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage
 // https://bugzilla.mozilla.org/show_bug.cgi?id=940273
 // http://www.w3.org/TR/service-workers/#cache-objects
