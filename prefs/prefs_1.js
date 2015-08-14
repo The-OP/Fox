@@ -189,6 +189,27 @@ user_pref("dom.ipc.plugins.reportCrashURL", false);
 // https://wiki.mozilla.org/Advocacy/heartbeat
 user_pref("browser.selfsupport.url", "");
 
+// Отключает установку дефолтных пермишнов (resource://app/defaults/permissions) в Permission Manager.
+// Среди которых есть пермишн install для AMO, из-за чего браузер в AMO -> Themes (со включенным JS)
+// скачивает и применяет темы по mouseover, без подтверждения установки.
+// Еще в том списке есть пермишн remote-troubleshooting, позволяющий скриптам на сайтах, которым он задан
+// (support.mozilla.org и input.mozilla.org), читать часть информации, перечисленной в about:support,
+// когда пользователь заходит на эти сайты (со включенным JS). Причем пермишны remote-troubleshooting,
+// в отличие от install, не видны через UI браузера (Page Info -> Permissions). Протестировать этот
+// механизм и узнать, какая именно информация доступна, можно здесь[1], задав mxr.mozilla.org пермишн
+// remote-troubleshooting путем присвоения этой настройке строки[2] (без кавычек) и перезапуска браузера.
+// Отключение установки пермишнов из дефолтного списка решает обе вышеописанные проблемы.
+// [1]: https://mxr.mozilla.org/mozilla-esr38/source/browser/base/content/test/general/test_remoteTroubleshoot.html?rev=569b611715e0
+// [2]: "data:text/plain,host%09remote-troubleshooting%091%09mxr.mozilla.org"
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1079563
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1091944
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1091942
+// https://mxr.mozilla.org/mozilla-esr38/source/browser/base/content/test/general/browser_remoteTroubleshoot.js?rev=ae7fbd79941b
+// https://mxr.mozilla.org/mozilla-esr38/source/browser/components/nsBrowserGlue.js?rev=f9441895096d#833
+// https://mxr.mozilla.org/mozilla-esr38/source/toolkit/modules/WebChannel.jsm?rev=56d740d0769f#139
+// https://mxr.mozilla.org/mozilla-esr38/source/extensions/cookie/nsPermissionManager.cpp?rev=a20c7910a82f#1888
+user_pref("permissions.manager.defaultsUrl", "");
+
 // Отключает автоматическую отправку отчетов в Mozilla об ошибках в сертификатах сайтов.
 // https://bugzilla.mozilla.org/show_bug.cgi?id=846489
 user_pref("security.ssl.errorReporting.automatic", false);
