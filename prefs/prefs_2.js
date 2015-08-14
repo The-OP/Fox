@@ -304,6 +304,30 @@ user_pref("pdfjs.enableWebGL", false);
 // https://drafts.csswg.org/css-font-loading/
 user_pref("layout.css.font-loading-api.enabled", false);
 
+// Отключает Indexed DB API, позволяющий скриптам хранить информацию в БД SQLite на компьютере
+// пользователя. Объем Indexed DB может значительно превышать объем DOM Storage.
+// https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API
+//
+// "IndexedDB is completely disabled in private browsing mode." --
+// 	https://wiki.mozilla.org/Security/Reviews/Firefox4/IndexedDB_Security_Review
+// Проверить это  можно на примере из MDN, здесь: https://mdn.github.io/to-do-notifications/index.html
+// В обычном окне пример покажет "Database initialised.", в приватном - "Error loading database.", плюс
+// сообщения "TypeError: db is undefined" в консоли.
+//
+// Также в обычном окне использование Indexed DB сайтом можно увидеть через Page Info -> Permissions
+// (но _не_ в about:permissions) -> Maintain Offline Storage и очистить там же. Block, равно как и Ask,
+// почему-то не работает для отдельных сайтов (протестировано в Fx39). В about:permissions -> All Sites,
+// Block _работает_ - при его выборе просто выставляется dom.indexedDB.enabled в false.
+// Находится Indexed DB в профиле, по такому пути: storage/default/<домен>/idb/
+//
+// UPD: Начиная с Firefox 35 отключение Indexed DB может сломать многие аддоны:
+// 	http://www.ghacks.net/2015/01/16/fix-add-ons-not-working-in-firefox-35/
+// 	https://adblockplus.org/forum/viewtopic.php?t=27375&start=15
+// UPD: Вышеописанный баг исправили, теперь эта настройка действует только на страницы, и браузер
+// с аддонами не ломает -- https://bugzilla.mozilla.org/show_bug.cgi?id=1079355
+user_pref("dom.indexedDB.enabled", false);
+user_pref("dom.indexedDB.experimental", false);
+
 // Отключает Cache API (Cache Storage), представляющее из себя еще одно хранилище на компьютере
 // пользователя, куда скрипты могут складывать информацию. Оно является частью спецификации
 // Service Workers, но может быть использовано и без них (через window.caches). Кроме того, писать
