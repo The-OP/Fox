@@ -47,17 +47,17 @@ user_pref("reader.parse-on-load.force-enabled", false);
 // При каждом изменении window.location значение сравнивается с этой настройкой, чтобы начать UI-тур
 // по режиму чтения. Значение этого параметра используется как регэксп без проверки на пустую строку,
 // поэтому обнулять его нельзя. Вместо этого используем регэксп, возвращающий для любой строки false.
-// https://mxr.mozilla.org/mozilla-release/source/browser/components/uitour/UITour.jsm?rev=e5d6dc48f6de#348
-// https://mxr.mozilla.org/mozilla-release/source/browser/base/content/browser.js?rev=cebe7cad65a2#4224
+// https://hg.mozilla.org/releases/mozilla-release/file/e5d6dc48f6de/browser/components/uitour/UITour.jsm#l348
+// https://hg.mozilla.org/releases/mozilla-release/file/cebe7cad65a2/browser/base/content/browser.js#l4224
 user_pref("browser.uitour.readerViewTrigger", ".^");
 
 // Отключает UI-тур по возможностям Australis, Hello и т.п. Эти настроки влияют на UITour.onPageEvent()
 // и не действуют на тур по Reader View, который вызывается напрямую через UITour.onLocationChange().
 // https://www.mozilla.org/en-US/firefox/39.0/tour/
 // https://wiki.mozilla.org/Ui_tour/Test_Plan
-// https://mxr.mozilla.org/mozilla-release/source/browser/components/uitour/content-UITour.js?rev=aee871513001#12
-// https://mxr.mozilla.org/mozilla-release/source/browser/components/nsBrowserGlue.js?rev=5e03a12dd57e#2943
-// https://mxr.mozilla.org/mozilla-release/source/browser/components/uitour/UITour.jsm?rev=e5d6dc48f6de#364
+// https://hg.mozilla.org/releases/mozilla-release/file/aee871513001/browser/components/uitour/content-UITour.js#l12
+// https://hg.mozilla.org/releases/mozilla-release/file/5e03a12dd57e/browser/components/nsBrowserGlue.js#l2943
+// https://hg.mozilla.org/releases/mozilla-release/file/e5d6dc48f6de/browser/components/uitour/UITour.jsm#l364
 user_pref("browser.uitour.enabled", false);
 user_pref("browser.uitour.url", "");
 user_pref("browser.uitour.themeOrigin", "");
@@ -67,10 +67,10 @@ user_pref("browser.uitour.themeOrigin", "");
 // https://www.mozilla.org/en-US/firefox/geolocation/
 user_pref("geo.enabled", false);
 user_pref("geo.wifi.logging.enabled", false);
-// https://mxr.mozilla.org/mozilla-esr38/source/dom/system/NetworkGeolocationProvider.js?rev=7bc0140f0bfe#488
+// https://hg.mozilla.org/releases/mozilla-esr38/file/7bc0140f0bfe/dom/system/NetworkGeolocationProvider.js#l488
 user_pref("geo.wifi.uri", "");
-// https://mxr.mozilla.org/mozilla-esr38/source/dom/system/NetworkGeolocationProvider.js?rev=7bc0140f0bfe#21
-// https://mxr.mozilla.org/mozilla-esr38/source/dom/system/NetworkGeolocationProvider.js?rev=7bc0140f0bfe#233
+// https://hg.mozilla.org/releases/mozilla-esr38/file/7bc0140f0bfe/dom/system/NetworkGeolocationProvider.js#l21
+// https://hg.mozilla.org/releases/mozilla-esr38/file/7bc0140f0bfe/dom/system/NetworkGeolocationProvider.js#l233
 user_pref("geo.wifi.scan", false);
 user_pref("geo.cell.scan", false);
 user_pref("geo.wifi.timeToWaitBeforeSending", 630720000); // 20 лет.
@@ -78,8 +78,8 @@ user_pref("geo.wifi.timeToWaitBeforeSending", 630720000); // 20 лет.
 // Отключает геолокацию для применения региональных настроек поиска. Геолокация запрашивается один раз,
 // после чего код страны сохранится в browser.search.countryCode в виде строки "US", "RU", etc. Она не будет
 // производиться, если код страны уже в browser.search.countryCode или если очищен необходимый для нее URL.
-// https://mxr.mozilla.org/mozilla-esr38/source/toolkit/components/search/nsSearchService.js?rev=0f8338121472#520
-// https://mxr.mozilla.org/mozilla-esr38/source/toolkit/components/search/nsSearchService.js?rev=0f8338121472#593
+// https://hg.mozilla.org/releases/mozilla-esr38/file/0f8338121472/toolkit/components/search/nsSearchService.js#l520
+// https://hg.mozilla.org/releases/mozilla-esr38/file/0f8338121472/toolkit/components/search/nsSearchService.js#l593
 user_pref("browser.search.countryCode", "US");
 user_pref("browser.search.geoip.timeout", 0);
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_geolocation-for-default-search-engine
@@ -87,7 +87,7 @@ user_pref("browser.search.geoip.url", "");
 // Эта настройка не отключает XHR геолокации, а только применение региональных настроек.
 user_pref("browser.search.geoSpecificDefaults", false);
 // Нужно очищать вместе с browser.search.geoip.url.
-// https://mxr.mozilla.org/mozilla-beta/source/toolkit/components/search/nsSearchService.js?rev=5657e76d4ee5#746
+// https://hg.mozilla.org/releases/mozilla-beta/file/5657e76d4ee5/toolkit/components/search/nsSearchService.js#l746
 user_pref("browser.search.geoSpecificDefaults.url", "");
 
 // Отключает Clipboard Events, которые позволяют страницам узнавать, какая их часть была скопирована в буфер
@@ -147,7 +147,7 @@ user_pref("dom.presentation.tcp_server.debug", false);
 user_pref("dom.push.enabled", false);
 user_pref("dom.push.serverURL", "");
 user_pref("dom.push.userAgentID", "");
-// https://mxr.mozilla.org/mozilla-beta/source/modules/libpref/init/all.js?rev=e549349b8d66#4237
+// https://hg.mozilla.org/releases/mozilla-beta/file/e549349b8d66/modules/libpref/init/all.js#l4237
 user_pref("dom.push.connection.enabled", false);
 user_pref("dom.push.adaptive.enabled", false);
 user_pref("dom.push.udp.wakeupEnabled", false);
@@ -186,13 +186,13 @@ user_pref("media.peerconnection.use_document_iceservers", false);
 // https://mozilla.github.io/webrtc-landing/gum_test.html
 user_pref("media.navigator.enabled", false);
 user_pref("media.navigator.video.enabled", false);
-// https://mxr.mozilla.org/mozilla-esr38/source/dom/media/MediaManager.cpp?rev=7bc0140f0bfe#1587
+// https://hg.mozilla.org/releases/mozilla-esr38/file/7bc0140f0bfe/dom/media/MediaManager.cpp#l1587
 user_pref("media.navigator.permission.disabled", false);
-// https://mxr.mozilla.org/mozilla-esr38/source/dom/media/MediaManager.cpp?rev=7bc0140f0bfe#1659
+// https://hg.mozilla.org/releases/mozilla-esr38/file/7bc0140f0bfe/dom/media/MediaManager.cpp#l1659
 user_pref("media.getusermedia.browser.enabled", false);
 user_pref("media.getusermedia.screensharing.enabled", false);
 user_pref("media.getusermedia.screensharing.allow_on_old_platforms", false);
-// https://mxr.mozilla.org/mozilla-esr38/source/dom/media/MediaManager.cpp?rev=7bc0140f0bfe#135
+// https://hg.mozilla.org/releases/mozilla-esr38/file/7bc0140f0bfe/dom/media/MediaManager.cpp#l135
 user_pref("media.getusermedia.screensharing.allowed_domains", "");
 // http://stackoverflow.com/questions/29291275/navigator-getusermedia-mutes-partially-the-other-sounds-of-the-computer
 user_pref("media.getusermedia.aec_enabled", false);
@@ -233,14 +233,14 @@ user_pref("media.gmp-eme-adobe.enabled", false);
 user_pref("media.gmp-eme-adobe.autoupdate", false);
 
 // Отключает загрузку бинарника H.264-кодека от Cisco (будет использоваться GStreamer).
-// https://mxr.mozilla.org/mozilla-esr38/source/toolkit/modules/GMPUtils.jsm?rev=0f8338121472#70
+// https://hg.mozilla.org/releases/mozilla-esr38/file/0f8338121472/toolkit/modules/GMPUtils.jsm#l70
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_openh264-codec
 user_pref("media.gmp-gmpopenh264.autoupdate", false);
 user_pref("media.gmp-gmpopenh264.enabled", false);
 user_pref("media.fragmented-mp4.gmp.enabled", false);
 user_pref("media.gmp-provider.enabled", false);
 user_pref("media.gmp-manager.url", "");
-// https://mxr.mozilla.org/mozilla-esr38/source/modules/libpref/init/all.js?rev=0f8338121472#4496
+// https://hg.mozilla.org/releases/mozilla-esr38/file/0f8338121472/modules/libpref/init/all.js#l4496
 user_pref("media.gmp-manager.cert.requireBuiltIn", true);
 user_pref("media.gmp-manager.cert.checkAttributes", true);
 user_pref("media.gmp-manager.certs.1.commonName", "");
@@ -248,9 +248,9 @@ user_pref("media.gmp-manager.certs.1.issuerName", "");
 user_pref("media.gmp-manager.certs.2.commonName", "");
 user_pref("media.gmp-manager.certs.2.issuerName", "");
 // https://github.com/The-OP/Fox/issues/25
-// https://mxr.mozilla.org/mozilla-esr38/source/toolkit/modules/GMPUtils.jsm?rev=0f8338121472#84
-// https://mxr.mozilla.org/mozilla-esr38/source/toolkit/modules/GMPInstallManager.jsm?rev=0f8338121472#384
-// https://mxr.mozilla.org/mozilla-esr38/source/toolkit/modules/GMPInstallManager.jsm?rev=0f8338121472#337
+// https://hg.mozilla.org/releases/mozilla-esr38/file/0f8338121472/toolkit/modules/GMPUtils.jsm#l84
+// https://hg.mozilla.org/releases/mozilla-esr38/file/0f8338121472/toolkit/modules/GMPInstallManager.jsm#l384
+// https://hg.mozilla.org/releases/mozilla-esr38/file/0f8338121472/toolkit/modules/GMPInstallManager.jsm#l337
 user_pref("media.gmp-manager.lastCheck", 1437696000); // 2015-07-24, 00:00 UTC
 user_pref("media.gmp-manager.secondsBetweenChecks", 630720000); // 20 лет.
 
@@ -279,8 +279,8 @@ user_pref("plugin.state.java", 0);
 // Отключает все плагины (только для Windows-билдов) -- http://kb.mozillazine.org/Plugin_scanning
 user_pref("plugin.scan.plid.all", false);
 // Отключает все плагины. Именно пробел, а не пустая строка. Пустая строка значит "разрешены все".
-// https://mxr.mozilla.org/mozilla-esr38/source/dom/plugins/base/nsPluginHost.h?rev=0f8338121472#174
-// https://mxr.mozilla.org/mozilla-esr38/source/dom/plugins/base/nsPluginHost.cpp?rev=0f8338121472#2505
+// https://hg.mozilla.org/releases/mozilla-esr38/file/0f8338121472/dom/plugins/base/nsPluginHost.h#l174
+// https://hg.mozilla.org/releases/mozilla-esr38/file/0f8338121472/dom/plugins/base/nsPluginHost.cpp#l2505
 user_pref("plugin.allowed_types", " ");
 // http://kb.mozillazine.org/Issues_related_to_plugins#Plugin_location
 user_pref("plugins.load_appdir_plugins", false);
@@ -345,8 +345,8 @@ user_pref("dom.caches.enabled", false);
 // Запрещает расширение WebGL, позволяющее узнать модель видеокарты пользователя и ее драйвер.
 // https://www.mail-archive.com/dev-platform@lists.mozilla.org/msg14121.html
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1171228
-// https://mxr.mozilla.org/mozilla-beta/source/dom/canvas/WebGLContextState.cpp?rev=8cf5636886f0#195
-// https://mxr.mozilla.org/mozilla-beta/source/dom/canvas/WebGLContextExtensions.cpp?rev=8cf5636886f0#99
+// https://hg.mozilla.org/releases/mozilla-beta/file/8cf5636886f0/dom/canvas/WebGLContextState.cpp#l195
+// https://hg.mozilla.org/releases/mozilla-beta/file/8cf5636886f0/dom/canvas/WebGLContextExtensions.cpp#l99
 user_pref("webgl.disable-debug-renderer-info", true);
 
 // Настройки для HTTP-заголовка Referer (а также DOM-свойства document.referrer), содержащего URL
@@ -367,8 +367,8 @@ user_pref("webgl.disable-debug-renderer-info", true);
 // DOM - с четырьмя "r", настройки Firefox кроме одной - с тремя "r", одна - с четырьмя.
 // https://en.wikipedia.org/wiki/HTTP_referer
 // https://en.wikipedia.org/wiki/Hotlinking
-// https://mxr.mozilla.org/mozilla-esr38/source/modules/libpref/init/all.js?rev=0f8338121472#1216
-// https://mxr.mozilla.org/mozilla-esr38/source/netwerk/protocol/http/HttpBaseChannel.cpp?rev=7bc0140f0bfe#921
+// https://hg.mozilla.org/releases/mozilla-esr38/file/0f8338121472/modules/libpref/init/all.js#l1216
+// https://hg.mozilla.org/releases/mozilla-esr38/file/7bc0140f0bfe/netwerk/protocol/http/HttpBaseChannel.cpp#l921
 // "false=real referer, true=spoof referer (use target URI as referer)"
 user_pref("network.http.referer.spoofSource", true);
 // "0=full URI, 1=scheme+host+port+path, 2=scheme+host+port"

@@ -33,7 +33,7 @@ user_pref("network.prefetch-next", false);
 // https://developer.mozilla.org/en-US/docs/Web/HTTP/Controlling_DNS_prefetching
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_dns-prefetching
 user_pref("network.dns.disablePrefetch", true);
-// https://mxr.mozilla.org/mozilla-esr38/source/dom/html/nsHTMLDNSPrefetch.cpp?rev=96e6f9392598#64
+// https://hg.mozilla.org/releases/mozilla-esr38/file/96e6f9392598/dom/html/nsHTMLDNSPrefetch.cpp#l64
 user_pref("network.dns.disablePrefetchFromHTTPS", true);
 // И предварительный коннект к хостам.
 // https://bugzilla.mozilla.org/show_bug.cgi?id=814169
@@ -115,9 +115,9 @@ user_pref("browser.polaris.enabled", false);
 
 // Вообще не регистрировать таблицы Safebrowsing и Tracking Protection в URL Classifier, пусть даже
 // в отключенном виде и с пустыми URL для обновления.
-// https://mxr.mozilla.org/mozilla-release/source/toolkit/components/url-classifier/SafeBrowsing.jsm?rev=6f3151d4ff03
-// https://mxr.mozilla.org/mozilla-release/source/toolkit/components/url-classifier/nsIUrlListManager.idl?rev=326bab27cc3c#29
-// https://mxr.mozilla.org/mozilla-release/source/toolkit/components/url-classifier/content/listmanager.js?rev=76c0924aea88#88
+// https://hg.mozilla.org/releases/mozilla-release/file/6f3151d4ff03/toolkit/components/url-classifier/SafeBrowsing.jsm
+// https://hg.mozilla.org/releases/mozilla-release/file/326bab27cc3c/toolkit/components/url-classifier/nsIUrlListManager.idl#l29
+// https://hg.mozilla.org/releases/mozilla-release/file/76c0924aea88/toolkit/components/url-classifier/content/listmanager.js#l88
 user_pref("urlclassifier.malwareTable", "");
 user_pref("urlclassifier.phishTable", "");
 user_pref("urlclassifier.downloadBlockTable", "");
@@ -154,7 +154,7 @@ user_pref("browser.startup.homepage_override.mstone", "ignore");
 // Отключает приветственную страницу при первом запуске браузера с новым профилем.
 user_pref("startup.homepage_welcome_url", "");
 // Отключает показ URL с описанием функций, связанных с Windows 10, у пользователей последней.
-// https://mxr.mozilla.org/mozilla-beta/source/browser/components/nsBrowserContentHandler.js?rev=883275447631#546
+// https://hg.mozilla.org/releases/mozilla-beta/file/883275447631/browser/components/nsBrowserContentHandler.js#l546
 user_pref("browser.usedOnWindows10", true);
 user_pref("browser.usedOnWindows10.introURL", "");
 
@@ -196,18 +196,18 @@ user_pref("browser.selfsupport.url", "");
 // (support.mozilla.org и input.mozilla.org), читать часть информации, перечисленной в about:support,
 // когда пользователь заходит на эти сайты (со включенным JS). Причем пермишны remote-troubleshooting,
 // в отличие от install, не видны через UI браузера (Page Info -> Permissions). Протестировать этот
-// механизм и узнать, какая именно информация доступна, можно здесь[1], задав mxr.mozilla.org пермишн
+// механизм и узнать, какая именно информация доступна, можно здесь[1], задав hg.mozilla.org пермишн
 // remote-troubleshooting путем присвоения этой настройке строки[2] (без кавычек) и перезапуска браузера.
 // Отключение установки пермишнов из дефолтного списка решает обе вышеописанные проблемы.
-// [1]: https://mxr.mozilla.org/mozilla-esr38/source/browser/base/content/test/general/test_remoteTroubleshoot.html?rev=569b611715e0
-// [2]: "data:text/plain,host%09remote-troubleshooting%091%09mxr.mozilla.org"
+// [1]: https://hg.mozilla.org/releases/mozilla-esr38/raw-file/569b611715e0/browser/base/content/test/general/test_remoteTroubleshoot.html
+// [2]: "data:text/plain,host%09remote-troubleshooting%091%09hg.mozilla.org"
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1079563
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1091944
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1091942
-// https://mxr.mozilla.org/mozilla-esr38/source/browser/base/content/test/general/browser_remoteTroubleshoot.js?rev=ae7fbd79941b
-// https://mxr.mozilla.org/mozilla-esr38/source/browser/components/nsBrowserGlue.js?rev=f9441895096d#833
-// https://mxr.mozilla.org/mozilla-esr38/source/toolkit/modules/WebChannel.jsm?rev=56d740d0769f#139
-// https://mxr.mozilla.org/mozilla-esr38/source/extensions/cookie/nsPermissionManager.cpp?rev=a20c7910a82f#1888
+// https://hg.mozilla.org/releases/mozilla-esr38/file/f402bfa9a35e/browser/base/content/test/general/browser_remoteTroubleshoot.js
+// https://hg.mozilla.org/releases/mozilla-esr38/file/f9441895096d/browser/components/nsBrowserGlue.js#l833
+// https://hg.mozilla.org/releases/mozilla-esr38/file/56d740d0769f/toolkit/modules/WebChannel.jsm#l139
+// https://hg.mozilla.org/releases/mozilla-esr38/file/a20c7910a82f/extensions/cookie/nsPermissionManager.cpp#l1888
 user_pref("permissions.manager.defaultsUrl", "");
 
 // Отключает автоматическую отправку отчетов в Mozilla об ошибках в сертификатах сайтов.
@@ -265,17 +265,17 @@ user_pref("dom.disable_window_open_feature.toolbar", true);
 // использование через about:cache -> appcache и меняя настройки.
 // http://www.w3.org/TR/offline-webapps/
 // https://developer.mozilla.org/en-US/docs/Web/HTML/Using_the_application_cache
-// https://mxr.mozilla.org/mozilla-esr38/source/browser/base/content/browser.js?rev=ae7fbd79941b#6020
+// https://hg.mozilla.org/releases/mozilla-esr38/file/ae7fbd79941b/browser/base/content/browser.js#l6020
 user_pref("browser.offline-apps.notify", true);
 // Эта настройка по умолчанию включена и дает всем сайтам permission "offline-app", так что
 // без ее отключения browser.offline-apps.notify _абсолютно бесполезна_, вопреки ее названию
 // ("Tell me when a website asks to store data for offline use"), а также тому, что написано про нее в
 // KB MozillaZine и некоторых других источниках. С отключением offline-apps.allow_by_default, этот
 // permission будет ставиться только при подтверждении пользователем (проверено в Firefox 38.2.0 и 40.0).
-// https://mxr.mozilla.org/mozilla-esr38/source/uriloader/prefetch/nsOfflineCacheUpdateService.cpp?rev=dd257f17530c#649
-// https://mxr.mozilla.org/mozilla-esr38/source/dom/base/nsContentSink.cpp?rev=dd257f17530c#1056
-// https://mxr.mozilla.org/mozilla-esr38/source/dom/base/nsContentUtils.cpp?rev=5be76431120a#1709
-// https://mxr.mozilla.org/mozilla-esr38/source/uriloader/prefetch/nsOfflineCacheUpdateService.cpp?rev=dd257f17530c#744
+// https://hg.mozilla.org/releases/mozilla-esr38/file/dd257f17530c/uriloader/prefetch/nsOfflineCacheUpdateService.cpp#l649
+// https://hg.mozilla.org/releases/mozilla-esr38/file/dd257f17530c/dom/base/nsContentSink.cpp#l1056
+// https://hg.mozilla.org/releases/mozilla-esr38/file/5be76431120a/dom/base/nsContentUtils.cpp#l1709
+// https://hg.mozilla.org/releases/mozilla-esr38/file/dd257f17530c/uriloader/prefetch/nsOfflineCacheUpdateService.cpp#l744
 user_pref("offline-apps.allow_by_default", false);
 
 // Отключает автоматическое скачивание и установку ADB Helper и аддона для удаленной отладки мобильных
@@ -294,18 +294,18 @@ user_pref("devtools.remote.wifi.visible", false);
 // Отключает команду screenshot --imgur, которая автоматически загружает сделанный скриншот на Imgur.
 // https://bugzilla.mozilla.org/show_bug.cgi?id=992386
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1173158
-// https://mxr.mozilla.org/mozilla-beta/source/toolkit/devtools/gcli/commands/screenshot.js?rev=ab89cbfcd3e6#382
+// https://hg.mozilla.org/releases/mozilla-beta/file/ab89cbfcd3e6/toolkit/devtools/gcli/commands/screenshot.js#l382
 user_pref("devtools.gcli.imgurClientID", "");
 user_pref("devtools.gcli.imgurUploadURL", "");
 
 // Отключает скачивание и показ подсказок для свойств CSS с developer.mozilla.org в Developer Tools.
-// https://mxr.mozilla.org/mozilla-beta/source/browser/devtools/styleinspector/test/browser_ruleview_context-menu-show-mdn-docs-03.js?rev=7f005a3c9f9d#5
-// https://mxr.mozilla.org/mozilla-beta/source/browser/devtools/styleinspector/rule-view.js?rev=14b2376c96fa#1538
-// https://mxr.mozilla.org/mozilla-beta/source/browser/devtools/shared/widgets/MdnDocsWidget.js?rev=7f005a3c9f9d#5
+// https://hg.mozilla.org/releases/mozilla-beta/file/7f005a3c9f9d/browser/devtools/styleinspector/test/browser_ruleview_context-menu-show-mdn-docs-03.js#l5
+// https://hg.mozilla.org/releases/mozilla-beta/file/14b2376c96fa/browser/devtools/styleinspector/rule-view.js#l1538
+// https://hg.mozilla.org/releases/mozilla-beta/file/7f005a3c9f9d/browser/devtools/shared/widgets/MdnDocsWidget.js#l5
 user_pref("devtools.inspector.mdnDocsTooltip.enabled", false);
 
 // Отключает рекламу Firefox Developer Edition в Developer Tools.
-// https://mxr.mozilla.org/mozilla-esr38/source/browser/devtools/shared/doorhanger.js?rev=0f8338121472#17
+// https://hg.mozilla.org/releases/mozilla-esr38/file/0f8338121472/browser/devtools/shared/doorhanger.js#l17
 user_pref("devtools.devedition.promo.enabled", false);
 user_pref("devtools.devedition.promo.shown", true);
 user_pref("devtools.devedition.promo.url", "");
