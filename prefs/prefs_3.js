@@ -107,34 +107,3 @@ user_pref("browser.cache.disk.capacity", 0);
 user_pref("browser.cache.disk.smart_size.enabled", false);
 user_pref("browser.cache.disk_cache_ssl", false);
 
-// Настройки для HTTP-заголовка Referer (а также DOM-свойства document.referrer), содержащего URL
-// страницы, с которой пользователь перешел по ссылке или, находясь на которой, запросил загрузку
-// нужного для ее отображения ресурса (картинки, стиля, скрипта, шрифта, etc). В частности, очень
-// многие сайты (и некоторые UserJS) ссылаются на скрипты, подгружающиеся с доменов Гугла (jQuery,
-// reCAPTCHA, Analytics), благодаря чему Гугл, анализируя заголовок Referer, узнает посещенные
-// пользователем URL, даже если тот переходил на них не из самого Гугла.
-// Используется некоторыми сайтами для защиты от хотлинкинга, поэтому целиком его лучше не запрещать.
-// Реферер удобнее контролировать при помощи аддона RefControl, однако в Firefox есть и довольно
-// продвинутые встроенные настройки для управления реферерами, которые могут быть использованы,
-// если установка лишнего аддона нежелательна.
-// Оптимально будет включить spoofSource и выставить trimmingPolicy в 2, а остальное не трогать - тогда
-// при любом запросе страницы или ресурса сайтам будет посылаться в Referer их собственный корень
-// вместо URL ссылающейся на них страницы. Альтернатива - запрет посылки Referer при кросс-доменных
-// запросах (XOriginPolicy -> 1), но это ломает некоторые защиты от хотлинкинга.
-// PS: Здесь нет опечаток в словах, обозначающих реферер. Заголовок - Referer с тремя "r", свойство
-// DOM - с четырьмя "r", настройки Firefox кроме одной - с тремя "r", одна - с четырьмя.
-// https://en.wikipedia.org/wiki/HTTP_referer
-// https://en.wikipedia.org/wiki/Hotlinking
-// https://mxr.mozilla.org/mozilla-esr38/source/modules/libpref/init/all.js?rev=0f8338121472#1216
-// https://mxr.mozilla.org/mozilla-esr38/source/netwerk/protocol/http/HttpBaseChannel.cpp?rev=7bc0140f0bfe#921
-// "false=real referer, true=spoof referer (use target URI as referer)"
-user_pref("network.http.referer.spoofSource", true);
-// "0=full URI, 1=scheme+host+port+path, 2=scheme+host+port"
-user_pref("network.http.referer.trimmingPolicy", 2);
-// "0=don't send any, 1=send only on clicks, 2=send on image requests as well"
-user_pref("network.http.sendRefererHeader", 2);
-// "0=always send, 1=send iff base domains match, 2=send iff hosts match"
-user_pref("network.http.referer.XOriginPolicy", 0);
-// "Controls whether we send HTTPS referres to other HTTPS sites. By default this is enabled for
-// compatibility (see bug 141641)"
-user_pref("network.http.sendSecureXSiteReferrer", true);
