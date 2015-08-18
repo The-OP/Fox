@@ -174,6 +174,7 @@ user_pref("datareporting.healthreport.service.enabled", false);
 user_pref("datareporting.healthreport.uploadEnabled", false);
 user_pref("datareporting.policy.dataSubmissionEnabled", false);
 user_pref("datareporting.healthreport.about.reportUrl", "");
+user_pref("datareporting.healthreport.about.reportUrlUnified", "");
 user_pref("datareporting.healthreport.documentServerURI", "");
 user_pref("toolkit.telemetry.enabled", false);
 user_pref("toolkit.telemetry.server", "");
