@@ -6,6 +6,8 @@ user_pref("dom.event.contextmenu.enabled", false);
 
 // Enforce public key pinning for all certificate authorities.
 // https://wiki.mozilla.org/SecurityEngineering/Public_Key_Pinning
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1059392
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1168603
 user_pref("security.cert_pinning.enforcement_level", 2);
 
 // Отключает предложения отправить в Mozilla отчеты об ошибках в сертификатах сайтов.
@@ -61,10 +63,6 @@ user_pref("media.mediasource.format-reader.mp4", false);
 // Отключает Audio Data API (от которого уже отказались в пользу Web Audio API).
 // https://wiki.mozilla.org/Audio_Data_API
 user_pref("media.audio_data.enabled", false);
-
-// Отключает загружаемые сайтами шрифты. Ломает кнопки uBlock.
-user_pref("gfx.downloadable_fonts.enabled", false);
-user_pref("gfx.downloadable_fonts.woff2.enabled", false);
 
 // SPDY может хранить идентификатор и держит экстремально долгое открытое соединение.
 user_pref("network.http.spdy.enabled", false);

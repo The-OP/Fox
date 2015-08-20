@@ -13,6 +13,17 @@ user_pref("image.cache.size", 0);
 user_pref("webgl.disabled", true);
 user_pref("webgl.force-enabled", false);
 
+// Отключает загружаемые сайтами шрифты. Несколько повышает безопасность за счет исключения
+// уязвимостей в парсере шрифтов. Ломает кнопки uBlock.
+user_pref("gfx.downloadable_fonts.enabled", false);
+user_pref("gfx.downloadable_fonts.woff2.enabled", false);
+
+// Отключает использование указанных сайтами шрифтов (Preferences -> Content -> Advanced ->
+// Allow pages to choose their own fonts, instead of my selections above). Будут использоваться
+// указанные пользователем в Preferences -> Content. Предотвращает фингерпринтинг через
+// анализ установленных шрифтов: https://www.browserleaks.com/fonts
+user_pref("browser.display.use_document_fonts", 0);
+
 // Отключает попытки страниц развернуть себя на весь экран и соответствующую кнопку в HTML5-плеерах.
 // https://developer.mozilla.org/en-US/docs/DOM/Using_fullscreen_mode
 user_pref("full-screen-api.enabled", false);
@@ -37,6 +48,7 @@ user_pref("browser.startup.homepage_override.buildID", "20100101");
 // проблемных возможностей путем предоставления пользователю кнопки для выбора уровня
 // безопасности.
 // Первый уровень подразумевает отключение opentype в коде отображения шрифтов.
+// https://wiki.mozilla.org/SVGOpenTypeFonts
 user_pref("gfx.font_rendering.opentype_svg.enabled", false);
 // Второй уровень - отключение WebAudio и asm.js.
 user_pref("javascript.options.ion", false);

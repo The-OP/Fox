@@ -142,11 +142,16 @@ user_pref("browser.newtabpage.directory.ping", "");
 // Firefox не проверяет эту опцию на пустую строку и XHR начинает ругаться в консоль, если она пустая.
 user_pref("browser.newtabpage.directory.source", "data:application/json,{}");
 user_pref("browser.newtabpage.enhanced", false);
+// Отключает предупреждение о вышеописанной рекламе при первом открытии New Tab Page.
+user_pref("browser.newtabpage.introShown", true);
 // Отключает загрузку рекламы сервисов от самой Mozilla (Sync, Hello, версий для Android) в about:home.
 // https://wiki.mozilla.org/Websites/Snippets
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_snippets
 user_pref("browser.aboutHomeSnippets.updateUrl", "");
 
+// Отключает проверку при запуске, является ли Firefox браузером по умолчанию.
+// Preferences -> General -> Startup -> Always check if Firefox is your default browser
+user_pref("browser.shell.checkDefaultBrowser", false);
 // Отключает автоматическое открытие вкладки с описанием изменений в новой версии после обновления.
 // http://kb.mozillazine.org/Browser.startup.homepage_override.mstone
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_whats-new-page
@@ -224,10 +229,16 @@ user_pref("browser.pocket.site", "");
 user_pref("browser.pocket.oAuthConsumerKey", "");
 user_pref("browser.pocket.enabledLocales", "");
 
-// Отключает остальные эксперименты Mozilla над пользователем.
+// Отключает эксперименты - фоновые тесты различных отключенных пока по умолчанию функций (вроде
+// HTTP Pipelining) со сбором телеметрии.
+// https://hg.mozilla.org/releases/mozilla-esr38/file/008aa6494f90/netwerk/protocol/http/nsHttpHandler.cpp#l1406
 user_pref("network.allow-experiments", false);
-user_pref("experiments.enabled", false);
+// https://hg.mozilla.org/releases/mozilla-esr38/file/91100de4f2ad/toolkit/mozapps/extensions/internal/XPIProvider.jsm#l7742
 user_pref("experiments.supported", false);
+// https://hg.mozilla.org/releases/mozilla-esr38/file/8bc9656cad94/browser/experiments/ExperimentsService.js
+// https://hg.mozilla.org/releases/mozilla-esr38/file/8bc9656cad94/browser/experiments/Experiments.jsm
+user_pref("experiments.enabled", false);
+user_pref("experiments.activeExperiment", false);
 user_pref("experiments.manifest.uri", "");
 
 // Отключает автообновление стилей Stylish -- https://userstyles.org/help/stylish_firefox
@@ -315,8 +326,20 @@ user_pref("devtools.devedition.promo.url", "");
 // Firefox для Android. Десктопный Firefox тоже почему-то посылал соответствующие мультикаст-запросы.
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1111967
 // https://support.mozilla.org/en-US/kb/use-firefox-android-send-videos-chromecast
+// https://trac.torproject.org/projects/tor/ticket/16222
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_send-video-to-device
 user_pref("browser.casting.enabled", false);
+
+// Отключает передачу по сети рисуемых браузером кадров специальному отладочному вьюверу.
+// https://wiki.mozilla.org/Platform/GFX/LayerScope
+// https://trac.torproject.org/projects/tor/ticket/16222#comment:8
+// https://hg.mozilla.org/releases/mozilla-esr38/file/a20c7910a82f/gfx/thebes/gfxPrefs.h#l208
+// https://hg.mozilla.org/releases/mozilla-esr38/file/a20c7910a82f/gfx/layers/LayerScope.cpp#l1243
+user_pref("gfx.layerscope.enabled", false);
+// https://hg.mozilla.org/releases/mozilla-esr38/file/a20c7910a82f/gfx/thebes/gfxPrefs.h#l209
+// https://hg.mozilla.org/releases/mozilla-esr38/file/a20c7910a82f/gfx/layers/LayerScope.cpp#l1202
+// https://hg.mozilla.org/releases/mozilla-esr38/file/a20c7910a82f/netwerk/base/nsServerSocket.cpp#l281
+user_pref("gfx.layerscope.port", 100000);
 
 // "As of 2015, there is speculation that some state cryptologic agencies may possess the capability
 // to break RC4 even when used in the TLS protocol. Mozilla and Microsoft recommend disabling
