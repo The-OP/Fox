@@ -14,7 +14,8 @@ user_pref("webgl.disabled", true);
 user_pref("webgl.force-enabled", false);
 
 // Отключает загружаемые сайтами шрифты. Несколько повышает безопасность за счет исключения
-// уязвимостей в парсере шрифтов. Ломает кнопки uBlock.
+// уязвимостей в парсере шрифтов. Ломает кнопки uBlock. Автор последнего предлагает использовать
+// правило "no-remote-fonts: * true" в самом uBlock вместо этих настроек.
 user_pref("gfx.downloadable_fonts.enabled", false);
 user_pref("gfx.downloadable_fonts.woff2.enabled", false);
 
