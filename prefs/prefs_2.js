@@ -2,8 +2,30 @@
 // https://wiki.mozilla.org/Addons/Extension_Signing
 user_pref("xpinstall.signatures.required", false);
 
-// Отключает Speed Dial, потребляющий процессорное время и замедляющий открытие новых вкладок.
+// Отключает автоматическое снятие скриншотов страниц с сохранением их на диск.
+// Эти скриншоты используются в качестве превью в New Tab Page Tiles и в Ctrl+Tab.
+// При включенных New Tab Page Tiles и дефолтном значении этой опции, происходит еще и автоматическая
+// закачка самых часто посещамых пользователем сайтов для генерации их превью. Если Tiles выключить,
+// превью все равно сохраняются, когда пользователь сам заходит на один из часто посещаемых сайтов.
+// Скриншоты пишутся на диск, даже если кэш полностью отключен. Хранятся они в каталоге thumbnails,
+// расположенном на уровень выше каталога кэша, указанного в about:cache.
+// Включение этой настройки решает все вышеописанные проблемы.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=897811#c14
+// https://hg.mozilla.org/releases/mozilla-esr38/file/0e97e6bdedd8/toolkit/components/thumbnails/PageThumbs.jsm#l510
+// https://hg.mozilla.org/releases/mozilla-esr38/file/0e97e6bdedd8/toolkit/components/thumbnails/PageThumbs.jsm#l350
+// https://hg.mozilla.org/releases/mozilla-esr38/file/d7ca3b75c842/browser/base/content/newtab/page.js#l214
+// https://hg.mozilla.org/releases/mozilla-esr38/file/d7ca3b75c842/browser/base/content/newtab/sites.js#l143
+// https://hg.mozilla.org/releases/mozilla-esr38/file/54cb0b2e118b/toolkit/components/thumbnails/BackgroundPageThumbs.jsm#l34
+// https://hg.mozilla.org/releases/mozilla-esr38/file/0e97e6bdedd8/browser/base/content/browser-thumbnails.js#l87
+// https://hg.mozilla.org/releases/mozilla-esr38/file/3ab8c6c88f1d/browser/base/content/browser-ctrlTab.js#l49
+// https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_tiles
+user_pref("browser.pagethumbnails.capturing_disabled", true);
+
+// Отключает New Tab Page Tiles - изкоробочную панель быстрого набора с часто посещаемыми сайтами,
+// которая потребляет процессорное время и замедляет открытие новых пустых вкладок.
+// https://support.mozilla.org/en-US/kb/about-tiles-new-tab
 user_pref("browser.newtabpage.enabled", false);
+user_pref("browser.newtab.preload", false);
 
 // Отключает угадывание доменного имени при помощи подстановки www и разных TLD.
 user_pref("browser.fixup.alternate.enabled", false);
@@ -21,8 +43,8 @@ user_pref("browser.formfill.saveHttpsForms", false);
 // вроде рефреша DNS-кэша. -- https://bugzilla.mozilla.org/show_bug.cgi?id=939318
 user_pref("network.notify.changed", false);
 
-// Отключает сбор статистики производительности декодирования HTML5-видео (Show Statistics
-// в контекстном меню плеера). -- https://bugzilla.mozilla.org/show_bug.cgi?id=654550
+// Отключает сбор статистики производительности декодирования HTML5-видео (посмотреть их можно в
+// Show Statistics контекстного меню плеера). -- https://bugzilla.mozilla.org/show_bug.cgi?id=654550
 user_pref("media.video_stats.enabled", false);
 
 // Отключает Social API и новую кнопку для перепостов в соцсети.
@@ -120,7 +142,10 @@ user_pref("dom.vibrator.enabled", false);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=740473
 // https://wiki.mozilla.org/Sensor_API
 user_pref("device.sensors.enabled", false);
-// Отключает события от геймпада. -- http://www.w3.org/TR/gamepad/
+// Отключает события от геймпада.
+// https://hacks.mozilla.org/2013/12/the-gamepad-api/
+// https://developer.mozilla.org/en-US/docs/Web/Guide/API/Gamepad
+// http://www.w3.org/TR/gamepad/
 user_pref("dom.gamepad.enabled", false);
 user_pref("dom.gamepad.non_standard_events.enabled", false);
 // Отключает поддержку устройств виртуальной реальности.
@@ -154,6 +179,7 @@ user_pref("dom.push.udp.wakeupEnabled", false);
 
 // Отключает User Timing API - доступ к высокочастотному таймеру, при помощи которого может быть
 // осуществлено прослушивание процессорного кэша из непривилегированного JS-кода.
+// https://trac.torproject.org/projects/tor/ticket/16336
 // http://www.html5rocks.com/en/tutorials/webperformance/usertiming/
 // https://www.linux.org.ru/news/security/11541326
 // http://arxiv.org/pdf/1502.07373v2.pdf
@@ -182,6 +208,7 @@ user_pref("media.peerconnection.use_document_iceservers", false);
 
 // Отключает getUserMedia API, который используется для записи звука с микрофона, изображения с
 // вебкамеры и screen sharing (доступ удаленного компьютера к порции экрана). Ломает Firefox Hello.
+// https://wiki.mozilla.org/Media/getUserMedia
 // https://stackoverflow.com/questions/13616449/screen-sharing-with-webrtc
 // https://mozilla.github.io/webrtc-landing/gum_test.html
 user_pref("media.navigator.enabled", false);
@@ -229,6 +256,9 @@ user_pref("loop.support_url", "");
 // Отключает поддержку Encrypted Media Extensions (DRM для HTML5-видео).
 user_pref("media.eme.enabled", false);
 user_pref("media.eme.apiVisible", false);
+// Отключает предложения включить EME.
+// https://hg.mozilla.org/releases/mozilla-esr38/file/704989f295eb/browser/base/content/browser-eme.js#l55
+user_pref("browser.eme.ui.enabled", false);
 user_pref("media.gmp-eme-adobe.enabled", false);
 user_pref("media.gmp-eme-adobe.autoupdate", false);
 
@@ -255,6 +285,7 @@ user_pref("media.gmp-manager.lastCheck", 1437696000); // 2015-07-24, 00:00 UTC
 user_pref("media.gmp-manager.secondsBetweenChecks", 630720000); // 20 лет.
 
 // Полностью отключает WebIDE, убирает его кнопку и из меню Developer Tools.
+// https://trac.torproject.org/projects/tor/ticket/16222#comment:10
 user_pref("devtools.webide.enabled", false);
 user_pref("devtools.appmanager.enabled", false);
 user_pref("devtools.webide.enableLocalRuntime", false);
@@ -270,8 +301,13 @@ user_pref("devtools.webide.simulatorAddonsURL", "");
 user_pref("devtools.webide.templatesURL", "");
 user_pref("devtools.webide.templatesURL_cache", "");
 
+// Отключает возможность отладки через сеть этого экземпляра Firefox другим и наоборот.
+// Включена по умолчанию на Developer Edition.
+user_pref("devtools.debugger.remote-enabled", false);
+
 // Отключает распространенные плагины. Рекомендуется их вообще удалять, ибо, как показывает практика,
 // плагины - самые дырявые компоненты браузера.
+user_pref("plugins.click_to_play", true);
 user_pref("plugin.default.state", 0);
 user_pref("plugin.defaultXpi.state", 0);
 user_pref("plugin.state.flash", 0);
@@ -282,6 +318,9 @@ user_pref("plugin.scan.plid.all", false);
 // https://hg.mozilla.org/releases/mozilla-esr38/file/0f8338121472/dom/plugins/base/nsPluginHost.h#l174
 // https://hg.mozilla.org/releases/mozilla-esr38/file/0f8338121472/dom/plugins/base/nsPluginHost.cpp#l2505
 user_pref("plugin.allowed_types", " ");
+// Отключает возможность перечисления плагинов через window.navigator.plugins[].
+// https://hg.mozilla.org/releases/mozilla-esr38/file/a9be9167d92b/modules/libpref/init/all.js#l2309
+user_pref("plugins.enumerable_names", "");
 // http://kb.mozillazine.org/Issues_related_to_plugins#Plugin_location
 user_pref("plugins.load_appdir_plugins", false);
 // https://support.mozilla.org/en-US/questions/833109
@@ -325,6 +364,8 @@ user_pref("layout.css.font-loading-api.enabled", false);
 // 	https://adblockplus.org/forum/viewtopic.php?t=27375&start=15
 // UPD: Вышеописанный баг исправили, теперь эта настройка действует только на страницы, и браузер
 // с аддонами не ломает -- https://bugzilla.mozilla.org/show_bug.cgi?id=1079355
+// UPD: Но ломает WebIDE (увидеть можно если выключить Indexed DB, перезапустить браузер и
+// попытаться открыть WebIDE - ошибки будут отображены как в нем самом, так и в Browser Console).
 user_pref("dom.indexedDB.enabled", false);
 user_pref("dom.indexedDB.experimental", false);
 
