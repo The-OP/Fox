@@ -65,9 +65,12 @@ user_pref("media.mediasource.format-reader.mp4", false);
 user_pref("media.audio_data.enabled", false);
 
 // SPDY может хранить идентификатор и держит экстремально долгое открытое соединение.
+// https://www.torproject.org/projects/torbrowser/design/#identifier-linkability
 user_pref("network.http.spdy.enabled", false);
-user_pref("network.http.spdy.enabled.v3", false);
 user_pref("network.http.spdy.enabled.v3-1", false);
+// https://trac.torproject.org/projects/tor/ticket/14952
+user_pref("network.http.spdy.enabled.http2", false);
+user_pref("network.http.spdy.enabled.http2draft", false);
 
 // Запрещает сайтам обращение к локальной машине, что позволило бы им анализировать список открытых
 // портов. Подсмотрено у разработчиков Tor (https://trac.torproject.org/projects/tor/ticket/10686).
@@ -94,6 +97,13 @@ user_pref("browser.offline-apps.notify", false);
 // https://hg.mozilla.org/releases/mozilla-esr38/file/5be76431120a/dom/base/nsContentUtils.cpp#l1709
 // https://hg.mozilla.org/releases/mozilla-esr38/file/dd257f17530c/uriloader/prefetch/nsOfflineCacheUpdateService.cpp#l744
 user_pref("offline-apps.allow_by_default", false);
+
+// Отключает Shared Workers. Они могут стать проблемой, если загружаются с одного CDN несколькими
+// разными открытыми в данный момент во вкладках у пользователя сайтами, так как такие Workers
+// имеют общий контекст (т.е. доступ к данным друг друга).
+// https://www.torproject.org/projects/torbrowser/design/#identifier-linkability
+// https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers#Shared_workers
+user_pref("dom.workers.sharedWorkers.enabled", false);
 
 // Отключение дискового кэширования. Анализируя время загрузки страницы, можно узнать, посещал ли
 // пользователь этот сайт. Если посещал - часть файлов будет взята из кэша, что отразится на времени.

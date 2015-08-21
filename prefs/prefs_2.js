@@ -2,8 +2,8 @@
 // https://wiki.mozilla.org/Addons/Extension_Signing
 user_pref("xpinstall.signatures.required", false);
 
-// Отключает автоматическое снятие скриншотов страниц с сохранением их на диск.
-// Эти скриншоты используются в качестве превью в New Tab Page Tiles и в Ctrl+Tab.
+// Отключает автоматическое снятие скриншотов страниц с сохранением их на диск. Эти скриншоты
+// используются в качестве превью в New Tab Page Tiles и в Ctrl+Tab (browser.ctrlTab.previews).
 // При включенных New Tab Page Tiles и дефолтном значении этой опции, происходит еще и автоматическая
 // закачка самых часто посещамых пользователем сайтов для генерации их превью. Если Tiles выключить,
 // превью все равно сохраняются, когда пользователь сам заходит на один из часто посещаемых сайтов.
@@ -177,6 +177,12 @@ user_pref("dom.push.connection.enabled", false);
 user_pref("dom.push.adaptive.enabled", false);
 user_pref("dom.push.udp.wakeupEnabled", false);
 
+// Отключает Simple Push API - нестандартную альтернативу Push API от Mozilla. В данный момент
+// используется только на Firefox OS, но возможно будет портировано и на десктопную версию.
+// https://wiki.mozilla.org/Security/Reviews/SimplePush
+user_pref("services.push.enabled", false);
+user_pref("services.push.serverURL", "");
+
 // Отключает User Timing API - доступ к высокочастотному таймеру, при помощи которого может быть
 // осуществлено прослушивание процессорного кэша из непривилегированного JS-кода.
 // https://trac.torproject.org/projects/tor/ticket/16336
@@ -308,12 +314,28 @@ user_pref("devtools.debugger.remote-enabled", false);
 // Отключает распространенные плагины. Рекомендуется их вообще удалять, ибо, как показывает практика,
 // плагины - самые дырявые компоненты браузера.
 user_pref("plugins.click_to_play", true);
+// https://hg.mozilla.org/releases/mozilla-esr38/file/a9be9167d92b/modules/libpref/init/all.js#l2325
+// https://hg.mozilla.org/releases/mozilla-esr38/file/31c202376ea8/browser/base/content/browser-plugins.js#l7
+// https://hg.mozilla.org/releases/mozilla-esr38/file/31c202376ea8/browser/base/content/browser-plugins.js#l144
+// https://hg.mozilla.org/releases/mozilla-esr38/file/a20c7910a82f/extensions/cookie/nsPermissionManager.cpp#l672
+user_pref("plugin.sessionPermissionNow.intervalInMinutes", 0);
+user_pref("plugin.persistentPermissionAlways.intervalInDays", 0);
+// https://hg.mozilla.org/releases/mozilla-esr38/file/683b45b75b40/dom/plugins/base/nsIPluginTag.idl#l11
+// https://hg.mozilla.org/releases/mozilla-esr38/file/a20c7910a82f/dom/plugins/base/nsPluginTags.h#l31
 user_pref("plugin.default.state", 0);
 user_pref("plugin.defaultXpi.state", 0);
 user_pref("plugin.state.flash", 0);
 user_pref("plugin.state.java", 0);
 // Отключает все плагины (только для Windows-билдов) -- http://kb.mozillazine.org/Plugin_scanning
 user_pref("plugin.scan.plid.all", false);
+// Плагины Acrobat, QuickTime и WMP ищутся напрямую. Содержимое этой настройки - минимальный номер
+// версии плагина. Каждый из компонентов версии (major и minor) должен умещаться в WORD (16 бит).
+// https://hg.mozilla.org/releases/mozilla-esr38/file/a9be9167d92b/modules/libpref/init/all.js#l2939
+// https://hg.mozilla.org/releases/mozilla-esr38/file/8ba67ee6a81d/dom/plugins/base/nsPluginDirServiceProvider.h#l17
+// https://hg.mozilla.org/releases/mozilla-esr38/file/6c1c7e45c902/dom/plugins/base/nsPluginDirServiceProvider.cpp
+user_pref("plugin.scan.Acrobat", "30000.0");
+user_pref("plugin.scan.Quicktime", "30000.0");
+user_pref("plugin.scan.WindowsMediaPlayer", "30000.0");
 // Отключает все плагины. Именно пробел, а не пустая строка. Пустая строка значит "разрешены все".
 // https://hg.mozilla.org/releases/mozilla-esr38/file/0f8338121472/dom/plugins/base/nsPluginHost.h#l174
 // https://hg.mozilla.org/releases/mozilla-esr38/file/0f8338121472/dom/plugins/base/nsPluginHost.cpp#l2505

@@ -154,10 +154,16 @@ user_pref("browser.aboutHomeSnippets.updateUrl", "");
 user_pref("browser.shell.checkDefaultBrowser", false);
 // Отключает автоматическое открытие вкладки с описанием изменений в новой версии после обновления.
 // http://kb.mozillazine.org/Browser.startup.homepage_override.mstone
+// https://hg.mozilla.org/releases/mozilla-esr38/file/29eac8276b62/browser/components/nsBrowserContentHandler.js#l565
+// https://hg.mozilla.org/releases/mozilla-esr38/file/29eac8276b62/browser/components/nsBrowserContentHandler.js#l102
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_whats-new-page
 user_pref("browser.startup.homepage_override.mstone", "ignore");
+user_pref("startup.homepage_override_url", "");
 // Отключает приветственную страницу при первом запуске браузера с новым профилем.
 user_pref("startup.homepage_welcome_url", "");
+// Отключает замеры времени запуска браузера и уведомление о слишком долгом по его мнению старте.
+// https://hg.mozilla.org/releases/mozilla-esr38/file/f9441895096d/browser/components/nsBrowserGlue.js#l687
+user_pref("browser.slowStartup.notificationDisabled", true);
 // Отключает показ URL с описанием функций, связанных с Windows 10, у пользователей последней.
 // https://hg.mozilla.org/releases/mozilla-beta/file/883275447631/browser/components/nsBrowserContentHandler.js#l546
 user_pref("browser.usedOnWindows10", true);
@@ -350,3 +356,12 @@ user_pref("security.ssl3.rsa_rc4_128_md5", false);
 user_pref("security.ssl3.rsa_rc4_128_sha", false);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1138882
 user_pref("security.tls.unrestricted_rc4_fallback", false);
+
+// Отключает встроенный белый список, разрешающий соединения с находящимися в нем сайтами,
+// несмотря на использование ими устаревшего шифрования.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1128227
+user_pref("security.tls.insecure_fallback_hosts.use_static_list", false);
+
+// Пользовательский белый список сайтов, которым разрешено устаревшее шифрование.
+// Рекомендуется работать с такими не из под основного профиля.
+user_pref("security.tls.insecure_fallback_hosts", "");
