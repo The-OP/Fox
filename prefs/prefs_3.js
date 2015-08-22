@@ -16,10 +16,6 @@ user_pref("security.ssl.errorReporting.enabled", false);
 user_pref("security.ssl.errorReporting.automatic", false);
 user_pref("security.ssl.errorReporting.url", "");
 
-// Блокировка загрузки незащищенного содержимого на HTTPS-страницах.
-user_pref("security.mixed_content.block_active_content", true);
-user_pref("security.mixed_content.block_display_content", true);
-
 // Разрешить запрос HTTP-аунтефикации при загрузке только самого документа, но не его ресурсов.
 // https://bugzilla.mozilla.org/show_bug.cgi?id=647010
 // https://hg.mozilla.org/releases/mozilla-beta/file/e549349b8d66/modules/libpref/init/all.js#l1717
@@ -104,6 +100,11 @@ user_pref("offline-apps.allow_by_default", false);
 // https://www.torproject.org/projects/torbrowser/design/#identifier-linkability
 // https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers#Shared_workers
 user_pref("dom.workers.sharedWorkers.enabled", false);
+
+// Отменять соединения с сайтами, не поддерживающими RFC 5746 (безопасное продление сессии,
+// закрывающее возможность для MitM-атаки, описанной в CVE-2009-3555).
+// https://wiki.mozilla.org/Security:Renegotiation
+user_pref("security.ssl.require_safe_negotiation", true);
 
 // Отключение дискового кэширования. Анализируя время загрузки страницы, можно узнать, посещал ли
 // пользователь этот сайт. Если посещал - часть файлов будет взята из кэша, что отразится на времени.

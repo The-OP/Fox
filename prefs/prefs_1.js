@@ -347,15 +347,28 @@ user_pref("gfx.layerscope.enabled", false);
 // https://hg.mozilla.org/releases/mozilla-esr38/file/a20c7910a82f/netwerk/base/nsServerSocket.cpp#l281
 user_pref("gfx.layerscope.port", 100000);
 
+// Настройки security.ssl3.* содержат строку "ssl3" по историческим причинам, а на деле управляют
+// и поведнием TLS, в чем можно убедиться здесь: https://www.ssllabs.com/ssltest/viewMyClient.html
+
 // "As of 2015, there is speculation that some state cryptologic agencies may possess the capability
 // to break RC4 even when used in the TLS protocol. Mozilla and Microsoft recommend disabling
 // RC4 where possible." -- https://en.wikipedia.org/wiki/RC4
+// https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-2566
+// https://community.qualys.com/blogs/securitylabs/2013/03/19/rc4-in-tls-is-broken-now-what
+// https://bugzilla.mozilla.org/show_bug.cgi?id=999544
 user_pref("security.ssl3.ecdhe_ecdsa_rc4_128_sha", false);
 user_pref("security.ssl3.ecdhe_rsa_rc4_128_sha", false);
 user_pref("security.ssl3.rsa_rc4_128_md5", false);
 user_pref("security.ssl3.rsa_rc4_128_sha", false);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1138882
 user_pref("security.tls.unrestricted_rc4_fallback", false);
+
+// 3DES, в отличие от RC4, пока вроде держится, но можно и запретить на всякий случай.
+// https://wiki.mozilla.org/Security/Guidelines/Key_Management#Algorithms_by_security_levels
+// https://hg.mozilla.org/releases/mozilla-esr38/file/fa67b437a89a/security/manager/ssl/src/nsNSSComponent.cpp#l666
+// https://bugzilla.mozilla.org/show_bug.cgi?id=936828
+// https://en.wikipedia.org/wiki/Triple_DES#Security
+user_pref("security.ssl3.rsa_des_ede3_sha", false);
 
 // Отключает встроенный белый список, разрешающий соединения с находящимися в нем сайтами,
 // несмотря на использование ими устаревшего шифрования.
@@ -365,3 +378,9 @@ user_pref("security.tls.insecure_fallback_hosts.use_static_list", false);
 // Пользовательский белый список сайтов, которым разрешено устаревшее шифрование.
 // Рекомендуется работать с такими не из под основного профиля.
 user_pref("security.tls.insecure_fallback_hosts", "");
+
+// Отображать восклицательный знак (ранее - красный замок) в адресной строке для сайтов, не
+// поддерживающих RFC 5746 (безопасное продление сессии, закрывающее возможность для MitM-атаки,
+// описанной в CVE-2009-3555).
+// https://wiki.mozilla.org/Security:Renegotiation
+user_pref("security.ssl.treat_unsafe_negotiation_as_broken", true);

@@ -342,6 +342,7 @@ user_pref("plugin.scan.WindowsMediaPlayer", "30000.0");
 user_pref("plugin.allowed_types", " ");
 // Отключает возможность перечисления плагинов через window.navigator.plugins[].
 // https://hg.mozilla.org/releases/mozilla-esr38/file/a9be9167d92b/modules/libpref/init/all.js#l2309
+// https://hg.mozilla.org/releases/mozilla-esr38/file/2ae2d0f3a546/dom/base/nsPluginArray.cpp#l318
 user_pref("plugins.enumerable_names", "");
 // http://kb.mozillazine.org/Issues_related_to_plugins#Plugin_location
 user_pref("plugins.load_appdir_plugins", false);
@@ -411,6 +412,14 @@ user_pref("dom.caches.enabled", false);
 // https://hg.mozilla.org/releases/mozilla-beta/file/8cf5636886f0/dom/canvas/WebGLContextState.cpp#l195
 // https://hg.mozilla.org/releases/mozilla-beta/file/8cf5636886f0/dom/canvas/WebGLContextExtensions.cpp#l99
 user_pref("webgl.disable-debug-renderer-info", true);
+
+// Блокировка загрузки незащищенного содержимого на HTTPS-страницах. Если какие-то ресурсы были
+// заблокированы, в адресной строке отображается щит.
+// https://www.ssllabs.com/ssltest/viewMyClient.html (тестировать нужно со включенным JS)
+// JS, CSS, XHR, Frames
+user_pref("security.mixed_content.block_active_content", true);
+// Images
+user_pref("security.mixed_content.block_display_content", true);
 
 // Настройки для HTTP-заголовка Referer (а также DOM-свойства document.referrer), содержащего URL
 // страницы, с которой пользователь перешел по ссылке или, находясь на которой, запросил загрузку
