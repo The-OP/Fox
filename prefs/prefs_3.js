@@ -106,6 +106,13 @@ user_pref("dom.workers.sharedWorkers.enabled", false);
 // https://wiki.mozilla.org/Security:Renegotiation
 user_pref("security.ssl.require_safe_negotiation", true);
 
+// Снижает число ранее посещенных в этой же вкладке адресов, хранящихся в истории back/forward
+// вкладки (на глобальную историю не влияет). Сами URL из этой истории недоступны из JS, но их
+// количество видно в window.history.length, что можно использовать для фингерпринтинга.
+// По умолчанию 50. Значение 1 означает хранение адреса только текущей страницы.
+// http://kb.mozillazine.org/About:config_entries#Browser.
+user_pref("browser.sessionhistory.max_entries", 2);
+
 // Отключение дискового кэширования. Анализируя время загрузки страницы, можно узнать, посещал ли
 // пользователь этот сайт. Если посещал - часть файлов будет взята из кэша, что отразится на времени.
 // Еще проще и надежнее определяется наличие файлов в кэше по значениям заголовков If-Modified-Since

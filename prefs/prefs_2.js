@@ -142,10 +142,11 @@ user_pref("dom.vibrator.enabled", false);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=740473
 // https://wiki.mozilla.org/Sensor_API
 user_pref("device.sensors.enabled", false);
-// Отключает события от геймпада.
-// https://hacks.mozilla.org/2013/12/the-gamepad-api/
+// Отключает Gamepad API, которое может быть использовано для получения идентификаторов
+// производителя и модели подключенных к компьютеру геймпадов.
+// https://trac.torproject.org/projects/tor/ticket/13023
 // https://developer.mozilla.org/en-US/docs/Web/Guide/API/Gamepad
-// http://www.w3.org/TR/gamepad/
+// http://www.w3.org/TR/gamepad/#methods
 user_pref("dom.gamepad.enabled", false);
 user_pref("dom.gamepad.non_standard_events.enabled", false);
 // Отключает поддержку устройств виртуальной реальности.
@@ -307,8 +308,8 @@ user_pref("devtools.webide.simulatorAddonsURL", "");
 user_pref("devtools.webide.templatesURL", "");
 user_pref("devtools.webide.templatesURL_cache", "");
 
-// Отключает возможность отладки через сеть этого экземпляра Firefox другим и наоборот.
-// Включена по умолчанию на Developer Edition.
+// Отключает возможность отладки через сеть этого экземпляра Firefox другим и наоборот (а также
+// самого себя через loopback-соединение Browser Toolbox). Включена по умолчанию на Developer Edition.
 user_pref("devtools.debugger.remote-enabled", false);
 
 // Отключает распространенные плагины. Рекомендуется их вообще удалять, ибо, как показывает практика,
