@@ -3,8 +3,12 @@
 // Еще проще и надежнее определяется наличие файлов в кэше по значениям заголовков If-Modified-Since
 // и If-None-Match (https://en.wikipedia.org/wiki/HTTP_ETag), которые также могут быть использованы
 // и для прямого трекинга (отдавая пользователям файл с уникальным Last-Modified и/или ETag).
+// http://kb.mozillazine.org/Network.http.use-cache
 user_pref("network.http.use-cache", false);
+// http://kb.mozillazine.org/Browser.cache.memory.enable
 user_pref("browser.cache.memory.enable", false);
+// http://kb.mozillazine.org/Browser.cache.memory.capacity
+user_pref("browser.cache.memory.capacity", 0);
 user_pref("media.cache_size", 0);
 user_pref("image.cache.size", 0);
 
@@ -12,6 +16,19 @@ user_pref("image.cache.size", 0);
 // http://www.contextis.com/resources/blog/webgl-new-dimension-browser-exploitation/
 user_pref("webgl.disabled", true);
 user_pref("webgl.force-enabled", false);
+
+// Отключает применение к посещенным ссылкам стилей с селектором :visited, что предотвращает
+// возможность выяснить, какие URL есть у пользователя в истории браузера. Главную уязвимость с
+// использованием для этого getComputedStyle() закрыли, однако есть и некоторые другие способы
+// (см. последние комментарии в багзилле), хоть и сложные в эксплуатации, но в принципе возможные.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=147777
+// https://blog.mozilla.org/security/2010/03/31/plugging-the-css-history-leak/
+// http://dbaron.org/mozilla/visited-privacy
+user_pref("layout.css.visited_links_enabled", false);
+
+// Отключает автоматическое копирование выделенного текста в буфер обмена (только для Linux-билдов).
+// http://kb.mozillazine.org/Clipboard.autocopy
+user_pref("clipboard.autocopy", false);
 
 // Отключает загружаемые сайтами шрифты. Несколько повышает безопасность за счет исключения
 // уязвимостей в парсере шрифтов. Ломает кнопки uBlock. В качестве не ломающей кнопки замены
@@ -53,6 +70,9 @@ user_pref("browser.startup.homepage_override.buildID", "20100101");
 user_pref("gfx.font_rendering.opentype_svg.enabled", false);
 // Второй уровень - отключение WebAudio и asm.js.
 user_pref("javascript.options.ion", false);
+// https://www.mozilla.org/en-US/security/advisories/mfsa2015-29/
+// https://www.mozilla.org/en-US/security/advisories/mfsa2015-50/
+// https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-2712
 user_pref("javascript.options.asmjs", false);
 // Настройки media.webaudio.enabled больше не существует, поэтому только так.
 user_pref("noscript.forbidMedia", true);
