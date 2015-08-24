@@ -24,6 +24,7 @@ user_pref("dom.storage.default_quota", 10240);
 user_pref("browser.sessionstore.interval", 300000);
 
 // Объем RAM-кэша в килобайтах. Полезно увеличить, если много памяти.
+// http://kb.mozillazine.org/Browser.cache.memory.capacity
 user_pref("browser.cache.memory.capacity", 524288);
 // Максимальный объем одного элемента.
 user_pref("browser.cache.memory.max_entry_size", 52428);

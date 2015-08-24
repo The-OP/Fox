@@ -103,6 +103,8 @@ user_pref("geo.wifi.timeToWaitBeforeSending", 630720000); // 20 лет.
 // https://hg.mozilla.org/releases/mozilla-esr38/file/0f8338121472/toolkit/components/search/nsSearchService.js#l520
 // https://hg.mozilla.org/releases/mozilla-esr38/file/0f8338121472/toolkit/components/search/nsSearchService.js#l593
 user_pref("browser.search.countryCode", "US");
+// https://hg.mozilla.org/releases/mozilla-esr38/file/0f8338121472/toolkit/components/search/nsSearchService.js#l425
+user_pref("browser.search.region", "US");
 user_pref("browser.search.geoip.timeout", 0);
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_geolocation-for-default-search-engine
 user_pref("browser.search.geoip.url", "");
@@ -240,6 +242,7 @@ user_pref("media.getusermedia.noise_enabled", false);
 user_pref("canvas.capturestream.enabled", false);
 
 // Отключает Firefox Hello.
+// https://wiki.mozilla.org/Loop/Data_Collection
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_firefox-hello
 user_pref("loop.enabled", false);
 user_pref("loop.screenshare.enabled", false);

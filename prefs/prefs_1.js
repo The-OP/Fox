@@ -180,6 +180,7 @@ user_pref("extensions.webservice.discoverURL", "");
 user_pref("extensions.getAddons.cache.enabled", false);
 
 // Отключает телеметрию.
+// https://support.mozilla.org/en-US/kb/firefox-health-report-understand-your-browser-perf
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_diagnostics
 user_pref("datareporting.healthreport.service.enabled", false);
 user_pref("datareporting.healthreport.uploadEnabled", false);
@@ -187,6 +188,9 @@ user_pref("datareporting.policy.dataSubmissionEnabled", false);
 user_pref("datareporting.healthreport.about.reportUrl", "");
 user_pref("datareporting.healthreport.about.reportUrlUnified", "");
 user_pref("datareporting.healthreport.documentServerURI", "");
+// https://www.mozilla.org/en-US/privacy/firefox/#telemetry
+// https://wiki.mozilla.org/Privacy/Reviews/Telemetry
+// https://wiki.mozilla.org/Security/Reviews/Firefox6/ReviewNotes/telemetry
 user_pref("toolkit.telemetry.enabled", false);
 user_pref("toolkit.telemetry.server", "");
 user_pref("toolkit.telemetry.archive.enabled", false);
