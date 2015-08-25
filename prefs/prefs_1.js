@@ -22,9 +22,6 @@ user_pref("browser.sessionhistory.max_total_viewers", 2);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=850607
 user_pref("memory.free_dirty_pages", true);
 
-// Использовать локаль из general.useragent.locale, а не установленную в ОС.
-user_pref("intl.locale.matchOS", false);
-
 // Отключает предзагрузку ссылок, на которые по мнению браузера вы собираетесь кликнуть.
 // https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_link-prefetching

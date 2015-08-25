@@ -50,15 +50,43 @@ user_pref("full-screen-api.pointer-lock.enabled", false);
 // Отключает декодирование мультимедиа через GStreamer.
 user_pref("media.gstreamer.enabled", false);
 
-// Маскировка браузера под версию 38 LTS и самую распространённую платформу. Не забываем обновлять
-// по мере выхода очередных LTS.
+// Маскировка браузера под версию 38.2 ESR и самую распространённую платформу. Не забываем обновлять
+// по мере выхода очередных ESR.
+// https://developer.mozilla.org/en-US/docs/Web/HTTP/Gecko_user_agent_string_reference
+// https://developer.mozilla.org/en-US/docs/Web/API/NavigatorID
+// http://www.w3.org/html/wg/drafts/html/master/webappapis.html#the-navigator-object
+// window.navigator.appName
 user_pref("general.appname.override", "Netscape");
+// window.navigator.appVersion
 user_pref("general.appversion.override", "5.0 (Windows)");
-user_pref("general.oscpu.override", "Windows NT 6.1");
+// window.navigator.oscpu
+user_pref("general.oscpu.override", "Windows NT 6.1; WOW64");
+// window.navigator.platform
 user_pref("general.platform.override", "Win32");
-user_pref("general.useragent.override", "Mozilla/5.0 (Windows NT 6.1; rv:38.0) Gecko/20100101 Firefox/38.0");
-user_pref("general.buildID.override", "20100101");
-user_pref("browser.startup.homepage_override.buildID", "20100101");
+// HTTP User-Agent, window.navigator.userAgent
+user_pref("general.useragent.override", "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:38.0) Gecko/20100101 Firefox/38.0");
+// window.navigator.buildID
+user_pref("general.buildID.override", "20150806103657");
+
+// Устанавливает HTTP-заголовок Accept-Language, а также DOM-свойств window.navigator.languages
+// и window.navigator.language в дефолтные для en-US локали значения. Q-values указывать не нужно -
+// они вычисляются автоматически, а если заданы - игнорируются.
+// https://tools.ietf.org/html/rfc2616#section-14.4
+// https://hg.mozilla.org/releases/mozilla-esr38/file/008aa6494f90/netwerk/protocol/http/nsHttpHandler.cpp#l1345
+// https://hg.mozilla.org/releases/mozilla-esr38/file/231a8c61b49f/modules/libpref/nsPrefBranch.cpp#l213
+// https://hg.mozilla.org/releases/mozilla-esr38/file/008aa6494f90/netwerk/protocol/http/nsHttpHandler.cpp#l1573
+user_pref("intl.accept_languages", "en-US, en");
+// Вопреки своему названию и устаревшей информации в KB MozillaZine, general.useragent.locale уже
+// не влияет на Accept-Language[1], а в основном передается в служебных URL из about:config,
+// куда ее значение подставляется вместо %LOCALE%. Но кроме этого оно еще ошибочно используется
+// в запросах некоторых поисковых движков[2][3] и, возможно, где-то еще, так что проще будет
+// изначально установить именно en-US билд Firefox.
+// [1]: https://bugzilla.mozilla.org/show_bug.cgi?id=448743#c5
+// [2]: https://bugzilla.mozilla.org/show_bug.cgi?id=670450
+// [3]: https://bugzilla.mozilla.org/show_bug.cgi?id=670451
+user_pref("general.useragent.locale", "en-US");
+// Использовать локаль из general.useragent.locale, а не установленную в ОС.
+user_pref("intl.locale.matchOS", false);
 
 // Кроме того, на основе анализа истории уязвимостей в Firefox, разработчиками Tor Browser был
 // сформирован список возможностей, в реализации которых всплывает больше всего уязвимостей.
