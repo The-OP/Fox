@@ -49,6 +49,9 @@
 **A:** Shift-F2: `screenshot --fullpage <имя файла опционально>` <br>
 Также можно использовать кнопку скриншота в Developer Tools (Ctrl+Shift+I), предварительно включив ее в about:config: `devtools.command-button-screenshot.enabled -> true`. Сверхдлинные страницы [не сохраняет](https://bugzilla.mozilla.org/show_bug.cgi?id=766661).
 
+* **Q:** Как уменьшить ширину вкладки, чтобы меньше их прокручивать? <br>
+**A:** Можно воспользоваться [UserCSS](http://www.ghacks.net/2011/02/02/change-firefoxs-minimum-maximum-tab-width/) или [аддоном](https://addons.mozilla.org/firefox/addon/custom-tab-width/).
+
 * **Q:** Как вернуть старую поисковую строку? <br>
 **A:** `about:config -> browser.search.showOneOffButtons -> false` <br>
 Применяется только после перезапуска Firefox, в отличие от большинства настроек about:config.
