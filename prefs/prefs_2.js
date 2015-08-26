@@ -212,8 +212,15 @@ user_pref("media.peerconnection.identity.enabled", false);
 user_pref("media.peerconnection.video.enabled", false);
 user_pref("media.peerconnection.video.h264_enabled", false);
 user_pref("media.peerconnection.turn.disable", true);
-user_pref("media.peerconnection.default_iceservers", "");
+// https://hg.mozilla.org/releases/mozilla-esr38/file/e7f06142f3b5/dom/media/PeerConnection.js#l330
+// https://hg.mozilla.org/releases/mozilla-beta/file/b14997797205/dom/media/PeerConnection.js#l335
+user_pref("media.peerconnection.default_iceservers", "[]");
 user_pref("media.peerconnection.use_document_iceservers", false);
+// Запрещает использование WebRTC на всех интерфейсах кроме loopback.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1189167
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1189040
+// https://hg.mozilla.org/releases/mozilla-beta/rev/955e74958483
+user_pref("media.peerconnection.ice.force_interface", "lo");
 
 // Отключает getUserMedia API, который используется для записи звука с микрофона, изображения с
 // вебкамеры и screen sharing (доступ удаленного компьютера к порции экрана). Ломает Firefox Hello.
