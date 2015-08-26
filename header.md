@@ -36,7 +36,7 @@
 **A:** `about:config -> keyword.enabled -> false`
 
 * **Q:** Что за специальная тема для разработчиков? <br>
-**A:** Тема, использующаяся в Firefox Developer Edition. Поприятнее чем дефолтный Australis. Включить ее можно так: `about:config -> browser.devedition.theme.enabled -> true`
+**A:** Тема, использующаяся в Firefox Developer Edition. В 38 ESR включается так: `about:config -> browser.devedition.theme.enabled -> true`. Для Firefox 40+ придется воспользоваться [аддоном](https://addons.mozilla.org/firefox/addon/devedition-theme-enabler/).
 
 * **Q:** Как копировать ссылки c кириллическим текстом в исходном виде, не закодированном percent-encoding (%D0%9B%D0%B8%D1%81 -> Лис)? <br>
 **A:** `about:config -> network.standard-url.escape-utf8 -> false`
