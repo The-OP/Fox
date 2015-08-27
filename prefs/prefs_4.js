@@ -17,6 +17,22 @@ user_pref("image.cache.size", 0);
 user_pref("webgl.disabled", true);
 user_pref("webgl.force-enabled", false);
 
+// Отключает History API, позволяющее добавлять в историю back/forward вкладки элементы, состоящие
+// из URL и ассоциированных с ними state objects с произвольными данными. Последние сохраняются при
+// перезапусках браузера (structuredCloneState в recovery.js), если включено восстановление сессии.
+// Когда пользователь снова загрузит вкладку с соответствующим элементом истории или перейдет по
+// back/forward на него, вкладка сможет прочитать сохраненный объект из window.history.state.
+// Объекты привязываются именно к элементам истории back/forward вкладки, поэтому прочитать их
+// может только установившая их вкладка, а не любая другая с таким же URL.
+// К сожалению, присваивать maxStateObjectSize 0, не отключая History API целиком, бесполезно - при
+// этом pushState и replaceState, даже с null вместо state object, будут выбрасывать исключения.
+// https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Manipulating_the_browser_history
+// https://hg.mozilla.org/releases/mozilla-esr38/file/aa2ecb8673b1/docshell/base/nsDocShell.cpp#l11491
+user_pref("browser.history.allowPopState", false);
+user_pref("browser.history.allowPushState", false);
+user_pref("browser.history.allowReplaceState", false);
+user_pref("browser.history.maxStateObjectSize", 0);
+
 // Отключает применение к посещенным ссылкам стилей с селектором :visited, что предотвращает
 // возможность выяснить, какие URL есть у пользователя в истории браузера. Главную уязвимость с
 // использованием для этого getComputedStyle() закрыли, однако есть и некоторые другие способы

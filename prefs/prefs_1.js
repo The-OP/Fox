@@ -378,6 +378,7 @@ user_pref("security.tls.insecure_fallback_hosts.use_static_list", false);
 
 // Пользовательский белый список сайтов, которым разрешено устаревшее шифрование.
 // Рекомендуется работать с такими не из под основного профиля.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1114816#c27
 user_pref("security.tls.insecure_fallback_hosts", "");
 
 // Отображать восклицательный знак (ранее - красный замок) в адресной строке для сайтов, не
