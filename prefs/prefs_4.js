@@ -17,6 +17,13 @@ user_pref("image.cache.size", 0);
 user_pref("webgl.disabled", true);
 user_pref("webgl.force-enabled", false);
 
+// Отключает встроенный менеджер паролей (Preferences -> Security -> Remember passwords for sites).
+// Рекомендуется использовать внешний, например, KeePass. После отключения следует удалить
+// сохраненные пароли, хранящиеся в logins.json в профиле (или через Saved Passwords в GUI).
+user_pref("signon.rememberSignons", false);
+// https://hg.mozilla.org/releases/mozilla-esr38/file/aa2ecb8673b1/toolkit/components/passwordmgr/LoginManagerContent.jsm#l524
+user_pref("signon.storeWhenAutocompleteOff", false);
+
 // Отключает History API, позволяющее добавлять в историю back/forward вкладки элементы, состоящие
 // из URL и ассоциированных с ними state objects с произвольными данными. Последние сохраняются при
 // перезапусках браузера (structuredCloneState в recovery.js), если включено восстановление сессии.

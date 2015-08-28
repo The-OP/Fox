@@ -39,6 +39,17 @@ user_pref("browser.fixup.alternate.enabled", false);
 user_pref("browser.formfill.enable", false);
 user_pref("browser.formfill.saveHttpsForms", false);
 
+// Отключает показ текста пароля по клику на соответствующее поле ввода в попапе, предлагающем
+// сохранить введенный пароль.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1169702
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1183908
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1186123
+user_pref("signon.rememberSignons.visibilityToggle", false);
+// Отключает автоподстановку имени пользователя и пароля в форму логина, когда для этого сайта
+// сохранена только одна их пара. Пароль будет подставлен после ввода логина.
+// http://kb.mozillazine.org/Signon.autofillForms
+user_pref("signon.autofillForms", false);
+
 // Отключает автодетект изменения состояния сетевого подключения и связанную с ним самодеятельность
 // вроде рефреша DNS-кэша. -- https://bugzilla.mozilla.org/show_bug.cgi?id=939318
 user_pref("network.notify.changed", false);
