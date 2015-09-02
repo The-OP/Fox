@@ -78,6 +78,13 @@ user_pref("network.security.ports.banned", "4444,9050,9051");
 // каждого загружаемого пользователем файла (якобы для проверки на вирусы), что уже совершенно
 // неприемлемо. Желающие могут установить себе подписку Malware Domains для uBlock Origin, которая
 // включает в себя URL из Safebrowsing и не следит за пользователем.
+// Обращения к Safebrowsing могли создать специальную куку PREF для домена google.com, которая
+// _не удаляется_ через менеджер кук браузера из-за бага и содержит идентификатор пользователя.
+// Поэтому, если Safebrowsing ранее был включен в этом профиле, после его отключения необходимо
+// вручную удалить cookies.sqlite из профиля, или подчистить эту БД каким-либо SQLite-редактором.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1008706
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1026538
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1186772
 // https://blog.mozilla.org/security/2014/07/23/improving-malware-detection-in-firefox/
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_anti-phishing-list-updating
 user_pref("browser.safebrowsing.enabled", false);
