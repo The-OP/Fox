@@ -195,11 +195,19 @@ user_pref("datareporting.healthreport.documentServerURI", "");
 // https://www.mozilla.org/en-US/privacy/firefox/#telemetry
 // https://wiki.mozilla.org/Privacy/Reviews/Telemetry
 // https://wiki.mozilla.org/Security/Reviews/Firefox6/ReviewNotes/telemetry
+// https://wiki.mozilla.org/Telemetry/Testing#Browser_Prefs
+// https://gecko.readthedocs.org/en/latest/toolkit/components/telemetry/telemetry/preferences.html
 user_pref("toolkit.telemetry.enabled", false);
 user_pref("toolkit.telemetry.server", "");
 user_pref("toolkit.telemetry.archive.enabled", false);
 // https://wiki.mozilla.org/Unified_Telemetry
 user_pref("toolkit.telemetry.unified", false);
+// Это должно быть true.
+// https://hg.mozilla.org/releases/mozilla-beta/file/0f8e1375f717/toolkit/components/telemetry/TelemetryController.jsm#l669
+user_pref("toolkit.telemetry.unifiedIsOptIn", true);
+// https://hg.mozilla.org/releases/mozilla-beta/file/0f8e1375f717/browser/app/profile/firefox.js#l1904
+// https://hg.mozilla.org/releases/mozilla-beta/file/0f8e1375f717/toolkit/components/telemetry/TelemetryController.jsm#l628
+user_pref("toolkit.telemetry.optoutSample", false);
 // Отключает отправку информации о падениях браузера в Mozilla (about:crashes).
 user_pref("breakpad.reportURL", "");
 user_pref("dom.ipc.plugins.flash.subprocess.crashreporter.enabled", false);
