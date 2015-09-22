@@ -9,7 +9,7 @@
   * [Интересные ссылки](addendum.md#Интересные-ссылки)
 	
 ## FAQ
-* **Q:** Проблемы с отрисовкой интерфейса, изображений или видео. <br>
+* **Q:** Проблемы с отрисовкой интерфейса, изображений или видео. Внезапные падения браузера.<br>
 **A:** Пробуйте по очереди: <br>
 1) `about:config -> layers.offmainthreadcomposition.enabled -> false` <br>
 2) `about:config -> layers.acceleration.disabled -> true` <br>
