@@ -37,6 +37,8 @@
 ## Продвинутые аддоны
 * [HTTPS Everywhere](https://addons.mozilla.org/en-us/firefox/addon/https-everywhere/). Содержит список сайтов, поддерживающих как HTTP, так HTTPS, и автоматически меняет все HTTP-ссылки, ведущие к этим сайтам, на HTTPS. Аддон вернули на AMO, но на всякий случай - [ссылка](https://www.eff.org/https-everywhere/) на официальный сайт. Правила обновляются редко, актуальную версию правил можно получить [на GitHub](https://github.com/EFForg/https-everywhere), там же можно отправить новое правило.
 
+* [SSleuth](https://addons.mozilla.org/en-US/firefox/addon/ssleuth/). Показывает информацию об используемых криптопримитивах и фичах TLS/SSL в шифрованных соединениях. [Версия с GitHub](https://github.com/sibiantony/ssleuth) имеет расширенную функциональность по сравнению с версией на AMO.
+
 * [RefControl](https://addons.mozilla.org/firefox/addon/refcontrol/). Резалка [рефереров](https://en.wikipedia.org/wiki/HTTP_Referer). Можно тонко тюнить, а можно рубить только рефереры при переходе на другой домен (Block (3rd party)), оставляя внутридоменные, что просто, эффективно для 99% случаев и не ломает так много сайтов как полный запрет.
 
 * [CleanLinks](https://addons.mozilla.org/firefox/addon/clean-links/). Чистит ссылки от редирект-префиксов Гугла и т.п. Имеет белый список как доменов, так и рэгэкспов, чтобы пропускать ссылки со всякими нужными префиксами вроде auth, ServiceLogin и т.п.
