@@ -35,6 +35,9 @@
 * **Q:** Как отключить беспрефиксный поиск в поисковике по умолчанию через адресную строку? <br>
 **A:** `about:config -> keyword.enabled -> false`
 
+* **Q:** Как вернуть настройку `browser.newtab.url` в Firefox 41+? <br>
+**A:** [New Tab Override](https://addons.mozilla.org/firefox/addon/new-tab-override/)
+
 * **Q:** Что за специальная тема для разработчиков? <br>
 **A:** Тема, использующаяся в Firefox Developer Edition. В 38 ESR включается так: `about:config -> browser.devedition.theme.enabled -> true`. Для Firefox 40+ придется воспользоваться [аддоном](https://addons.mozilla.org/firefox/addon/devedition-theme-enabler/).
 
