@@ -430,6 +430,6 @@ user_pref("network.jar.block-remote-files", true);
 user_pref("media.peerconnection.ice.relay_only", true);
 // Разрешает работу WebRTC только на дефолтном сетевом интерфейсе, вследствие чего не
 // происходит раскрытия настоящего IP пользователя, использующего VPN.
-// Пока что не работает вместе с E10S: https://bugzilla.mozilla.org/show_bug.cgi?id=1189041
+// Пока что не работает вместе с E10S: https://bugzilla.mozilla.org/show_bug.cgi?id=1194259
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1189041
 //user_pref("media.peerconnection.ice.default_address_only", true);
