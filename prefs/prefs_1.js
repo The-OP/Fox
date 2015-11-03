@@ -56,6 +56,14 @@ user_pref("browser.tabs.animate", false);
 // используемую для формирования поисковых подсказок.
 user_pref("browser.search.suggest.enabled", false);
 user_pref("browser.urlbar.suggest.searches", false);
+// https://hg.mozilla.org/releases/mozilla-beta/file/00bcc10b3bdc/toolkit/components/places/UnifiedComplete.js#l959
+// https://hg.mozilla.org/releases/mozilla-beta/file/00bcc10b3bdc/toolkit/components/places/UnifiedComplete.js#l1011
+user_pref("browser.urlbar.maxCharsForSearchSuggestions", 0);
+// Отключает предложение включить поисковые подсказки. Должно быть true.
+// https://hg.mozilla.org/releases/mozilla-beta/file/00bcc10b3bdc/toolkit/components/telemetry/docs/environment.rst#l301
+// https://hg.mozilla.org/releases/mozilla-beta/file/00bcc10b3bdc/browser/base/content/urlbarBindings.xml#l953
+// https://hg.mozilla.org/releases/mozilla-beta/file/00bcc10b3bdc/browser/base/content/urlbarBindings.xml#l1201
+user_pref("browser.urlbar.userMadeSearchSuggestionsChoice", true);
 // Отключает поиск через адресную строку без заданных поисковикам префиксов-кейвордов.
 // http://kb.mozillazine.org/Keyword.enabled
 user_pref("keyword.enabled", false);
@@ -111,11 +119,15 @@ user_pref("browser.safebrowsing.reportMalwareMistakeURL", "");
 // подписками и является менее эффективным (т.к. основан на списке от Disconnect).
 // https://support.mozilla.org/en-US/kb/tracking-protection-firefox
 // https://wiki.mozilla.org/Polaris
+// https://hg.mozilla.org/releases/mozilla-beta/file/00bcc10b3bdc/browser/base/content/browser-trackingprotection.js
 user_pref("privacy.trackingprotection.enabled", false);
 user_pref("privacy.trackingprotection.pbmode.enabled", false);
 user_pref("browser.trackingprotection.updateURL", "");
 user_pref("browser.trackingprotection.gethashURL", "");
 user_pref("browser.polaris.enabled", false);
+user_pref("privacy.trackingprotection.introURL", "");
+// https://hg.mozilla.org/releases/mozilla-beta/file/00bcc10b3bdc/browser/base/content/browser-trackingprotection.js#l6
+//user_pref("privacy.trackingprotection.introCount", 1);
 
 // Вообще не регистрировать таблицы Safebrowsing и Tracking Protection в URL Classifier, пусть даже
 // в отключенном виде и с пустыми URL для обновления.
@@ -127,6 +139,7 @@ user_pref("urlclassifier.phishTable", "");
 user_pref("urlclassifier.downloadBlockTable", "");
 user_pref("urlclassifier.downloadAllowTable", "");
 user_pref("urlclassifier.trackingTable", "");
+user_pref("urlclassifier.trackingWhitelistTable", "");
 user_pref("urlclassifier.disallow_completions", "");
 
 // Отключает <a ping>, которые отправляют запрос по отдельному указанному адресу (с целью трекинга)
@@ -165,6 +178,7 @@ user_pref("browser.startup.homepage_override.mstone", "ignore");
 user_pref("startup.homepage_override_url", "");
 // Отключает приветственную страницу при первом запуске браузера с новым профилем.
 user_pref("startup.homepage_welcome_url", "");
+user_pref("startup.homepage_welcome_url.additional", "");
 // Отключает замеры времени запуска браузера и уведомление о слишком долгом по его мнению старте.
 // https://hg.mozilla.org/releases/mozilla-esr38/file/f9441895096d/browser/components/nsBrowserGlue.js#l687
 user_pref("browser.slowStartup.notificationDisabled", true);
@@ -188,7 +202,9 @@ user_pref("extensions.getAddons.cache.enabled", false);
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_diagnostics
 user_pref("datareporting.healthreport.service.enabled", false);
 user_pref("datareporting.healthreport.uploadEnabled", false);
+// https://hg.mozilla.org/releases/mozilla-beta/file/00bcc10b3bdc/services/datareporting/policy.jsm#l366
 user_pref("datareporting.policy.dataSubmissionEnabled", false);
+user_pref("datareporting.policy.dataSubmissionEnabled.v2", false);
 user_pref("datareporting.healthreport.about.reportUrl", "");
 user_pref("datareporting.healthreport.about.reportUrlUnified", "");
 user_pref("datareporting.healthreport.documentServerURI", "");
@@ -401,3 +417,19 @@ user_pref("security.tls.insecure_fallback_hosts", "");
 // описанной в CVE-2009-3555).
 // https://wiki.mozilla.org/Security:Renegotiation
 user_pref("security.ssl.treat_unsafe_negotiation_as_broken", true);
+
+// Запрещает Firefox открывать JAR-файлы вместо скачивания, что повышает безопасность.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1173171
+user_pref("network.jar.block-remote-files", true);
+
+// Запрещает работу WebRTC в режиме P2P, разрешая ее только через сервер третьей стороны, что
+// предотвращает утечку IP-адресов всех сетевых интерфейсов компьютера (подробнее - см. prefs_2).
+// https://wiki.mozilla.org/Media/WebRTC/Privacy
+// http://www.html5rocks.com/en/tutorials/webrtc/infrastructure/
+// https://en.wikipedia.org/wiki/Interactive_Connectivity_Establishment
+user_pref("media.peerconnection.ice.relay_only", true);
+// Разрешает работу WebRTC только на дефолтном сетевом интерфейсе, вследствие чего не
+// происходит раскрытия настоящего IP пользователя, использующего VPN.
+// Пока что не работает вместе с E10S: https://bugzilla.mozilla.org/show_bug.cgi?id=1189041
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1189041
+//user_pref("media.peerconnection.ice.default_address_only", true);

@@ -77,6 +77,8 @@ user_pref("readinglist.server", "");
 // https://wiki.mozilla.org/QA/Reader_view
 user_pref("reader.parse-on-load.enabled", false);
 user_pref("reader.parse-on-load.force-enabled", false);
+// https://hg.mozilla.org/releases/mozilla-beta/file/00bcc10b3bdc/modules/libpref/init/all.js#l4997
+user_pref("reader.errors.includeURLs", false);
 // При каждом изменении window.location значение сравнивается с этой настройкой, чтобы начать UI-тур
 // по режиму чтения. Значение этого параметра используется как регэксп без проверки на пустую строку,
 // поэтому обнулять его нельзя. Вместо этого используем регэксп, возвращающий для любой строки false.
@@ -165,6 +167,9 @@ user_pref("dom.gamepad.non_standard_events.enabled", false);
 // Отключает поддержку устройств виртуальной реальности.
 // https://developer.mozilla.org/en-US/Firefox/Releases/36#Interfaces.2FAPIs.2FDOM
 user_pref("dom.vr.enabled", false);
+user_pref("dom.vr.cardboard.enabled", false);
+user_pref("dom.vr.oculus.enabled", false);
+user_pref("dom.vr.oculus050.enabled", false);
 // Отключает API для телефонных звонков, использующийся в Firefox OS.
 // https://wiki.mozilla.org/WebAPI/Security/WebTelephony
 user_pref("dom.telephony.enabled", false);
@@ -175,6 +180,12 @@ user_pref("dom.telephony.enabled", false);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1158029
 user_pref("dom.presentation.enabled", false);
 user_pref("dom.presentation.tcp_server.debug", false);
+// Отключает обнаружение устройств для презентации в локальной сети.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1080474
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1115480
+// https://hg.mozilla.org/releases/mozilla-beta/file/00bcc10b3bdc/dom/presentation/provider/MulticastDNSDeviceProvider.cpp#l18
+user_pref("dom.presentation.discovery.enabled", false);
+user_pref("dom.presentation.discoverable", false);
 
 // Отключает Push API, позволяющий веб-приложениям регистрировать идентификатор на сервере Мозиллы,
 // чтобы сайт приложения оставлял там уведомления, которые пользователь получит, когда выйдет онлайн.
@@ -190,12 +201,21 @@ user_pref("dom.push.userAgentID", "");
 user_pref("dom.push.connection.enabled", false);
 user_pref("dom.push.adaptive.enabled", false);
 user_pref("dom.push.udp.wakeupEnabled", false);
+// https://hg.mozilla.org/releases/mozilla-beta/file/00bcc10b3bdc/modules/libpref/init/all.js#l4445
+// https://hg.mozilla.org/releases/mozilla-beta/file/00bcc10b3bdc/dom/push/PushRecord.jsm#l59
+user_pref("dom.push.maxQuotaPerSubscription", 0);
 
 // Отключает Simple Push API - нестандартную альтернативу Push API от Mozilla. В данный момент
 // используется только на Firefox OS, но возможно будет портировано и на десктопную версию.
 // https://wiki.mozilla.org/Security/Reviews/SimplePush
 user_pref("services.push.enabled", false);
 user_pref("services.push.serverURL", "");
+
+// Отключает SystemUpdate API, использующийся в Firefox OS.
+// https://wiki.mozilla.org/WebAPI/SystemUpdateAPI
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1037329
+user_pref("dom.system_update.enabled", false);
+user_pref("dom.system_update.debug", false);
 
 // Отключает User Timing API - доступ к высокочастотному таймеру, при помощи которого может быть
 // осуществлено прослушивание процессорного кэша из непривилегированного JS-кода.
@@ -252,6 +272,8 @@ user_pref("media.getusermedia.screensharing.allowed_domains", "");
 user_pref("media.getusermedia.aec_enabled", false);
 user_pref("media.getusermedia.agc_enabled", false);
 user_pref("media.getusermedia.noise_enabled", false);
+// https://hg.mozilla.org/releases/mozilla-beta/file/00bcc10b3bdc/dom/media/MediaManager.cpp#l1942
+user_pref("media.getusermedia.audiocapture.enabled", false);
 
 // Отключает видеозахват с элемента canvas.
 // https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/captureStream
@@ -280,6 +302,12 @@ user_pref("loop.oauth.google.scope", "");
 user_pref("loop.seenToS", "unseen");
 user_pref("loop.showPartnerLogo", false);
 user_pref("loop.support_url", "");
+// Отключает появляющееся раз в 6 месяцев окно с предложением оставить отзыв о работе Hello.
+// https://hg.mozilla.org/releases/mozilla-beta/file/00bcc10b3bdc/browser/components/loop/content/js/conversationAppStore.js#l54
+// https://hg.mozilla.org/releases/mozilla-beta/file/00bcc10b3bdc/browser/components/loop/content/js/conversation.js#l47
+user_pref("loop.feedback.dateLastSeenSec", 1446595200); // 2015-11-04, 00:00 UTC
+user_pref("loop.feedback.periodSec", 630720000); // 20 лет
+user_pref("loop.feedback.formURL", "");
 
 // Отключает поддержку Encrypted Media Extensions (DRM для HTML5-видео).
 user_pref("media.eme.enabled", false);
@@ -332,6 +360,25 @@ user_pref("devtools.webide.templatesURL_cache", "");
 // Отключает возможность отладки через сеть этого экземпляра Firefox другим и наоборот (а также
 // самого себя через loopback-соединение Browser Toolbox). Включена по умолчанию на Developer Edition.
 user_pref("devtools.debugger.remote-enabled", false);
+
+// Отключает обнаружение captive portal - подмены всех запрашиваемых пользователем страниц на
+// страницы провайдера. Эта техника используется в местах публичного Wi-Fi и некоторыми операторами
+// для аунтефикации или показа пользователю какой-либо информации (например, о необходимости
+// пополнить счет). Обнаружение происходит через периодическое скачивание файла с сервера Мозиллы.
+// https://en.wikipedia.org/wiki/Captive_portal
+// https://github.com/vtsatskin/FX-Captive-Portals-Design
+// https://wiki.mozilla.org/Necko/CaptivePortal
+// https://hg.mozilla.org/releases/mozilla-beta/file/00bcc10b3bdc/netwerk/base/nsIOService.cpp#l1246
+user_pref("network.captive-portal-service.enabled", false);
+// https://hg.mozilla.org/releases/mozilla-beta/file/00bcc10b3bdc/modules/libpref/init/all.js#l4684
+// https://hg.mozilla.org/releases/mozilla-beta/file/00bcc10b3bdc/netwerk/base/CaptivePortalService.cpp#l143
+// https://hg.mozilla.org/releases/mozilla-beta/file/00bcc10b3bdc/netwerk/base/CaptivePortalService.cpp#l76
+user_pref("network.captive-portal-service.minInterval", 0);
+// https://hg.mozilla.org/releases/mozilla-beta/file/380817d573cd/toolkit/components/captivedetect/captivedetect.js#l199
+// https://hg.mozilla.org/releases/mozilla-beta/file/380817d573cd/toolkit/components/captivedetect/captivedetect.js#l301
+// https://hg.mozilla.org/releases/mozilla-beta/file/380817d573cd/toolkit/components/captivedetect/captivedetect.js#l345
+user_pref("captivedetect.canonicalURL", "");
+user_pref("captivedetect.maxRetryCount", 0);
 
 // Отключает распространенные плагины. Рекомендуется их вообще удалять, ибо, как показывает практика,
 // плагины - самые дырявые компоненты браузера.
@@ -408,6 +455,9 @@ user_pref("dom.caches.enabled", false);
 // https://hg.mozilla.org/releases/mozilla-beta/file/8cf5636886f0/dom/canvas/WebGLContextState.cpp#l195
 // https://hg.mozilla.org/releases/mozilla-beta/file/8cf5636886f0/dom/canvas/WebGLContextExtensions.cpp#l99
 user_pref("webgl.disable-debug-renderer-info", true);
+// Переменовано в Firefox 42:
+// https://hg.mozilla.org/releases/mozilla-beta/file/00bcc10b3bdc/dom/canvas/WebGLContextExtensions.cpp#l99
+user_pref("webgl.enable-debug-renderer-info", false);
 
 // Блокировка загрузки незащищенного содержимого на HTTPS-страницах. Если какие-то ресурсы были
 // заблокированы, в адресной строке отображается щит.

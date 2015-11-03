@@ -138,6 +138,7 @@ user_pref("noscript.forbidFonts", true);
 user_pref("noscript.global", false);
 // Отключает поддержку соответствующих форматов/кодеков.
 user_pref("media.format-reader.mp4", false);
+user_pref("media.format-reader.webm", false);
 user_pref("media.fragmented-mp4.enabled", false);
 user_pref("media.fragmented-mp4.exposed", false);
 user_pref("media.fragmented-mp4.ffmpeg.enabled", false);
