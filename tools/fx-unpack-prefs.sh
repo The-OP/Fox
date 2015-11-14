@@ -3,18 +3,19 @@ die() { echo "$1"; exit 1; }
 
 test -e "$1" || die "ERROR: Specify a Firefox distro downloaded by fx-get-dist."
 
-fxext="${1##*.}"
+fxname=$(basename "$1")
+fxext="${fxname##*.}"
 if [ "$fxext" = "zip" ]; then
-	dest_dir=./${1%.zip}
+	dest_dir=./${fxname%.zip}
 	subdir=firefox
 	unzip -d "$dest_dir" "$1" "$subdir/omni.ja" "$subdir/browser/omni.ja" "$subdir/webapprt/omni.ja"
 elif [ "$fxext" = "bz2" ]; then
-	dest_dir=./${1%.tar.bz2}
+	dest_dir=./${fxname%.tar.bz2}
 	subdir=firefox
 	mkdir -p "$dest_dir"
 	tar -C "$dest_dir" -xjf "$1" "$subdir/omni.ja" "$subdir/browser/omni.ja" "$subdir/webapprt/omni.ja"
 elif [ "$fxext" = "exe" ]; then
-	dest_dir=./${1%.exe}
+	dest_dir=./${fxname%.exe}
 	subdir=core
 	7z x -o"$dest_dir" "$1" "$subdir/omni.ja" "$subdir/browser/omni.ja" "$subdir/webapprt/omni.ja"
 else

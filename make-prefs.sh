@@ -1,6 +1,7 @@
 #!/bin/sh
+# This script is not needed right now.
 
-FOXES="3800 3900"
+FOXES=""
 
 for f in prefs/prefs_*.meta.js; do
     for FX in $FOXES; do

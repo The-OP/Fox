@@ -1,4 +1,3 @@
-
 // Минимальный интервал в миллисекундах для записи изменений в сессии на диск. Дефолтные 15 секунд -
 // маловато, особенно для мегабайтных сессий.
 user_pref("browser.sessionstore.interval", 60000);
@@ -23,9 +22,6 @@ user_pref("browser.sessionhistory.max_total_viewers", 2);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=850607
 user_pref("memory.free_dirty_pages", true);
 
-// Использовать локаль из general.useragent.locale, а не установленную в ОС.
-user_pref("intl.locale.matchOS", false);
-
 // Отключает предзагрузку ссылок, на которые по мнению браузера вы собираетесь кликнуть.
 // https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_link-prefetching
@@ -34,7 +30,7 @@ user_pref("network.prefetch-next", false);
 // https://developer.mozilla.org/en-US/docs/Web/HTTP/Controlling_DNS_prefetching
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_dns-prefetching
 user_pref("network.dns.disablePrefetch", true);
-// https://mxr.mozilla.org/mozilla-esr38/source/dom/html/nsHTMLDNSPrefetch.cpp?rev=96e6f9392598#64
+// https://hg.mozilla.org/releases/mozilla-esr38/file/96e6f9392598/dom/html/nsHTMLDNSPrefetch.cpp#l64
 user_pref("network.dns.disablePrefetchFromHTTPS", true);
 // И предварительный коннект к хостам.
 // https://bugzilla.mozilla.org/show_bug.cgi?id=814169
@@ -60,6 +56,14 @@ user_pref("browser.tabs.animate", false);
 // используемую для формирования поисковых подсказок.
 user_pref("browser.search.suggest.enabled", false);
 user_pref("browser.urlbar.suggest.searches", false);
+// https://hg.mozilla.org/releases/mozilla-beta/file/00bcc10b3bdc/toolkit/components/places/UnifiedComplete.js#l959
+// https://hg.mozilla.org/releases/mozilla-beta/file/00bcc10b3bdc/toolkit/components/places/UnifiedComplete.js#l1011
+user_pref("browser.urlbar.maxCharsForSearchSuggestions", 0);
+// Отключает предложение включить поисковые подсказки. Должно быть true.
+// https://hg.mozilla.org/releases/mozilla-beta/file/00bcc10b3bdc/toolkit/components/telemetry/docs/environment.rst#l301
+// https://hg.mozilla.org/releases/mozilla-beta/file/00bcc10b3bdc/browser/base/content/urlbarBindings.xml#l953
+// https://hg.mozilla.org/releases/mozilla-beta/file/00bcc10b3bdc/browser/base/content/urlbarBindings.xml#l1201
+user_pref("browser.urlbar.userMadeSearchSuggestionsChoice", true);
 // Отключает поиск через адресную строку без заданных поисковикам префиксов-кейвордов.
 // http://kb.mozillazine.org/Keyword.enabled
 user_pref("keyword.enabled", false);
@@ -73,9 +77,6 @@ user_pref("browser.search.update", false);
 // и при следующем подключении заранее соединяющийся со всеми хостами, которые понадобятся.
 // https://wiki.mozilla.org/Privacy/Reviews/Necko
 user_pref("network.predictor.enabled", false);
-// network.predictor.max-db-size нужно устанавливать в 0, иначе в профиле появляется БД посещенных
-// сайтов, несмотря на отключенный network.predictor.enabled.
-user_pref("network.predictor.max-db-size", 0);
 
 // Запрещает сайтам установку соединений на критически важные порты, занятые I2P и Tor.
 user_pref("network.security.ports.banned", "4444,9050,9051");
@@ -85,6 +86,13 @@ user_pref("network.security.ports.banned", "4444,9050,9051");
 // каждого загружаемого пользователем файла (якобы для проверки на вирусы), что уже совершенно
 // неприемлемо. Желающие могут установить себе подписку Malware Domains для uBlock Origin, которая
 // включает в себя URL из Safebrowsing и не следит за пользователем.
+// Обращения к Safebrowsing могли создать специальную куку PREF для домена google.com, которая
+// _не удаляется_ через менеджер кук браузера из-за бага и содержит идентификатор пользователя.
+// Поэтому, если Safebrowsing ранее был включен в этом профиле, после его отключения необходимо
+// вручную удалить cookies.sqlite из профиля, или подчистить эту БД каким-либо SQLite-редактором.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1008706
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1026538
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1186772
 // https://blog.mozilla.org/security/2014/07/23/improving-malware-detection-in-firefox/
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_anti-phishing-list-updating
 user_pref("browser.safebrowsing.enabled", false);
@@ -103,27 +111,35 @@ user_pref("browser.safebrowsing.reportMalwareURL", "");
 user_pref("browser.safebrowsing.reportPhishURL", "");
 user_pref("browser.safebrowsing.reportURL", "");
 user_pref("browser.safebrowsing.updateURL", "");
+user_pref("browser.safebrowsing.reportPhishMistakeURL", "");
+user_pref("browser.safebrowsing.reportPhishURL", "");
+user_pref("browser.safebrowsing.reportMalwareMistakeURL", "");
 
 // Отключает мозилловский анти-трекинговый список, который дублирует функции uBlock с соответствующими
 // подписками и является менее эффективным (т.к. основан на списке от Disconnect).
 // https://support.mozilla.org/en-US/kb/tracking-protection-firefox
 // https://wiki.mozilla.org/Polaris
+// https://hg.mozilla.org/releases/mozilla-beta/file/00bcc10b3bdc/browser/base/content/browser-trackingprotection.js
 user_pref("privacy.trackingprotection.enabled", false);
 user_pref("privacy.trackingprotection.pbmode.enabled", false);
 user_pref("browser.trackingprotection.updateURL", "");
 user_pref("browser.trackingprotection.gethashURL", "");
 user_pref("browser.polaris.enabled", false);
+user_pref("privacy.trackingprotection.introURL", "");
+// https://hg.mozilla.org/releases/mozilla-beta/file/00bcc10b3bdc/browser/base/content/browser-trackingprotection.js#l6
+//user_pref("privacy.trackingprotection.introCount", 1);
 
 // Вообще не регистрировать таблицы Safebrowsing и Tracking Protection в URL Classifier, пусть даже
 // в отключенном виде и с пустыми URL для обновления.
-// https://mxr.mozilla.org/mozilla-release/source/toolkit/components/url-classifier/SafeBrowsing.jsm?rev=6f3151d4ff03
-// https://mxr.mozilla.org/mozilla-release/source/toolkit/components/url-classifier/nsIUrlListManager.idl?rev=326bab27cc3c#29
-// https://mxr.mozilla.org/mozilla-release/source/toolkit/components/url-classifier/content/listmanager.js?rev=76c0924aea88#88
+// https://hg.mozilla.org/releases/mozilla-release/file/6f3151d4ff03/toolkit/components/url-classifier/SafeBrowsing.jsm
+// https://hg.mozilla.org/releases/mozilla-release/file/326bab27cc3c/toolkit/components/url-classifier/nsIUrlListManager.idl#l29
+// https://hg.mozilla.org/releases/mozilla-release/file/76c0924aea88/toolkit/components/url-classifier/content/listmanager.js#l88
 user_pref("urlclassifier.malwareTable", "");
 user_pref("urlclassifier.phishTable", "");
 user_pref("urlclassifier.downloadBlockTable", "");
 user_pref("urlclassifier.downloadAllowTable", "");
 user_pref("urlclassifier.trackingTable", "");
+user_pref("urlclassifier.trackingWhitelistTable", "");
 user_pref("urlclassifier.disallow_completions", "");
 
 // Отключает <a ping>, которые отправляют запрос по отдельному указанному адресу (с целью трекинга)
@@ -133,7 +149,7 @@ user_pref("browser.send_pings", false);
 // https://developer.mozilla.org/en-US/docs/Web/API/navigator.sendBeacon
 user_pref("beacon.enabled", false);
 
-// Отключает добавление в Speed Dial сайтов спонсоров Mozilla и сбор статистики кликов по ним.
+// Отключает добавление в New Tab Page Tiles сайтов спонсоров Mozilla и сбор статистики кликов по ним.
 // После отключения следует удалить directoryLinks.json в about:cache -> <директория на уровень выше cache2>,
 // чтобы уже загруженная реклама не показывалась -- https://support.mozilla.org/en-US/questions/1030849
 // https://wiki.mozilla.org/Tiles
@@ -143,19 +159,31 @@ user_pref("browser.newtabpage.directory.ping", "");
 // Firefox не проверяет эту опцию на пустую строку и XHR начинает ругаться в консоль, если она пустая.
 user_pref("browser.newtabpage.directory.source", "data:application/json,{}");
 user_pref("browser.newtabpage.enhanced", false);
+// Отключает предупреждение о вышеописанной рекламе при первом открытии New Tab Page.
+user_pref("browser.newtabpage.introShown", true);
 // Отключает загрузку рекламы сервисов от самой Mozilla (Sync, Hello, версий для Android) в about:home.
 // https://wiki.mozilla.org/Websites/Snippets
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_snippets
 user_pref("browser.aboutHomeSnippets.updateUrl", "");
 
+// Отключает проверку при запуске, является ли Firefox браузером по умолчанию.
+// Preferences -> General -> Startup -> Always check if Firefox is your default browser
+user_pref("browser.shell.checkDefaultBrowser", false);
 // Отключает автоматическое открытие вкладки с описанием изменений в новой версии после обновления.
 // http://kb.mozillazine.org/Browser.startup.homepage_override.mstone
+// https://hg.mozilla.org/releases/mozilla-esr38/file/29eac8276b62/browser/components/nsBrowserContentHandler.js#l565
+// https://hg.mozilla.org/releases/mozilla-esr38/file/29eac8276b62/browser/components/nsBrowserContentHandler.js#l102
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_whats-new-page
 user_pref("browser.startup.homepage_override.mstone", "ignore");
+user_pref("startup.homepage_override_url", "");
 // Отключает приветственную страницу при первом запуске браузера с новым профилем.
 user_pref("startup.homepage_welcome_url", "");
+user_pref("startup.homepage_welcome_url.additional", "");
+// Отключает замеры времени запуска браузера и уведомление о слишком долгом по его мнению старте.
+// https://hg.mozilla.org/releases/mozilla-esr38/file/f9441895096d/browser/components/nsBrowserGlue.js#l687
+user_pref("browser.slowStartup.notificationDisabled", true);
 // Отключает показ URL с описанием функций, связанных с Windows 10, у пользователей последней.
-// https://mxr.mozilla.org/mozilla-beta/source/browser/components/nsBrowserContentHandler.js?rev=883275447631#546
+// https://hg.mozilla.org/releases/mozilla-beta/file/883275447631/browser/components/nsBrowserContentHandler.js#l546
 user_pref("browser.usedOnWindows10", true);
 user_pref("browser.usedOnWindows10.introURL", "");
 
@@ -170,19 +198,32 @@ user_pref("extensions.webservice.discoverURL", "");
 user_pref("extensions.getAddons.cache.enabled", false);
 
 // Отключает телеметрию.
+// https://support.mozilla.org/en-US/kb/firefox-health-report-understand-your-browser-perf
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_diagnostics
 user_pref("datareporting.healthreport.service.enabled", false);
 user_pref("datareporting.healthreport.uploadEnabled", false);
+// https://hg.mozilla.org/releases/mozilla-beta/file/00bcc10b3bdc/services/datareporting/policy.jsm#l366
 user_pref("datareporting.policy.dataSubmissionEnabled", false);
-user_pref("datareporting.policy.dataSubmissionPolicyAccepted", false);
-user_pref("datareporting.policy.dataSubmissionPolicyBypassAcceptance", false);
+user_pref("datareporting.policy.dataSubmissionEnabled.v2", false);
 user_pref("datareporting.healthreport.about.reportUrl", "");
+user_pref("datareporting.healthreport.about.reportUrlUnified", "");
 user_pref("datareporting.healthreport.documentServerURI", "");
+// https://www.mozilla.org/en-US/privacy/firefox/#telemetry
+// https://wiki.mozilla.org/Privacy/Reviews/Telemetry
+// https://wiki.mozilla.org/Security/Reviews/Firefox6/ReviewNotes/telemetry
+// https://wiki.mozilla.org/Telemetry/Testing#Browser_Prefs
+// https://gecko.readthedocs.org/en/latest/toolkit/components/telemetry/telemetry/preferences.html
 user_pref("toolkit.telemetry.enabled", false);
 user_pref("toolkit.telemetry.server", "");
 user_pref("toolkit.telemetry.archive.enabled", false);
 // https://wiki.mozilla.org/Unified_Telemetry
 user_pref("toolkit.telemetry.unified", false);
+// Это должно быть true.
+// https://hg.mozilla.org/releases/mozilla-beta/file/0f8e1375f717/toolkit/components/telemetry/TelemetryController.jsm#l669
+user_pref("toolkit.telemetry.unifiedIsOptIn", true);
+// https://hg.mozilla.org/releases/mozilla-beta/file/0f8e1375f717/browser/app/profile/firefox.js#l1904
+// https://hg.mozilla.org/releases/mozilla-beta/file/0f8e1375f717/toolkit/components/telemetry/TelemetryController.jsm#l628
+user_pref("toolkit.telemetry.optoutSample", false);
 // Отключает отправку информации о падениях браузера в Mozilla (about:crashes).
 user_pref("breakpad.reportURL", "");
 user_pref("dom.ipc.plugins.flash.subprocess.crashreporter.enabled", false);
@@ -191,6 +232,27 @@ user_pref("dom.ipc.plugins.reportCrashURL", false);
 // Отключает предложения оценить работу Firefox и отправить пожертвования Mozilla.
 // https://wiki.mozilla.org/Advocacy/heartbeat
 user_pref("browser.selfsupport.url", "");
+
+// Отключает установку дефолтных пермишнов (resource://app/defaults/permissions) в Permission Manager.
+// Среди которых есть пермишн install для AMO, из-за чего браузер в AMO -> Themes (со включенным JS)
+// скачивает и применяет темы по mouseover, без подтверждения установки.
+// Еще в том списке есть пермишн remote-troubleshooting, позволяющий скриптам на сайтах, которым он задан
+// (support.mozilla.org и input.mozilla.org), читать часть информации, перечисленной в about:support,
+// когда пользователь заходит на эти сайты (со включенным JS). Причем пермишны remote-troubleshooting,
+// в отличие от install, не видны через UI браузера (Page Info -> Permissions). Протестировать этот
+// механизм и узнать, какая именно информация доступна, можно здесь[1], задав hg.mozilla.org пермишн
+// remote-troubleshooting путем присвоения этой настройке строки[2] (без кавычек) и перезапуска браузера.
+// Отключение установки пермишнов из дефолтного списка решает обе вышеописанные проблемы.
+// [1]: https://hg.mozilla.org/releases/mozilla-esr38/raw-file/569b611715e0/browser/base/content/test/general/test_remoteTroubleshoot.html
+// [2]: "data:text/plain,host%09remote-troubleshooting%091%09hg.mozilla.org"
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1079563
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1091944
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1091942
+// https://hg.mozilla.org/releases/mozilla-esr38/file/f402bfa9a35e/browser/base/content/test/general/browser_remoteTroubleshoot.js
+// https://hg.mozilla.org/releases/mozilla-esr38/file/f9441895096d/browser/components/nsBrowserGlue.js#l833
+// https://hg.mozilla.org/releases/mozilla-esr38/file/56d740d0769f/toolkit/modules/WebChannel.jsm#l139
+// https://hg.mozilla.org/releases/mozilla-esr38/file/a20c7910a82f/extensions/cookie/nsPermissionManager.cpp#l1888
+user_pref("permissions.manager.defaultsUrl", "");
 
 // Отключает автоматическую отправку отчетов в Mozilla об ошибках в сертификатах сайтов.
 // https://bugzilla.mozilla.org/show_bug.cgi?id=846489
@@ -205,13 +267,16 @@ user_pref("browser.pocket.site", "");
 user_pref("browser.pocket.oAuthConsumerKey", "");
 user_pref("browser.pocket.enabledLocales", "");
 
-// Отключает сбор статистики для оценки эффективности текущих значений DNS TTL.
-// Этот параметр убрали в Fx36.
-// user_pref("dns.ttl-experiment.enabled", false);
-// Отключает остальные эксперименты Mozilla над пользователем.
+// Отключает эксперименты - фоновые тесты различных отключенных пока по умолчанию функций (вроде
+// HTTP Pipelining) со сбором телеметрии.
+// https://hg.mozilla.org/releases/mozilla-esr38/file/008aa6494f90/netwerk/protocol/http/nsHttpHandler.cpp#l1406
 user_pref("network.allow-experiments", false);
-user_pref("experiments.enabled", false);
+// https://hg.mozilla.org/releases/mozilla-esr38/file/91100de4f2ad/toolkit/mozapps/extensions/internal/XPIProvider.jsm#l7742
 user_pref("experiments.supported", false);
+// https://hg.mozilla.org/releases/mozilla-esr38/file/8bc9656cad94/browser/experiments/ExperimentsService.js
+// https://hg.mozilla.org/releases/mozilla-esr38/file/8bc9656cad94/browser/experiments/Experiments.jsm
+user_pref("experiments.enabled", false);
+user_pref("experiments.activeExperiment", false);
 user_pref("experiments.manifest.uri", "");
 
 // Отключает автообновление стилей Stylish -- https://userstyles.org/help/stylish_firefox
@@ -244,6 +309,25 @@ user_pref("dom.disable_window_open_feature.status", true);
 user_pref("dom.disable_window_open_feature.titlebar", true);
 user_pref("dom.disable_window_open_feature.toolbar", true);
 
+// Запрещает сайтам использовать Offline App Cache без разрешения пользователя. Список разрешенных
+// сайтов управляется через Preferences -> Advanced -> Network -> Offline Web Content and User Data.
+// Демо можно посмотреть тут: http://appcache.offline.technology/demo/index.html мониторя
+// использование через about:cache -> appcache и меняя настройки.
+// http://www.w3.org/TR/offline-webapps/
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Using_the_application_cache
+// https://hg.mozilla.org/releases/mozilla-esr38/file/ae7fbd79941b/browser/base/content/browser.js#l6020
+user_pref("browser.offline-apps.notify", true);
+// Эта настройка по умолчанию включена и дает всем сайтам permission "offline-app", так что
+// без ее отключения browser.offline-apps.notify _абсолютно бесполезна_, вопреки ее названию
+// ("Tell me when a website asks to store data for offline use"), а также тому, что написано про нее в
+// KB MozillaZine и некоторых других источниках. С отключением offline-apps.allow_by_default, этот
+// permission будет ставиться только при подтверждении пользователем (проверено в Firefox 38.2.0 и 40.0).
+// https://hg.mozilla.org/releases/mozilla-esr38/file/dd257f17530c/uriloader/prefetch/nsOfflineCacheUpdateService.cpp#l649
+// https://hg.mozilla.org/releases/mozilla-esr38/file/dd257f17530c/dom/base/nsContentSink.cpp#l1056
+// https://hg.mozilla.org/releases/mozilla-esr38/file/5be76431120a/dom/base/nsContentUtils.cpp#l1709
+// https://hg.mozilla.org/releases/mozilla-esr38/file/dd257f17530c/uriloader/prefetch/nsOfflineCacheUpdateService.cpp#l744
+user_pref("offline-apps.allow_by_default", false);
+
 // Отключает автоматическое скачивание и установку ADB Helper и аддона для удаленной отладки мобильных
 // браузеров при первом запуске WebIDE. Ручная установка через меню WebIDE все еще будет работать.
 // https://developer.mozilla.org/en-US/docs/Tools/Valence
@@ -260,18 +344,18 @@ user_pref("devtools.remote.wifi.visible", false);
 // Отключает команду screenshot --imgur, которая автоматически загружает сделанный скриншот на Imgur.
 // https://bugzilla.mozilla.org/show_bug.cgi?id=992386
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1173158
-// https://mxr.mozilla.org/mozilla-beta/source/toolkit/devtools/gcli/commands/screenshot.js?rev=ab89cbfcd3e6#382
+// https://hg.mozilla.org/releases/mozilla-beta/file/ab89cbfcd3e6/toolkit/devtools/gcli/commands/screenshot.js#l382
 user_pref("devtools.gcli.imgurClientID", "");
 user_pref("devtools.gcli.imgurUploadURL", "");
 
 // Отключает скачивание и показ подсказок для свойств CSS с developer.mozilla.org в Developer Tools.
-// https://mxr.mozilla.org/mozilla-beta/source/browser/devtools/styleinspector/test/browser_ruleview_context-menu-show-mdn-docs-03.js?rev=7f005a3c9f9d#5
-// https://mxr.mozilla.org/mozilla-beta/source/browser/devtools/styleinspector/rule-view.js?rev=14b2376c96fa#1538
-// https://mxr.mozilla.org/mozilla-beta/source/browser/devtools/shared/widgets/MdnDocsWidget.js?rev=7f005a3c9f9d#5
+// https://hg.mozilla.org/releases/mozilla-beta/file/7f005a3c9f9d/browser/devtools/styleinspector/test/browser_ruleview_context-menu-show-mdn-docs-03.js#l5
+// https://hg.mozilla.org/releases/mozilla-beta/file/14b2376c96fa/browser/devtools/styleinspector/rule-view.js#l1538
+// https://hg.mozilla.org/releases/mozilla-beta/file/7f005a3c9f9d/browser/devtools/shared/widgets/MdnDocsWidget.js#l5
 user_pref("devtools.inspector.mdnDocsTooltip.enabled", false);
 
 // Отключает рекламу Firefox Developer Edition в Developer Tools.
-// https://mxr.mozilla.org/mozilla-esr38/source/browser/devtools/shared/doorhanger.js?rev=0f8338121472#17
+// https://hg.mozilla.org/releases/mozilla-esr38/file/0f8338121472/browser/devtools/shared/doorhanger.js#l17
 user_pref("devtools.devedition.promo.enabled", false);
 user_pref("devtools.devedition.promo.shown", true);
 user_pref("devtools.devedition.promo.url", "");
@@ -280,29 +364,72 @@ user_pref("devtools.devedition.promo.url", "");
 // Firefox для Android. Десктопный Firefox тоже почему-то посылал соответствующие мультикаст-запросы.
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1111967
 // https://support.mozilla.org/en-US/kb/use-firefox-android-send-videos-chromecast
+// https://trac.torproject.org/projects/tor/ticket/16222
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_send-video-to-device
 user_pref("browser.casting.enabled", false);
 
-// Отключает шифры, уязвимые к Logjam. Настройки взяты из официального аддона от Mozilla.
-// "Firefox 39 and Firefox ESR 38.0.2 will include changes that will increase the minimum
-// strength of keys to 1024 bits." -- https://addons.mozilla.org/en-US/firefox/addon/disable-dhe/
-user_pref("security.ssl3.dhe_dss_aes_128_sha", false);
-user_pref("security.ssl3.dhe_rsa_aes_128_sha", false);
-user_pref("security.ssl3.dhe_rsa_aes_256_sha", false);
-user_pref("security.ssl3.dhe_rsa_des_ede3_sha", false);
-// Для Firefox 31 еще и это нужно:
-user_pref("security.ssl3.dhe_dss_aes_256_sha", false);
-user_pref("security.ssl3.dhe_rsa_camellia_128_sha", false);
-user_pref("security.ssl3.dhe_rsa_camellia_256_sha", false);
-user_pref("security.ssl3.dhe_dss_camellia_128_sha", false);
-user_pref("security.ssl3.dhe_dss_camellia_256_sha", false);
+// Отключает передачу по сети рисуемых браузером кадров специальному отладочному вьюверу.
+// https://wiki.mozilla.org/Platform/GFX/LayerScope
+// https://trac.torproject.org/projects/tor/ticket/16222#comment:8
+// https://hg.mozilla.org/releases/mozilla-esr38/file/a20c7910a82f/gfx/thebes/gfxPrefs.h#l208
+// https://hg.mozilla.org/releases/mozilla-esr38/file/a20c7910a82f/gfx/layers/LayerScope.cpp#l1243
+user_pref("gfx.layerscope.enabled", false);
+// https://hg.mozilla.org/releases/mozilla-esr38/file/a20c7910a82f/gfx/thebes/gfxPrefs.h#l209
+// https://hg.mozilla.org/releases/mozilla-esr38/file/a20c7910a82f/gfx/layers/LayerScope.cpp#l1202
+// https://hg.mozilla.org/releases/mozilla-esr38/file/a20c7910a82f/netwerk/base/nsServerSocket.cpp#l281
+user_pref("gfx.layerscope.port", 100000);
+
+// Настройки security.ssl3.* содержат строку "ssl3" по историческим причинам, а на деле управляют
+// и поведнием TLS, в чем можно убедиться здесь: https://www.ssllabs.com/ssltest/viewMyClient.html
 
 // "As of 2015, there is speculation that some state cryptologic agencies may possess the capability
 // to break RC4 even when used in the TLS protocol. Mozilla and Microsoft recommend disabling
 // RC4 where possible." -- https://en.wikipedia.org/wiki/RC4
+// https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-2566
+// https://community.qualys.com/blogs/securitylabs/2013/03/19/rc4-in-tls-is-broken-now-what
+// https://bugzilla.mozilla.org/show_bug.cgi?id=999544
 user_pref("security.ssl3.ecdhe_ecdsa_rc4_128_sha", false);
 user_pref("security.ssl3.ecdhe_rsa_rc4_128_sha", false);
 user_pref("security.ssl3.rsa_rc4_128_md5", false);
 user_pref("security.ssl3.rsa_rc4_128_sha", false);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1138882
 user_pref("security.tls.unrestricted_rc4_fallback", false);
+
+// 3DES, в отличие от RC4, пока вроде держится, но можно и запретить на всякий случай.
+// https://wiki.mozilla.org/Security/Guidelines/Key_Management#Algorithms_by_security_levels
+// https://hg.mozilla.org/releases/mozilla-esr38/file/fa67b437a89a/security/manager/ssl/src/nsNSSComponent.cpp#l666
+// https://bugzilla.mozilla.org/show_bug.cgi?id=936828
+// https://en.wikipedia.org/wiki/Triple_DES#Security
+user_pref("security.ssl3.rsa_des_ede3_sha", false);
+
+// Отключает встроенный белый список, разрешающий соединения с находящимися в нем сайтами,
+// несмотря на использование ими устаревшего шифрования.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1128227
+user_pref("security.tls.insecure_fallback_hosts.use_static_list", false);
+
+// Пользовательский белый список сайтов, которым разрешено устаревшее шифрование.
+// Рекомендуется работать с такими не из под основного профиля.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1114816#c27
+user_pref("security.tls.insecure_fallback_hosts", "");
+
+// Отображать восклицательный знак (ранее - красный замок) в адресной строке для сайтов, не
+// поддерживающих RFC 5746 (безопасное продление сессии, закрывающее возможность для MitM-атаки,
+// описанной в CVE-2009-3555).
+// https://wiki.mozilla.org/Security:Renegotiation
+user_pref("security.ssl.treat_unsafe_negotiation_as_broken", true);
+
+// Запрещает Firefox открывать JAR-файлы вместо скачивания, что повышает безопасность.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1173171
+user_pref("network.jar.block-remote-files", true);
+
+// Запрещает работу WebRTC в режиме P2P, разрешая ее только через сервер третьей стороны, что
+// предотвращает утечку IP-адресов всех сетевых интерфейсов компьютера (подробнее - см. prefs_2).
+// https://wiki.mozilla.org/Media/WebRTC/Privacy
+// http://www.html5rocks.com/en/tutorials/webrtc/infrastructure/
+// https://en.wikipedia.org/wiki/Interactive_Connectivity_Establishment
+user_pref("media.peerconnection.ice.relay_only", true);
+// Разрешает работу WebRTC только на дефолтном сетевом интерфейсе, вследствие чего не
+// происходит раскрытия настоящего IP пользователя, использующего VPN.
+// Пока что не работает вместе с E10S: https://bugzilla.mozilla.org/show_bug.cgi?id=1194259
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1189041
+//user_pref("media.peerconnection.ice.default_address_only", true);

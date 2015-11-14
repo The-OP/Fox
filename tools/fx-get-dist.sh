@@ -9,7 +9,7 @@ if expr "$1" : ".*releases" >/dev/null; then
 	# Releases and betas
 	# https://ftp.mozilla.org/pub/mozilla.org/firefox/releases/
 	fname=$(echo "$1"|sed -rn 's~.*/releases/([^/]+)/([^/]+)/([^/]+)/.*((\.exe)|(\.tar\.bz2)|(\.zip))~firefox_\1_\2_\3\4~p')
-elif expr "$1" : ".*[0-9]-candidates" >/dev/null; then
+elif expr "$1" : ".*-candidates" >/dev/null; then
 	# RC's (39.0-candidates) and prebetas (39.0b7-candidates)
 	# https://ftp.mozilla.org/pub/mozilla.org/firefox/candidates/
 	fname=$(echo "$1"|sed -rn 's~.*/candidates/([^/]+)s/build([0-9]+)/([^/]+)/([^/]+)/.*((\.exe)|(\.tar\.bz2)|(\.zip))~firefox_\1\2_\3_\4\5~p')
