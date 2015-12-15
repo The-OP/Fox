@@ -114,6 +114,14 @@ user_pref("browser.safebrowsing.updateURL", "");
 user_pref("browser.safebrowsing.reportPhishMistakeURL", "");
 user_pref("browser.safebrowsing.reportPhishURL", "");
 user_pref("browser.safebrowsing.reportMalwareMistakeURL", "");
+user_pref("browser.safebrowsing.provider.google.appRepURL", "");
+user_pref("browser.safebrowsing.provider.google.gethashURL", "");
+user_pref("browser.safebrowsing.provider.google.lists", "");
+user_pref("browser.safebrowsing.provider.google.reportURL", "");
+user_pref("browser.safebrowsing.provider.google.updateURL", "");
+user_pref("browser.safebrowsing.provider.mozilla.lists", "");
+user_pref("browser.safebrowsing.provider.mozilla.updateURL", "");
+user_pref("browser.safebrowsing.provider.mozilla.gethashURL", "");
 
 // Отключает мозилловский анти-трекинговый список, который дублирует функции uBlock с соответствующими
 // подписками и является менее эффективным (т.к. основан на списке от Disconnect).

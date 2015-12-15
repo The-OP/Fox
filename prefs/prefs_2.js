@@ -127,6 +127,11 @@ user_pref("browser.search.geoSpecificDefaults", false);
 // https://hg.mozilla.org/releases/mozilla-beta/file/5657e76d4ee5/toolkit/components/search/nsSearchService.js#l746
 user_pref("browser.search.geoSpecificDefaults.url", "");
 
+// Отключает Selection Events, позволяющие странице реагировать на выделение пользователем текста на ней.
+// NB: Сам Selection API эта настройка _не_ отключает и window.getSelection() все еще будет работать.
+// https://developer.mozilla.org/en-US/Firefox/Releases/43#Miscellaneous
+// https://developer.mozilla.org/en-US/docs/Web/API/Selection
+user_pref("dom.select_events.enabled", false);
 // Отключает Clipboard Events, которые позволяют страницам узнавать, какая их часть была скопирована в буфер
 // обмена, подменять скопированное, перехватывать вставку из буфера и реагировать на нее особым образом
 // (например загружать находящуюся в буфере обмена картинку в сообщение почты или чата).
@@ -308,6 +313,8 @@ user_pref("loop.support_url", "");
 user_pref("loop.feedback.dateLastSeenSec", 1446595200); // 2015-11-04, 00:00 UTC
 user_pref("loop.feedback.periodSec", 630720000); // 20 лет
 user_pref("loop.feedback.formURL", "");
+// https://hg.mozilla.org/releases/mozilla-release/file/5b66df4523cf/browser/components/loop/modules/LoopRooms.jsm#l198
+user_pref("loop.linkClicker.url", "");
 
 // Отключает поддержку Encrypted Media Extensions (DRM для HTML5-видео).
 user_pref("media.eme.enabled", false);
@@ -448,6 +455,19 @@ user_pref("layout.css.font-loading-api.enabled", false);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=940273
 // http://www.w3.org/TR/service-workers/#cache-objects
 user_pref("dom.caches.enabled", false);
+
+// Отключает [пока еще находящийся в разработке] Device Storage API, который позволит
+// веб-страницам получать доступ к ФС и самопроизвольно читать файлы пользователя или писать в них.
+// https://hacks.mozilla.org/2012/07/why-no-filesystem-api-in-firefox/
+// https://wiki.mozilla.org/WebAPI/DeviceStorageAPI
+// https://hg.mozilla.org/releases/mozilla-release/file/5b66df4523cf/modules/libpref/init/all.js#l4342
+user_pref("device.storage.enabled", false);
+
+// Отключает File Handle API который используется совместно с Indexed DB или Device Storage и
+// предоставляет доступ к более низкоуровневым файловым операциям.
+// https://hacks.mozilla.org/2012/07/why-no-filesystem-api-in-firefox/
+// https://wiki.mozilla.org/WebAPI/FileHandleAPI
+user_pref("dom.fileHandle.enabled", false);
 
 // Запрещает расширение WebGL, позволяющее узнать модель видеокарты пользователя и ее драйвер.
 // https://www.mail-archive.com/dev-platform@lists.mozilla.org/msg14121.html
