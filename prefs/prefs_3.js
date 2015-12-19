@@ -21,15 +21,6 @@ user_pref("security.ssl.errorReporting.url", "");
 // https://hg.mozilla.org/releases/mozilla-beta/file/e549349b8d66/modules/libpref/init/all.js#l1717
 user_pref("network.auth.allow-subresource-auth", 0);
 
-// Отключает периодическую загрузку списка вредоносных расширений с AMO.
-// https://addons.mozilla.org/firefox/blocked/
-// http://kb.mozillazine.org/Extensions.blocklist.enabled
-// https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_blocklist-updating
-user_pref("extensions.blocklist.enabled", false);
-user_pref("extensions.blocklist.url", "");
-user_pref("extensions.blocklist.detailsURL", "");
-user_pref("extensions.blocklist.itemURL", "");
-
 // Отключает переход по URL при нажатии на соответствующие элементы управления:
 // Preferences -> Search -> Add more search engines...
 user_pref("browser.search.searchEnginesURL", "");

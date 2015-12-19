@@ -153,6 +153,20 @@ user_pref("media.windows-media-foundation.enabled", false);
 user_pref("media.windows-media-foundation.use-dxva", false);
 user_pref("media.directshow.enabled", false);
 
+// Отключает периодическую загрузку списка вредоносных расширений с AMO.
+// https://addons.mozilla.org/firefox/blocked/
+// http://kb.mozillazine.org/Extensions.blocklist.enabled
+// https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_blocklist-updating
+// UPD: Начиная с Firefox 43, blocklist содержит не только список вредоносных расширений, но и
+// информацию об отозванных сертификатах, поэтому отключать его не рекомендуется.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1016555
+// https://wiki.mozilla.org/CA:RevocationPlan#OneCRL
+// https://blog.mozilla.org/security/2015/03/03/revoking-intermediate-certificates-introducing-onecrl/
+user_pref("extensions.blocklist.enabled", false);
+user_pref("extensions.blocklist.url", "");
+user_pref("extensions.blocklist.detailsURL", "");
+user_pref("extensions.blocklist.itemURL", "");
+
 // Отключает проверку на отзыв сертификата через OCSP-сервер при установке шифрованного соединения.
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_secure-website-certificates
 user_pref("security.OCSP.enabled", 0);
