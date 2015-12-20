@@ -62,8 +62,8 @@
 **A:** Можно воспользоваться [UserCSS](http://www.ghacks.net/2011/02/02/change-firefoxs-minimum-maximum-tab-width/) или [аддоном](https://addons.mozilla.org/firefox/addon/custom-tab-width/).
 
 * **Q:** Как вернуть старую поисковую строку? <br>
-**A:** `about:config -> browser.search.showOneOffButtons -> false` <br>
-Применяется только после перезапуска Firefox, в отличие от большинства настроек about:config.
+**A:** `about:config -> browser.search.showOneOffButtons -> false` (применяется после перезапуска Firefox) <br>
+В Firefox 43+ этой опции уже нет, придется воспользоваться Classic Theme Restorer.
 
 * **Q:** Как вернуть старый диалог настроек браузера? <br>
 **A:** `about:config -> browser.preferences.inContent -> false`
