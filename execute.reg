@@ -1,0 +1,17 @@
+Windows Registry Editor Version 5.00
+
+;Отображать подменю быстро
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"MenuShowDelay"="8"
+
+;Не добавлять "Ярлык" в имена ярлыков
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer]
+"link"=hex:00,00,00,00
+
+;При загрузке файла из Интернета браузерами Firefox и Chrome не сохранять в альтернативном потоке NTFS информацию о том, что этот файл скачан из Интернета, чтобы, например, при запуске *.exe-файла не выводилось предупреждение системы безопасности
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Attachments]
+"SaveZoneInformation"=dword:00000001
+
+;Отключить запись компакт-дисков встроенными в Windows средствами, чтобы при открытии DVD-ROM с отсутствующим диском лоток не выдвигался
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoCDBurning"=dword:00000001
