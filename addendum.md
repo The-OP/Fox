@@ -4,11 +4,11 @@
   * [FAQ](header.md#faq)
   * [Аддоны](header.md#Аддоны)
 * **Приложение**
-  * [CSS твики](addendum.md#CSS твики)
+  * [CSS твики](addendum.md#CSS-твики)
   * [Настройки about:config](addendum.md#Настройки-aboutconfig)
   * [Продвинутые аддоны](addendum.md#Продвинутые-аддоны)
   * [Интересные ссылки](addendum.md#Интересные-ссылки)
-  * [Твик реестра Microsoft Windows](addendum.md#Твик реестра Microsoft Windows)
+  * [Твик реестра Microsoft Windows](addendum.md#Твик-реестра-Microsoft Windows)
 
 
 Эта часть для тех, кто хочет настроить свой браузер еще больше. Настройки для повышения удобства, производительности, безопасности и отключения различных зондов, полезные аддоны, интересные ссылки и т.п.
