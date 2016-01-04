@@ -9,17 +9,17 @@
   * [Интересные ссылки](addendum.md#user-content-Интересные-ссылки)
 	
 ## FAQ
-* **Q:** Проблемы с отрисовкой интерфейса, изображений или видео. Внезапные падения браузера.<br>
+1. **Q:** Проблемы с отрисовкой интерфейса, изображений или видео. Внезапные падения браузера.<br>
 **A:** Пробуйте по очереди: <br>
 1) `about:config -> layers.offmainthreadcomposition.enabled -> false` <br>
 2) `about:config -> layers.acceleration.disabled -> true` <br>
 3) 1 и 2 вместе.  <br>
 Также проблему может решить обновление видеодрайверов либо возврат к более старой версии. Или обновление самого Firefox до беты/откат к ESR.
 
-* **Q:** О блокировке неподписанных расширений. <br>
+1. **Q:** О блокировке неподписанных расширений. <br>
 **A:** В Firefox 43 установку не подписанных Mozilla аддонов можно включить в `about:config -> xpinstall.signatures.required -> false`. Начиная с 44 версии, из стандартных релизов и бет эта опция исчезнет, однако будут выпускаться специальные сборки (по аналогии с EME-free), где она [сохранится](https://wiki.mozilla.org/Addons/Extension_Signing).
 
-* **Q:** Проблемы с видео и аудио в HTML5 на YouTube, VK и других сайтах; включение 1080p, H.264, VP9. <br>
+1. **Q:** Проблемы с видео и аудио в HTML5 на YouTube, VK и других сайтах; включение 1080p, H.264, VP9. <br>
 **A:** Должны быть включены нижеприведенные настройки в about:config. В Linux-билдах MSE по умолчанию отключены, но работают, начиная с Firefox 38, если их вручную включить и установить GStreamer с gstreamer-plugins (-good, -bad, -ugly, -libav, точные названия пакетов зависят от дистрибутива). <br>
 `media.mediasource.enabled -> true` <br>
 `media.mediasource.mp4.enabled -> true` <br>
@@ -29,43 +29,43 @@
 `media.fragmented-mp4.ffmpeg.enabled -> true # Для Linux-билдов` <br>
 `media.gstreamer.enabled -> true # Для Linux-билдов`
 
-* **Q:** Тормозит видео на YouTube в высоких разрешениях. <br>
+1. **Q:** Тормозит видео на YouTube в высоких разрешениях. <br>
 **A:** Кодек VP9 требует мощного процессора. Может помочь отключение `media.mediasource.webm.enabled` - тогда видео будут отдаваться в H.264. Отключение этой настройки не сломает обычные WebM.
 
-* **Q:** Как отключить предупреждение при переходе сайта в полноэкранный режим в Firefox 43+? <br>
+1. **Q:** Как отключить предупреждение при переходе сайта в полноэкранный режим в Firefox 43+? <br>
 **A:** `about:config -> full-screen-api.warning.timeout -> 0`
 
-* **Q:** Как искать в разных поисковиках через адресную строку? <br>
+1. **Q:** Как искать в разных поисковиках через адресную строку? <br>
 **A:** Используя префиксы-кейворды (g Google, w Wikipedia, etc), настраивающиеся в Preferences -> Search (даблкликом по ячейкам второй колонки) или в пункте Manage Search Engines выпадающего меню старой поисковой строки.
 
-* **Q:** Как отключить беспрефиксный поиск в поисковике по умолчанию через адресную строку? <br>
+1. **Q:** Как отключить беспрефиксный поиск в поисковике по умолчанию через адресную строку? <br>
 **A:** `about:config -> keyword.enabled -> false`
 
-* **Q:** Как вернуть настройку `browser.newtab.url` в Firefox 41+? <br>
+1. **Q:** Как вернуть настройку `browser.newtab.url` в Firefox 41+? <br>
 **A:** [New Tab Override](https://addons.mozilla.org/firefox/addon/new-tab-override/)
 
-* **Q:** Что за специальная тема для разработчиков? <br>
+1. **Q:** Что за специальная тема для разработчиков? <br>
 **A:** Тема, использующаяся в Firefox Developer Edition. В 38 ESR включается так: `about:config -> browser.devedition.theme.enabled -> true`. Для Firefox 40+ придется воспользоваться [аддоном](https://addons.mozilla.org/firefox/addon/devedition-theme-enabler/).
 
-* **Q:** Как копировать ссылки c кириллическим текстом в исходном виде, не закодированном percent-encoding (%D0%9B%D0%B8%D1%81 -> Лис)? <br>
+1. **Q:** Как копировать ссылки c кириллическим текстом в исходном виде, не закодированном percent-encoding (%D0%9B%D0%B8%D1%81 -> Лис)? <br>
 **A:** `about:config -> network.standard-url.escape-utf8 -> false`
 
-* **Q:** Как ускорить прокрутку колесом мыши? <br>
+1. **Q:** Как ускорить прокрутку колесом мыши? <br>
 **A:** `about:config -> mousewheel.min_line_scroll_amount -> 35` <br>
 Значение подбирается по вкусу. Другие твики описаны [здесь](http://12bytes.org/articles/tech/firefox-scroll-tweak).
 
-* **Q:** Как сделать скриншот всей страницы? <br>
+1. **Q:** Как сделать скриншот всей страницы? <br>
 **A:** Shift-F2: `screenshot --fullpage <имя файла опционально>` <br>
 Также можно использовать кнопку скриншота в Developer Tools (Ctrl+Shift+I), предварительно включив ее в about:config: `devtools.command-button-screenshot.enabled -> true`. Сверхдлинные страницы [не сохраняет](https://bugzilla.mozilla.org/show_bug.cgi?id=766661).
 
-* **Q:** Как уменьшить ширину вкладки, чтобы меньше их прокручивать? <br>
+1. **Q:** Как уменьшить ширину вкладки, чтобы меньше их прокручивать? <br>
 **A:** Можно воспользоваться [UserCSS](http://www.ghacks.net/2011/02/02/change-firefoxs-minimum-maximum-tab-width/) или [аддоном](https://addons.mozilla.org/firefox/addon/custom-tab-width/).
 
-* **Q:** Как вернуть старую поисковую строку? <br>
+1. **Q:** Как вернуть старую поисковую строку? <br>
 **A:** `about:config -> browser.search.showOneOffButtons -> false` (применяется после перезапуска Firefox) <br>
 В Firefox 43+ этой опции уже нет, придется воспользоваться Classic Theme Restorer.
 
-* **Q:** Как вернуть старый диалог настроек браузера? <br>
+1. **Q:** Как вернуть старый диалог настроек браузера? <br>
 **A:** `about:config -> browser.preferences.inContent -> false`
 
 #### Профили
