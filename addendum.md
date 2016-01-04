@@ -79,6 +79,19 @@
 
 ## Разное
 
+### Stylish
+
+#### Полезные стили
+
+* [Dim Unloaded Tabs](https://userstyles.org/styles/71928/dim-unloaded-tabs). Затемнение незагруженных после перезапуска браузера вкладок.
+
+#### О написании собственных стилей
+Некоторая пригождающаяся информация есть в [Stylish Wiki](https://github.com/JasonBarnabe/stylish/wiki).
+
+Инспектировать элементы интерфейса самого браузера удобно при помощи [Browser Toolbox](https://developer.mozilla.org/en-US/docs/Tools/Browser_Toolbox).
+
+Также, в качестве менее функцональной, но изкоробочной альтернативы Stylish, можно использовать файл [userChome.css](http://kb.mozillazine.org/UserChrome.css).
+
 #### Опасность юзерстилей с -moz-binding
 В мозилловском CSS есть специальное предназначенное для использования с XUL свойство [-moz-binding](https://developer.mozilla.org/en-US/docs/Web/CSS/-moz-binding), при помощи которого можно привязать к элементу обработчики различных событий. Для CSS веб-страниц вытекающие из этого уязвимости давно закрыли: [bug 324253](https://bugzilla.mozilla.org/show_bug.cgi?id=324253), [bug 379959](https://bugzilla.mozilla.org/show_bug.cgi?id=379959).
 
@@ -98,10 +111,13 @@ Userstyles.org [не пропускает](https://github.com/JasonBarnabe/styli
 
 ## Интересные ссылки
 * [Release Notes](https://www.mozilla.org/firefox/notes) и [Developer Release Notes](https://developer.mozilla.org/en-US/Firefox/Releases).
+* [Список исправленных уязвимостей](https://www.mozilla.org/en-US/security/known-vulnerabilities/firefox/)
+* [Ghacks](http://www.ghacks.net/category/firefox/) - сайт, на котором попадаются неплохие статьи и обзоры грядущих нововведений в Firefox.
 * [Здесь](http://kb.mozillazine.org/About:config_entries) и [здесь](http://kb.mozillazine.org/Category:Preferences) приведены подробные описания настроек, жаль, не всех.
-* [Блог](https://cat-in-136.github.io/tags.html#tag_pref%20diff) автора аддона Configuration Mania, который выкладывает разницу между дефолтными конфигами предыдущей и новой версии Firefox.
+* [Описание](https://developer.mozilla.org/en-US/Add-ons/AMO/Policy/Reviews) процедуры ревью аддонов на AMO.
 * [Неплохой обзор от Mozilla](https://support.mozilla.org/en-US/kb/how-stop-firefox-automatically-making-connections) с описаниями механизмов, из-за которых Firefox может инициировать соединения без прямого приказа пользователя. Еще: [соединения](http://kb.mozillazine.org/Connections_established_on_startup_-_Firefox), устанавливающиеся при запуске браузера. Настройки для отключения подобной самодеятельности есть здесь, в разделе "Настройки".
 * [user.js -- Firefox hardening stuff](https://github.com/pyllyukko/user.js) - репозиторий настроек вроде этого, но с несколько другим подходом к организации.
+* [Блог](https://cat-in-136.github.io/tags.html#tag_pref%20diff) автора аддона Configuration Mania, который выкладывает разницу между дефолтными конфигами предыдущей и новой версии Firefox. **UPD:** Настройки могут меняться и в более поздних бетах, чем там сравниваются, поэтому целиком полагаться на него не стоит.
 * [PrivacyTools.io](https://www.privacytools.io) - сайт, посвященный инструментам для обеспечения приватности. Можно предлагать дополнения и улучшения в их [репозитории на GitHub](https://github.com/privacytoolsIO/privacytools.io).
 * [Evercookie](http://samy.pl/evercookie/). Собирательное название для техник помещения трекинг-идентификаторов в разные труднодоступные места помимо cookies, LSO и DOM Storage.
 * Фингерпринтинг
