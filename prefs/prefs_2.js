@@ -108,7 +108,8 @@ user_pref("geo.wifi.uri", "");
 // https://hg.mozilla.org/releases/mozilla-esr38/file/7bc0140f0bfe/dom/system/NetworkGeolocationProvider.js#l233
 user_pref("geo.wifi.scan", false);
 user_pref("geo.cell.scan", false);
-user_pref("geo.wifi.timeToWaitBeforeSending", 630720000); // 20 лет.
+// 20 лет
+user_pref("geo.wifi.timeToWaitBeforeSending", 630720000);
 
 // Отключает геолокацию для применения региональных настроек поиска. Геолокация запрашивается один раз,
 // после чего код страны сохранится в browser.search.countryCode в виде строки "US", "RU", etc. Она не будет
@@ -311,8 +312,10 @@ user_pref("loop.support_url", "");
 // Отключает появляющееся раз в 6 месяцев окно с предложением оставить отзыв о работе Hello.
 // https://hg.mozilla.org/releases/mozilla-beta/file/00bcc10b3bdc/browser/components/loop/content/js/conversationAppStore.js#l54
 // https://hg.mozilla.org/releases/mozilla-beta/file/00bcc10b3bdc/browser/components/loop/content/js/conversation.js#l47
-user_pref("loop.feedback.dateLastSeenSec", 1446595200); // 2015-11-04, 00:00 UTC
-user_pref("loop.feedback.periodSec", 630720000); // 20 лет
+// 2015-11-04, 00:00 UTC
+user_pref("loop.feedback.dateLastSeenSec", 1446595200);
+// 20 лет
+user_pref("loop.feedback.periodSec", 630720000);
 user_pref("loop.feedback.formURL", "");
 // https://hg.mozilla.org/releases/mozilla-release/file/5b66df4523cf/browser/components/loop/modules/LoopRooms.jsm#l198
 user_pref("loop.linkClicker.url", "");
@@ -345,8 +348,10 @@ user_pref("media.gmp-manager.certs.2.issuerName", "");
 // https://hg.mozilla.org/releases/mozilla-esr38/file/0f8338121472/toolkit/modules/GMPUtils.jsm#l84
 // https://hg.mozilla.org/releases/mozilla-esr38/file/0f8338121472/toolkit/modules/GMPInstallManager.jsm#l384
 // https://hg.mozilla.org/releases/mozilla-esr38/file/0f8338121472/toolkit/modules/GMPInstallManager.jsm#l337
-user_pref("media.gmp-manager.lastCheck", 1437696000); // 2015-07-24, 00:00 UTC
-user_pref("media.gmp-manager.secondsBetweenChecks", 630720000); // 20 лет.
+// 2015-07-24, 00:00 UTC
+user_pref("media.gmp-manager.lastCheck", 1437696000);
+// 20 лет
+user_pref("media.gmp-manager.secondsBetweenChecks", 630720000);
 
 // Полностью отключает WebIDE, убирает его кнопку и из меню Developer Tools.
 // https://trac.torproject.org/projects/tor/ticket/16222#comment:10
