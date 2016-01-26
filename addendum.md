@@ -70,6 +70,8 @@
 
 * [NoRedirect](https://addons.mozilla.org/firefox/addon/noredirect/). Рубит редиректы по рэгэкспам исходного или целевого URL.
 
+* [Redirector](https://addons.mozilla.org/firefox/addon/redirector/). Позволяет задавать пользовательские редиректы по паттернам или регулярным выражениям.
+
 * [HttpFox](https://addons.mozilla.org/firefox/addon/httpfox/). Мониторит все HTTP-запросы браузера. Показывает заголовки, параметры GET/POST и статус запроса (в т.ч. был ли он выполнен, взят из кэша, или отменен (NS_BINDING_ABORTED) самим браузером/другим аддоном).
 
 * [User Agent Switcher](https://addons.mozilla.org/firefox/addon/user-agent-switcher/) и [списки к нему](http://techpatterns.com/downloads/firefox/useragentswitcher.xml).
