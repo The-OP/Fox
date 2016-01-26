@@ -142,6 +142,7 @@ user_pref("media.format-reader.webm", false);
 user_pref("media.fragmented-mp4.enabled", false);
 user_pref("media.fragmented-mp4.exposed", false);
 user_pref("media.fragmented-mp4.ffmpeg.enabled", false);
+user_pref("media.mp4.enabled", false);
 user_pref("media.ogg.enabled", false);
 user_pref("media.opus.enabled", false);
 user_pref("media.webm.enabled", false);
@@ -151,7 +152,11 @@ user_pref("media.apple.mp3.enabled", false);
 user_pref("media.apple.mp4.enabled", false);
 user_pref("media.windows-media-foundation.enabled", false);
 user_pref("media.windows-media-foundation.use-dxva", false);
+user_pref("media.wmf.enabled", false);
+user_pref("media.wmf.low-latency.enabled", false);
 user_pref("media.directshow.enabled", false);
+user_pref("media.ffmpeg.enabled", false);
+user_pref("media.gmp.decoder.enabled", false);
 
 // Отключает периодическую загрузку списка вредоносных расширений с AMO.
 // https://addons.mozilla.org/firefox/blocked/
@@ -183,3 +188,4 @@ user_pref("extensions.update.autoUpdateDefault", false);
 user_pref("extensions.update.enabled", false);
 user_pref("extensions.update.url", "");
 user_pref("extensions.update.background.url", "");
+user_pref("extensions.systemAddon.update.url", "");

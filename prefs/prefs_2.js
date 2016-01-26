@@ -317,6 +317,7 @@ user_pref("loop.feedback.dateLastSeenSec", 1446595200);
 // 20 лет
 user_pref("loop.feedback.periodSec", 630720000);
 user_pref("loop.feedback.formURL", "");
+user_pref("loop.feedback.manualFormURL", "");
 // https://hg.mozilla.org/releases/mozilla-release/file/5b66df4523cf/browser/components/loop/modules/LoopRooms.jsm#l198
 user_pref("loop.linkClicker.url", "");
 
@@ -447,6 +448,22 @@ user_pref("pdfjs.enableWebGL", false);
 // https://developer.mozilla.org/en-US/docs/Web/API/CSSFontLoading_API
 // https://drafts.csswg.org/css-font-loading/
 user_pref("layout.css.font-loading-api.enabled", false);
+
+// Отключает Service Worker API, позволяющее сайтам запускать скрипты, которые могут заниматься
+// различной сомнительной самодеятельностью (примеры по ссылкам ниже) в фоновом режиме, даже
+// если у пользователя не открыто ни одной вкладки этого сайта.
+// Посмотреть и удалить установленные сайтами Service Workers можно через about:serviceworkers
+// https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API#Other_use_case_ideas
+// https://github.com/slightlyoff/ServiceWorker
+// https://serviceworke.rs/
+user_pref("dom.serviceWorkers.enabled", false);
+user_pref("dom.serviceWorkers.interception.enabled", false);
+user_pref("dom.serviceWorkers.interception.opaque.enabled", false);
+user_pref("dom.serviceWorkers.openWindow.enabled", false);
+// https://hg.mozilla.org/releases/mozilla-release/file/7eabe4d30cde/modules/libpref/init/all.js#l163
+// https://hg.mozilla.org/releases/mozilla-release/file/7eabe4d30cde/dom/workers/ServiceWorkerManager.cpp#l2593
+user_pref("dom.serviceWorkers.testUpdateOverOneDay", false);
+user_pref("dom.webnotifications.serviceworker.enabled", false);
 
 // Отключает Cache API (Cache Storage), представляющее из себя еще одно хранилище на компьютере
 // пользователя, куда скрипты могут складывать информацию. Оно является частью спецификации

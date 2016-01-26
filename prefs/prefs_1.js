@@ -236,6 +236,15 @@ user_pref("toolkit.telemetry.optoutSample", false);
 user_pref("breakpad.reportURL", "");
 user_pref("dom.ipc.plugins.flash.subprocess.crashreporter.enabled", false);
 user_pref("dom.ipc.plugins.reportCrashURL", false);
+// about:tabcrashed
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1110511
+// https://hg.mozilla.org/releases/mozilla-release/file/7eabe4d30cde/browser/modules/ContentCrashReporters.jsm#l141
+// https://hg.mozilla.org/releases/mozilla-release/file/7eabe4d30cde/browser/base/content/aboutTabCrashed.js#l31
+// https://hg.mozilla.org/releases/mozilla-release/file/7eabe4d30cde/browser/base/content/browser.js#l1159
+user_pref("browser.tabs.crashReporting.sendReport", false);
+user_pref("browser.tabs.crashReporting.includeURL", false);
+user_pref("browser.tabs.crashReporting.emailMe", false);
+user_pref("browser.tabs.crashReporting.email", "");
 
 // Отключает предложения оценить работу Firefox и отправить пожертвования Mozilla.
 // https://wiki.mozilla.org/Advocacy/heartbeat

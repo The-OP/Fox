@@ -44,6 +44,7 @@ user_pref("webgl.min_capability_mode", true);
 user_pref("media.mediasource.enabled", false);
 user_pref("media.mediasource.mp4.enabled", false);
 user_pref("media.mediasource.webm.enabled", false);
+user_pref("media.mediasource.webm.audio.enabled", false);
 user_pref("media.mediasource.format-reader", false);
 user_pref("media.mediasource.format-reader.mp4", false);
 user_pref("media.mediasource.format-reader.webm", false);
