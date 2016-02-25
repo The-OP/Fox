@@ -542,6 +542,12 @@ user_pref("network.http.referer.XOriginPolicy", 0);
 // compatibility (see bug 141641)"
 user_pref("network.http.sendSecureXSiteReferrer", true);
 
+// Запрещает новые сертификаты, использующие SHA1.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=942515#c32
+// 0 = allow SHA-1; 1 = forbid SHA-1; 2 = allow SHA-1 only if notBefore < 2016-01-01
+// http://www.scmagazine.com/mozilla-pulls-back-on-rejecting-sha-1-certs-outright/article/463913/
+user_pref("security.pki.sha1_enforcement_level", 2);
+
 // Отключает автоматическое обновление браузера.
 // https://developer.mozilla.org/en-US/Firefox/Enterprise_deployment
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_auto-update-checking

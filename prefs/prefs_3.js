@@ -48,6 +48,12 @@ user_pref("webgl.min_capability_mode", true);
 // https://en.wikipedia.org/wiki/Triple_DES#Security
 user_pref("security.ssl3.rsa_des_ede3_sha", false);
 
+// Запрещает все сертификаты, использующие SHA1.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=942515#c32
+// 0 = allow SHA-1; 1 = forbid SHA-1; 2 = allow SHA-1 only if notBefore < 2016-01-01
+// http://www.scmagazine.com/mozilla-pulls-back-on-rejecting-sha-1-certs-outright/article/463913/
+user_pref("security.pki.sha1_enforcement_level", 1);
+
 // Отключает Media Source Extensions. Ломает некоторые кодеки на YouTube.
 user_pref("media.mediasource.enabled", false);
 user_pref("media.mediasource.mp4.enabled", false);
