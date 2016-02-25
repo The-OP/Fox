@@ -40,6 +40,14 @@ user_pref("media.webvtt.enabled", false);
 user_pref("webgl.disable-extensions", true);
 user_pref("webgl.min_capability_mode", true);
 
+// 3DES, в отличие от RC4, пока вроде держится, но можно и запретить на всякий случай.
+// Отключение ломает https://login.skype.com/login
+// https://wiki.mozilla.org/Security/Guidelines/Key_Management#Algorithms_by_security_levels
+// https://hg.mozilla.org/releases/mozilla-esr38/file/fa67b437a89a/security/manager/ssl/src/nsNSSComponent.cpp#l666
+// https://bugzilla.mozilla.org/show_bug.cgi?id=936828
+// https://en.wikipedia.org/wiki/Triple_DES#Security
+user_pref("security.ssl3.rsa_des_ede3_sha", false);
+
 // Отключает Media Source Extensions. Ломает некоторые кодеки на YouTube.
 user_pref("media.mediasource.enabled", false);
 user_pref("media.mediasource.mp4.enabled", false);

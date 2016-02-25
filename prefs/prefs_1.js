@@ -412,13 +412,6 @@ user_pref("security.ssl3.rsa_rc4_128_sha", false);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1138882
 user_pref("security.tls.unrestricted_rc4_fallback", false);
 
-// 3DES, в отличие от RC4, пока вроде держится, но можно и запретить на всякий случай.
-// https://wiki.mozilla.org/Security/Guidelines/Key_Management#Algorithms_by_security_levels
-// https://hg.mozilla.org/releases/mozilla-esr38/file/fa67b437a89a/security/manager/ssl/src/nsNSSComponent.cpp#l666
-// https://bugzilla.mozilla.org/show_bug.cgi?id=936828
-// https://en.wikipedia.org/wiki/Triple_DES#Security
-user_pref("security.ssl3.rsa_des_ede3_sha", false);
-
 // Отключает встроенный белый список, разрешающий соединения с находящимися в нем сайтами,
 // несмотря на использование ими устаревшего шифрования.
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1128227

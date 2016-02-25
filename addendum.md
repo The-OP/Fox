@@ -40,6 +40,7 @@
 * `dom.event.clipboardevents.enabled` -- GitHub (копирование текста из редактора).
 * `security.ssl.require_safe_negotiation` -- Instagram, многие другие.
 * `dom.indexedDB.enabled` -- Twitter.
+* `security.ssl3.rsa_des_ede3_sha` -- https://login.skype.com/login
 
 ## Продвинутые аддоны
 * [HTTPS Everywhere](https://addons.mozilla.org/en-us/firefox/addon/https-everywhere/). Содержит список сайтов, поддерживающих как HTTP, так HTTPS, и автоматически меняет все HTTP-ссылки, ведущие к этим сайтам, на HTTPS. Аддон вернули на AMO, но на всякий случай - [ссылка](https://www.eff.org/https-everywhere/) на официальный сайт. Правила обновляются редко, актуальную версию правил можно получить [на GitHub](https://github.com/EFForg/https-everywhere), там же можно отправить новое правило.
