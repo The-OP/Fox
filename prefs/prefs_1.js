@@ -150,6 +150,12 @@ user_pref("urlclassifier.trackingTable", "");
 user_pref("urlclassifier.trackingWhitelistTable", "");
 user_pref("urlclassifier.disallow_completions", "");
 
+// Отключает список сайтов, запрещенных в режиме ограниченного профиля / родительского контроля.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1216723
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1222377
+user_pref("browser.safebrowsing.forbiddenURIs.enabled", false);
+user_pref("urlclassifier.forbiddenTable", "");
+
 // Отключает <a ping>, которые отправляют запрос по отдельному указанному адресу (с целью трекинга)
 // при нажатии на ссылку. -- http://kb.mozillazine.org/Browser.send_pings
 user_pref("browser.send_pings", false);

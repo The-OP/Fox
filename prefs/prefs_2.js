@@ -320,6 +320,7 @@ user_pref("loop.feedback.formURL", "");
 user_pref("loop.feedback.manualFormURL", "");
 // https://hg.mozilla.org/releases/mozilla-release/file/5b66df4523cf/browser/components/loop/modules/LoopRooms.jsm#l198
 user_pref("loop.linkClicker.url", "");
+user_pref("loop.facebook.shareUrl", "");
 
 // Отключает поддержку Encrypted Media Extensions (DRM для HTML5-видео).
 user_pref("media.eme.enabled", false);
