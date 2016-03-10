@@ -1,4 +1,5 @@
 #!/usr/bin/env phantomjs
+'use strict';
 
 var fs = require('fs');
 var sys = require('system');
@@ -9,19 +10,15 @@ function qs(arg) {
 }
 
 (function main() {
-	if (sys.args.length != 3) {
+	if (sys.args.length !== 3) {
 		console.log("ERROR: Specify two folders containing Firefox prefs (created by fx-unpack-prefs) to compare.");
-		phantom.exit();
+		phantom.exit(1);
 	}
 
-	// Prefs in browser/* override prefs in greprefs.js
-	var files = ['greprefs.js',
-		'defaults/pref/services-sync.js',
-		'browser/defaults/preferences/firefox.js',
-		'browser/defaults/preferences/firefox-branding.js',
-		'browser/defaults/preferences/firefox-l10n.js',
-		'browser/defaults/preferences/webide-prefs.js', // Introduced in Firefox 33
-		'webapprt/defaults/preferences/prefs.js'];
+	var scriptDir = fs.absolute(sys.args[0]).replace(sys.args[0].split('/').pop(), '');
+
+	// Prefs in browser/* override prefs in greprefs.js, so they should be parsed afterwards.
+	var files = fs.read(scriptDir + 'fx-pref-files.txt').split('\n').filter(function(v) {return v;});
 	var prefs = [];
 	var page = webPage.create();
 
@@ -30,8 +27,23 @@ function qs(arg) {
 	page.onResourceRequested = function(data, request) {console.log('WARNING: Page tried to request ' + data.url); request.abort();};
 	for (var i = 0; i < 2; i++) {
 		var text = '';
+		var dirName = sys.args[i+1];
 		for (var j = 0; j < files.length; j++) {
-			text += fs.read(sys.args[i+1] + '/' + files[j]) + '\n';
+			var optional = false;
+			var fileName = files[j];
+			if (fileName.charAt(0) === '?') {
+				optional = true;
+				fileName = fileName.substr(1);
+			}
+			fileName = dirName + '/firefox/' + fileName.replace(':', '/');
+			if (!fs.exists(fileName)) {
+			    if (!optional) {
+				console.log('ERROR: Required file ' + files[j] + ' was not found in ' + dirName + '.');
+				phantom.exit(2);
+			    }
+			} else {
+				text += fs.read(fileName) + '\n';
+			}
 		}
 		prefs[i] = page.evaluate(function(text) {
 			var prefs = {};
@@ -63,6 +75,5 @@ function qs(arg) {
 		}
 	}
 
-	phantom.exit();
+	phantom.exit(0);
 })();
-
