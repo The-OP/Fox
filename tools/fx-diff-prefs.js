@@ -31,9 +31,9 @@ function qs(arg) {
 		for (var j = 0; j < files.length; j++) {
 			var optional = false;
 			var fileName = files[j];
-			if (fileName.charAt(0) === '?') {
+			if (fileName.indexOf('?') !== -1) {
 				optional = true;
-				fileName = fileName.substr(1);
+				fileName = fileName.replace(/\?/g, '');
 			}
 			fileName = dirName + '/firefox/' + fileName.replace(':', '/');
 			if (!fs.exists(fileName)) {

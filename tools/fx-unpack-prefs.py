@@ -51,10 +51,16 @@ for loc in pref_file_loc:
     # Some archives are marked optional, so their presence is not required (e.g. Hello prefs are
     # in separate archive only on Firefox 45+ - that archive doesn't exist on older versions).
     if jar[0] == '?':
-        optional = True
+        optional_jar = True
         jar = jar[1:]
     else:
-        optional = False
+        optional_jar = False
+
+    if pfile[0] == '?':
+        optional_pfile = True
+        pfile = pfile[1:]
+    else:
+        optional_pfile = False
 
     jar_path = unp_distr_subdir / Path(jar)
     unp_jar_dir = Path(dest_dir) / Path('firefox') / Path(jar)
@@ -65,14 +71,17 @@ for loc in pref_file_loc:
         stderr=subprocess.DEVNULL)
     if rc != 0 and rc != 2: # Unzip returns 2 for JARs/XPIs, but extracts them successfully
         if rc == 9:
-            if optional:
-                print('Skipping non-existent optional JAR: ' + jar)
+            if optional_jar:
+                print('Skipping non-existent optional JAR: ' + jar + '.')
             else:
-                print('ERROR: Required JAR was not found: ' + jar)
+                print('ERROR: Required JAR was not found: ' + jar + '.')
                 sys.exit(6)
         elif rc == 11:
-            print('ERROR: Pref file was not found: ' + jar + ':' + pfile + '.')
-            sys.exit(7)
+            if optional_pfile:
+                print('Skipping non-existent optional pref file: ' + jar + ':' + pfile + '.')
+            else:
+                print('ERROR: Required pref file was not found: ' + jar + ':' + pfile + '.')
+                sys.exit(7)
         else:
             print('ERROR: Failure while unpacking prefs (' + str(rc) + ').')
             sys.exit(8)

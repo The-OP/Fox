@@ -4,6 +4,6 @@ browser/omni.ja:defaults/preferences/firefox.js
 browser/omni.ja:defaults/preferences/firefox-branding.js
 browser/omni.ja:defaults/preferences/firefox-l10n.js
 browser/omni.ja:defaults/preferences/webide-prefs.js
-browser/omni.ja:defaults/preferences/devtools.js
+browser/omni.ja:?defaults/preferences/devtools.js
 ?browser/features/loop@mozilla.org.xpi:chrome/content/preferences/prefs.js
 webapprt/omni.ja:defaults/preferences/prefs.js
