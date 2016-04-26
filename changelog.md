@@ -2,7 +2,7 @@
 * https://www.mozilla.org/en-US/firefox/46.0/releasenotes/
 * http://www.ghacks.net/2016/04/26/firefox-46-0/
 * https://www.opennet.ru/opennews/art.shtml?num=44315
-* https://www.linux.org.ru/news/mozilla/12546647
+* https://www.linux.org.ru/news/mozilla/12547956
 
 #### Firefox 45
 * https://www.mozilla.org/en-US/firefox/45.0/releasenotes/
