@@ -33,6 +33,11 @@ user_pref("lightweightThemes.getMoreURL", "");
 // на .webm/.mp3/etc. Вместо проигрывания вызовется сохранение файла.
 user_pref("media.play-stand-alone", false);
 
+// Отключает замену <embed> на <iframe> в страницах, встраивающих видео с YouTube. Такая замена
+// позволяет использовать HTML5-проигрыватель вместо Flash на видео, встроенных по старому образцу.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=769117
+user_pref("plugins.rewrite_youtube_embeds", false);
+
 // Отключает Web Video Text Tracks (субтитры для тега video).
 user_pref("media.webvtt.enabled", false);
 

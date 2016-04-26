@@ -452,7 +452,6 @@ user_pref("pfs.datasource.url", "");
 // Запрещает яваскриптам обращаться к плагинам.
 user_pref("security.xpconnect.plugin.unrestricted", false);
 user_pref("application.use_ns_plugin_finder", false);
-user_pref("plugins.rewrite_youtube_embeds", false);
 
 // Отключает встроенный просмотрщик PDF, в котором частенько находят уязвимости.
 // http://habrahabr.ru/company/eset/blog/264619/
