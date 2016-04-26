@@ -177,6 +177,8 @@ user_pref("dom.vr.enabled", false);
 user_pref("dom.vr.cardboard.enabled", false);
 user_pref("dom.vr.oculus.enabled", false);
 user_pref("dom.vr.oculus050.enabled", false);
+// https://hg.mozilla.org/releases/mozilla-release/file/970d0cf1c5d9/modules/libpref/init/all.js#l4778
+user_pref("dom.vr.add-test-devices", 0);
 // Отключает API для телефонных звонков, использующийся в Firefox OS.
 // https://wiki.mozilla.org/WebAPI/Security/WebTelephony
 user_pref("dom.telephony.enabled", false);
@@ -249,6 +251,7 @@ user_pref("media.peerconnection.enabled", false);
 user_pref("media.peerconnection.identity.enabled", false);
 user_pref("media.peerconnection.video.enabled", false);
 user_pref("media.peerconnection.video.h264_enabled", false);
+user_pref("media.peerconnection.simulcast", false);
 user_pref("media.peerconnection.turn.disable", true);
 // https://hg.mozilla.org/releases/mozilla-esr38/file/e7f06142f3b5/dom/media/PeerConnection.js#l330
 // https://hg.mozilla.org/releases/mozilla-beta/file/b14997797205/dom/media/PeerConnection.js#l335
@@ -321,6 +324,18 @@ user_pref("loop.feedback.manualFormURL", "");
 // https://hg.mozilla.org/releases/mozilla-release/file/5b66df4523cf/browser/components/loop/modules/LoopRooms.jsm#l198
 user_pref("loop.linkClicker.url", "");
 user_pref("loop.facebook.shareUrl", "");
+user_pref("loop.facebook.appId", "");
+user_pref("loop.facebook.enabled", false);
+user_pref("loop.facebook.fallbackUrl", "");
+user_pref("loop.conversationPopOut.enabled", false);
+// Отключает отправку в Google Analytics доменов тех ссылок, которые были заданы в теме дискуссии
+// при создании room в Hello ("context URL"[1]). Отправляются только домены из белого списка[2].
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1211542
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1261467
+// https://hg.mozilla.org/releases/mozilla-release/file/970d0cf1c5d9/browser/extensions/loop/chrome/content/modules/LoopRooms.jsm#l975
+// [1]: https://wiki.mozilla.org/Loop/Architecture/Context
+// [2]: https://hg.mozilla.org/releases/mozilla-release/file/4f87a2517f36/browser/extensions/loop/chrome/content/modules/DomainWhitelist.jsm#l17
+user_pref("loop.logDomains", false);
 
 // Отключает поддержку Encrypted Media Extensions (DRM для HTML5-видео).
 user_pref("media.eme.enabled", false);
@@ -437,6 +452,7 @@ user_pref("pfs.datasource.url", "");
 // Запрещает яваскриптам обращаться к плагинам.
 user_pref("security.xpconnect.plugin.unrestricted", false);
 user_pref("application.use_ns_plugin_finder", false);
+user_pref("plugins.rewrite_youtube_embeds", false);
 
 // Отключает встроенный просмотрщик PDF, в котором частенько находят уязвимости.
 // http://habrahabr.ru/company/eset/blog/264619/

@@ -100,6 +100,7 @@ user_pref("browser.safebrowsing.enabled", false);
 user_pref("browser.safebrowsing.malware.enabled", false);
 user_pref("browser.safebrowsing.downloads.enabled", false);
 user_pref("browser.safebrowsing.downloads.remote.enabled", false);
+user_pref("browser.safebrowsing.downloads.remote.url", "");
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_anti-malware-list-updating
 user_pref("browser.safebrowsing.appRepURL", "");
 user_pref("browser.safebrowsing.gethashURL", "");
@@ -134,8 +135,11 @@ user_pref("browser.trackingprotection.updateURL", "");
 user_pref("browser.trackingprotection.gethashURL", "");
 user_pref("browser.polaris.enabled", false);
 user_pref("privacy.trackingprotection.introURL", "");
+// https://hg.mozilla.org/releases/mozilla-release/file/970d0cf1c5d9/browser/components/preferences/in-content/privacy.js#l19
+user_pref("privacy.trackingprotection.ui.enabled", false);
 // https://hg.mozilla.org/releases/mozilla-beta/file/00bcc10b3bdc/browser/base/content/browser-trackingprotection.js#l6
 //user_pref("privacy.trackingprotection.introCount", 1);
+
 
 // Вообще не регистрировать таблицы Safebrowsing и Tracking Protection в URL Classifier, пусть даже
 // в отключенном виде и с пустыми URL для обновления.
@@ -200,6 +204,11 @@ user_pref("browser.slowStartup.notificationDisabled", true);
 // https://hg.mozilla.org/releases/mozilla-beta/file/883275447631/browser/components/nsBrowserContentHandler.js#l546
 user_pref("browser.usedOnWindows10", true);
 user_pref("browser.usedOnWindows10.introURL", "");
+// Отключает модуль LaterRun, предназначенный для показа новым пользователям различной справочной
+// информации при энном запуске браузера.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1200639
+// https://hg.mozilla.org/releases/mozilla-release/file/970d0cf1c5d9/browser/modules/LaterRun.jsm#l106
+user_pref("browser.laterrun.enabled", false);
 
 // Отключает показ AMO при входе в Add-ons Manager на вкладку Get Add-ons.
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_add-on-list-prefetching
@@ -289,6 +298,12 @@ user_pref("browser.pocket.api", "");
 user_pref("browser.pocket.site", "");
 user_pref("browser.pocket.oAuthConsumerKey", "");
 user_pref("browser.pocket.enabledLocales", "");
+// Начиная с Firefox 46 перемещено в системный аддон.
+// https://hg.mozilla.org/releases/mozilla-release/file/970d0cf1c5d9/browser/extensions/pocket/bootstrap.js#l33
+user_pref("extensions.pocket.enabled", false);
+user_pref("extensions.pocket.api", "");
+user_pref("extensions.pocket.site", "");
+user_pref("extensions.pocket.oAuthConsumerKey", "");
 
 // Отключает эксперименты - фоновые тесты различных отключенных пока по умолчанию функций (вроде
 // HTTP Pipelining) со сбором телеметрии.

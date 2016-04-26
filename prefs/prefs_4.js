@@ -157,6 +157,7 @@ user_pref("media.wmf.low-latency.enabled", false);
 user_pref("media.directshow.enabled", false);
 user_pref("media.ffmpeg.enabled", false);
 user_pref("media.gmp.decoder.enabled", false);
+user_pref("media.ffvpx.enabled", false);
 
 // Отключает периодическую загрузку списка вредоносных расширений с AMO.
 // https://addons.mozilla.org/firefox/blocked/
