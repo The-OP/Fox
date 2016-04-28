@@ -16,6 +16,14 @@
 3) 1 и 2 вместе.  <br>
 Также проблему может решить обновление видеодрайверов либо возврат к более старой версии. Или обновление самого Firefox до беты/откат к ESR.
 
+1. **Q:** Когда будет мультипроцессная версия? <br>
+**A**: [Electrolysis#Schedule_and_Status](https://wiki.mozilla.org/Electrolysis#Schedule_and_Status). Также можно на свой страх и риск вручную включить E10S в релизах/бетах (работает, начиная с Firefox 45): <br>
+`browser.tabs.remote.autostart -> true` <br>
+`layers.async-pan-zoom.enabled -> true` <br>
+`extensions.e10sBlockedByAddons -> false` <br>
+`extensions.e10sBlocksEnabling -> false` <br>
+Применение требует перезапуска. Проверить работу можно в `about:support -> Multiprocess Windows`.
+
 1. **Q:** О блокировке неподписанных расширений. <br>
 **A:** В Firefox 43 установку не подписанных Mozilla аддонов можно включить в `about:config -> xpinstall.signatures.required -> false`. Начиная с **47** версии, из стандартных релизов и бет эта опция исчезнет, однако будут выпускаться специальные сборки (по аналогии с EME-free), где она [сохранится](https://wiki.mozilla.org/Addons/Extension_Signing).
 
