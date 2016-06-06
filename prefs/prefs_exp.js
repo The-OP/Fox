@@ -10,6 +10,11 @@ user_pref("browser.addon-watch.interval", -1);
 // (редиректы через HTTP 3xx не отключает) -- http://kb.mozillazine.org/Accessibility.blockautorefresh
 user_pref("accessibility.blockautorefresh", true);
 
+// Отключает <meta http-equiv="refresh"> в неактивных вкладках, оставляя разрешенным в активной.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=518805
+// https://hg.mozilla.org/releases/mozilla-release/file/b0310cb90fd0/mobile/android/app/mobile.js#l623
+user_pref("browser.meta_refresh_when_inactive.disabled", true);
+
 // https://github.com/The-OP/Fox/issues/8
 user_pref("dom.max_chrome_script_run_time", 600);
 

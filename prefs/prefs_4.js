@@ -35,6 +35,10 @@ user_pref("signon.storeWhenAutocompleteOff", false);
 // этом pushState и replaceState, даже с null вместо state object, будут выбрасывать исключения.
 // https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Manipulating_the_browser_history
 // https://hg.mozilla.org/releases/mozilla-esr38/file/aa2ecb8673b1/docshell/base/nsDocShell.cpp#l11491
+//
+// UPD: В Firefox 47 allow-префы были убраны -- https://bugzilla.mozilla.org/show_bug.cgi?id=1249542
+//      Также, начиная с 47 версии, обнуление maxStateObjectSize  вызывает неработоспособность
+//      переключения категорий в about:addons и about:preferences.
 user_pref("browser.history.allowPopState", false);
 user_pref("browser.history.allowPushState", false);
 user_pref("browser.history.allowReplaceState", false);
@@ -125,6 +129,9 @@ user_pref("javascript.options.ion", false);
 // https://www.mozilla.org/en-US/security/advisories/mfsa2015-50/
 // https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-2712
 user_pref("javascript.options.asmjs", false);
+// Отключает WebAssembly.
+// https://hacks.mozilla.org/2016/03/a-webassembly-milestone/
+user_pref("javascript.options.wasm", false);
 // Настройки media.webaudio.enabled больше не существует, поэтому только так.
 user_pref("noscript.forbidMedia", true);
 // Третий уровень - отключение JIT-компилятора, SVG и обработку JavaScript только для HTTPS.
@@ -148,6 +155,7 @@ user_pref("media.opus.enabled", false);
 user_pref("media.webm.enabled", false);
 user_pref("media.raw.enabled", false);
 user_pref("media.wave.enabled", false);
+user_pref("media.wave.decoder.enabled", false);
 user_pref("media.apple.mp3.enabled", false);
 user_pref("media.apple.mp4.enabled", false);
 user_pref("media.windows-media-foundation.enabled", false);
@@ -158,6 +166,8 @@ user_pref("media.directshow.enabled", false);
 user_pref("media.ffmpeg.enabled", false);
 user_pref("media.gmp.decoder.enabled", false);
 user_pref("media.ffvpx.enabled", false);
+user_pref("media.hardware-video-decoding.enabled", false);
+user_pref("media.hardware-video-decoding.force-enabled", false);
 
 // Отключает периодическую загрузку списка вредоносных расширений с AMO.
 // https://addons.mozilla.org/firefox/blocked/
@@ -172,6 +182,13 @@ user_pref("extensions.blocklist.enabled", false);
 user_pref("extensions.blocklist.url", "");
 user_pref("extensions.blocklist.detailsURL", "");
 user_pref("extensions.blocklist.itemURL", "");
+
+// Начиная с Firefox 47, распространение blocklist и отозванных сертификатов постепенно переходит на
+// новый бэкэнд под названием Kinto.
+// https://wiki.mozilla.org/Firefox/Go_Faster#III:_Kinto
+// https://wiki.mozilla.org/Firefox/Kinto
+// https://hg.mozilla.org/releases/mozilla-release/file/b0310cb90fd0/services/common/KintoCertificateBlocklist.js
+user_pref("services.kinto.base", "");
 
 // Отключает проверку на отзыв сертификата через OCSP-сервер при установке шифрованного соединения.
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_secure-website-certificates

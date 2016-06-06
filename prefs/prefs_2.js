@@ -85,6 +85,11 @@ user_pref("reader.errors.includeURLs", false);
 // https://hg.mozilla.org/releases/mozilla-release/file/e5d6dc48f6de/browser/components/uitour/UITour.jsm#l348
 // https://hg.mozilla.org/releases/mozilla-release/file/cebe7cad65a2/browser/base/content/browser.js#l4224
 user_pref("browser.uitour.readerViewTrigger", ".^");
+// Отключает функцию зачитывания текста при помощи синтезированной речи в Reader View.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1166365
+// https://wiki.mozilla.org/QA/Speak_the_article
+// https://hg.mozilla.org/releases/mozilla-release/file/b0310cb90fd0/toolkit/components/reader/AboutReader.jsm#l106
+user_pref("narrate.enabled", false);
 
 // Отключает UI-тур по возможностям Australis, Hello и т.п. Эти настроки влияют на UITour.onPageEvent()
 // и не действуют на тур по Reader View, который вызывается напрямую через UITour.onLocationChange().
@@ -177,6 +182,7 @@ user_pref("dom.vr.enabled", false);
 user_pref("dom.vr.cardboard.enabled", false);
 user_pref("dom.vr.oculus.enabled", false);
 user_pref("dom.vr.oculus050.enabled", false);
+user_pref("dom.vr.poseprediction.enabled", false);
 // https://hg.mozilla.org/releases/mozilla-release/file/970d0cf1c5d9/modules/libpref/init/all.js#l4778
 user_pref("dom.vr.add-test-devices", 0);
 // Отключает API для телефонных звонков, использующийся в Firefox OS.
@@ -195,6 +201,12 @@ user_pref("dom.presentation.tcp_server.debug", false);
 // https://hg.mozilla.org/releases/mozilla-beta/file/00bcc10b3bdc/dom/presentation/provider/MulticastDNSDeviceProvider.cpp#l18
 user_pref("dom.presentation.discovery.enabled", false);
 user_pref("dom.presentation.discoverable", false);
+// Отключает встроенный mDNS-клиент, нужный для Presentation API.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1241368
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1239909
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1225736
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1225726
+user_pref("network.mdns.use_js_fallback", false);
 
 // Отключает Push API, позволяющий веб-приложениям регистрировать идентификатор на сервере Мозиллы,
 // чтобы сайт приложения оставлял там уведомления, которые пользователь получит, когда выйдет онлайн.
@@ -336,6 +348,13 @@ user_pref("loop.conversationPopOut.enabled", false);
 // [1]: https://wiki.mozilla.org/Loop/Architecture/Context
 // [2]: https://hg.mozilla.org/releases/mozilla-release/file/4f87a2517f36/browser/extensions/loop/chrome/content/modules/DomainWhitelist.jsm#l17
 user_pref("loop.logDomains", false);
+// https://hg.mozilla.org/releases/mozilla-release/file/b0310cb90fd0/browser/extensions/loop/bootstrap.js#l392
+user_pref("loop.copy.showLimit", 0);
+user_pref("loop.copy.shown", true);
+// https://hg.mozilla.org/releases/mozilla-release/file/b0310cb90fd0/browser/extensions/loop/bootstrap.js#l1226
+user_pref("loop.copy.throttler", "");
+// https://hg.mozilla.org/releases/mozilla-release/file/b0310cb90fd0/browser/extensions/loop/bootstrap.js#l1285
+user_pref("loop.copy.ticket", 255);
 
 // Отключает поддержку Encrypted Media Extensions (DRM для HTML5-видео).
 user_pref("media.eme.enabled", false);

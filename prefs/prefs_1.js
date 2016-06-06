@@ -123,6 +123,10 @@ user_pref("browser.safebrowsing.provider.google.updateURL", "");
 user_pref("browser.safebrowsing.provider.mozilla.lists", "");
 user_pref("browser.safebrowsing.provider.mozilla.updateURL", "");
 user_pref("browser.safebrowsing.provider.mozilla.gethashURL", "");
+user_pref("browser.safebrowsing.downloads.remote.block_dangerous", false);
+user_pref("browser.safebrowsing.downloads.remote.block_dangerous_host", false);
+user_pref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", false);
+user_pref("browser.safebrowsing.downloads.remote.block_uncommon", false);
 
 // Отключает мозилловский анти-трекинговый список, который дублирует функции uBlock с соответствующими
 // подписками и является менее эффективным (т.к. основан на списке от Disconnect).
@@ -160,6 +164,15 @@ user_pref("urlclassifier.disallow_completions", "");
 user_pref("browser.safebrowsing.forbiddenURIs.enabled", false);
 user_pref("urlclassifier.forbiddenTable", "");
 
+// Отключает список Tracking Protection, содержащий адреса тех SWF с популярных сайтов, которые были
+// замечены в попытках получить список шрифтов или совершить другие подозрительные действия.
+// https://hg.mozilla.org/releases/mozilla-release/file/b0310cb90fd0/modules/libpref/init/all.js#l4965
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1237198
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1248813
+// https://github.com/mozilla-services/shavar-plugin-blocklist
+user_pref("browser.safebrowsing.blockedURIs.enabled", false);
+user_pref("urlclassifier.blockedTable", "");
+
 // Отключает <a ping>, которые отправляют запрос по отдельному указанному адресу (с целью трекинга)
 // при нажатии на ссылку. -- http://kb.mozillazine.org/Browser.send_pings
 user_pref("browser.send_pings", false);
@@ -183,6 +196,20 @@ user_pref("browser.newtabpage.introShown", true);
 // https://wiki.mozilla.org/Websites/Snippets
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_snippets
 user_pref("browser.aboutHomeSnippets.updateUrl", "");
+
+// Отключает новую версию new tab page, которая будет подгружаться с сервера Мозиллы. [Фича еще не
+// готова и не включена по умолчанию.] Сделано это якобы для того, чтобы разработчики могли
+// экспериментировать с функциональностью этой страницы чаще чем происходят релизы браузера.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1176429
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1246202
+// https://wiki.mozilla.org/TPE_SecEng/Content_Signing_for_Remote_New_Tab
+// https://github.com/mozilla/remote-newtab
+// https://hg.mozilla.org/releases/mozilla-release/file/b0310cb90fd0/browser/components/newtab/aboutNewTabService.js#l48
+// https://hg.mozilla.org/releases/mozilla-release/file/b0310cb90fd0/browser/components/newtab/aboutNewTabService.js#l108
+user_pref("browser.newtabpage.remote", false);
+// https://hg.mozilla.org/releases/mozilla-release/file/b0310cb90fd0/browser/components/newtab/NewTabRemoteResources.jsm
+// https://hg.mozilla.org/releases/mozilla-release/file/b0310cb90fd0/browser/components/newtab/aboutNewTabService.js#l160
+user_pref("browser.newtabpage.remote.mode", "dev");
 
 // Отключает проверку при запуске, является ли Firefox браузером по умолчанию.
 // Preferences -> General -> Startup -> Always check if Firefox is your default browser
