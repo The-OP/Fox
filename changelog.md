@@ -1,3 +1,9 @@
+#### Firefox 47
+* https://www.mozilla.org/en-US/firefox/47.0/releasenotes/
+* http://www.ghacks.net/2016/06/07/firefox-47/
+* https://www.opennet.ru/opennews/art.shtml?num=44558
+* https://www.linux.org.ru/news/mozilla/12650023
+
 #### Firefox 46
 * https://www.mozilla.org/en-US/firefox/46.0/releasenotes/
 * http://www.ghacks.net/2016/04/26/firefox-46-0/
