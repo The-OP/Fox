@@ -60,7 +60,7 @@
 
 * [RequestPolicy](https://addons.mozilla.org/firefox/addon/requestpolicy/). Резалка кросс-доменных запросов. Более надежная, но уже не обновляющаяся. Можно (и рекомендуется самим автором) использовать в связке с NoScript.
 
-	* [RequestPolicy Continued](https://requestpolicycontinued.github.io). Форк проекта, в котором идет дальнейшее развитие.
+	* [RequestPolicy Continued](https://addons.mozilla.org/firefox/addon/requestpolicy-continued/). Форк проекта, в котором идет дальнейшее развитие.
 
 * [Policeman](https://addons.mozilla.org/firefox/addon/policeman/). Еще одна резалка кросс-доменных запросов. Более удобная, более фичастая и активно развивающаяся. Но пока есть некоторые шероховатости, например с file -> file и file -> web. Из фич, которые есть в RequestPolicy, тут нет Request Log (решается сторонними аддонами вроде HttpFox) и блокировки редиректов с домена на домен, если они не в белом списке (решается NoRedirect в некотором роде, но менее удобно). **UPD:** Блокировку редиректов запилили в 0.19 версии, ждем на AMO. **UPD:** К сожалению, похоже что аддон прекратил развиваться.
 
