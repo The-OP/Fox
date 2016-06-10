@@ -17,12 +17,10 @@ user_pref("image.cache.size", 0);
 user_pref("webgl.disabled", true);
 user_pref("webgl.force-enabled", false);
 
-// Отключает встроенный менеджер паролей (Preferences -> Security -> Remember passwords for sites).
-// Рекомендуется использовать внешний, например, KeePass. После отключения следует удалить
-// сохраненные пароли, хранящиеся в logins.json в профиле (или через Saved Passwords в GUI).
-user_pref("signon.rememberSignons", false);
-// https://hg.mozilla.org/releases/mozilla-esr38/file/aa2ecb8673b1/toolkit/components/passwordmgr/LoginManagerContent.jsm#l524
-user_pref("signon.storeWhenAutocompleteOff", false);
+// Отключает попытки страниц развернуть себя на весь экран и соответствующую кнопку в HTML5-плеерах.
+// https://developer.mozilla.org/en-US/docs/DOM/Using_fullscreen_mode
+user_pref("full-screen-api.enabled", false);
+user_pref("full-screen-api.pointer-lock.enabled", false);
 
 // Отключает History API, позволяющее добавлять в историю back/forward вкладки элементы, состоящие
 // из URL и ассоциированных с ними state objects с произвольными данными. Последние сохраняются при
@@ -68,14 +66,6 @@ user_pref("gfx.downloadable_fonts.woff2.enabled", false);
 // указанные пользователем в Preferences -> Content. Предотвращает фингерпринтинг через
 // анализ установленных шрифтов: https://www.browserleaks.com/fonts
 user_pref("browser.display.use_document_fonts", 0);
-
-// Отключает попытки страниц развернуть себя на весь экран и соответствующую кнопку в HTML5-плеерах.
-// https://developer.mozilla.org/en-US/docs/DOM/Using_fullscreen_mode
-user_pref("full-screen-api.enabled", false);
-user_pref("full-screen-api.pointer-lock.enabled", false);
-
-// Отключает декодирование мультимедиа через GStreamer.
-user_pref("media.gstreamer.enabled", false);
 
 // Маскировка браузера под версию 38.2 ESR и самую распространённую платформу. Не забываем обновлять
 // по мере выхода очередных ESR.
@@ -141,8 +131,16 @@ user_pref("gfx.font_rendering.graphite.enabled", false);
 // Отключение внешних шрифтов. На выбор одна из настроек:
 user_pref("gfx.downloadable_fonts.enabled", false);
 user_pref("noscript.forbidFonts", true);
-// Полное отключение JavaScript
-user_pref("noscript.global", false);
+// Отключает Media Source Extensions. Ломает некоторые кодеки на YouTube.
+user_pref("media.mediasource.enabled", false);
+user_pref("media.mediasource.mp4.enabled", false);
+user_pref("media.mediasource.webm.enabled", false);
+user_pref("media.mediasource.webm.audio.enabled", false);
+user_pref("media.mediasource.format-reader", false);
+user_pref("media.mediasource.format-reader.mp4", false);
+user_pref("media.mediasource.format-reader.webm", false);
+// Отключает декодирование мультимедиа через GStreamer.
+user_pref("media.gstreamer.enabled", false);
 // Отключает поддержку соответствующих форматов/кодеков.
 user_pref("media.format-reader.mp4", false);
 user_pref("media.format-reader.webm", false);
@@ -168,6 +166,8 @@ user_pref("media.gmp.decoder.enabled", false);
 user_pref("media.ffvpx.enabled", false);
 user_pref("media.hardware-video-decoding.enabled", false);
 user_pref("media.hardware-video-decoding.force-enabled", false);
+// Полное отключение JavaScript
+user_pref("noscript.global", false);
 
 // Отключает периодическую загрузку списка вредоносных расширений с AMO.
 // https://addons.mozilla.org/firefox/blocked/

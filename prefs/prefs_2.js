@@ -484,6 +484,33 @@ user_pref("pdfjs.enableWebGL", false);
 // https://drafts.csswg.org/css-font-loading/
 user_pref("layout.css.font-loading-api.enabled", false);
 
+// Отключает Offline App Cache.
+// Демо можно посмотреть тут: http://appcache.offline.technology/demo/index.html мониторя
+// использование через about:cache -> appcache и меняя настройки.
+// http://www.w3.org/TR/offline-webapps/
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Using_the_application_cache
+user_pref("browser.cache.offline.enable", false);
+user_pref("browser.cache.offline.capacity", 0);
+// Запрос разрешения на использование бесполезен при отключенном Offline App Cache, но все равно
+// будет появляться, если его не отключить этой настройкой.
+// https://hg.mozilla.org/releases/mozilla-esr38/file/ae7fbd79941b/browser/base/content/browser.js#l6020
+user_pref("browser.offline-apps.notify", false);
+// Эта настройка тоже нужна тут, иначе у всех сайтов по умолчанию будет permission "offline-app", и при
+// попытке воспользоваться Offline App Cache, они будут появляться в списке Preferences -> Advanced ->
+// Network -> Offline Web Content and User Data, хоть и не смогут ничего хранить в выключенном кэше.
+// https://hg.mozilla.org/releases/mozilla-esr38/file/dd257f17530c/uriloader/prefetch/nsOfflineCacheUpdateService.cpp#l649
+// https://hg.mozilla.org/releases/mozilla-esr38/file/dd257f17530c/dom/base/nsContentSink.cpp#l1056
+// https://hg.mozilla.org/releases/mozilla-esr38/file/5be76431120a/dom/base/nsContentUtils.cpp#l1709
+// https://hg.mozilla.org/releases/mozilla-esr38/file/dd257f17530c/uriloader/prefetch/nsOfflineCacheUpdateService.cpp#l744
+user_pref("offline-apps.allow_by_default", false);
+
+// Отключает Shared Workers. Они могут стать проблемой, если загружаются с одного CDN несколькими
+// разными открытыми в данный момент во вкладках у пользователя сайтами, так как такие Workers
+// имеют общий контекст (т.е. доступ к данным друг друга).
+// https://www.torproject.org/projects/torbrowser/design/#identifier-linkability
+// https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers#Shared_workers
+user_pref("dom.workers.sharedWorkers.enabled", false);
+
 // Отключает Service Worker API, позволяющее сайтам запускать скрипты, которые могут заниматься
 // различной сомнительной самодеятельностью (примеры по ссылкам ниже) в фоновом режиме, даже
 // если у пользователя не открыто ни одной вкладки этого сайта.
