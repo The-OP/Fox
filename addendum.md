@@ -130,6 +130,11 @@ Userstyles.org [не пропускает](https://github.com/JasonBarnabe/styli
 #### Безопасность
 * [Список исправленных уязвимостей](https://www.mozilla.org/en-US/security/known-vulnerabilities/firefox/)
 * [Описание](https://developer.mozilla.org/en-US/Add-ons/AMO/Policy/Reviews) процедуры ревью аддонов на AMO.
+* Атаки через подмену содержимого буфера обмена
+  * С использованием JavaScript:
+    * https://www.opennet.ru/opennews/art.shtml?num=44481
+    * https://security.love/Pastejacking/
+  * Без использования JavaScript, на чистом HTML: https://thejh.net/misc/website-terminal-copy-paste
 
 #### Приватность
 * [Неплохой обзор от Mozilla](https://support.mozilla.org/en-US/kb/how-stop-firefox-automatically-making-connections) с описаниями механизмов, из-за которых Firefox может инициировать соединения без прямого приказа пользователя. Еще: [соединения](http://kb.mozillazine.org/Connections_established_on_startup_-_Firefox), устанавливающиеся при запуске браузера. Настройки для отключения подобной самодеятельности есть здесь, в разделе "Настройки".
