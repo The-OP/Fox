@@ -7,7 +7,9 @@
   * [Настройки about:config](addendum.md#user-content-Настройки-aboutconfig)
   * [Продвинутые аддоны](addendum.md#user-content-Продвинутые-аддоны)
   * [Интересные ссылки](addendum.md#user-content-Интересные-ссылки)
-	
+    * [Безопасность](addendum.md#user-content-Безопасность)
+    * [Приватность](addendum.md#user-content-Приватность)
+
 ## FAQ
 1. **Q:** Проблемы с отрисовкой интерфейса, изображений или видео. Внезапные падения браузера.<br>
 **A:** Пробуйте по очереди: <br>
