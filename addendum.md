@@ -100,6 +100,10 @@
 <sup><s><a href="https://addons.mozilla.org/firefox/files/browse/115831/file/install.rdf">E10S</a></s></sup>
 Рубит редиректы по рэгэкспам исходного или целевого URL.
 
+* [Redirect Control](https://addons.mozilla.org/firefox/addon/redirect-control/)
+<sup><s><a href="https://addons.mozilla.org/en-US/firefox/files/browse/419810/file/install.rdf">E10S</a></s></sup>
+Еще один блокировщик редиректов. Развивается в отличие от давно не обновлявшегося NoRedirect.
+
 * [Redirector](https://addons.mozilla.org/firefox/addon/redirector/)
 <sup><a href="https://addons.mozilla.org/firefox/files/browse/403096/file/install.rdf">E10S</a></sup>
 Позволяет задавать пользовательские редиректы по паттернам или регулярным выражениям.
