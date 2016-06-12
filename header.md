@@ -24,7 +24,10 @@
 `layers.async-pan-zoom.enabled -> true` <br>
 `extensions.e10sBlockedByAddons -> false` <br>
 `extensions.e10sBlocksEnabling -> false` <br>
-Применение требует перезапуска. Проверить работу можно в `about:support -> Multiprocess Windows`.
+Применение требует перезапуска. Проверить работу можно в `about:support -> Multiprocess Windows`. <br>
+<sub>
+Если все еще не работает: [`browser.tabs.remote.force-enable -> true`](https://wiki.mozilla.org/Electrolysis#Force_Enable) (не рекомендуется). Для тестирования расширений, есть способ отключить костыли, которые в ущерб производительности обеспечивают работу не совместимых с E10S аддонов: `extensions.interposition.enabled -> false` и `extensions.interposition.prefetching -> false`
+</sub>
 
 1. **Q:** О блокировке неподписанных расширений. <br>
 **A:** В Firefox 43 установку не подписанных Mozilla аддонов можно включить в `about:config -> xpinstall.signatures.required -> false`. Начиная с **48** версии, из стандартных релизов и бет эта опция исчезнет, однако будут выпускаться специальные сборки (по аналогии с EME-free), где она [сохранится](https://wiki.mozilla.org/Addons/Extension_Signing).
