@@ -124,6 +124,10 @@
 <sup><s>E10S</s></sup>
 Еще один продвинутый аддон для противодействия фингерпринтингу. Позволяет не только менять юзер-агент, но и заблокировать другие каналы утечки опознавательной информации.
 
+* [Decentraleyes](https://addons.mozilla.org/firefox/addon/decentraleyes/)
+<sup><s><a href="https://addons.mozilla.org/en-US/firefox/files/browse/435450/file/install.rdf">E10S</a></s></sup>
+Аддон содержит популярные библиотеки (AngularJS, Backbone.js, Dojo, Ember.js, Ext Core, jQuery, jQuery UI, Modernizr, MooTools, Prototype, Scriptaculous, SWFObject, Underscore.js) и предотвращает обращения сайтов за ними ко внешним 3rd-party CDN, предоставляя вместо этого локальные копии.
+
 * [Privacy Badger](https://addons.mozilla.org/firefox/addon/privacy-badger-firefox/)
 <sup><s><a href="https://addons.mozilla.org/firefox/files/browse/422094/file/install.rdf">E10S</a></s></sup>
 Аналог Ghostery от EFF. Актуально для тех, кто хочет поставить и забыть, чтоб оно там автоматом боролось с трекингом.
