@@ -44,49 +44,91 @@
 * `security.ssl3.rsa_des_ede3_sha` -- https://login.skype.com/login
 
 ## Продвинутые аддоны
-* [HTTPS Everywhere](https://addons.mozilla.org/en-us/firefox/addon/https-everywhere/). Содержит список сайтов, поддерживающих как HTTP, так HTTPS, и автоматически меняет все HTTP-ссылки, ведущие к этим сайтам, на HTTPS. Аддон вернули на AMO, но на всякий случай - [ссылка](https://www.eff.org/https-everywhere/) на официальный сайт. Правила обновляются редко, актуальную версию правил можно получить [на GitHub](https://github.com/EFForg/https-everywhere), там же можно отправить новое правило.
+<sub>`E10S` - совместимые с Electrolysis расширения, <s>`E10S`</s> - не совместимые, либо работающие через прослойку для совместимости (interposition).</sub>
 
-* [SSleuth](https://addons.mozilla.org/en-US/firefox/addon/ssleuth/) ([GitHub](https://github.com/sibiantony/ssleuth)). Показывает информацию об используемых криптопримитивах и фичах TLS/SSL в шифрованных соединениях.
+* [HTTPS Everywhere](https://addons.mozilla.org/en-us/firefox/addon/https-everywhere/)
+<sup><a href="https://addons.mozilla.org/en-us/firefox/files/browse/451140/file/install.rdf">E10S</a></sup>
+Содержит список сайтов, поддерживающих как HTTP, так HTTPS, и автоматически меняет все HTTP-ссылки, ведущие к этим сайтам, на HTTPS. Аддон вернули на AMO, но на всякий случай - [ссылка](https://www.eff.org/https-everywhere/) на официальный сайт. Правила обновляются редко, актуальную версию правил можно получить [на GitHub](https://github.com/EFForg/https-everywhere), там же можно отправить новое правило.
 
-* [RefControl](https://addons.mozilla.org/firefox/addon/refcontrol/). Резалка [рефереров](https://en.wikipedia.org/wiki/HTTP_Referer). Можно тонко тюнить, а можно рубить только рефереры при переходе на другой домен (Block (3rd party)), оставляя внутридоменные, что просто, эффективно для 99% случаев и не ломает так много сайтов как полный запрет.
+* [SSleuth](https://addons.mozilla.org/firefox/addon/ssleuth/)
+<sup><s><a href="https://github.com/sibiantony/ssleuth/blob/master/install.rdf">E10S</a></s></sup>
+([GitHub](https://github.com/sibiantony/ssleuth)) Показывает информацию об используемых криптопримитивах и фичах TLS/SSL в шифрованных соединениях.
 
-* [CleanLinks](https://addons.mozilla.org/firefox/addon/clean-links/). Чистит ссылки от редирект-префиксов Гугла и т.п. Имеет белый список как доменов, так и рэгэкспов, чтобы пропускать ссылки со всякими нужными префиксами вроде auth, ServiceLogin и т.п.
+* [RefControl](https://addons.mozilla.org/firefox/addon/refcontrol/)
+<sup><s><a href="https://addons.mozilla.org/firefox/files/browse/287508/file/install.rdf">E10S</a></s></sup>
+Резалка [рефереров](https://en.wikipedia.org/wiki/HTTP_Referer). Можно тонко тюнить, а можно рубить только рефереры при переходе на другой домен (Block (3rd party)), оставляя внутридоменные, что просто, эффективно для 99% случаев и не ломает так много сайтов как полный запрет.
 
-* [Google search link fix](https://addons.mozilla.org/en-US/firefox/addon/google-search-link-fix/). Более простая альтернатива CleanLinks для тех, кого он по каким-то причинам не устраивает. Работает только на Google, Yandex и Yahoo.
+* [CleanLinks](https://addons.mozilla.org/firefox/addon/clean-links/)
+<sup><s><a href="https://github.com/diegocr/CleanLinks/blob/master/install.rdf">E10S</a></s></sup>
+Чистит ссылки от редирект-префиксов Гугла и т.п. Имеет белый список как доменов, так и рэгэкспов, чтобы пропускать ссылки со всякими нужными префиксами вроде auth, ServiceLogin и т.п.
 
-* [Cookie Controller](https://addons.mozilla.org/firefox/addon/cookie-controller/). Менее удобная чем Cookie Monster штука, но можно использовать на случай длительного затишья в поддержке первого (такое уже бывало).
+* [Google search link fix](https://addons.mozilla.org/firefox/addon/google-search-link-fix/)
+<sup><a href="https://addons.mozilla.org/firefox/files/browse/378875/file/install.rdf">E10S</a></sup>
+Более простая альтернатива CleanLinks для тех, кого он по каким-то причинам не устраивает. Работает только на Google, Yandex и Yahoo.
 
-* [Self-Destructing Cookies](https://addons.mozilla.org/firefox/addon/self-destructing-cookies/). Самоуничтожение кук после закрытия всех вкладок с соответствующим сайтом. Может быть удобнее чем полная блокировка.
+* [Cookie Controller](https://addons.mozilla.org/firefox/addon/cookie-controller/)
+<sup><a href="https://addons.mozilla.org/firefox/files/browse/422548/file/install.rdf">E10S</a></sup>
+Менее удобная чем Cookie Monster штука, но можно использовать на случай длительного затишья в поддержке первого (такое уже бывало).
 
-* [BetterPrivacy](https://addons.mozilla.org/firefox/addon/betterprivacy/). Менее актуально с понижением числа пользователей Flash, но все же. Уничтожает [LSO](https://en.wikipedia.org/wiki/Local_shared_object), которые не может заблокировать или уничтожить сам браузер.
+* [Self-Destructing Cookies](https://addons.mozilla.org/firefox/addon/self-destructing-cookies/)
+<sup><s><a href="https://addons.mozilla.org/firefox/files/browse/423258/file/install.rdf">E10S</a></s></sup>
+Самоуничтожение кук после закрытия всех вкладок с соответствующим сайтом. Может быть удобнее чем полная блокировка.
 
-* [RequestPolicy](https://addons.mozilla.org/firefox/addon/requestpolicy/). Резалка кросс-доменных запросов. Более надежная, но уже не обновляющаяся. Можно (и рекомендуется самим автором) использовать в связке с NoScript.
+* [BetterPrivacy](https://addons.mozilla.org/firefox/addon/betterprivacy/)
+<sup><s>E10S</s></sup>
+Менее актуально с понижением числа пользователей Flash, но все же. Уничтожает [LSO](https://en.wikipedia.org/wiki/Local_shared_object), которые не может заблокировать или уничтожить сам браузер.
 
-	* [RequestPolicy Continued](https://addons.mozilla.org/firefox/addon/requestpolicy-continued/). Форк проекта, в котором идет дальнейшее развитие.
+* [RequestPolicy](https://addons.mozilla.org/firefox/addon/requestpolicy/)
+<sup><s><a href="https://addons.mozilla.org/firefox/files/browse/223479/file/install.rdf">E10S</a></s></sup>
+Резалка кросс-доменных запросов. Более надежная, но уже не обновляющаяся. Можно (и рекомендуется самим автором) использовать в связке с NoScript.
 
-* [Policeman](https://addons.mozilla.org/firefox/addon/policeman/). Еще одна резалка кросс-доменных запросов. Более удобная, более фичастая и активно развивающаяся. Но пока есть некоторые шероховатости, например с file -> file и file -> web. Из фич, которые есть в RequestPolicy, тут нет Request Log (решается сторонними аддонами вроде HttpFox) и блокировки редиректов с домена на домен, если они не в белом списке (решается NoRedirect в некотором роде, но менее удобно). **UPD:** Блокировку редиректов запилили в 0.19 версии, ждем на AMO. **UPD:** К сожалению, похоже что аддон прекратил развиваться.
+	* [RequestPolicy Continued](https://addons.mozilla.org/firefox/addon/requestpolicy-continued/)
+	<sup><s><a href="https://github.com/RequestPolicyContinued/requestpolicy/blob/dev-1.0/src/install.rdf">E10S</a></s></sup>
+	Форк проекта, в котором идет дальнейшее развитие.
 
-* [uMatrix](https://addons.mozilla.org/firefox/addon/umatrix/). Самая многофункциональная из резалок кросс-доменных запросов. Как и Policeman может блокировать запросы в зависимости от типа контента, но обладает более удобным интерфейсом. Также умеет блокировать XHR (отдельно от обычных запросов), скрипты, куки, рефереры, плагины, медиа (HTML5 аудио и видео) и вебсокеты ([только на Firefox](https://code.google.com/p/chromium/issues/detail?id=129353)). Документацию еще не перенесли целиком из старого проекта, на котором основан uMatrix, так что если что непонятно, смотреть не только [здесь](https://github.com/gorhill/uMatrix/wiki), но и [здесь](https://github.com/gorhill/httpswitchboard/wiki).
+* [Policeman](https://addons.mozilla.org/firefox/addon/policeman/)
+<sup><s><a href="https://github.com/futpib/policeman/blob/master/src/install.rdf">E10S</a></s></sup>
+Еще одна резалка кросс-доменных запросов. Более удобная, более фичастая и активно развивающаяся. Но пока есть некоторые шероховатости, например с file -> file и file -> web. Из фич, которые есть в RequestPolicy, тут нет Request Log (решается сторонними аддонами вроде HttpFox) и блокировки редиректов с домена на домен, если они не в белом списке (решается NoRedirect в некотором роде, но менее удобно). **UPD:** Блокировку редиректов запилили в 0.19 версии, ждем на AMO. **UPD:** К сожалению, похоже что аддон прекратил развиваться.
+
+* [uMatrix](https://addons.mozilla.org/firefox/addon/umatrix/)
+<sup><a href="https://github.com/gorhill/uMatrix/blob/master/platform/firefox/install.rdf">E10S</a></sup>
+Самая многофункциональная из резалок кросс-доменных запросов. Как и Policeman может блокировать запросы в зависимости от типа контента, но обладает более удобным интерфейсом. Также умеет блокировать XHR (отдельно от обычных запросов), скрипты, куки, рефереры, плагины, медиа (HTML5 аудио и видео) и вебсокеты ([только на Firefox](https://code.google.com/p/chromium/issues/detail?id=129353)). Документацию еще не перенесли целиком из старого проекта, на котором основан uMatrix, так что если что непонятно, смотреть не только [здесь](https://github.com/gorhill/uMatrix/wiki), но и [здесь](https://github.com/gorhill/httpswitchboard/wiki).
 
 	* <sub>Алгоритм блокирования кук несколько отличается от того, что у Cookie Monster и Cookie Controller - первые два не дают сайтам устанавливать куки, а uMatrix дает ставить, но не дает читать, убирая из всех HTTP-запросов заголовок Cookie (но при этом через document.cookie установленные куки все еще видны), а через некоторое время - подчищает. Также в отличие от CM/CC, uMatrix не умеет запрещать писать в DOM Storage, а может только периодически его очищать.</sub>
 
-* [NoRedirect](https://addons.mozilla.org/firefox/addon/noredirect/). Рубит редиректы по рэгэкспам исходного или целевого URL.
+* [NoRedirect](https://addons.mozilla.org/firefox/addon/noredirect/)
+<sup><s><a href="https://addons.mozilla.org/firefox/files/browse/115831/file/install.rdf">E10S</a></s></sup>
+Рубит редиректы по рэгэкспам исходного или целевого URL.
 
-* [Redirector](https://addons.mozilla.org/firefox/addon/redirector/). Позволяет задавать пользовательские редиректы по паттернам или регулярным выражениям.
+* [Redirector](https://addons.mozilla.org/firefox/addon/redirector/)
+<sup><a href="https://addons.mozilla.org/firefox/files/browse/403096/file/install.rdf">E10S</a></sup>
+Позволяет задавать пользовательские редиректы по паттернам или регулярным выражениям.
 
-* [HttpFox](https://addons.mozilla.org/firefox/addon/httpfox/). Мониторит все HTTP-запросы браузера. Показывает заголовки, параметры GET/POST и статус запроса (в т.ч. был ли он выполнен, взят из кэша, или отменен (NS_BINDING_ABORTED) самим браузером/другим аддоном).
+* [HttpFox](https://addons.mozilla.org/firefox/addon/httpfox/)
+<sup><s>E10S</s></sup>
+Мониторит все HTTP-запросы браузера. Показывает заголовки, параметры GET/POST и статус запроса (в т.ч. был ли он выполнен, взят из кэша, или отменен (NS_BINDING_ABORTED) самим браузером/другим аддоном).
 
-* [User Agent Switcher](https://addons.mozilla.org/firefox/addon/user-agent-switcher/) и [списки к нему](http://techpatterns.com/downloads/firefox/useragentswitcher.xml).
+* [User Agent Switcher](https://addons.mozilla.org/firefox/addon/user-agent-switcher/)
+<sup><s><a href="https://addons.mozilla.org/firefox/files/browse/107207/file/install.rdf">E10S</a></s></sup>
+и [списки к нему](http://techpatterns.com/downloads/firefox/useragentswitcher.xml).
 
-* [Random Agent Spoofer](https://addons.mozilla.org/firefox/addon/random-agent-spoofer/). Меняет юзер-агенты по таймеру и с дополнительными фичами, препятствующими фингерпринтингу. Версия с GitHub имеет расширенную функциональность по сравнению с версией с AMO (см. описание на AMO).
+* [Random Agent Spoofer](https://addons.mozilla.org/firefox/addon/random-agent-spoofer/)
+<sup><s><a href="https://addons.mozilla.org/firefox/files/browse/376077/file/install.rdf">E10S</a></s></sup>
+Меняет юзер-агенты по таймеру и с дополнительными фичами, препятствующими фингерпринтингу. Версия с GitHub имеет расширенную функциональность по сравнению с версией с AMO (см. описание на AMO).
 
-* [http-useragent-cleaner](https://addons.mozilla.org/firefox/addon/http-useragent-cleaner/). Еще один продвинутый аддон для противодействия фингерпринтингу. Позволяет не только менять юзер-агент, но и заблокировать другие каналы утечки опознавательной информации.
+* [http-useragent-cleaner](https://addons.mozilla.org/firefox/addon/http-useragent-cleaner/)
+<sup><s>E10S</s></sup>
+Еще один продвинутый аддон для противодействия фингерпринтингу. Позволяет не только менять юзер-агент, но и заблокировать другие каналы утечки опознавательной информации.
 
-* [Privacy Badger](https://addons.mozilla.org/firefox/addon/privacy-badger-firefox/). Аналог Ghostery от EFF. Актуально для тех, кто хочет поставить и забыть, чтоб оно там автоматом боролось с трекингом.
+* [Privacy Badger](https://addons.mozilla.org/firefox/addon/privacy-badger-firefox/)
+<sup><s><a href="https://addons.mozilla.org/firefox/files/browse/422094/file/install.rdf">E10S</a></s></sup>
+Аналог Ghostery от EFF. Актуально для тех, кто хочет поставить и забыть, чтоб оно там автоматом боролось с трекингом.
 
-	* <sub>Часто спрашивают, чем плох Ghostery. Во-первых, он принадлежит маркетинговой компании, собирающей [статистику](https://addons.mozilla.org/en-US/firefox/addon/ghostery/privacy/) с wannabe-анонимусов. Во-вторых - распространяется под [проприетарной лицензией](https://addons.mozilla.org/en-US/firefox/addon/ghostery/license/5.4.1). Но самое главное то, что он бесполезен, если уже используется баннерорезка с анти-трекерными подписками и какой-нибудь аддон для контроля/очистки кук. См. [исследование Стэнфорда](http://cyberlaw.stanford.edu/node/6730), сравнивающее баннерорезки с Ghostery по эффективности. Если уж вам очень сильно хочется автоматического все-в-одном комбайна, подобного Ghostery - используйте Privacy Badger от Electronic Frontier Foundation, распространяющийся под свободной лицензией.</sub>
+	* <sub>Часто спрашивают, чем плох Ghostery. Во-первых, он принадлежит маркетинговой компании, собирающей [статистику](https://addons.mozilla.org/firefox/addon/ghostery/privacy/) с wannabe-анонимусов. Во-вторых - распространяется под [проприетарной лицензией](https://addons.mozilla.org/firefox/addon/ghostery/license/5.4.1). Но самое главное то, что он бесполезен, если уже используется баннерорезка с анти-трекерными подписками и какой-нибудь аддон для контроля/очистки кук. См. [исследование Стэнфорда](http://cyberlaw.stanford.edu/node/6730), сравнивающее баннерорезки с Ghostery по эффективности. Если уж вам очень сильно хочется автоматического все-в-одном комбайна, подобного Ghostery - используйте Privacy Badger от Electronic Frontier Foundation, распространяющийся под свободной лицензией.</sub>
 
-* [Yet Another Remove It Permanently](https://addons.mozilla.org/firefox/addon/yarip/). Баннерорезка с поддержкой XPath. Для тех случаев, когда CSS-селекторов не хватает.
+* [Yet Another Remove It Permanently](https://addons.mozilla.org/firefox/addon/yarip/)
+<sup><s><a href="https://addons.mozilla.org/firefox/files/browse/284102/file/install.rdf">E10S</a></s></sup>
+Баннерорезка с поддержкой XPath. Для тех случаев, когда CSS-селекторов не хватает.
 
 ## Разное
 
