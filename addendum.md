@@ -129,7 +129,7 @@
 Аддон содержит популярные библиотеки (AngularJS, Backbone.js, Dojo, Ember.js, Ext Core, jQuery, jQuery UI, Modernizr, MooTools, Prototype, Scriptaculous, SWFObject, Underscore.js) и предотвращает обращения сайтов за ними ко внешним 3rd-party CDN, предоставляя вместо этого локальные копии.
 
 * [No Resource URI Leak](https://addons.mozilla.org/firefox/addon/no-resource-uri-leak/)
-<sup><a href="https://addons.mozilla.org/en-US/firefox/files/browse/454913/file/install.rdf">E10S</a></sup>
+<sup><a href="https://addons.mozilla.org/firefox/files/browse/454913/file/install.rdf">E10S</a></sup>
 Предотвращает фингерпринтинг по внутренним URL браузера со схемой resource://, запрещая веб-страницам доступ к ним. Может сломать некоторые другие расширения. Подробнее о проблеме: [Ghacks](http://www.ghacks.net/2016/06/12/firefox-resource-leak/), [Bug 863246](https://bugzilla.mozilla.org/show_bug.cgi?id=863246), [Bug 903959](https://bugzilla.mozilla.org/show_bug.cgi?id=903959). Протестировать можно на Browserleaks: https://www.browserleaks.com/firefox
 
 * [Privacy Badger](https://addons.mozilla.org/firefox/addon/privacy-badger-firefox/)
