@@ -408,7 +408,13 @@ user_pref("devtools.webide.templatesURL_cache", "");
 
 // Отключает возможность отладки через сеть этого экземпляра Firefox другим и наоборот (а также
 // самого себя через loopback-соединение Browser Toolbox). Включена по умолчанию на Developer Edition.
+// https://hg.mozilla.org/releases/mozilla-release/file/3dcde73ca237dd579e1599f635f3cc994afc1346/modules/libpref/init/all.js#l875
 user_pref("devtools.debugger.remote-enabled", false);
+user_pref("devtools.chrome.enabled", false);
+// Разрешает сетевую отладку только через loopback-интерфейс и только после подтверждения.
+// https://hg.mozilla.org/releases/mozilla-release/file/3dcde73ca237dd579e1599f635f3cc994afc1346/modules/libpref/init/all.js#l886
+user_pref("devtools.debugger.force-local", true);
+user_pref("devtools.debugger.prompt-connection", true);
 
 // Отключает обнаружение captive portal - подмены всех запрашиваемых пользователем страниц на
 // страницы провайдера. Эта техника используется в местах публичного Wi-Fi и некоторыми операторами

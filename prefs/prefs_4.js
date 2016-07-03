@@ -22,6 +22,15 @@ user_pref("webgl.force-enabled", false);
 user_pref("full-screen-api.enabled", false);
 user_pref("full-screen-api.pointer-lock.enabled", false);
 
+// Включает спуфинг различных свойств, как DOM, так и CSS, по которым можно фингерпринтить
+// пользователя (screenX, screenY, screen.width, screen.height, etc - полный список см. в исходниках
+// тестов по ссылкам ниже).
+// https://bugzilla.mozilla.org/show_bug.cgi?id=418986
+// https://hg.mozilla.org/releases/mozilla-release/file/3dcde73ca237dd579e1599f635f3cc994afc1346/dom/base/test/chrome/bug418986-1.js
+// https://hg.mozilla.org/releases/mozilla-release/file/3dcde73ca237dd579e1599f635f3cc994afc1346/layout/style/test/chrome/bug418986-2.js
+// https://hg.mozilla.org/releases/mozilla-release/file/3dcde73ca237dd579e1599f635f3cc994afc1346/dom/events/test/bug418986-3.js
+user_pref("privacy.resistFingerprinting", true);
+
 // Отключает History API, позволяющее добавлять в историю back/forward вкладки элементы, состоящие
 // из URL и ассоциированных с ними state objects с произвольными данными. Последние сохраняются при
 // перезапусках браузера (structuredCloneState в recovery.js), если включено восстановление сессии.
@@ -104,6 +113,12 @@ user_pref("intl.accept_languages", "en-US, en");
 user_pref("general.useragent.locale", "en-US");
 // Использовать локаль из general.useragent.locale, а не установленную в ОС.
 user_pref("intl.locale.matchOS", false);
+// Отключает возможность определения локали через Date.toLocaleString() - будет использоваться
+// всегда американская. Применяется только после перезапуска браузера. Проверить можно так:
+// LANG=ru_RU.UTF-8 firefox
+// (new Date(Date.now())).toLocaleString()
+// https://bugzilla.mozilla.org/show_bug.cgi?id=867501
+user_pref("javascript.use_us_english_locale", true);
 
 // Кроме того, на основе анализа истории уязвимостей в Firefox, разработчиками Tor Browser был
 // сформирован список возможностей, в реализации которых всплывает больше всего уязвимостей.
