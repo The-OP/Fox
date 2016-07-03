@@ -64,6 +64,23 @@ user_pref("layout.css.visited_links_enabled", false);
 // http://kb.mozillazine.org/Clipboard.autocopy
 user_pref("clipboard.autocopy", false);
 
+// Удалять cookies после выхода из браузера.
+// Preferences -> Privacy -> Accept cookies from sites -> Keep until: I close Firefox
+// http://kb.mozillazine.org/Network.cookie.lifetimePolicy
+// https://hg.mozilla.org/releases/mozilla-release/file/3dcde73ca237dd579e1599f635f3cc994afc1346/modules/libpref/init/all.js#l1891
+user_pref("network.cookie.lifetimePolicy", 2);
+
+// Запрещает cookies полностью. Ломает многие сайты, поэтому рекомендуется не отключать полностью, а
+// контролировать и чистить соответствующими аддонами.
+// Preferences -> Privacy -> Accept cookies from sites
+// http://kb.mozillazine.org/Network.cookie.cookieBehavior
+// https://hg.mozilla.org/releases/mozilla-release/file/3dcde73ca237dd579e1599f635f3cc994afc1346/modules/libpref/init/all.js#l1886
+user_pref("network.cookie.cookieBehavior", 2);
+
+// Отключает DOM Storage. Ломает многие сайты, поэтому рекомендуется не отключать полностью, а
+// контролировать и чистить соответствующими аддонами.
+user_pref("dom.storage.enabled", false);
+
 // Отключает загружаемые сайтами шрифты. Несколько повышает безопасность за счет исключения
 // уязвимостей в парсере шрифтов. Ломает кнопки uBlock. В качестве не ломающей кнопки замены
 // можно добавить правило "no-remote-fonts: * true" (без кавычек) в My rules самого uBlock.

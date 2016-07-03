@@ -5,6 +5,12 @@ user_pref("signon.rememberSignons", false);
 // https://hg.mozilla.org/releases/mozilla-esr38/file/aa2ecb8673b1/toolkit/components/passwordmgr/LoginManagerContent.jsm#l524
 user_pref("signon.storeWhenAutocompleteOff", false);
 
+// Запрещает 3rd-party cookies.
+// Preferences -> Privacy -> Accept cookies from sites -> Accept third-party cookies: Never
+// http://kb.mozillazine.org/Network.cookie.cookieBehavior
+// https://hg.mozilla.org/releases/mozilla-release/file/3dcde73ca237dd579e1599f635f3cc994afc1346/modules/libpref/init/all.js#l1886
+user_pref("network.cookie.cookieBehavior", 1);
+
 // Отключает API для системных уведомлений из веб-приложений.
 // https://developer.mozilla.org/en-US/docs/Web/API/Notification/Using_Web_Notifications
 user_pref("dom.webnotifications.enabled", false);
