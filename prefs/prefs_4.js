@@ -107,6 +107,8 @@ user_pref("general.oscpu.override", "Windows NT 6.1; WOW64");
 // window.navigator.platform
 user_pref("general.platform.override", "Win32");
 // HTTP User-Agent, window.navigator.userAgent
+// Внимание! Неправдоподобно выглядящий useragent ломает maps.yandex.ru —
+//           координаты не резолвятся в адреса и невозможно построить маршрут между А и Б.
 user_pref("general.useragent.override", "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:38.0) Gecko/20100101 Firefox/38.0");
 // window.navigator.buildID
 user_pref("general.buildID.override", "20150806103657");
