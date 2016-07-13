@@ -104,6 +104,7 @@ user_pref("browser.uitour.themeOrigin", "");
 
 // Отключает геолокацию через сервисы Гугла с присвоением клиентскому компьютеру уникального
 // идентификатора и передачей в Гугл информации о близлежащих точках доступа Wi-Fi.
+// Внимание! Ломает панель фильтров на citilink.ru, и, может, не только там.
 // https://www.mozilla.org/en-US/firefox/geolocation/
 user_pref("geo.enabled", false);
 user_pref("geo.wifi.logging.enabled", false);
