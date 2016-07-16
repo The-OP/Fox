@@ -42,6 +42,8 @@
 * `security.ssl.require_safe_negotiation` -- Instagram, многие другие.
 * `dom.indexedDB.enabled` -- Twitter.
 * `security.ssl3.rsa_des_ede3_sha` -- https://login.skype.com/login
+* `geo.enabled` -- citilink.ru (панель фильтров).
+* `general.useragent.override` -- Неправдоподобно выглядящий useragent ломает maps.yandex.ru и много что еще.
 
 ## Продвинутые аддоны
 <sub>`E10S` - совместимые с Electrolysis расширения, <s>`E10S`</s> - не совместимые, либо работающие через прослойку для совместимости (interposition).</sub>
