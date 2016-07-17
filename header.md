@@ -107,7 +107,7 @@ Firefox сохраняет вкладки, закладки, историю, а�
 		* <sub> Разработчик Adblock Edge закрыл проект и [рекомендует пользователям uBlock Origin](https://addons.mozilla.org/firefox/addon/adblock-edge/#addon-description) как более совершенную альтернативу.</sub>
 
 * [Add Bookmark Here 2](https://addons.mozilla.org/firefox/addon/add-bookmark-here-2/)
-<sup><s><a href="https://addons.mozilla.org/firefox/files/browse/429646/file/install.rdf">E10S</a></s></sup>
+<sup><a href="https://addons.mozilla.org/firefox/files/browse/461049/file/install.rdf">E10S</a></sup>
 Решает [проблему](https://bugzilla.mozilla.org/show_bug.cgi?id=423617) с запоминанием папки для добавления закладок по умолчанию и обладает несколькими другими улучшающими работу с закладками функциями.
 
 * [Add to Search Bar](https://addons.mozilla.org/firefox/addon/add-to-search-bar/)
