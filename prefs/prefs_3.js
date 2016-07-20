@@ -8,8 +8,28 @@ user_pref("signon.storeWhenAutocompleteOff", false);
 // Запрещает 3rd-party cookies.
 // Preferences -> Privacy -> Accept cookies from sites -> Accept third-party cookies: Never
 // http://kb.mozillazine.org/Network.cookie.cookieBehavior
-// https://hg.mozilla.org/releases/mozilla-release/file/3dcde73ca237dd579e1599f635f3cc994afc1346/modules/libpref/init/all.js#l1886
+// https://hg.mozilla.org/releases/mozilla-esr45/file/2786beb35a3825b68651e2bf22ce06b84ff31ee3/modules/libpref/init/all.js#l1854
+// https://hg.mozilla.org/releases/mozilla-esr45/file/4bd5a188c4236c4d14f9e859aa0ba243480af9bc/netwerk/cookie/nsCookieService.cpp#l3800
+// https://hg.mozilla.org/releases/mozilla-esr45/file/4bd5a188c4236c4d14f9e859aa0ba243480af9bc/netwerk/cookie/nsICookieService.idl#l77
 user_pref("network.cookie.cookieBehavior", 1);
+
+// Запрещает сохранение данных форм, Session Storage и Session Cookies при сохранении сессии.
+// С privacy_level по умолчанию и включенным восстановлением сессии, они хранятся и
+// восстанавливаются независимо от числа перезапусков браузера, вплоть до закрытия соответствующей
+// вкладки пользователем.
+// Находятся в профиле, в файлах recovery.js/sessionstore.js (ключи windows[N].cookies,
+// windows[N].tabs[N].storage, и windows[N].tabs[N].formdata для Session Cookies, Session Storage и
+// данных форм соответственно).
+// https://hg.mozilla.org/releases/mozilla-esr45/file/4bd5a188c4236c4d14f9e859aa0ba243480af9bc/browser/components/sessionstore/PrivacyLevel.jsm
+// https://hg.mozilla.org/releases/mozilla-esr45/file/4bd5a188c4236c4d14f9e859aa0ba243480af9bc/browser/components/sessionstore/SessionCookies.jsm#l70
+// https://hg.mozilla.org/releases/mozilla-esr45/file/4bd5a188c4236c4d14f9e859aa0ba243480af9bc/browser/components/sessionstore/PrivacyFilter.jsm#l33
+// https://hg.mozilla.org/releases/mozilla-esr45/file/4bd5a188c4236c4d14f9e859aa0ba243480af9bc/browser/components/sessionstore/PrivacyFilter.jsm#l53
+user_pref("browser.sessionstore.privacy_level", 2);
+
+// Запрещает проигрывание HTML5-медиа до нажатия на кнопку play. Теперь работает и на YouTube.
+// Следующие видео из плейлиста будут проигрываться автоматически после окончания первого.
+// Автобуферизацию не предотвращает.
+user_pref("media.autoplay.enabled", false);
 
 // Отключает API для системных уведомлений из веб-приложений.
 // https://developer.mozilla.org/en-US/docs/Web/API/Notification/Using_Web_Notifications
@@ -33,6 +53,16 @@ user_pref("security.ssl.errorReporting.url", "");
 // https://bugzilla.mozilla.org/show_bug.cgi?id=647010
 // https://hg.mozilla.org/releases/mozilla-beta/file/e549349b8d66/modules/libpref/init/all.js#l1717
 user_pref("network.auth.allow-subresource-auth", 0);
+
+// Запрещает браузеру посылать странице события online и offline в зависимости от состояния сетевого
+// подключения, а также устанавливать свойство window.navigator.onLine (будет всегда true).
+// https://trac.torproject.org/projects/tor/ticket/18945
+// https://bugzilla.mozilla.org/show_bug.cgi?id=620472
+// https://developer.mozilla.org/en-US/docs/Online_and_offline_events
+// https://hg.mozilla.org/releases/mozilla-esr45/file/8a94f762f0a35613d967357816141f212f1b8772/browser/app/profile/firefox.js#l601
+// https://hg.mozilla.org/releases/mozilla-esr45/file/8a94f762f0a35613d967357816141f212f1b8772/netwerk/base/nsIOService.cpp#l1224
+// https://hg.mozilla.org/releases/mozilla-esr45/file/8a94f762f0a35613d967357816141f212f1b8772/netwerk/base/nsIOService.cpp#l1614
+user_pref("network.manage-offline-status", false);
 
 // Отключает переход по URL при нажатии на соответствующие элементы управления:
 // Preferences -> Search -> Add more search engines...
@@ -69,6 +99,16 @@ user_pref("network.http.spdy.enabled.v3-1", false);
 // https://trac.torproject.org/projects/tor/ticket/14952
 user_pref("network.http.spdy.enabled.http2", false);
 user_pref("network.http.spdy.enabled.http2draft", false);
+user_pref("network.http.spdy.allow-push", false);
+user_pref("network.http.spdy.enabled.deps", false);
+
+// Отключает посылку Session Tickets (TLS) и Session Identifiers (SSL) - уникальных идентификаторов,
+// применяемых для ускорения повторной установки шифрованного соединения, которые могут быть также
+// использованы и для отслеживания пользователя.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=967977
+// https://tools.ietf.org/html/rfc5077
+// https://hg.mozilla.org/releases/mozilla-esr45/file/8a94f762f0a35613d967357816141f212f1b8772/security/manager/ssl/nsNSSComponent.cpp#l723
+user_pref("security.ssl.disable_session_identifiers", true);
 
 // 3DES, в отличие от RC4, пока вроде держится, но можно и запретить на всякий случай.
 // Отключение ломает https://login.skype.com/login

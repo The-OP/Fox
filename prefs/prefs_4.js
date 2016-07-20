@@ -16,6 +16,9 @@ user_pref("image.cache.size", 0);
 // http://www.contextis.com/resources/blog/webgl-new-dimension-browser-exploitation/
 user_pref("webgl.disabled", true);
 user_pref("webgl.force-enabled", false);
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1232864
+user_pref("webgl.enable-prototype-webgl2", false);
+user_pref("webgl.webgl2-compat-mode", false);
 
 // Отключает попытки страниц развернуть себя на весь экран и соответствующую кнопку в HTML5-плеерах.
 // https://developer.mozilla.org/en-US/docs/DOM/Using_fullscreen_mode
@@ -67,18 +70,24 @@ user_pref("clipboard.autocopy", false);
 // Удалять cookies после выхода из браузера.
 // Preferences -> Privacy -> Accept cookies from sites -> Keep until: I close Firefox
 // http://kb.mozillazine.org/Network.cookie.lifetimePolicy
-// https://hg.mozilla.org/releases/mozilla-release/file/3dcde73ca237dd579e1599f635f3cc994afc1346/modules/libpref/init/all.js#l1891
+// https://hg.mozilla.org/releases/mozilla-esr45/file/2786beb35a3825b68651e2bf22ce06b84ff31ee3/modules/libpref/init/all.js#l1859
+// https://hg.mozilla.org/releases/mozilla-esr45/file/4bd5a188c4236c4d14f9e859aa0ba243480af9bc/extensions/cookie/nsCookiePermission.cpp#l252
+// https://hg.mozilla.org/releases/mozilla-esr45/file/4bd5a188c4236c4d14f9e859aa0ba243480af9bc/netwerk/cookie/nsICookieService.idl#l86
 user_pref("network.cookie.lifetimePolicy", 2);
 
 // Запрещает cookies полностью. Ломает многие сайты, поэтому рекомендуется не отключать полностью, а
 // контролировать и чистить соответствующими аддонами.
 // Preferences -> Privacy -> Accept cookies from sites
 // http://kb.mozillazine.org/Network.cookie.cookieBehavior
-// https://hg.mozilla.org/releases/mozilla-release/file/3dcde73ca237dd579e1599f635f3cc994afc1346/modules/libpref/init/all.js#l1886
+// https://hg.mozilla.org/releases/mozilla-esr45/file/2786beb35a3825b68651e2bf22ce06b84ff31ee3/modules/libpref/init/all.js#l1854
+// https://hg.mozilla.org/releases/mozilla-esr45/file/4bd5a188c4236c4d14f9e859aa0ba243480af9bc/netwerk/cookie/nsCookieService.cpp#l3794
+// https://hg.mozilla.org/releases/mozilla-esr45/file/4bd5a188c4236c4d14f9e859aa0ba243480af9bc/netwerk/cookie/nsICookieService.idl#l77
 user_pref("network.cookie.cookieBehavior", 2);
 
-// Отключает DOM Storage. Ломает многие сайты, поэтому рекомендуется не отключать полностью, а
-// контролировать и чистить соответствующими аддонами.
+// Отключает DOM Storage (и Local Storage, и Session Storage). Ломает многие сайты, поэтому
+// рекомендуется не отключать полностью, а контролировать и чистить соответствующими аддонами.
+// Хранится в файле webappsstore.sqlite в профиле.
+// https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API
 user_pref("dom.storage.enabled", false);
 
 // Отключает загружаемые сайтами шрифты. Несколько повышает безопасность за счет исключения

@@ -1,3 +1,11 @@
+// Удаляет 3rd-party cookies после закрытия браузера.
+// http://kb.mozillazine.org/Network.cookie.thirdparty.sessionOnly
+// https://hg.mozilla.org/releases/mozilla-esr45/file/4bd5a188c4236c4d14f9e859aa0ba243480af9bc/netwerk/cookie/nsCookieService.cpp#l117
+// https://hg.mozilla.org/releases/mozilla-esr45/file/4bd5a188c4236c4d14f9e859aa0ba243480af9bc/netwerk/cookie/nsCookieService.cpp#l2187
+// https://hg.mozilla.org/releases/mozilla-esr45/file/4bd5a188c4236c4d14f9e859aa0ba243480af9bc/netwerk/cookie/nsCookieService.cpp#l3800
+// https://hg.mozilla.org/releases/mozilla-esr45/file/4bd5a188c4236c4d14f9e859aa0ba243480af9bc/netwerk/cookie/nsICookieService.idl#l77
+user_pref("network.cookie.thirdparty.sessionOnly", true);
+
 // Позволяет устанавливать неподписанные аддоны.
 // https://wiki.mozilla.org/Addons/Extension_Signing
 user_pref("xpinstall.signatures.required", false);
@@ -169,6 +177,12 @@ user_pref("dom.vibrator.enabled", false);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=740473
 // https://wiki.mozilla.org/Sensor_API
 user_pref("device.sensors.enabled", false);
+// Отключает Touch Events, при помощи которых можно выяснить разрешение экрана.
+// https://trac.torproject.org/projects/tor/ticket/10286
+// https://developer.mozilla.org/en-US/docs/Web/API/Touch_events
+// https://hg.mozilla.org/releases/mozilla-esr45/file/4bd5a188c4236c4d14f9e859aa0ba243480af9bc/modules/libpref/init/all.js#l4579
+// https://hg.mozilla.org/releases/mozilla-esr45/file/4bd5a188c4236c4d14f9e859aa0ba243480af9bc/dom/events/TouchEvent.cpp#l177
+user_pref("dom.w3c_touch_events.enabled", 0);
 // Отключает Gamepad API, которое может быть использовано для получения идентификаторов
 // производителя и модели подключенных к компьютеру геймпадов.
 // https://trac.torproject.org/projects/tor/ticket/13023

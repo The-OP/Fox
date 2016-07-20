@@ -79,7 +79,10 @@ user_pref("browser.search.update", false);
 // запрашивается контент для того или иного URL (например, основным хостом и хостом со статикой),
 // и при следующем подключении заранее соединяющийся со всеми хостами, которые понадобятся.
 // https://wiki.mozilla.org/Privacy/Reviews/Necko
+// https://hg.mozilla.org/releases/mozilla-esr45/file/87a22e023b10fc3116f333e313934d38cd533ce0/netwerk/base/Predictor.cpp#l73
 user_pref("network.predictor.enabled", false);
+// https://hg.mozilla.org/releases/mozilla-esr45/file/87a22e023b10fc3116f333e313934d38cd533ce0/netwerk/base/Predictor.cpp#l972
+user_pref("network.predictor.enable-hover-on-ssl", false);
 
 // Запрещает сайтам установку соединений на критически важные порты, занятые I2P и Tor.
 user_pref("network.security.ports.banned", "4444,9050,9051");
@@ -178,7 +181,11 @@ user_pref("urlclassifier.blockedTable", "");
 
 // Отключает <a ping>, которые отправляют запрос по отдельному указанному адресу (с целью трекинга)
 // при нажатии на ссылку. -- http://kb.mozillazine.org/Browser.send_pings
+// https://hg.mozilla.org/releases/mozilla-esr45/file/87a22e023b10fc3116f333e313934d38cd533ce0/docshell/base/nsDocShell.cpp#l294
+// https://hg.mozilla.org/releases/mozilla-esr45/file/87a22e023b10fc3116f333e313934d38cd533ce0/docshell/base/nsDocShell.cpp#l635
 user_pref("browser.send_pings", false);
+user_pref("browser.send_pings.max_per_link", 0);
+user_pref("browser.send_pings.require_same_host", true);
 // Отключает sendBeacon() - API для отправки статистики перед выгрузкой страницы.
 // https://developer.mozilla.org/en-US/docs/Web/API/navigator.sendBeacon
 user_pref("beacon.enabled", false);
@@ -346,6 +353,15 @@ user_pref("experiments.supported", false);
 user_pref("experiments.enabled", false);
 user_pref("experiments.activeExperiment", false);
 user_pref("experiments.manifest.uri", "");
+// Отключает эксперимент по определению оптимального времени жизни кэша, назначающий каждому
+// пользователю рандомно один из четырех возможных интервалов.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=986728
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1098422
+// https://trac.torproject.org/projects/tor/ticket/13575
+// https://wiki.mozilla.org/User:Jesse/NewFrecency
+// https://hg.mozilla.org/releases/mozilla-esr45/file/8a94f762f0a35613d967357816141f212f1b8772/browser/app/profile/firefox.js#l1530
+// https://hg.mozilla.org/releases/mozilla-esr45/file/8a94f762f0a35613d967357816141f212f1b8772/netwerk/cache2/CacheObserver.cpp#l194
+user_pref("browser.cache.frecency_experiment", -1);
 
 // Отключает автообновление стилей Stylish -- https://userstyles.org/help/stylish_firefox
 user_pref("extensions.stylish.updatesEnabled", false);
@@ -435,6 +451,16 @@ user_pref("devtools.devedition.promo.url", "");
 // https://trac.torproject.org/projects/tor/ticket/16222
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_send-video-to-device
 user_pref("browser.casting.enabled", false);
+
+// Отключает посылку серии пустых UDP-пакетов шлюзу на порт 4886 перед началом соединения с сайтом,
+// предназначенную для улучшения латентности при использовании Wi-Fi в режиме сбережения энергии
+// (Power Save Polling mode). Включено по умолчанию пока (?) только в Firefox для Android.
+// (Однако такие фичи могут случайно протекать и на десктоп - см. browser.casting.enabled.)
+// https://bugzilla.mozilla.org/show_bug.cgi?id=888268
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1156249
+// https://hg.mozilla.org/releases/mozilla-esr45/file/2786beb35a3825b68651e2bf22ce06b84ff31ee3/modules/libpref/init/all.js#l1219
+// https://hg.mozilla.org/releases/mozilla-esr45/file/2786beb35a3825b68651e2bf22ce06b84ff31ee3/netwerk/base/Tickler.cpp#l159
+user_pref("network.tickle-wifi.enabled", false);
 
 // Отключает передачу по сети рисуемых браузером кадров специальному отладочному вьюверу.
 // https://wiki.mozilla.org/Platform/GFX/LayerScope
