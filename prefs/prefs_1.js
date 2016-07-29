@@ -67,6 +67,9 @@ user_pref("browser.urlbar.maxCharsForSearchSuggestions", 0);
 // https://hg.mozilla.org/releases/mozilla-beta/file/00bcc10b3bdc/browser/base/content/urlbarBindings.xml#l953
 // https://hg.mozilla.org/releases/mozilla-beta/file/00bcc10b3bdc/browser/base/content/urlbarBindings.xml#l1201
 user_pref("browser.urlbar.userMadeSearchSuggestionsChoice", true);
+// https://hg.mozilla.org/releases/mozilla-release/file/c1de04f39fa956cfce83f6065b0e709369215ed5/browser/base/content/urlbarBindings.xml#l957
+// https://hg.mozilla.org/releases/mozilla-release/file/c1de04f39fa956cfce83f6065b0e709369215ed5/browser/base/content/urlbarBindings.xml#l1310
+user_pref("browser.urlbar.daysBeforeHidingSuggestionsPrompt", 0);
 // Отключает поиск через адресную строку без заданных поисковикам префиксов-кейвордов.
 // http://kb.mozillazine.org/Keyword.enabled
 user_pref("keyword.enabled", false);
@@ -83,6 +86,17 @@ user_pref("browser.search.update", false);
 user_pref("network.predictor.enabled", false);
 // https://hg.mozilla.org/releases/mozilla-esr45/file/87a22e023b10fc3116f333e313934d38cd533ce0/netwerk/base/Predictor.cpp#l972
 user_pref("network.predictor.enable-hover-on-ssl", false);
+// Начиная с Firefox 48, Predictor умеет не только предконнекты, но и префетч.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1016628
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1271944
+// https://hg.mozilla.org/releases/mozilla-release/file/c1de04f39fa956cfce83f6065b0e709369215ed5/netwerk/base/Predictor.cpp#l1301
+user_pref("network.predictor.enable-prefetch", false);
+user_pref("network.predictor.prefetch-rolling-load-count", 0);
+// https://hg.mozilla.org/releases/mozilla-release/file/c1de04f39fa956cfce83f6065b0e709369215ed5/netwerk/base/Predictor.cpp#l1132
+// https://hg.mozilla.org/releases/mozilla-release/file/c1de04f39fa956cfce83f6065b0e709369215ed5/netwerk/test/unit/test_predictor.js#l405
+user_pref("network.predictor.prefetch-min-confidence", 101);
+user_pref("network.predictor.preconnect-min-confidence", 101);
+user_pref("network.predictor.preresolve-min-confidence", 101);
 
 // Запрещает сайтам установку соединений на критически важные порты, занятые I2P и Tor.
 user_pref("network.security.ports.banned", "4444,9050,9051");
@@ -220,6 +234,8 @@ user_pref("browser.newtabpage.remote", false);
 // https://hg.mozilla.org/releases/mozilla-release/file/b0310cb90fd0/browser/components/newtab/NewTabRemoteResources.jsm
 // https://hg.mozilla.org/releases/mozilla-release/file/b0310cb90fd0/browser/components/newtab/aboutNewTabService.js#l160
 user_pref("browser.newtabpage.remote.mode", "dev");
+// https://hg.mozilla.org/releases/mozilla-release/file/c1de04f39fa956cfce83f6065b0e709369215ed5/browser/components/newtab/aboutNewTabService.js#l182
+user_pref("browser.newtabpage.remote.content-signing-test", false);
 
 // Отключает проверку при запуске, является ли Firefox браузером по умолчанию.
 // Preferences -> General -> Startup -> Always check if Firefox is your default browser

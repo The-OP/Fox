@@ -228,8 +228,11 @@ user_pref("extensions.blocklist.itemURL", "");
 // новый бэкэнд под названием Kinto.
 // https://wiki.mozilla.org/Firefox/Go_Faster#III:_Kinto
 // https://wiki.mozilla.org/Firefox/Kinto
-// https://hg.mozilla.org/releases/mozilla-release/file/b0310cb90fd0/services/common/KintoCertificateBlocklist.js
-user_pref("services.kinto.base", "");
+// https://hg.mozilla.org/releases/mozilla-release/file/c1de04f39fa956cfce83f6065b0e709369215ed5/services/common/kinto-updater.js
+user_pref("services.kinto.base", "data:application/json,{}");
+user_pref("services.kinto.changes.path", "");
+// https://hg.mozilla.org/releases/mozilla-release/file/c1de04f39fa956cfce83f6065b0e709369215ed5/toolkit/mozapps/extensions/nsBlocklistService.js#l632
+user_pref("services.kinto.update_enabled", false);
 
 // Отключает проверку на отзыв сертификата через OCSP-сервер при установке шифрованного соединения.
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_secure-website-certificates
