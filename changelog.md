@@ -1,3 +1,9 @@
+#### Firefox 48
+* https://www.mozilla.org/firefox/48.0/releasenotes/
+* http://www.ghacks.net/2016/08/01/firefox-48-release/
+* https://www.opennet.ru/opennews/art.shtml?num=44897
+* https://www.linux.org.ru/news/mozilla/12782140
+
 #### Firefox 47
 * https://www.mozilla.org/en-US/firefox/47.0/releasenotes/
 * http://www.ghacks.net/2016/06/07/firefox-47/
