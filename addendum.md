@@ -176,6 +176,24 @@
 
 Userstyles.org [не пропускает](https://github.com/JasonBarnabe/stylish/issues/159) стили, содержащие свойство -moz-binding, поэтому внимательно проверять нужно только стили, устанавливаемые из  других источников.
 
+### Хак для отключения требования подписей аддонов
+Изобретен пользователями форума Mozilla Russia[[1]](https://forum.mozilla-russia.org/viewtopic.php?id=70321)[[2]](https://forum.mozilla-russia.org/viewtopic.php?id=70326). После применения может потребоваться переустановка отключенных браузером неподписанных аддонов.
+
+Создайте файл `config.js` в папке с установленным Firefox: `C:\Program Files\Mozilla Firefox`
+```
+//
+try {
+    Components.utils.import("resource://gre/modules/addons/XPIProvider.jsm", {})
+        .eval("SIGNED_TYPES.clear()");
+} catch(ex) {}
+```
+
+Создайте файл `config-prefs.js` в папке `C:\Program Files\Mozilla Firefox\defaults\pref`
+```
+pref("general.config.obscure_value", 0);
+pref("general.config.filename", "config.js");
+```
+
 ## Интересные ссылки
 * [Release Notes](https://www.mozilla.org/firefox/notes) и [Developer Release Notes](https://developer.mozilla.org/en-US/Firefox/Releases).
 * [Ghacks](http://www.ghacks.net/category/firefox/) - сайт, на котором попадаются неплохие статьи и обзоры грядущих нововведений в Firefox.
