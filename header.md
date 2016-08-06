@@ -35,16 +35,6 @@
 	* Есть [хак](addendum.md#user-content-Хак-для-отключения-требования-подписей-аддонов), позволяющий обойти это ограничение даже на официальных сборках.
 	* Если вы используете Linux, вероятно, мейнтейнеры вашего дистрибутива уже собрали Firefox без флага обязательного требования подписей, и его можно отключить вышеописанной настройкой.
 
-1. **Q:** Проблемы с видео и аудио в HTML5 на YouTube, VK и других сайтах; включение 1080p, H.264, VP9. <br>
-**A:** Должны быть включены нижеприведенные настройки в about:config. В Linux-билдах MSE по умолчанию отключены, но работают, начиная с Firefox 38, если их вручную включить и установить GStreamer с gstreamer-plugins (-good, -bad, -ugly, -libav, точные названия пакетов зависят от дистрибутива). <br>
-`media.mediasource.enabled -> true` <br>
-`media.mediasource.mp4.enabled -> true` <br>
-`media.mediasource.webm.enabled -> true` <br>
-`media.fragmented-mp4.enabled -> true`  <br>
-`media.fragmented-mp4.exposed -> true` <br>
-`media.fragmented-mp4.ffmpeg.enabled -> true # Для Linux-билдов` <br>
-`media.gstreamer.enabled -> true # Для Linux-билдов`
-
 1. **Q:** Тормозит видео на YouTube в высоких разрешениях. <br>
 **A:** Кодек VP9 требует мощного процессора. Может помочь отключение `media.mediasource.webm.enabled` - тогда видео будут отдаваться в H.264. Отключение этой настройки не сломает обычные WebM.
 
@@ -56,7 +46,7 @@
 **A:** `about:config -> full-screen-api.warning.timeout -> 0`
 
 1. **Q:** Как искать в разных поисковиках через адресную строку? <br>
-**A:** Используя префиксы-кейворды (g Google, w Wikipedia, etc), настраивающиеся в Preferences -> Search (даблкликом по ячейкам второй колонки) или в пункте Manage Search Engines выпадающего меню старой поисковой строки.
+**A:** Используя префиксы-кейворды (g Google, w Wikipedia, etc), настраивающиеся в Preferences -> Search даблкликом по ячейкам второй колонки.
 
 1. **Q:** Как отключить беспрефиксный поиск в поисковике по умолчанию через адресную строку? <br>
 **A:** `about:config -> keyword.enabled -> false`
@@ -65,7 +55,7 @@
 **A:** [New Tab Override](https://addons.mozilla.org/firefox/addon/new-tab-override/)
 
 1. **Q:** Что за специальная тема для разработчиков? <br>
-**A:** Тема, использующаяся в Firefox Developer Edition. В 38 ESR включается так: `about:config -> browser.devedition.theme.enabled -> true`. Для Firefox 40+ придется воспользоваться [аддоном](https://addons.mozilla.org/firefox/addon/devedition-theme-enabler/).
+**A:** Тема, использующаяся в Firefox Developer Edition. [Аддон](https://addons.mozilla.org/firefox/addon/devedition-theme-enabler/), включающий ее на релизных сборках.
 
 1. **Q:** Как копировать ссылки c кириллическим текстом в исходном виде, не закодированном percent-encoding (%D0%9B%D0%B8%D1%81 -> Лис)? <br>
 **A:** `about:config -> network.standard-url.escape-utf8 -> false`
@@ -81,12 +71,8 @@
 1. **Q:** Как уменьшить ширину вкладки, чтобы меньше их прокручивать? <br>
 **A:** Можно воспользоваться [UserCSS](http://www.ghacks.net/2011/02/02/change-firefoxs-minimum-maximum-tab-width/) или [аддоном](https://addons.mozilla.org/firefox/addon/custom-tab-width/).
 
-1. **Q:** Как вернуть старую поисковую строку? <br>
-**A:** `about:config -> browser.search.showOneOffButtons -> false` (применяется после перезапуска Firefox) <br>
-В Firefox 43+ этой опции уже нет, придется воспользоваться Classic Theme Restorer.
-
-1. **Q:** Как вернуть старый диалог настроек браузера? <br>
-**A:** `about:config -> browser.preferences.inContent -> false`
+1. **Q:** Как вернуть старую поисковую строку/старый диалог настроек браузера? <br>
+**A:** Воспользоваться [Classic Theme Restorer](https://addons.mozilla.org/firefox/addon/classicthemerestorer/).
 
 #### Профили
 Firefox сохраняет вкладки, закладки, историю, аддоны, настройки и пароли в каталоге, называемом профилем. Можно иметь несколько профилей и даже использовать их одновременно, запуская две и более копии Firefox. Для входа в менеджер профилей следует указать ключи [`-no-remote -P`](https://developer.mozilla.org/en-US/docs/Mozilla/Command_Line_Options). Подробнее [здесь](https://support.mozilla.org/ru/kb/upravlenie-profilyami).
