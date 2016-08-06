@@ -9,6 +9,7 @@
   * [Интересные ссылки](addendum.md#user-content-Интересные-ссылки)
     * [Безопасность](addendum.md#user-content-Безопасность)
     * [Приватность](addendum.md#user-content-Приватность)
+* [Серый список аддонов](greylist.md)
 
 Эта часть для тех, кто хочет настроить свой браузер еще больше. Настройки для повышения удобства, производительности, безопасности и отключения различных зондов, полезные аддоны, интересные ссылки и т.п.
 
@@ -137,8 +138,6 @@
 * [Privacy Badger](https://addons.mozilla.org/firefox/addon/privacy-badger-firefox/)
 <sup><s><a href="https://addons.mozilla.org/firefox/files/browse/422094/file/install.rdf">E10S</a></s></sup>
 Аналог Ghostery от EFF. Актуально для тех, кто хочет поставить и забыть, чтоб оно там автоматом боролось с трекингом.
-
-	* <sub>Часто спрашивают, чем плох Ghostery. Во-первых, он принадлежит маркетинговой компании, собирающей [статистику](https://addons.mozilla.org/firefox/addon/ghostery/privacy/) с wannabe-анонимусов. Во-вторых - распространяется под [проприетарной лицензией](https://addons.mozilla.org/firefox/addon/ghostery/license/5.4.1). Но самое главное то, что он бесполезен, если уже используется баннерорезка с анти-трекерными подписками и какой-нибудь аддон для контроля/очистки кук. См. [исследование Стэнфорда](http://cyberlaw.stanford.edu/node/6730), сравнивающее баннерорезки с Ghostery по эффективности. Если уж вам очень сильно хочется автоматического все-в-одном комбайна, подобного Ghostery - используйте Privacy Badger от Electronic Frontier Foundation, распространяющийся под свободной лицензией.</sub>
 
 * [Yet Another Remove It Permanently](https://addons.mozilla.org/firefox/addon/yarip/)
 <sup><s><a href="https://addons.mozilla.org/firefox/files/browse/284102/file/install.rdf">E10S</a></s></sup>
