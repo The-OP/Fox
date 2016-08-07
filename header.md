@@ -184,6 +184,10 @@ Firefox сохраняет вкладки, закладки, историю, а�
 <sup><s><a href="https://addons.mozilla.org/firefox/files/browse/420712/file/install.rdf">E10S</a></s></sup>
 Панель для кнопок браузера и аддонов. Экономит ценное пространство по вертикали.
 
+* [Watch with MPV](https://addons.mozilla.org/firefox/addon/watch-with-mpv/)
+<sup><s><a href="https://addons.mozilla.org/firefox/files/browse/368995/file/install.rdf">E10S</a></s></sup>
+Проигрывание видео при помощи связки из [mpv](https://github.com/mpv-player/mpv/) и [youtube-dl](https://github.com/rg3/youtube-dl) вместо принадлежащего сайту HTML5/Flash-плеера. [Список поддерживаемых сайтов](https://github.com/rg3/youtube-dl/blob/master/docs/supportedsites.md).
+
 * [Yet Another Smooth Scrolling](https://addons.mozilla.org/firefox/addon/yet-another-smooth-scrolling/)
 <sup><s><a href="https://addons.mozilla.org/firefox/files/browse/429884/file/install.rdf">E10S</a></s></sup>
 Тонкая настройка прокрутки, включая плавность, скорость и ускорение.
