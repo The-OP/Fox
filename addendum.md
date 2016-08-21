@@ -54,7 +54,7 @@
 Содержит список сайтов, поддерживающих как HTTP, так HTTPS, и автоматически меняет все HTTP-ссылки, ведущие к этим сайтам, на HTTPS. Аддон вернули на AMO, но на всякий случай - [ссылка](https://www.eff.org/https-everywhere/) на официальный сайт. Правила обновляются редко, актуальную версию правил можно получить [на GitHub](https://github.com/EFForg/https-everywhere), там же можно отправить новое правило.
 
 * [SSleuth](https://addons.mozilla.org/firefox/addon/ssleuth/)
-<sup><s><a href="https://github.com/sibiantony/ssleuth/blob/master/install.rdf">E10S</a></s></sup>
+<sup><a href="https://addons.mozilla.org/firefox/files/browse/477284/file/install.rdf">E10S</a></sup>
 ([GitHub](https://github.com/sibiantony/ssleuth)) Показывает информацию об используемых криптопримитивах и фичах TLS/SSL в шифрованных соединениях.
 
 * [RefControl](https://addons.mozilla.org/firefox/addon/refcontrol/)
