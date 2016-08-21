@@ -3,8 +3,6 @@
 // Еще проще и надежнее определяется наличие файлов в кэше по значениям заголовков If-Modified-Since
 // и If-None-Match (https://en.wikipedia.org/wiki/HTTP_ETag), которые также могут быть использованы
 // и для прямого трекинга (отдавая пользователям файл с уникальным Last-Modified и/или ETag).
-// http://kb.mozillazine.org/Network.http.use-cache
-user_pref("network.http.use-cache", false);
 // http://kb.mozillazine.org/Browser.cache.memory.enable
 user_pref("browser.cache.memory.enable", false);
 // http://kb.mozillazine.org/Browser.cache.memory.capacity
@@ -177,17 +175,11 @@ user_pref("media.mediasource.enabled", false);
 user_pref("media.mediasource.mp4.enabled", false);
 user_pref("media.mediasource.webm.enabled", false);
 user_pref("media.mediasource.webm.audio.enabled", false);
-user_pref("media.mediasource.format-reader", false);
-user_pref("media.mediasource.format-reader.mp4", false);
 user_pref("media.mediasource.format-reader.webm", false);
 // Отключает декодирование мультимедиа через GStreamer.
 user_pref("media.gstreamer.enabled", false);
 // Отключает поддержку соответствующих форматов/кодеков.
-user_pref("media.format-reader.mp4", false);
 user_pref("media.format-reader.webm", false);
-user_pref("media.fragmented-mp4.enabled", false);
-user_pref("media.fragmented-mp4.exposed", false);
-user_pref("media.fragmented-mp4.ffmpeg.enabled", false);
 user_pref("media.mp4.enabled", false);
 user_pref("media.ogg.enabled", false);
 user_pref("media.opus.enabled", false);
@@ -197,7 +189,6 @@ user_pref("media.wave.enabled", false);
 user_pref("media.wave.decoder.enabled", false);
 user_pref("media.apple.mp3.enabled", false);
 user_pref("media.apple.mp4.enabled", false);
-user_pref("media.windows-media-foundation.enabled", false);
 user_pref("media.windows-media-foundation.use-dxva", false);
 user_pref("media.wmf.enabled", false);
 user_pref("media.wmf.low-latency.enabled", false);

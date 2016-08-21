@@ -49,11 +49,6 @@ user_pref("security.ssl.errorReporting.enabled", false);
 user_pref("security.ssl.errorReporting.automatic", false);
 user_pref("security.ssl.errorReporting.url", "");
 
-// Разрешить запрос HTTP-аунтефикации при загрузке только самого документа, но не его ресурсов.
-// https://bugzilla.mozilla.org/show_bug.cgi?id=647010
-// https://hg.mozilla.org/releases/mozilla-beta/file/e549349b8d66/modules/libpref/init/all.js#l1717
-user_pref("network.auth.allow-subresource-auth", 0);
-
 // Запрещает браузеру посылать странице события online и offline в зависимости от состояния сетевого
 // подключения, а также устанавливать свойство window.navigator.onLine (будет всегда true).
 // https://trac.torproject.org/projects/tor/ticket/18945
@@ -88,17 +83,12 @@ user_pref("media.webvtt.enabled", false);
 user_pref("webgl.disable-extensions", true);
 user_pref("webgl.min_capability_mode", true);
 
-// Отключает Audio Data API (от которого уже отказались в пользу Web Audio API).
-// https://wiki.mozilla.org/Audio_Data_API
-user_pref("media.audio_data.enabled", false);
-
 // SPDY может хранить идентификатор и держит экстремально долгое открытое соединение.
 // https://www.torproject.org/projects/torbrowser/design/#identifier-linkability
 user_pref("network.http.spdy.enabled", false);
 user_pref("network.http.spdy.enabled.v3-1", false);
 // https://trac.torproject.org/projects/tor/ticket/14952
 user_pref("network.http.spdy.enabled.http2", false);
-user_pref("network.http.spdy.enabled.http2draft", false);
 user_pref("network.http.spdy.allow-push", false);
 user_pref("network.http.spdy.enabled.deps", false);
 

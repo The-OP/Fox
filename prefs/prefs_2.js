@@ -78,9 +78,6 @@ user_pref("social.shareDirectory", "");
 // Отключает Reading List, портированный с версии для Android.
 // https://wiki.mozilla.org/CloudServices/Reading_List
 user_pref("browser.readinglist.enabled", false);
-user_pref("browser.readinglist.sidebarEverOpened", false);
-user_pref("readinglist.scheduler.enabled", false);
-user_pref("readinglist.server", "");
 // Отключает Reader View
 // https://wiki.mozilla.org/QA/Reader_view
 user_pref("reader.parse-on-load.enabled", false);
@@ -321,22 +318,14 @@ user_pref("canvas.capturestream.enabled", false);
 // https://wiki.mozilla.org/Loop/Data_Collection
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_firefox-hello
 user_pref("loop.enabled", false);
-user_pref("loop.screenshare.enabled", false);
 user_pref("loop.textChat.enabled", false);
 user_pref("loop.server", "");
-user_pref("loop.feedback.baseUrl", "");
 user_pref("loop.debug.twoWayMediaTelemetry", false);
 user_pref("loop.contextInConversations.enabled", false);
-user_pref("loop.contacts.gravatars.promo", false);
-user_pref("loop.contacts.gravatars.show", false);
 user_pref("loop.gettingStarted.url", "");
 user_pref("loop.learnMoreUrl", "");
 user_pref("loop.legal.ToS_url", "");
 user_pref("loop.legal.privacy_url", "");
-user_pref("loop.oauth.google.redirect_uri", "");
-user_pref("loop.oauth.google.scope", "");
-user_pref("loop.seenToS", "unseen");
-user_pref("loop.showPartnerLogo", false);
 user_pref("loop.support_url", "");
 // Отключает появляющееся раз в 6 месяцев окно с предложением оставить отзыв о работе Hello.
 // https://hg.mozilla.org/releases/mozilla-beta/file/00bcc10b3bdc/browser/components/loop/content/js/conversationAppStore.js#l54
@@ -384,7 +373,6 @@ user_pref("media.gmp-eme-adobe.autoupdate", false);
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_openh264-codec
 user_pref("media.gmp-gmpopenh264.autoupdate", false);
 user_pref("media.gmp-gmpopenh264.enabled", false);
-user_pref("media.fragmented-mp4.gmp.enabled", false);
 user_pref("media.gmp-provider.enabled", false);
 user_pref("media.gmp-manager.url", "");
 // https://hg.mozilla.org/releases/mozilla-esr38/file/0f8338121472/modules/libpref/init/all.js#l4496
@@ -406,7 +394,6 @@ user_pref("media.gmp-manager.secondsBetweenChecks", 630720000);
 // Полностью отключает WebIDE, убирает его кнопку и из меню Developer Tools.
 // https://trac.torproject.org/projects/tor/ticket/16222#comment:10
 user_pref("devtools.webide.enabled", false);
-user_pref("devtools.appmanager.enabled", false);
 user_pref("devtools.webide.enableLocalRuntime", false);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1056923
 user_pref("devtools.webide.widget.autoinstall", false);
@@ -478,16 +465,10 @@ user_pref("plugin.scan.WindowsMediaPlayer", "30000.0");
 // https://hg.mozilla.org/releases/mozilla-esr38/file/0f8338121472/dom/plugins/base/nsPluginHost.h#l174
 // https://hg.mozilla.org/releases/mozilla-esr38/file/0f8338121472/dom/plugins/base/nsPluginHost.cpp#l2505
 user_pref("plugin.allowed_types", " ");
-// Отключает возможность перечисления плагинов через window.navigator.plugins[].
-// https://hg.mozilla.org/releases/mozilla-esr38/file/a9be9167d92b/modules/libpref/init/all.js#l2309
-// https://hg.mozilla.org/releases/mozilla-esr38/file/2ae2d0f3a546/dom/base/nsPluginArray.cpp#l318
-user_pref("plugins.enumerable_names", "");
 // http://kb.mozillazine.org/Issues_related_to_plugins#Plugin_location
 user_pref("plugins.load_appdir_plugins", false);
 // https://support.mozilla.org/en-US/questions/833109
 user_pref("plugins.update.url", "");
-// http://kb.mozillazine.org/Pfs.datasource.url
-user_pref("pfs.datasource.url", "");
 // Запрещает яваскриптам обращаться к плагинам.
 user_pref("security.xpconnect.plugin.unrestricted", false);
 user_pref("application.use_ns_plugin_finder", false);
@@ -523,13 +504,6 @@ user_pref("browser.offline-apps.notify", false);
 // https://hg.mozilla.org/releases/mozilla-esr38/file/5be76431120a/dom/base/nsContentUtils.cpp#l1709
 // https://hg.mozilla.org/releases/mozilla-esr38/file/dd257f17530c/uriloader/prefetch/nsOfflineCacheUpdateService.cpp#l744
 user_pref("offline-apps.allow_by_default", false);
-
-// Отключает Shared Workers. Они могут стать проблемой, если загружаются с одного CDN несколькими
-// разными открытыми в данный момент во вкладках у пользователя сайтами, так как такие Workers
-// имеют общий контекст (т.е. доступ к данным друг друга).
-// https://www.torproject.org/projects/torbrowser/design/#identifier-linkability
-// https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers#Shared_workers
-user_pref("dom.workers.sharedWorkers.enabled", false);
 
 // Отключает Service Worker API, позволяющее сайтам запускать скрипты, которые могут заниматься
 // различной сомнительной самодеятельностью (примеры по ссылкам ниже) в фоновом режиме, даже
@@ -579,7 +553,6 @@ user_pref("dom.fileHandle.enabled", false);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1171228
 // https://hg.mozilla.org/releases/mozilla-beta/file/8cf5636886f0/dom/canvas/WebGLContextState.cpp#l195
 // https://hg.mozilla.org/releases/mozilla-beta/file/8cf5636886f0/dom/canvas/WebGLContextExtensions.cpp#l99
-user_pref("webgl.disable-debug-renderer-info", true);
 // Переменовано в Firefox 42:
 // https://hg.mozilla.org/releases/mozilla-beta/file/00bcc10b3bdc/dom/canvas/WebGLContextExtensions.cpp#l99
 user_pref("webgl.enable-debug-renderer-info", false);

@@ -125,12 +125,7 @@ user_pref("browser.safebrowsing.downloads.remote.url", "");
 user_pref("browser.safebrowsing.appRepURL", "");
 user_pref("browser.safebrowsing.gethashURL", "");
 user_pref("browser.safebrowsing.malware.reportURL", "");
-user_pref("browser.safebrowsing.reportErrorURL", "");
-user_pref("browser.safebrowsing.reportGenericURL", "");
-user_pref("browser.safebrowsing.reportMalwareErrorURL", "");
-user_pref("browser.safebrowsing.reportMalwareURL", "");
 user_pref("browser.safebrowsing.reportPhishURL", "");
-user_pref("browser.safebrowsing.reportURL", "");
 user_pref("browser.safebrowsing.updateURL", "");
 user_pref("browser.safebrowsing.reportPhishMistakeURL", "");
 user_pref("browser.safebrowsing.reportPhishURL", "");
@@ -155,8 +150,6 @@ user_pref("browser.safebrowsing.downloads.remote.block_uncommon", false);
 // https://hg.mozilla.org/releases/mozilla-beta/file/00bcc10b3bdc/browser/base/content/browser-trackingprotection.js
 user_pref("privacy.trackingprotection.enabled", false);
 user_pref("privacy.trackingprotection.pbmode.enabled", false);
-user_pref("browser.trackingprotection.updateURL", "");
-user_pref("browser.trackingprotection.gethashURL", "");
 user_pref("browser.polaris.enabled", false);
 user_pref("privacy.trackingprotection.introURL", "");
 // https://hg.mozilla.org/releases/mozilla-release/file/970d0cf1c5d9/browser/components/preferences/in-content/privacy.js#l19
@@ -504,11 +497,6 @@ user_pref("security.ssl3.rsa_rc4_128_md5", false);
 user_pref("security.ssl3.rsa_rc4_128_sha", false);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1138882
 user_pref("security.tls.unrestricted_rc4_fallback", false);
-
-// Отключает встроенный белый список, разрешающий соединения с находящимися в нем сайтами,
-// несмотря на использование ими устаревшего шифрования.
-// https://bugzilla.mozilla.org/show_bug.cgi?id=1128227
-user_pref("security.tls.insecure_fallback_hosts.use_static_list", false);
 
 // Пользовательский белый список сайтов, которым разрешено устаревшее шифрование.
 // Рекомендуется работать с такими не из под основного профиля.
