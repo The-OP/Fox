@@ -30,3 +30,8 @@ ABP нехорош не только своими [продажными acceptab
 #### uBlock
 
 uBlock **Origin** - это и есть настоящий uBlock от первоначального автора. То, что сейчас называется uBlock - его форк. Для пропустивших драму - кратко [тут](https://www.opennet.ru/opennews/art.shtml?num=42107). Кроме того, с момента разветвления (версии 0.9.3) разработка Origin идет значительно [активнее](https://github.com/gorhill/uBlock/releases) чем у [форка](https://github.com/chrisaljoudi/uBlock/releases). **UPD:** Форк уже больше года не обновлялся, но на AMO все еще зачем-то присутствует.
+
+
+#### YouTube High Definition
+
+Открывает свой официальный сайт при [установке и каждом обновлении](https://addons.mozilla.org/firefox/files/browse/488204/file/bootstrap.js#L511) аддона. Нет никаких настроек для отключения этой навязчивой рекламы.
