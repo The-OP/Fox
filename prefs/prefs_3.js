@@ -101,6 +101,7 @@ user_pref("network.http.spdy.enabled.deps", false);
 user_pref("security.ssl.disable_session_identifiers", true);
 
 // 3DES, в отличие от RC4, пока вроде держится, но можно и запретить на всякий случай.
+// UPD: Уже плохо держится: https://www.opennet.ru/opennews/art.shtml?num=45023
 // Отключение ломает https://login.skype.com/login
 // https://wiki.mozilla.org/Security/Guidelines/Key_Management#Algorithms_by_security_levels
 // https://hg.mozilla.org/releases/mozilla-esr38/file/fa67b437a89a/security/manager/ssl/src/nsNSSComponent.cpp#l666
