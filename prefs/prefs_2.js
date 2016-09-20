@@ -196,6 +196,7 @@ user_pref("dom.vr.oculus050.enabled", false);
 user_pref("dom.vr.poseprediction.enabled", false);
 // https://hg.mozilla.org/releases/mozilla-release/file/970d0cf1c5d9/modules/libpref/init/all.js#l4778
 user_pref("dom.vr.add-test-devices", 0);
+user_pref("dom.vr.osvr.enabled", false);
 // Отключает API для телефонных звонков, использующийся в Firefox OS.
 // https://wiki.mozilla.org/WebAPI/Security/WebTelephony
 user_pref("dom.telephony.enabled", false);
@@ -359,14 +360,45 @@ user_pref("loop.copy.throttler", "");
 // https://hg.mozilla.org/releases/mozilla-release/file/b0310cb90fd0/browser/extensions/loop/bootstrap.js#l1285
 user_pref("loop.copy.ticket", 255);
 
-// Отключает поддержку Encrypted Media Extensions (DRM для HTML5-видео).
+// Отключает FlyWeb - новый системный аддон, предназначенный для взаимодействия с IoT-устройствами.
+// (В Firefox 49 присутствуют только некоторые части дополнения.)
+// https://wiki.mozilla.org/FlyWeb
+// http://www.ghacks.net/2016/07/26/firefox-flyweb/
+// https://www.reddit.com/r/firefox/comments/4uwd1n/flyweb_we_dont_need_no_stinking_iot_apps/
+// https://hg.mozilla.org/releases/mozilla-release/rev/576019c74103
+user_pref("dom.flyweb.enabled", false);
+
+// Отключает поддержку Encrypted Media Extensions (DRM для HTML5-видео). Рекомендуется
+// устанавливать EME-free билды Firefox, не содержащие этих модулей. Скачать их можно здесь:
+// https://ftp.mozilla.org/pub/firefox/releases/
+// https://wiki.mozilla.org/Media/EME
+// https://hg.mozilla.org/releases/mozilla-release/file/04a6cd9d45f9/dom/media/eme/MediaKeySystemAccessManager.cpp#l100
+// https://hg.mozilla.org/releases/mozilla-release/file/8634f32770f9/dom/media/MediaPrefs.h#l79
+// https://hg.mozilla.org/releases/mozilla-release/file/b9fd9efbcd9b/toolkit/mozapps/extensions/internal/GMPProvider.jsm#l191
 user_pref("media.eme.enabled", false);
 user_pref("media.eme.apiVisible", false);
 // Отключает предложения включить EME.
-// https://hg.mozilla.org/releases/mozilla-esr38/file/704989f295eb/browser/base/content/browser-eme.js#l55
+// https://hg.mozilla.org/releases/mozilla-release/file/11b64780a7f5/browser/base/content/browser-media.js#l63
+// https://hg.mozilla.org/releases/mozilla-release/file/11b64780a7f5/browser/base/content/browser-media.js#l7
 user_pref("browser.eme.ui.enabled", false);
+// Content Decryption Modules
+// https://hg.mozilla.org/releases/mozilla-release/file/8e7e1a4f3520/browser/app/profile/firefox.js#l1300
+// https://hg.mozilla.org/releases/mozilla-release/file/7b8879ab0e02/dom/media/eme/MediaKeySystemAccess.cpp#l259
+// https://hg.mozilla.org/releases/mozilla-release/file/f948c66393c4/toolkit/modules/GMPUtils.jsm
+// https://hg.mozilla.org/releases/mozilla-release/file/b9fd9efbcd9b/toolkit/mozapps/extensions/internal/GMPProvider.jsm#l199
+// https://hg.mozilla.org/releases/mozilla-release/file/11b64780a7f5/browser/base/content/browser-media.js#l63
+// https://hg.mozilla.org/releases/mozilla-release/file/11b64780a7f5/browser/base/content/browser-media.js#l34
+// Adobe Primetime
+user_pref("media.gmp-eme-adobe.visible", false);
 user_pref("media.gmp-eme-adobe.enabled", false);
 user_pref("media.gmp-eme-adobe.autoupdate", false);
+// Google Widevine
+// https://blog.mozilla.org/futurereleases/2016/04/08/mozilla-to-test-widevine-cdm-in-firefox-nightly/
+// https://wiki.mozilla.org/QA/Widevine_CDM
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1288580
+user_pref("media.gmp-widevinecdm.visible", false);
+user_pref("media.gmp-widevinecdm.enabled", false);
+user_pref("media.gmp-widevinecdm.autoupdate", false);
 
 // Отключает загрузку бинарника H.264-кодека от Cisco (будет использоваться GStreamer).
 // https://hg.mozilla.org/releases/mozilla-esr38/file/0f8338121472/toolkit/modules/GMPUtils.jsm#l70

@@ -421,6 +421,18 @@ user_pref("browser.offline-apps.notify", true);
 // https://hg.mozilla.org/releases/mozilla-esr38/file/dd257f17530c/uriloader/prefetch/nsOfflineCacheUpdateService.cpp#l744
 user_pref("offline-apps.allow_by_default", false);
 
+// Отключает автоматический импорт содержимого профилей других браузеров при первом запуске Firefox.
+// По умолчанию пока выключен на релизе: https://bugzilla.mozilla.org/show_bug.cgi?id=1271800
+// Импортируются закладки, история, пароли и содержимое форм (см. bug 1271774).
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1248077
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1271775
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1271774
+// https://hg.mozilla.org/releases/mozilla-release/file/a22bfcef3c0d/browser/components/migration/AutoMigrate.jsm#l54
+// https://hg.mozilla.org/releases/mozilla-release/file/ea34f05424a8/browser/components/migration/MigrationUtils.jsm#l768
+user_pref("browser.migrate.automigrate.enabled", false);
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1297479
+user_pref("browser.migrate.automigrate.ui.enabled", false);
+
 // Отключает автоматическое скачивание и установку ADB Helper и аддона для удаленной отладки мобильных
 // браузеров при первом запуске WebIDE. Ручная установка через меню WebIDE все еще будет работать.
 // https://developer.mozilla.org/en-US/docs/Tools/Valence

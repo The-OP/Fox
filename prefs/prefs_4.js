@@ -219,11 +219,18 @@ user_pref("extensions.blocklist.itemURL", "");
 // новый бэкэнд под названием Kinto.
 // https://wiki.mozilla.org/Firefox/Go_Faster#III:_Kinto
 // https://wiki.mozilla.org/Firefox/Kinto
-// https://hg.mozilla.org/releases/mozilla-release/file/c1de04f39fa956cfce83f6065b0e709369215ed5/services/common/kinto-updater.js
-user_pref("services.kinto.base", "data:application/json,{}");
-user_pref("services.kinto.changes.path", "");
 // https://hg.mozilla.org/releases/mozilla-release/file/c1de04f39fa956cfce83f6065b0e709369215ed5/toolkit/mozapps/extensions/nsBlocklistService.js#l632
 user_pref("services.kinto.update_enabled", false);
+// https://hg.mozilla.org/releases/mozilla-release/file/c1de04f39fa956cfce83f6065b0e709369215ed5/services/common/kinto-updater.js
+user_pref("services.kinto.base", "data:application/json,{\"data\":[]}");
+user_pref("services.kinto.changes.path", "");
+
+// Переименованы в Firefox 49: https://hg.mozilla.org/releases/mozilla-release/rev/c6c57d394549
+// https://hg.mozilla.org/releases/mozilla-release/file/c6c57d394549/toolkit/mozapps/extensions/nsBlocklistService.js#l633
+user_pref("services.blocklist.update_enabled", false);
+// https://hg.mozilla.org/releases/mozilla-release/file/c6c57d394549/services/common/blocklist-updater.js
+user_pref("services.settings.server", "data:application/json,{\"data\":[]}");
+user_pref("services.blocklist.changes.path", "");
 
 // Отключает проверку на отзыв сертификата через OCSP-сервер при установке шифрованного соединения.
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_secure-website-certificates
