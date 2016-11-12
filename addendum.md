@@ -78,7 +78,7 @@
 Самоуничтожение кук после закрытия всех вкладок с соответствующим сайтом. Может быть удобнее чем полная блокировка.
 
 * [BetterPrivacy](https://addons.mozilla.org/firefox/addon/betterprivacy/)
-<sup><s>E10S</s></sup>
+<sup>E10S</sup>
 Менее актуально с понижением числа пользователей Flash, но все же. Уничтожает [LSO](https://en.wikipedia.org/wiki/Local_shared_object), которые не может заблокировать или уничтожить сам браузер.
 
 * [RequestPolicy](https://addons.mozilla.org/firefox/addon/requestpolicy/)
@@ -132,7 +132,7 @@
 Предотвращает фингерпринтинг через [анализ особенностей рендеринга элемента &lt;canvas&gt;](https://en.wikipedia.org/wiki/Canvas_fingerprinting), зависящих от ОС, железа, драйверов, шрифтов и т.п. Также см. [Bug 967895](https://bugzilla.mozilla.org/show_bug.cgi?id=967895).
 
 * [Decentraleyes](https://addons.mozilla.org/firefox/addon/decentraleyes/)
-<sup><s><a href="https://addons.mozilla.org/en-US/firefox/files/browse/435450/file/install.rdf">E10S</a></s></sup>
+<sup><a href="https://addons.mozilla.org/firefox/files/browse/533559/file/install.rdf">E10S</a></sup>
 Аддон содержит популярные библиотеки (AngularJS, Backbone.js, Dojo, Ember.js, Ext Core, jQuery, jQuery UI, Modernizr, MooTools, Prototype, Scriptaculous, SWFObject, Underscore.js) и предотвращает обращения сайтов за ними ко внешним 3rd-party CDN, предоставляя вместо этого локальные копии.
 
 	* Расширение экспериментальное и может ломать некоторые сайты. Известны проблемы с Yandex.Disk.
