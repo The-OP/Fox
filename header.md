@@ -135,7 +135,7 @@ Firefox сохраняет вкладки, закладки, историю, а�
 Аддон значительно повышающий удобство работы с историей.
 
 * [NoScript](https://addons.mozilla.org/firefox/addon/noscript/)
-<sup><s><a href="https://addons.mozilla.org/firefox/files/browse/421899/file/install.rdf">E10S</a></s></sup>
+<sup><a href="https://addons.mozilla.org/firefox/files/browse/541135/file/install.rdf">E10S</a></sup>
 Блокировщик JS с возможностью работы в режиме белого или черного списка. Поможет тем, у кого в простое вкладки с тяжелым JS отжирают ресурсы CPU.
 
 * [Open Tabs Next to Current](https://addons.mozilla.org/firefox/addon/open-tabs-next-to-current/)
