@@ -187,6 +187,7 @@ user_pref("dom.w3c_touch_events.enabled", 0);
 // http://www.w3.org/TR/gamepad/#methods
 user_pref("dom.gamepad.enabled", false);
 user_pref("dom.gamepad.non_standard_events.enabled", false);
+user_pref("dom.gamepad.test.enabled", false);
 // Отключает поддержку устройств виртуальной реальности.
 // https://developer.mozilla.org/en-US/Firefox/Releases/36#Interfaces.2FAPIs.2FDOM
 user_pref("dom.vr.enabled", false);
@@ -207,6 +208,7 @@ user_pref("dom.telephony.enabled", false);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1158029
 user_pref("dom.presentation.enabled", false);
 user_pref("dom.presentation.tcp_server.debug", false);
+user_pref("dom.presentation.discovery.legacy.enabled", false);
 // Отключает обнаружение устройств для презентации в локальной сети.
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1080474
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1115480
@@ -219,6 +221,28 @@ user_pref("dom.presentation.discoverable", false);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1225736
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1225726
 user_pref("network.mdns.use_js_fallback", false);
+
+// Отключает File and Directory Entries API, позволяющее сайтам создавать файлы на компьютере
+// пользователя.
+// https://developer.mozilla.org/en-US/Firefox/Releases/50#Files_and_directories
+// https://developer.mozilla.org/en-US/docs/Web/API/File_and_Directory_Entries_API
+// https://developer.mozilla.org/en-US/docs/Web/API/File_and_Directory_Entries_API/Introduction
+// https://developer.mozilla.org/en-US/docs/Web/API/File_and_Directory_Entries_API/Firefox_support
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1265767
+user_pref("dom.webkitBlink.filesystem.enabled", false);
+// Отключает нестандартный атрибут webkitdirectory элемента input, позволяющий загружать целые
+// каталоги через форму.
+// https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/webkitdirectory
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1258489
+// https://hg.mozilla.org/releases/mozilla-release/rev/133af19777be
+user_pref("dom.webkitBlink.dirPicker.enabled", false);
+
+// Отключает Directory Upload API, как и webkitdirectory позволяющий загружать целые каталоги через
+// форму.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1188880
+// https://bugzilla.mozilla.org/show_bug.cgi?id=907707
+// https://wicg.github.io/directory-upload/proposal.html
+user_pref("dom.input.dirpicker", false);
 
 // Отключает Push API, позволяющий веб-приложениям регистрировать идентификатор на сервере Мозиллы,
 // чтобы сайт приложения оставлял там уведомления, которые пользователь получит, когда выйдет онлайн.
@@ -366,6 +390,7 @@ user_pref("loop.copy.ticket", 255);
 // http://www.ghacks.net/2016/07/26/firefox-flyweb/
 // https://www.reddit.com/r/firefox/comments/4uwd1n/flyweb_we_dont_need_no_stinking_iot_apps/
 // https://hg.mozilla.org/releases/mozilla-release/rev/576019c74103
+// https://hg.mozilla.org/releases/mozilla-release/file/8dc18bf5abac/browser/extensions/flyweb/bootstrap.js#l36
 user_pref("dom.flyweb.enabled", false);
 
 // Отключает поддержку Encrypted Media Extensions (DRM для HTML5-видео). Рекомендуется
@@ -612,7 +637,7 @@ user_pref("security.mixed_content.block_display_content", true);
 // вместо URL ссылающейся на них страницы. Альтернатива - запрет посылки Referer при кросс-доменных
 // запросах (XOriginPolicy -> 1), но это ломает некоторые защиты от хотлинкинга.
 // PS: Здесь нет опечаток в словах, обозначающих реферер. Заголовок - Referer с тремя "r", свойство
-// DOM - с четырьмя "r", настройки Firefox кроме одной - с тремя "r", одна - с четырьмя.
+// DOM - с четырьмя "r", настройки Firefox кроме двух нижних - с тремя "r", две - с четырьмя.
 // https://en.wikipedia.org/wiki/HTTP_referer
 // https://en.wikipedia.org/wiki/Hotlinking
 // https://hg.mozilla.org/releases/mozilla-esr38/file/0f8338121472/modules/libpref/init/all.js#l1216
@@ -628,6 +653,8 @@ user_pref("network.http.referer.XOriginPolicy", 0);
 // "Controls whether we send HTTPS referres to other HTTPS sites. By default this is enabled for
 // compatibility (see bug 141641)"
 user_pref("network.http.sendSecureXSiteReferrer", true);
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1223838#c31
+user_pref("network.http.enablePerElementReferrer", false);
 
 // Запрещает новые сертификаты, использующие SHA1.
 // https://bugzilla.mozilla.org/show_bug.cgi?id=942515#c32

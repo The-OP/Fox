@@ -14,14 +14,20 @@ user_pref("image.cache.size", 0);
 // http://www.contextis.com/resources/blog/webgl-new-dimension-browser-exploitation/
 user_pref("webgl.disabled", true);
 user_pref("webgl.force-enabled", false);
+user_pref("webgl.disable-wgl", true);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1232864
 user_pref("webgl.enable-prototype-webgl2", false);
 user_pref("webgl.webgl2-compat-mode", false);
+user_pref("webgl.enable-webgl2", false);
 
 // Отключает попытки страниц развернуть себя на весь экран и соответствующую кнопку в HTML5-плеерах.
 // https://developer.mozilla.org/en-US/docs/DOM/Using_fullscreen_mode
 user_pref("full-screen-api.enabled", false);
+// Отключает Pointer Lock API.
+// https://developer.mozilla.org/en-US/docs/Web/API/Pointer_Lock_API
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1273351
 user_pref("full-screen-api.pointer-lock.enabled", false);
+user_pref("pointer-lock-api.prefixed.enabled", false);
 
 // Включает спуфинг различных свойств, как DOM, так и CSS, по которым можно фингерпринтить
 // пользователя (screenX, screenY, screen.width, screen.height, etc - полный список см. в исходниках
@@ -161,6 +167,7 @@ user_pref("javascript.options.asmjs", false);
 // Отключает WebAssembly.
 // https://hacks.mozilla.org/2016/03/a-webassembly-milestone/
 user_pref("javascript.options.wasm", false);
+user_pref("javascript.options.wasm_baselinejit", false);
 // Настройки media.webaudio.enabled больше не существует, поэтому только так.
 user_pref("noscript.forbidMedia", true);
 // Третий уровень - отключение JIT-компилятора, SVG и обработку JavaScript только для HTTPS.
@@ -180,6 +187,7 @@ user_pref("media.mediasource.format-reader.webm", false);
 user_pref("media.gstreamer.enabled", false);
 // Отключает поддержку соответствующих форматов/кодеков.
 user_pref("media.format-reader.webm", false);
+user_pref("media.format-reader.ogg", false);
 user_pref("media.mp4.enabled", false);
 user_pref("media.ogg.enabled", false);
 user_pref("media.opus.enabled", false);

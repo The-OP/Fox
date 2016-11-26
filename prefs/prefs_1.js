@@ -135,13 +135,16 @@ user_pref("browser.safebrowsing.provider.google.gethashURL", "");
 user_pref("browser.safebrowsing.provider.google.lists", "");
 user_pref("browser.safebrowsing.provider.google.reportURL", "");
 user_pref("browser.safebrowsing.provider.google.updateURL", "");
-user_pref("browser.safebrowsing.provider.mozilla.lists", "");
-user_pref("browser.safebrowsing.provider.mozilla.updateURL", "");
-user_pref("browser.safebrowsing.provider.mozilla.gethashURL", "");
 user_pref("browser.safebrowsing.downloads.remote.block_dangerous", false);
 user_pref("browser.safebrowsing.downloads.remote.block_dangerous_host", false);
 user_pref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", false);
 user_pref("browser.safebrowsing.downloads.remote.block_uncommon", false);
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1025965
+user_pref("browser.safebrowsing.phishing.enabled", false);
+user_pref("browser.safebrowsing.provider.google4.lists", "");
+user_pref("browser.safebrowsing.provider.google4.updateURL", "");
+user_pref("browser.safebrowsing.provider.google4.gethashURL", "");
+user_pref("browser.safebrowsing.provider.google4.reportURL", "");
 
 // Отключает мозилловский анти-трекинговый список, который дублирует функции uBlock с соответствующими
 // подписками и является менее эффективным (т.к. основан на списке от Disconnect).
@@ -156,7 +159,9 @@ user_pref("privacy.trackingprotection.introURL", "");
 user_pref("privacy.trackingprotection.ui.enabled", false);
 // https://hg.mozilla.org/releases/mozilla-beta/file/00bcc10b3bdc/browser/base/content/browser-trackingprotection.js#l6
 //user_pref("privacy.trackingprotection.introCount", 1);
-
+user_pref("browser.safebrowsing.provider.mozilla.lists", "");
+user_pref("browser.safebrowsing.provider.mozilla.updateURL", "");
+user_pref("browser.safebrowsing.provider.mozilla.gethashURL", "");
 
 // Вообще не регистрировать таблицы Safebrowsing и Tracking Protection в URL Classifier, пусть даже
 // в отключенном виде и с пустыми URL для обновления.
@@ -520,6 +525,12 @@ user_pref("security.tls.insecure_fallback_hosts", "");
 // описанной в CVE-2009-3555).
 // https://wiki.mozilla.org/Security:Renegotiation
 user_pref("security.ssl.treat_unsafe_negotiation_as_broken", true);
+
+// Отключает импорт используемого для MITM сертификата Family Safety от Microsoft.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1239166
+// https://wiki.mozilla.org/SecurityEngineering/Untrusted_Certificates_in_Windows_Child_Mode
+// https://hg.mozilla.org/releases/mozilla-release/file/ddb37c386bb2ffa180117b4d30ca3b41a8af233c/security/manager/ssl/nsNSSComponent.cpp#l782
+user_pref("security.family_safety.mode", 0);
 
 // Запрещает Firefox открывать JAR-файлы вместо скачивания, что повышает безопасность.
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1173171
