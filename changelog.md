@@ -1,3 +1,9 @@
+#### Firefox 50
+* https://www.mozilla.org/firefox/50.0/releasenotes/
+* http://www.ghacks.net/2016/11/15/firefox-50/
+* https://www.opennet.ru/opennews/art.shtml?num=45496
+* https://www.linux.org.ru/news/mozilla/13016812
+
 #### Firefox 49
 * https://www.mozilla.org/firefox/49.0/releasenotes/
 * http://www.ghacks.net/2016/09/20/firefox-49-release/
