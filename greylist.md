@@ -27,6 +27,11 @@ ABP нехорош не только своими [продажными acceptab
 При всем этом он бесполезен, если уже используется баннерорезка с анти-трекерными подписками и какой-нибудь аддон для контроля/очистки кук. См. [исследование Стэнфорда](http://cyberlaw.stanford.edu/node/6730), сравнивающее баннерорезки с Ghostery по эффективности. Если уж вам очень сильно хочется автоматического все-в-одном комбайна, подобного Ghostery - используйте Privacy Badger от Electronic Frontier Foundation, распространяющийся под свободной лицензией.
 
 
+#### Stylish
+
+Оригинальный разработчик Stylish продал сам аддон и userstyles.org[[1]](https://www.ghacks.net/2017/01/04/major-stylish-add-on-changes-in-regards-to-privacy/). Новый владелец поспешил монетизировать проект - анонсировал партнерство с рекламной компанией[[2]](https://forum.userstyles.org/discussion/53233/announcement-to-the-community) и уже встроил зонд в Stylish для Chrome, посылающий ему посещенные пользователем URL[[3]](https://www.ghacks.net/2017/01/04/major-stylish-add-on-changes-in-regards-to-privacy/#comment-4084542)[[4]](https://forum.userstyles.org/discussion/comment/109446/#Comment_109446). Stylish для Firefox пока (?) чист, однако следует тщательно приглядывать за любыми изменениями.
+
+
 #### uBlock
 
 uBlock **Origin** - это и есть настоящий uBlock от первоначального автора. То, что сейчас называется uBlock - его форк. Для пропустивших драму - кратко [тут](https://www.opennet.ru/opennews/art.shtml?num=42107). Кроме того, с момента разветвления (версии 0.9.3) разработка Origin идет значительно [активнее](https://github.com/gorhill/uBlock/releases) чем у [форка](https://github.com/chrisaljoudi/uBlock/releases). **UPD:** Форк уже больше года не обновлялся, но на AMO все еще зачем-то присутствует.
