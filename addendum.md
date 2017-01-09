@@ -142,7 +142,7 @@
 Предотвращает фингерпринтинг по внутренним URL браузера со схемой resource://, запрещая веб-страницам доступ к ним. Может сломать некоторые другие расширения. Подробнее о проблеме: [Ghacks](http://www.ghacks.net/2016/06/12/firefox-resource-leak/), [Bug 863246](https://bugzilla.mozilla.org/show_bug.cgi?id=863246), [Bug 903959](https://bugzilla.mozilla.org/show_bug.cgi?id=903959). Протестировать можно на Browserleaks: https://www.browserleaks.com/firefox
 
 * [Privacy Badger](https://addons.mozilla.org/firefox/addon/privacy-badger17/)
-<sup><s><a href="https://addons.mozilla.org/firefox/files/browse/531616/file/install.rdf">E10S</a></s></sup>
+<sup>E10S</sup>
 Аналог Ghostery от EFF. Актуально для тех, кто хочет поставить и забыть, чтоб оно там автоматом боролось с трекингом.
 
 * [Yet Another Remove It Permanently](https://addons.mozilla.org/firefox/addon/yarip/)
