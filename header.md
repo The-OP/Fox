@@ -53,10 +53,10 @@
 **A:** `about:config -> keyword.enabled -> false`
 
 1. **Q:** Как вернуть настройку `browser.newtab.url` в Firefox 41+? <br>
-**A:** [New Tab Override](https://addons.mozilla.org/firefox/addon/new-tab-override/)
+**A:** [New Tab Override](https://addons.mozilla.org/en-US/firefox/addon/new-tab-override/)
 
 1. **Q:** Что за специальная тема для разработчиков? <br>
-**A:** Тема, использующаяся в Firefox Developer Edition. [Аддон](https://addons.mozilla.org/firefox/addon/devedition-theme-enabler/), включающий ее на релизных сборках.
+**A:** Тема, использующаяся в Firefox Developer Edition. [Аддон](https://addons.mozilla.org/en-US/firefox/addon/devedition-theme-enabler/), включающий ее на релизных сборках.
 
 1. **Q:** Как копировать ссылки c кириллическим текстом в исходном виде, не закодированном percent-encoding (%D0%9B%D0%B8%D1%81 -> Лис)? <br>
 **A:** `about:config -> network.standard-url.escape-utf8 -> false`
@@ -70,10 +70,10 @@
 Также можно использовать кнопку скриншота в Developer Tools (Ctrl+Shift+I), предварительно включив ее в about:config: `devtools.command-button-screenshot.enabled -> true`. Сверхдлинные страницы [не сохраняет](https://bugzilla.mozilla.org/show_bug.cgi?id=766661).
 
 1. **Q:** Как уменьшить ширину вкладки, чтобы меньше их прокручивать? <br>
-**A:** Можно воспользоваться [UserCSS](http://www.ghacks.net/2011/02/02/change-firefoxs-minimum-maximum-tab-width/) или [аддоном](https://addons.mozilla.org/firefox/addon/custom-tab-width/).
+**A:** Можно воспользоваться [UserCSS](http://www.ghacks.net/2011/02/02/change-firefoxs-minimum-maximum-tab-width/) или [аддоном](https://addons.mozilla.org/en-US/firefox/addon/custom-tab-width/).
 
 1. **Q:** Как вернуть старую поисковую строку/старый диалог настроек браузера? <br>
-**A:** Воспользоваться [Classic Theme Restorer](https://addons.mozilla.org/firefox/addon/classicthemerestorer/).
+**A:** Воспользоваться [Classic Theme Restorer](https://addons.mozilla.org/en-US/firefox/addon/classicthemerestorer/).
 
 #### Профили
 Firefox сохраняет вкладки, закладки, историю, аддоны, настройки и пароли в каталоге, называемом профилем. Можно иметь несколько профилей и даже использовать их одновременно, запуская две и более копии Firefox. Для входа в менеджер профилей следует указать ключи [`-no-remote -P`](https://developer.mozilla.org/en-US/docs/Mozilla/Command_Line_Options). Подробнее [здесь](https://support.mozilla.org/ru/kb/upravlenie-profilyami).
@@ -87,116 +87,116 @@ Firefox сохраняет вкладки, закладки, историю, а�
 ## Аддоны
 <sub>`E10S` - совместимые с Electrolysis расширения, <s>`E10S`</s> - не совместимые, либо работающие через прослойку для совместимости (interposition).</sub>
 
-* [uBlock Origin](https://addons.mozilla.org/firefox/addon/ublock-origin/)
+* [uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/)
 <sup><a href="https://github.com/gorhill/uBlock/blob/master/platform/firefox/install.rdf">E10S</a></sup>
 Быстрая и легковесная баннерорезка. Поддерживает подписки ABP, но потребляет значительно меньше процессорного времени и памяти. Подписки включаются в настройках (обычно достаточно EasyList и RU AdList). Element picker, облегчающий создание своих фильтров, уже встроен.
 
-	* <sub>Согласно [исследованию Стэнфорда](http://cyberlaw.stanford.edu/node/6730), баннерорезка с соответствующими подписками (EasyList + EasyPrivacy + Fanboy's Annoyances) по эффективности превосходит Ghostery.</sub>
+	* <sub>Согласно [исследованию Стэнфорда](https://cyberlaw.stanford.edu/blog/2011/09/tracking-trackers-self-help-tools), баннерорезка с соответствующими подписками (EasyList + EasyPrivacy + Fanboy's Annoyances) по эффективности превосходит Ghostery.</sub>
 	* <sub>[uBlock Origin vs uBlock](greylist.md#user-content-ublock)</sub>
 	* <sub>[Почему не Adblock Plus?](greylist.md#user-content-adblock-plus)</sub>
 
-* [Add Bookmark Here 2](https://addons.mozilla.org/firefox/addon/add-bookmark-here-2/)
-<sup><a href="https://addons.mozilla.org/firefox/files/browse/461049/file/install.rdf">E10S</a></sup>
+* [Add Bookmark Here 2](https://addons.mozilla.org/en-US/firefox/addon/add-bookmark-here-2/)
+<sup><a href="https://addons.mozilla.org/en-US/firefox/files/browse/461049/file/install.rdf">E10S</a></sup>
 Решает [проблему](https://bugzilla.mozilla.org/show_bug.cgi?id=423617) с запоминанием папки для добавления закладок по умолчанию и обладает несколькими другими улучшающими работу с закладками функциями.
 
-* [Add to Search Bar](https://addons.mozilla.org/firefox/addon/add-to-search-bar/)
-<sup><s><a href="https://addons.mozilla.org/firefox/files/browse/387922/file/install.rdf">E10S</a></s></sup>
+* [Add to Search Bar](https://addons.mozilla.org/en-US/firefox/addon/add-to-search-bar/)
+<sup><s><a href="https://addons.mozilla.org/en-US/firefox/files/browse/387922/file/install.rdf">E10S</a></s></sup>
 Позволяет добавить в поисковую панель Firefox поисковую строку любого сайта.
 
-* [Classic Theme Restorer](https://addons.mozilla.org/firefox/addon/classicthemerestorer/)
+* [Classic Theme Restorer](https://addons.mozilla.org/en-US/firefox/addon/classicthemerestorer/)
 <sup><a href="https://github.com/Aris-t2/ClassicThemeRestorer/blob/master/xpi/install.rdf">E10S</a></sup>
 Для нелюбителей Australis, и для тех, кто хочет вернуть старый внешний вид Лиса.
 
-* [Cookie Monster](https://addons.mozilla.org/firefox/addon/cookie-monster/)
+* [Cookie Monster](https://addons.mozilla.org/en-US/firefox/addon/cookie-monster/)
 <sup><s>E10S</s></sup>
 Режет cookies и DOM Storage для сайтов, не внесенных в белый список.
 
-* [Custom Buttons](https://addons.mozilla.org/firefox/addon/custom-buttons/)
-<sup><s><a href="https://addons.mozilla.org/firefox/files/browse/414139/file/install.rdf">E10S</a></s></sup>
+* [Custom Buttons](https://addons.mozilla.org/en-US/firefox/addon/custom-buttons/)
+<sup><s><a href="https://addons.mozilla.org/en-US/firefox/files/browse/414139/file/install.rdf">E10S</a></s></sup>
 Разрешает создавать свои кнопки, исполняющие пользовательские скрипты с правами браузера. Удобно, чтобы не писать целый новый аддон для какой-либо мелкой полезности. Есть много готовых кнопок на [официальном форуме](http://custombuttons.sourceforge.net/forum/) и на [форуме Mozilla Russia](https://forum.mozilla-russia.org/viewforum.php?id=34).
 	* **ВАЖНО:** Код кнопок выполняется в контексте браузера, и могут они все то же самое что и расширения (включая полный доступ к ФС). Поэтому лучше ставить только те кнопки, чей код проверен лично вами.
 
-* [Enable Right Click and Copy](https://addons.mozilla.org/firefox/addon/enable-rightclick-and-copy)
+* [Enable Right Click and Copy](https://addons.mozilla.org/en-US/firefox/addon/enable-rightclick-and-copy/)
 <sup>E10S</sup>
 Помогает против сайтов, блокирующих контекстное меню по правой кнопке мыши.
 
-* [FireGestures](https://addons.mozilla.org/firefox/addon/firegestures/)
-<sup><a href="https://addons.mozilla.org/firefox/files/browse/438957/file/install.rdf">E10S</a></sup>
+* [FireGestures](https://addons.mozilla.org/en-US/firefox/addon/firegestures/)
+<sup><a href="https://addons.mozilla.org/en-US/firefox/files/browse/438957/file/install.rdf">E10S</a></sup>
 Жесты мышью, мышиными кнопками, колесом и т.п.
 
-* [Greasemonkey](https://addons.mozilla.org/firefox/addon/greasemonkey/)
+* [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/)
 <sup><a href="https://github.com/greasemonkey/greasemonkey/blob/master/install.rdf">E10S</a></sup>
-Всем известный движок для запуска UserJS. Ссылки на репозитории скриптов [здесь](http://wiki.greasespot.net/User_Script_Hosting).
+Всем известный движок для запуска UserJS. Ссылки на репозитории скриптов [здесь](https://wiki.greasespot.net/User_Script_Hosting).
 
 	* [Dollchan Extension Tools](https://github.com/SthephanShinkufag/Dollchan-Extension-Tools/). Полезнейший скрипт, значительно повышающий удобство двачевания.
 
-* [Image Search Options](https://addons.mozilla.org/firefox/addon/image-search-options/)
+* [Image Search Options](https://addons.mozilla.org/en-US/firefox/addon/image-search-options/)
 <sup><s>E10S</s></sup>
 Поиск картинок. Поддерживает как передачу ссылки на картинку поисковику, так и закачку туда самой картинки, что полезно для защищенных от хотлинкинга сайтов. После установки нужно импортировать обновленный список поисковиков с сайта автора (инструкция на странице аддона).
 
-* [Norwell History Tools](https://addons.mozilla.org/firefox/addon/norwell/)
-<sup><s><a href="https://addons.mozilla.org/firefox/files/browse/298146/file/install.rdf">E10S</a></s></sup>
+* [Norwell History Tools](https://addons.mozilla.org/en-US/firefox/addon/norwell/)
+<sup><s><a href="https://addons.mozilla.org/en-US/firefox/files/browse/298146/file/install.rdf">E10S</a></s></sup>
 Аддон значительно повышающий удобство работы с историей.
 
-* [NoScript](https://addons.mozilla.org/firefox/addon/noscript/)
-<sup><a href="https://addons.mozilla.org/firefox/files/browse/541135/file/install.rdf">E10S</a></sup>
+* [NoScript](https://addons.mozilla.org/en-US/firefox/addon/noscript/)
+<sup><a href="https://addons.mozilla.org/en-US/firefox/files/browse/541135/file/install.rdf">E10S</a></sup>
 Блокировщик JS с возможностью работы в режиме белого или черного списка. Поможет тем, у кого в простое вкладки с тяжелым JS отжирают ресурсы CPU.
 
-* [Open Tabs Next to Current](https://addons.mozilla.org/firefox/addon/open-tabs-next-to-current/)
-<sup><s><a href="https://addons.mozilla.org/firefox/files/browse/366060/file/install.rdf">E10S</a></s></sup>
+* [Open Tabs Next to Current](https://addons.mozilla.org/en-US/firefox/addon/open-tabs-next-to-current/)
+<sup><s><a href="https://addons.mozilla.org/en-US/firefox/files/browse/366060/file/install.rdf">E10S</a></s></sup>
 Небольшой аддон, позволяющий открывать новую вкладку сразу за текущей.
 
-* [ScrapBook X](https://addons.mozilla.org/firefox/addon/scrapbook-x/)
+* [ScrapBook X](https://addons.mozilla.org/en-US/firefox/addon/scrapbook-x/)
 <sup><s><a href="https://github.com/danny0838/firefox-scrapbook/blob/master/install.rdf">E10S</a></s></sup>
 Удобное дополнение для сохранения веб-страниц и создания заметок. Обладает значительно расширенной функциональностью по сравнению с оригинальным ScrapBook.
 
-* [Session Manager](https://addons.mozilla.org/firefox/addon/session-manager/)
-<sup><s><a href="https://addons.mozilla.org/firefox/files/browse/413348/file/install.rdf">E10S</a></s></sup>
+* [Session Manager](https://addons.mozilla.org/en-US/firefox/addon/session-manager/)
+<sup><s><a href="https://addons.mozilla.org/en-US/firefox/files/browse/413348/file/install.rdf">E10S</a></s></sup>
 Менеджер сессий.
 
-* [SlyZoom](https://addons.mozilla.org/firefox/addon/slyzoom/)
-<sup><s><a href="https://addons.mozilla.org/firefox/files/browse/392208/file/install.rdf">E10S</a></s></sup>
+* [SlyZoom](https://addons.mozilla.org/en-US/firefox/addon/slyzoom/)
+<sup><s><a href="https://addons.mozilla.org/en-US/firefox/files/browse/392208/file/install.rdf">E10S</a></s></sup>
 Позволяет масштабировать страницы с произвольным шагом вместо изкоробочных ±10%, а также задавать масштаб по умолчанию на всех страницах.
 
-* [Stylish](https://addons.mozilla.org/firefox/addon/stylish/)
-<sup><a href="https://github.com/JasonBarnabe/stylish/blob/master/install.rdf">E10S</a></sup>
+* [Stylish](https://addons.mozilla.org/en-US/firefox/addon/stylish/)
+<sup><a href="https://github.com/stylish-userstyles/stylish/blob/master/install.rdf">E10S</a></sup>
 Меняет внешний вид сайтов и самого браузера согласно UserCSS. [Репозиторий](https://userstyles.org) стилей. Также см. [раздел о Stylish](addendum.md#user-content-stylish) в приложении.
 
 	* **ВАЖНО:** См. [информацию о Stylish в сером списке](greylist.md#user-content-stylish).
 
 	* **ВАЖНО:** Обязательно читайте стили перед установкой. Вставив запрещенное на Userstyles.org свойство **-moz-binding** в стиль Stylish, [можно выполнить JS-код на компьютере пользователя](addendum.md#user-content-Опасность-юзерстилей-с--moz-binding).
 
-* [Tab Counter](https://addons.mozilla.org/firefox/addon/tab-counter/)
-<sup><s><a href="https://addons.mozilla.org/firefox/files/browse/409212/file/install.rdf">E10S</a></s></sup>
+* [Tab Counter](https://addons.mozilla.org/en-US/firefox/addon/tab-counter/)
+<sup><s><a href="https://addons.mozilla.org/en-US/firefox/files/browse/409212/file/install.rdf">E10S</a></s></sup>
 Показывает количество открытых вкладок.
 
-* [Tab Groups](https://addons.mozilla.org/firefox/addon/tab-groups-panorama/)
+* [Tab Groups](https://addons.mozilla.org/en-US/firefox/addon/tab-groups-panorama/)
 <sup><a href="https://github.com/Quicksaver/Tab-Groups/blob/master/install.rdf">E10S</a></sup>
 Панорама вкладок на замену встроенной в браузер, которую удалили в Firefox 45.
 
-* [Tree Style Tab](https://addons.mozilla.org/firefox/addon/tree-style-tab/)
+* [Tree Style Tab](https://addons.mozilla.org/en-US/firefox/addon/tree-style-tab/)
 <sup><a href="https://github.com/piroor/treestyletab/blob/master/install.rdf">E10S</a></sup>
 Перемещает вкладки набок, в вертикальную панель и позволяет группировать их в связанные по смыслу деревья. Особенно актуально на широкоформатных мониторах. Для тех, кто хочет открывать больше 3.5 вкладок и удобно управлять ими. Рекомендуется использовать вместе с [этим стилем](https://userstyles.org/styles/71882/tree-style-tab-compact-tabs).
 
-	* [Multiple Tab Handler](https://addons.mozilla.org/firefox/addon/multiple-tab-handler/)
+	* [Multiple Tab Handler](https://addons.mozilla.org/en-US/firefox/addon/multiple-tab-handler/)
 	<sup><a href="https://github.com/piroor/multipletab/blob/master/install.rdf">E10S</a></sup>
 	Позволяет выделять несколько вкладок и производить с ними разные операции: перемещать, группировать, добавлять в закладки, копировать URL, etc. Полностью совместим с TST.
 
-* [Vertical Toolbar](https://addons.mozilla.org/firefox/addon/vertical-toolbar/)
-<sup><s><a href="https://addons.mozilla.org/firefox/files/browse/420712/file/install.rdf">E10S</a></s></sup>
+* [Vertical Toolbar](https://addons.mozilla.org/en-US/firefox/addon/vertical-toolbar/)
+<sup><s><a href="https://addons.mozilla.org/en-US/firefox/files/browse/420712/file/install.rdf">E10S</a></s></sup>
 Панель для кнопок браузера и аддонов. Экономит ценное пространство по вертикали.
 
-* [Watch with MPV](https://addons.mozilla.org/firefox/addon/watch-with-mpv/)
-<sup><s><a href="https://addons.mozilla.org/firefox/files/browse/368995/file/install.rdf">E10S</a></s></sup>
+* [Watch with MPV](https://addons.mozilla.org/en-US/firefox/addon/watch-with-mpv/)
+<sup><s><a href="https://addons.mozilla.org/en-US/firefox/files/browse/368995/file/install.rdf">E10S</a></s></sup>
 Проигрывание видео при помощи связки из [mpv](https://github.com/mpv-player/mpv/) и [youtube-dl](https://github.com/rg3/youtube-dl) вместо принадлежащего сайту HTML5/Flash-плеера. [Список поддерживаемых сайтов](https://github.com/rg3/youtube-dl/blob/master/docs/supportedsites.md).
 
-* [Yet Another Smooth Scrolling](https://addons.mozilla.org/firefox/addon/yet-another-smooth-scrolling/)
-<sup><s><a href="https://addons.mozilla.org/firefox/files/browse/429884/file/install.rdf">E10S</a></s></sup>
+* [Yet Another Smooth Scrolling](https://addons.mozilla.org/en-US/firefox/addon/yet-another-smooth-scrolling/)
+<sup><s><a href="https://addons.mozilla.org/en-US/firefox/files/browse/429884/file/install.rdf">E10S</a></s></sup>
 Тонкая настройка прокрутки, включая плавность, скорость и ускорение.
 
-* [Русский словарь для проверки правописания](https://addons.mozilla.org/firefox/addon/russian-spellchecking-dic-3703/)
+* [Русский словарь для проверки правописания](https://addons.mozilla.org/en-US/firefox/addon/russian-spellchecking-dic-3703/)
 
-* [Английский словарь для проверки правописания](https://addons.mozilla.org/firefox/addon/united-states-english-spellche/)
+* [Английский словарь для проверки правописания](https://addons.mozilla.org/en-US/firefox/addon/united-states-english-spellche/)
 
 **Ньюфагам на заметку**: Не старайтесь ставить все аддоны, которые видите. Попробуйте поработать с почти голым браузером чтобы понять, чего именно вам будет не хватать, и не ныть, что **ЛИС ТАРМАЗИТ ЛАГАЕТ КРАШИ НИРАБОТАЕТ**. Если что-то не работает, то, вероятно, вы установили кучу сторонних аддонов, стилей, скриптов, и некоторые из них друг с другом конфликтуют. Отключайте по очереди, чтобы найти виновника.
 
