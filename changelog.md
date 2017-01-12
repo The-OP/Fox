@@ -1,17 +1,17 @@
 #### Firefox 50
-* https://www.mozilla.org/firefox/50.0/releasenotes/
+* https://www.mozilla.org/en-US/firefox/50.0/releasenotes/
 * https://www.ghacks.net/2016/11/15/firefox-50/
 * https://www.opennet.ru/opennews/art.shtml?num=45496
 * https://www.linux.org.ru/news/mozilla/13016812
 
 #### Firefox 49
-* https://www.mozilla.org/firefox/49.0/releasenotes/
+* https://www.mozilla.org/en-US/firefox/49.0/releasenotes/
 * https://www.ghacks.net/2016/09/20/firefox-49-release/
 * https://www.opennet.ru/opennews/art.shtml?num=45180
 * https://www.linux.org.ru/news/mozilla/12891229
 
 #### Firefox 48
-* https://www.mozilla.org/firefox/48.0/releasenotes/
+* https://www.mozilla.org/en-US/firefox/48.0/releasenotes/
 * https://www.ghacks.net/2016/08/01/firefox-48-release/
 * https://www.opennet.ru/opennews/art.shtml?num=44897
 * https://www.linux.org.ru/news/mozilla/12782140
