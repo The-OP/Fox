@@ -27,6 +27,11 @@ ABP нехорош не только своими [продажными acceptab
 При всем этом он бесполезен, если уже используется баннерорезка с анти-трекерными подписками и какой-нибудь аддон для контроля/очистки кук. См. [исследование Стэнфорда](https://cyberlaw.stanford.edu/blog/2011/09/tracking-trackers-self-help-tools), сравнивающее баннерорезки с Ghostery по эффективности. Если уж вам очень сильно хочется автоматического все-в-одном комбайна, подобного Ghostery - используйте Privacy Badger от Electronic Frontier Foundation, распространяющийся под свободной лицензией.
 
 
+#### NoScript
+
+NoScript с настройками по умолчанию периодически посылает запрос на свой сервер для определения IP компьютера пользователя с целью защиты его от DNS rebinding. Утверждается, что никакой статистики на стороне сервера при этом не ведется. Информация об этой функциональности вместе со способом ее отключения приведена в [Privacy Policy аддона](https://addons.mozilla.org/en-US/firefox/addon/noscript/privacy/).
+
+
 #### Stylish
 
 Оригинальный разработчик Stylish продал сам аддон и userstyles.org[[1]](https://www.ghacks.net/2017/01/04/major-stylish-add-on-changes-in-regards-to-privacy/). Новый владелец поспешил монетизировать проект - анонсировал партнерство с рекламной компанией[[2]](https://forum.userstyles.org/discussion/53233/announcement-to-the-community) и уже встроил зонд в Stylish для Chrome, посылающий ему посещенные пользователем URL[[3]](https://www.ghacks.net/2017/01/04/major-stylish-add-on-changes-in-regards-to-privacy/#comment-4084542)[[4]](https://forum.userstyles.org/discussion/comment/109446/#Comment_109446). Stylish для Firefox пока (?) чист, однако следует тщательно приглядывать за любыми изменениями.
