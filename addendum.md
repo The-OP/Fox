@@ -139,7 +139,7 @@
 
 * [No Resource URI Leak](https://addons.mozilla.org/en-US/firefox/addon/no-resource-uri-leak/)
 <sup><a href="https://addons.mozilla.org/firefox/files/browse/454913/file/install.rdf">E10S</a></sup>
-Предотвращает фингерпринтинг по внутренним URL браузера со схемой resource://, запрещая веб-страницам доступ к ним. Может сломать некоторые другие расширения. Подробнее о проблеме: [Ghacks](http://www.ghacks.net/2016/06/12/firefox-resource-leak/), [Bug 863246](https://bugzilla.mozilla.org/show_bug.cgi?id=863246), [Bug 903959](https://bugzilla.mozilla.org/show_bug.cgi?id=903959). Протестировать можно на Browserleaks: https://browserleaks.com/firefox
+Предотвращает фингерпринтинг по внутренним URL браузера со схемой resource://, запрещая веб-страницам доступ к ним. Может сломать некоторые другие расширения. Подробнее о проблеме: [Ghacks](https://www.ghacks.net/2016/06/12/firefox-resource-leak/), [Bug 863246](https://bugzilla.mozilla.org/show_bug.cgi?id=863246), [Bug 903959](https://bugzilla.mozilla.org/show_bug.cgi?id=903959). Протестировать можно на Browserleaks: https://browserleaks.com/firefox
 
 * [Privacy Badger](https://addons.mozilla.org/en-US/firefox/addon/privacy-badger17/)
 <sup>E10S</sup>
@@ -201,7 +201,7 @@ pref("general.config.filename", "config.js");
 
 ## Интересные ссылки
 * [Release Notes](https://www.mozilla.org/en-US/firefox/notes) и [Developer Release Notes](https://developer.mozilla.org/en-US/Firefox/Releases).
-* [Ghacks](http://www.ghacks.net/category/firefox/) - сайт, на котором попадаются неплохие статьи и обзоры грядущих нововведений в Firefox.
+* [Ghacks](https://www.ghacks.net/category/firefox/) - сайт, на котором попадаются неплохие статьи и обзоры грядущих нововведений в Firefox.
 * [Здесь](http://kb.mozillazine.org/About:config_entries) и [здесь](http://kb.mozillazine.org/Category:Preferences) приведены подробные описания настроек, жаль, не всех.
 * [user.js -- Firefox hardening stuff](https://github.com/pyllyukko/user.js) - репозиторий настроек вроде этого, но с несколько другим подходом к организации.
 * [Блог](https://cat-in-136.github.io/tags.html#tag_pref%20diff) автора аддона Configuration Mania, который выкладывает разницу между дефолтными конфигами предыдущей и новой версии Firefox. **UPD:** Настройки могут меняться и в более поздних бетах, чем там сравниваются, поэтому целиком полагаться на него не стоит.

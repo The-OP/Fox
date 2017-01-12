@@ -137,7 +137,7 @@ user_pref("security.ssl.require_safe_negotiation", true);
 // Находится Indexed DB в профиле, по такому пути: storage/default/<домен>/idb/
 //
 // UPD: Начиная с Firefox 35 отключение Indexed DB может сломать многие аддоны:
-// 	http://www.ghacks.net/2015/01/16/fix-add-ons-not-working-in-firefox-35/
+// 	https://www.ghacks.net/2015/01/16/fix-add-ons-not-working-in-firefox-35/
 // 	https://adblockplus.org/forum/viewtopic.php?t=27375&start=15
 // UPD: Вышеописанный баг исправили, теперь эта настройка действует только на страницы, и браузер
 // с аддонами не ломает -- https://bugzilla.mozilla.org/show_bug.cgi?id=1079355

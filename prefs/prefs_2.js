@@ -387,7 +387,7 @@ user_pref("loop.copy.ticket", 255);
 // Отключает FlyWeb - новый системный аддон, предназначенный для взаимодействия с IoT-устройствами.
 // (В Firefox 49 присутствуют только некоторые части дополнения.)
 // https://wiki.mozilla.org/FlyWeb
-// http://www.ghacks.net/2016/07/26/firefox-flyweb/
+// https://www.ghacks.net/2016/07/26/firefox-flyweb/
 // https://www.reddit.com/r/firefox/comments/4uwd1n/flyweb_we_dont_need_no_stinking_iot_apps/
 // https://hg.mozilla.org/releases/mozilla-release/rev/576019c74103
 // https://hg.mozilla.org/releases/mozilla-release/file/8dc18bf5abac/browser/extensions/flyweb/bootstrap.js#l36
