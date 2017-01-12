@@ -1,3 +1,8 @@
+// Отключает рекламу Sync при установке аддонов, сохранении паролей и редактировании закладок.
+// https://hg.mozilla.org/releases/mozilla-esr45/file/cd64cd568d3879680838f3de32f5033fbaa409d5/browser/base/content/urlbarBindings.xml#l2705
+// https://hg.mozilla.org/releases/mozilla-esr45/file/cd64cd568d3879680838f3de32f5033fbaa409d5/browser/base/content/urlbarBindings.xml#l2730
+user_pref("browser.syncPromoViewsLeftMap", "{\"addons\":0,\"bookmarks\":0,\"passwords\":0}");
+
 // Удаляет 3rd-party cookies после закрытия браузера.
 // http://kb.mozillazine.org/Network.cookie.thirdparty.sessionOnly
 // https://hg.mozilla.org/releases/mozilla-esr45/file/4bd5a188c4236c4d14f9e859aa0ba243480af9bc/netwerk/cookie/nsCookieService.cpp#l117
