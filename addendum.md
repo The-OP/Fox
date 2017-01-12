@@ -77,6 +77,10 @@
 <sup><s><a href="https://addons.mozilla.org/firefox/files/browse/423258/file/install.rdf">E10S</a></s></sup>
 Самоуничтожение кук после закрытия всех вкладок с соответствующим сайтом. Может быть удобнее чем полная блокировка.
 
+* [Cookies Exterminator](https://addons.mozilla.org/en-US/firefox/addon/cookies-exterminator/)
+<sup><s><a href="https://addons.mozilla.org/en-US/firefox/files/browse/566672/file/install.rdf">E10S</a></s></sup>
+Еще один аддон для автоматического удаления cookies и DOM Storage после закрытия использующих их вкладок.
+
 * [BetterPrivacy](https://addons.mozilla.org/en-US/firefox/addon/betterprivacy/)
 <sup>E10S</sup>
 Менее актуально с понижением числа пользователей Flash, но все же. Уничтожает [LSO](https://en.wikipedia.org/wiki/Local_shared_object), которые не может заблокировать или уничтожить сам браузер.
