@@ -226,6 +226,7 @@ pref("general.config.filename", "config.js");
 * Фингерпринтинг
   * Такие методы обнаружения, для которых не требуется запись уникального идентификатора на машину пользователя.
   * [Обзор](https://wiki.mozilla.org/Fingerprinting) методов фингерпринтинга в Mozilla Wiki и [предложения](https://wiki.mozilla.org/Security/Anonymous_Browsing) по улучшению анонимности браузера.
+  * [Обзор](https://www.chromium.org/Home/chromium-security/client-identification-mechanisms) способов идентификации на сайте проекта Chromium.
   * Проверить себя на уникальность отпечатка можно на следующих ресурсах:
     * https://panopticlick.eff.org/
     * http://ip-check.info/?lang=en
