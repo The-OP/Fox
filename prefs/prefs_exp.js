@@ -37,4 +37,5 @@ user_pref("browser.cache.memory.max_entry_size", 52428);
 // заполнения RAM-кэша.
 user_pref("browser.cache.disk.enable", false);
 user_pref("browser.cache.disk.capacity", 0);
+user_pref("browser.cache.disk.smart_size.enabled", false);
 user_pref("browser.cache.disk_cache_ssl", false);
