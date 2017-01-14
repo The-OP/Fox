@@ -254,6 +254,8 @@ user_pref("lightweightThemes.update.enabled", false);
 user_pref("extensions.update.autoUpdateDefault", false);
 // Отключает периодическую проверку обновлений аддонов.
 user_pref("extensions.update.enabled", false);
+// Полностью отключает возможность обновления аддонов с AMO, даже путем ручного нажатия
+// "Check for Updates" в Add-ons Manager.
 user_pref("extensions.update.url", "");
 user_pref("extensions.update.background.url", "");
 user_pref("extensions.systemAddon.update.url", "");
