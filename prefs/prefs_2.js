@@ -154,8 +154,10 @@ user_pref("dom.select_events.enabled", false);
 // Ломает копирование текста из редактора Stylish.
 // https://w3c.github.io/clipboard-apis/#clipboard-event-interfaces
 user_pref("dom.event.clipboardevents.enabled", false);
-// Отключает событие beforeunload, на которое некоторые страницы ставят сообщения
-// вроде: "Эта страница просит вас подтвердить, что вы хотите уйти."
+// Отключает запрос подтверждений вроде: "Эта страница просит вас подтвердить, что вы хотите уйти."
+// при обработке браузером события beforeunload. НЕ отключает само событие beforeunload.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1107771
+// https://developer.mozilla.org/en-US/docs/Web/Events/beforeunload
 user_pref("dom.disable_beforeunload", true);
 // Отключает Network Information API, которым можно узнать информацию о типе подключения к Интернету.
 // https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API
