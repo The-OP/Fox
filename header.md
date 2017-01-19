@@ -107,10 +107,6 @@ Firefox сохраняет вкладки, закладки, историю, а�
 <sup><a href="https://github.com/Aris-t2/ClassicThemeRestorer/blob/master/xpi/install.rdf">E10S</a></sup>
 Для нелюбителей Australis, и для тех, кто хочет вернуть старый внешний вид Лиса.
 
-* [Cookie Monster](https://addons.mozilla.org/en-US/firefox/addon/cookie-monster/)
-<sup><s>E10S</s></sup>
-Режет cookies и DOM Storage для сайтов, не внесенных в белый список.
-
 * [Custom Buttons](https://addons.mozilla.org/en-US/firefox/addon/custom-buttons/)
 <sup><s><a href="https://addons.mozilla.org/en-US/firefox/files/browse/414139/file/install.rdf">E10S</a></s></sup>
 Разрешает создавать свои кнопки, исполняющие пользовательские скрипты с правами браузера. Удобно, чтобы не писать целый новый аддон для какой-либо мелкой полезности. Есть много готовых кнопок на [официальном форуме](http://custombuttons.sourceforge.net/forum/) и на [форуме Mozilla Russia](https://forum.mozilla-russia.org/viewforum.php?id=34).

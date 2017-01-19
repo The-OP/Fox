@@ -69,6 +69,10 @@
 <sup><a href="https://addons.mozilla.org/firefox/files/browse/378875/file/install.rdf">E10S</a></sup>
 Более простая альтернатива CleanLinks для тех, кого он по каким-то причинам не устраивает. Работает только на Google, Yandex и Yahoo.
 
+* [Cookie Monster](https://addons.mozilla.org/en-US/firefox/addon/cookie-monster/)
+<sup><s>E10S</s></sup>
+Режет cookies и DOM Storage для сайтов, не внесенных в белый список.
+
 * [Cookie Controller](https://addons.mozilla.org/en-US/firefox/addon/cookie-controller/)
 <sup><a href="https://addons.mozilla.org/firefox/files/browse/422548/file/install.rdf">E10S</a></sup>
 Менее удобная чем Cookie Monster штука, но можно использовать на случай длительного затишья в поддержке первого (такое уже бывало).
