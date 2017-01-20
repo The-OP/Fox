@@ -158,6 +158,10 @@ user_pref("javascript.use_us_english_locale", true);
 // Первый уровень подразумевает отключение opentype в коде отображения шрифтов.
 // https://wiki.mozilla.org/SVGOpenTypeFonts
 user_pref("gfx.font_rendering.opentype_svg.enabled", false);
+// Отключает потенциально уязвимый парсер MathML.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1173199
+// https://www.torproject.org/projects/torbrowser/design/#other-security
+user_pref("mathml.disabled", true);
 // Второй уровень - отключение WebAudio и asm.js.
 user_pref("javascript.options.ion", false);
 // https://www.mozilla.org/en-US/security/advisories/mfsa2015-29/
@@ -200,6 +204,8 @@ user_pref("media.apple.mp4.enabled", false);
 user_pref("media.windows-media-foundation.use-dxva", false);
 user_pref("media.wmf.enabled", false);
 user_pref("media.wmf.low-latency.enabled", false);
+user_pref("media.flac.enabled", false);
+user_pref("media.ogg.flac.enabled", false);
 user_pref("media.directshow.enabled", false);
 user_pref("media.ffmpeg.enabled", false);
 user_pref("media.gmp.decoder.enabled", false);

@@ -276,6 +276,9 @@ user_pref("datareporting.healthreport.uploadEnabled", false);
 // https://hg.mozilla.org/releases/mozilla-beta/file/00bcc10b3bdc/services/datareporting/policy.jsm#l366
 user_pref("datareporting.policy.dataSubmissionEnabled", false);
 user_pref("datareporting.policy.dataSubmissionEnabled.v2", false);
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1324049
+// https://hg.mozilla.org/releases/mozilla-release/rev/03358dc42d00
+user_pref("datareporting.policy.firstRunURL", "");
 user_pref("datareporting.healthreport.about.reportUrl", "");
 user_pref("datareporting.healthreport.about.reportUrlUnified", "");
 user_pref("datareporting.healthreport.documentServerURI", "");
@@ -308,6 +311,13 @@ user_pref("browser.tabs.crashReporting.sendReport", false);
 user_pref("browser.tabs.crashReporting.includeURL", false);
 user_pref("browser.tabs.crashReporting.emailMe", false);
 user_pref("browser.tabs.crashReporting.email", "");
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1287178
+// https://hg.mozilla.org/releases/mozilla-release/file/a67a1682be8f0327435aaa2f417154330eff0017/browser/modules/ContentCrashHandlers.jsm#l383
+user_pref("browser.crashReports.unsubmittedCheck.enabled", false);
+// https://hg.mozilla.org/releases/mozilla-release/rev/c94848691f8a
+user_pref("browser.crashReports.unsubmittedCheck.autoSubmit", false);
+// https://hg.mozilla.org/releases/mozilla-release/file/a67a1682be8f0327435aaa2f417154330eff0017/browser/modules/ContentCrashHandlers.jsm#l511
+user_pref("browser.crashReports.unsubmittedCheck.chancesUntilSuppress", 0);
 
 // Отключает предложения оценить работу Firefox и отправить пожертвования Mozilla.
 // https://wiki.mozilla.org/Advocacy/heartbeat
@@ -532,6 +542,14 @@ user_pref("security.family_safety.mode", 0);
 // Запрещает Firefox открывать JAR-файлы вместо скачивания, что повышает безопасность.
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1173171
 user_pref("network.jar.block-remote-files", true);
+
+// Отключает передачу полных URL PAC-скрипту (будут передаваться только имена хостов), что
+// отчасти исправляет уязвимость при использовании WPAD, описанную в статьях ниже.
+// https://geektimes.ru/post/279472/
+// https://habrahabr.ru/company/mailru/blog/259521/
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1255474
+// https://hg.mozilla.org/releases/mozilla-release/rev/5139b0dd7acc
+user_pref("network.proxy.autoconfig_url.include_path", false);
 
 // Запрещает работу WebRTC в режиме P2P, разрешая ее только через сервер третьей стороны, что
 // предотвращает утечку IP-адресов всех сетевых интерфейсов компьютера (подробнее - см. prefs_2).

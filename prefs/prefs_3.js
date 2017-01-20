@@ -4,6 +4,9 @@
 user_pref("signon.rememberSignons", false);
 // https://hg.mozilla.org/releases/mozilla-esr38/file/aa2ecb8673b1/toolkit/components/passwordmgr/LoginManagerContent.jsm#l524
 user_pref("signon.storeWhenAutocompleteOff", false);
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1166947
+// https://hg.mozilla.org/releases/mozilla-release/rev/1e3c438085ec
+user_pref("signon.formlessCapture.enabled", false);
 
 // Запрещает 3rd-party cookies.
 // Preferences -> Privacy -> Accept cookies from sites -> Accept third-party cookies: Never
@@ -28,6 +31,10 @@ user_pref("browser.sessionstore.privacy_level", 2);
 
 // Запрещает проигрывание HTML5-медиа в фоновой вкладке до первого переключения на нее.
 user_pref("media.block-play-until-visible", true);
+// Переименовано в Firefox 51.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1262053
+// https://hg.mozilla.org/releases/mozilla-release/rev/ab7f9029b66a
+user_pref("media.block-autoplay-until-in-foreground", true);
 
 // Запрещает проигрывание HTML5-медиа до нажатия на кнопку play. Теперь работает и на YouTube.
 // Следующие видео из плейлиста будут проигрываться автоматически после окончания первого.
@@ -102,6 +109,25 @@ user_pref("network.http.spdy.enabled.deps", false);
 user_pref("security.mixed_content.block_active_content", true);
 // Images
 user_pref("security.mixed_content.block_display_content", true);
+
+// Отключает HSTS Priming - механизм, пытающийся исправить ситуацию с mixed content путем посылки
+// дополнительных запросов на 3rd-party домены, чтобы выяснить, поддерживают ли они HTTPS.
+// Вещь потенциально полезная, однако пока недоделанная - в Firefox 51 по умолчанию дополнительные
+// запросы посылаются (send_hsts_priming: true), но их результат не используется (use_hsts: false)
+// ни для чего кроме телеметрии.
+// https://wicg.github.io/hsts-priming/
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1246540#c145
+// https://hg.mozilla.org/releases/mozilla-release/rev/d7d42cef7968
+user_pref("security.mixed_content.send_hsts_priming", false);
+user_pref("security.mixed_content.use_hsts", false);
+
+// Отключает ускоренный Zero RTT хэндшейк, введенный в TLS 1.3, который жертвует безопасностью для
+// уменьшения латентности.
+// https://timtaubert.de/blog/2015/11/more-privacy-less-latency-improved-handshakes-in-tls-13/
+// https://tlswg.github.io/tls13-spec/#rfc.section.2.3
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1264578
+// https://hg.mozilla.org/releases/mozilla-release/rev/a1fcbe1fc10c
+user_pref("security.tls.enable_0rtt_data", false);
 
 // Отключает посылку Session Tickets (TLS) и Session Identifiers (SSL) - уникальных идентификаторов,
 // применяемых для ускорения повторной установки шифрованного соединения, которые могут быть также

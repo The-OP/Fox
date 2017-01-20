@@ -202,6 +202,7 @@ user_pref("dom.vr.cardboard.enabled", false);
 user_pref("dom.vr.oculus.enabled", false);
 user_pref("dom.vr.oculus050.enabled", false);
 user_pref("dom.vr.poseprediction.enabled", false);
+user_pref("dom.vr.openvr.enabled", false);
 // https://hg.mozilla.org/releases/mozilla-release/file/970d0cf1c5d9/modules/libpref/init/all.js#l4778
 user_pref("dom.vr.add-test-devices", 0);
 user_pref("dom.vr.osvr.enabled", false);
@@ -214,6 +215,9 @@ user_pref("dom.telephony.enabled", false);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1148149
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1158029
 user_pref("dom.presentation.enabled", false);
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1278205
+user_pref("dom.presentation.controller.enabled", false);
+user_pref("dom.presentation.receiver.enabled", false);
 user_pref("dom.presentation.tcp_server.debug", false);
 user_pref("dom.presentation.discovery.legacy.enabled", false);
 // Отключает обнаружение устройств для презентации в локальной сети.
@@ -306,6 +310,7 @@ user_pref("media.peerconnection.enabled", false);
 user_pref("media.peerconnection.identity.enabled", false);
 user_pref("media.peerconnection.video.enabled", false);
 user_pref("media.peerconnection.video.h264_enabled", false);
+user_pref("media.peerconnection.video.vp9_enabled", false);
 user_pref("media.peerconnection.simulcast", false);
 user_pref("media.peerconnection.turn.disable", true);
 // https://hg.mozilla.org/releases/mozilla-esr38/file/e7f06142f3b5/dom/media/PeerConnection.js#l330
@@ -339,6 +344,14 @@ user_pref("media.getusermedia.agc_enabled", false);
 user_pref("media.getusermedia.noise_enabled", false);
 // https://hg.mozilla.org/releases/mozilla-beta/file/00bcc10b3bdc/dom/media/MediaManager.cpp#l1942
 user_pref("media.getusermedia.audiocapture.enabled", false);
+// Отключает событие devicechange, возникающее когда к компьютеру подключают веб-камеру, микрофон,
+// колонки и т.п. устройства.
+// https://developer.mozilla.org/en-US/docs/Web/Events/devicechange
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1152383
+// https://hg.mozilla.org/releases/mozilla-release/file/a67a1682be8f0327435aaa2f417154330eff0017/dom/webidl/MediaDevices.webidl#l15
+user_pref("media.ondevicechange.enabled", false);
+// https://hg.mozilla.org/releases/mozilla-release/rev/5022a33fd3e9
+user_pref("media.ondevicechange.fakeDeviceChangeEvent.enabled", false);
 
 // Отключает видеозахват с элемента canvas.
 // https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/captureStream
@@ -612,6 +625,15 @@ user_pref("device.storage.enabled", false);
 // https://wiki.mozilla.org/WebAPI/FileHandleAPI
 user_pref("dom.fileHandle.enabled", false);
 
+// Отключает Storage API - еще один способ для сайтов хранить свои данные на ПК пользователя.
+// Включено пока только в Nightly: https://bugzilla.mozilla.org/show_bug.cgi?id=1304966
+// https://developer.mozilla.org/en-US/docs/Web/API/Storage_API
+// https://storage.spec.whatwg.org/
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1254428
+// https://hg.mozilla.org/releases/mozilla-release/file/a67a1682be8f0327435aaa2f417154330eff0017/dom/quota/StorageManager.cpp#l340
+// https://hg.mozilla.org/releases/mozilla-release/file/a67a1682be8f0327435aaa2f417154330eff0017/dom/workers/WorkerPrefs.h#l36
+user_pref("dom.storageManager.enabled", false);
+
 // Запрещает расширение WebGL, позволяющее узнать модель видеокарты пользователя и ее драйвер.
 // https://www.mail-archive.com/dev-platform@lists.mozilla.org/msg14121.html
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1171228
@@ -620,6 +642,12 @@ user_pref("dom.fileHandle.enabled", false);
 // Переменовано в Firefox 42:
 // https://hg.mozilla.org/releases/mozilla-beta/file/00bcc10b3bdc/dom/canvas/WebGLContextExtensions.cpp#l99
 user_pref("webgl.enable-debug-renderer-info", false);
+
+// Отключает WebAudio API, который может быть использован для фингерпринтинга.
+// https://geektimes.ru/post/284604
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1288359
+// https://hg.mozilla.org/releases/mozilla-release/rev/2e3e036ccb2a
+user_pref("dom.webaudio.enabled", false);
 
 // Настройки для HTTP-заголовка Referer (а также DOM-свойства document.referrer), содержащего URL
 // страницы, с которой пользователь перешел по ссылке или, находясь на которой, запросил загрузку
