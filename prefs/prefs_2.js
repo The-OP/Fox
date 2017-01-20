@@ -621,14 +621,6 @@ user_pref("dom.fileHandle.enabled", false);
 // https://hg.mozilla.org/releases/mozilla-beta/file/00bcc10b3bdc/dom/canvas/WebGLContextExtensions.cpp#l99
 user_pref("webgl.enable-debug-renderer-info", false);
 
-// Блокировка загрузки незащищенного содержимого на HTTPS-страницах. Если какие-то ресурсы были
-// заблокированы, в адресной строке отображается щит.
-// https://www.ssllabs.com/ssltest/viewMyClient.html (тестировать нужно со включенным JS)
-// JS, CSS, XHR, Frames
-user_pref("security.mixed_content.block_active_content", true);
-// Images
-user_pref("security.mixed_content.block_display_content", true);
-
 // Настройки для HTTP-заголовка Referer (а также DOM-свойства document.referrer), содержащего URL
 // страницы, с которой пользователь перешел по ссылке или, находясь на которой, запросил загрузку
 // нужного для ее отображения ресурса (картинки, стиля, скрипта, шрифта, etc). В частности, очень

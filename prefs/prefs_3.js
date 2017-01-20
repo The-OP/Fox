@@ -95,6 +95,14 @@ user_pref("network.http.spdy.enabled.http2", false);
 user_pref("network.http.spdy.allow-push", false);
 user_pref("network.http.spdy.enabled.deps", false);
 
+// Блокировка загрузки незащищенного содержимого на HTTPS-страницах. Если какие-то ресурсы были
+// заблокированы, в адресной строке отображается щит.
+// https://www.ssllabs.com/ssltest/viewMyClient.html (тестировать нужно со включенным JS)
+// JS, CSS, XHR, Frames
+user_pref("security.mixed_content.block_active_content", true);
+// Images
+user_pref("security.mixed_content.block_display_content", true);
+
 // Отключает посылку Session Tickets (TLS) и Session Identifiers (SSL) - уникальных идентификаторов,
 // применяемых для ускорения повторной установки шифрованного соединения, которые могут быть также
 // использованы и для отслеживания пользователя.
