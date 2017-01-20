@@ -14,9 +14,6 @@ user_pref("network.proxy.socks_remote_dns", true);
 // Более информативная страница показа ошибок в сертификатах сайтов.
 user_pref("browser.xul.error_pages.expert_bad_cert", true);
 
-// Запрещает проигрывание HTML5-медиа в фоновой вкладке до первого переключения на нее.
-user_pref("media.block-play-until-visible", true);
-
 // Количество страниц, которые держатся в памяти уже в виде DOM для быстрого перехода по
 // back/forward. Уменьшение снизит потребление памяти.
 user_pref("browser.sessionhistory.max_total_viewers", 2);

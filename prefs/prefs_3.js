@@ -26,6 +26,9 @@ user_pref("network.cookie.cookieBehavior", 1);
 // https://hg.mozilla.org/releases/mozilla-esr45/file/4bd5a188c4236c4d14f9e859aa0ba243480af9bc/browser/components/sessionstore/PrivacyFilter.jsm#l53
 user_pref("browser.sessionstore.privacy_level", 2);
 
+// Запрещает проигрывание HTML5-медиа в фоновой вкладке до первого переключения на нее.
+user_pref("media.block-play-until-visible", true);
+
 // Запрещает проигрывание HTML5-медиа до нажатия на кнопку play. Теперь работает и на YouTube.
 // Следующие видео из плейлиста будут проигрываться автоматически после окончания первого.
 // Автобуферизацию не предотвращает.
