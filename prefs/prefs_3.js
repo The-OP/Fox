@@ -149,6 +149,9 @@ user_pref("security.ssl3.rsa_des_ede3_sha", false);
 // Запрещает все сертификаты, использующие SHA1.
 // https://bugzilla.mozilla.org/show_bug.cgi?id=942515#c32
 // 0 = allow SHA-1; 1 = forbid SHA-1; 2 = allow SHA-1 only if notBefore < 2016-01-01
+// UPD: В Firefox 51+ значение "2" этой опции обозначает то же, что и "1".
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1302140
+// https://hg.mozilla.org/releases/mozilla-release/rev/43c724bde81c#l3.34
 // http://www.scmagazine.com/mozilla-pulls-back-on-rejecting-sha-1-certs-outright/article/463913/
 user_pref("security.pki.sha1_enforcement_level", 1);
 
