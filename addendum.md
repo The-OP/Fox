@@ -89,13 +89,9 @@
 <sup>E10S</sup>
 Менее актуально с понижением числа пользователей Flash, но все же. Уничтожает [LSO](https://en.wikipedia.org/wiki/Local_shared_object), которые не может заблокировать или уничтожить сам браузер.
 
-* [RequestPolicy](https://addons.mozilla.org/en-US/firefox/addon/requestpolicy/)
-<sup><s><a href="https://addons.mozilla.org/firefox/files/browse/223479/file/install.rdf">E10S</a></s></sup>
-Резалка кросс-доменных запросов. Более надежная, но уже не обновляющаяся. Можно (и рекомендуется самим автором) использовать в связке с NoScript.
-
-	* [RequestPolicy Continued](https://addons.mozilla.org/en-US/firefox/addon/requestpolicy-continued/)
-	<sup><s><a href="https://github.com/RequestPolicyContinued/requestpolicy/blob/dev-1.0/src/install.rdf">E10S</a></s></sup>
-	Форк проекта, в котором идет дальнейшее развитие.
+* [RequestPolicy Continued](https://addons.mozilla.org/en-US/firefox/addon/requestpolicy-continued/)
+<sup><s><a href="https://addons.mozilla.org/en-US/firefox/files/browse/517331/file/install.rdf">E10S</a></s></sup>
+Резалка кросс-доменных запросов. Можно (и рекомендуется самим автором) использовать в связке с NoScript.
 
 * [Policeman](https://addons.mozilla.org/en-US/firefox/addon/policeman/)
 <sup><s><a href="https://github.com/futpib/policeman/blob/master/src/install.rdf">E10S</a></s></sup>
