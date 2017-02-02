@@ -93,13 +93,9 @@
 <sup><s><a href="https://addons.mozilla.org/en-US/firefox/files/browse/517331/file/install.rdf">E10S</a></s></sup>
 Резалка кросс-доменных запросов. Можно (и рекомендуется самим автором) использовать в связке с NoScript.
 
-* [Policeman](https://addons.mozilla.org/en-US/firefox/addon/policeman/)
-<sup><s><a href="https://github.com/futpib/policeman/blob/master/src/install.rdf">E10S</a></s></sup>
-Еще одна резалка кросс-доменных запросов. Более удобная, более фичастая и активно развивающаяся. Но пока есть некоторые шероховатости, например с file -> file и file -> web. Из фич, которые есть в RequestPolicy, тут нет Request Log (решается сторонними аддонами вроде HttpFox) и блокировки редиректов с домена на домен, если они не в белом списке (решается NoRedirect в некотором роде, но менее удобно). **UPD:** Блокировку редиректов запилили в 0.19 версии, ждем на AMO. **UPD:** К сожалению, похоже что аддон прекратил развиваться.
-
 * [uMatrix](https://addons.mozilla.org/en-US/firefox/addon/umatrix/)
 <sup><a href="https://github.com/gorhill/uMatrix/blob/master/platform/firefox/install.rdf">E10S</a></sup>
-Самая многофункциональная из резалок кросс-доменных запросов. Как и Policeman может блокировать запросы в зависимости от типа контента, но обладает более удобным интерфейсом. Также умеет блокировать XHR (отдельно от обычных запросов), скрипты, куки, рефереры, плагины, медиа (HTML5 аудио и видео) и вебсокеты ([только на Firefox](https://bugs.chromium.org/p/chromium/issues/detail?id=129353)). Документацию еще не перенесли целиком из старого проекта, на котором основан uMatrix, так что если что непонятно, смотреть не только [здесь](https://github.com/gorhill/uMatrix/wiki), но и [здесь](https://github.com/gorhill/httpswitchboard/wiki).
+Самая многофункциональная из резалок кросс-доменных запросов. Может блокировать запросы в зависимости от типа контента. Также умеет блокировать XHR (отдельно от обычных запросов), скрипты, куки, рефереры, плагины, медиа (HTML5 аудио и видео) и вебсокеты ([только на Firefox](https://bugs.chromium.org/p/chromium/issues/detail?id=129353)). Документацию еще не перенесли целиком из старого проекта, на котором основан uMatrix, так что если что непонятно, смотреть не только [здесь](https://github.com/gorhill/uMatrix/wiki), но и [здесь](https://github.com/gorhill/httpswitchboard/wiki).
 
 	* <sub>Алгоритм блокирования кук несколько отличается от того, что у Cookie Monster и Cookie Controller - первые два не дают сайтам устанавливать куки, а uMatrix дает ставить, но не дает читать, убирая из всех HTTP-запросов заголовок Cookie (но при этом через document.cookie установленные куки все еще видны), а через некоторое время - подчищает. Также в отличие от CM/CC, uMatrix не умеет запрещать писать в DOM Storage, а может только периодически его очищать.</sub>
 
