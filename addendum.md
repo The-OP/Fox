@@ -145,10 +145,6 @@
 <sup>E10S</sup>
 Аналог Ghostery от EFF. Актуально для тех, кто хочет поставить и забыть, чтоб оно там автоматом боролось с трекингом.
 
-* [Yet Another Remove It Permanently](https://addons.mozilla.org/en-US/firefox/addon/yarip/)
-<sup><s><a href="https://addons.mozilla.org/firefox/files/browse/284102/file/install.rdf">E10S</a></s></sup>
-Баннерорезка с поддержкой XPath. Для тех случаев, когда CSS-селекторов не хватает.
-
 ## Разное
 
 ### Stylish
