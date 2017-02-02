@@ -149,7 +149,7 @@ Firefox сохраняет вкладки, закладки, историю, а�
 Удобное дополнение для сохранения веб-страниц и создания заметок. Обладает значительно расширенной функциональностью по сравнению с оригинальным ScrapBook.
 
 * [Session Manager](https://addons.mozilla.org/en-US/firefox/addon/session-manager/)
-<sup><s><a href="https://addons.mozilla.org/en-US/firefox/files/browse/413348/file/install.rdf">E10S</a></s></sup>
+<sup><a href="https://addons.mozilla.org/en-US/firefox/files/browse/581411/file/install.rdf">E10S</a></sup>
 Менеджер сессий.
 
 * [SlyZoom](https://addons.mozilla.org/en-US/firefox/addon/slyzoom/)
