@@ -20,9 +20,8 @@
 Также проблему может решить обновление видеодрайверов либо возврат к более старой версии. Или обновление самого Firefox до беты/откат к ESR.
 
 1. **Q:** Когда будет мультипроцессная версия? <br>
-**A**: [Electrolysis#Schedule_and_Status](https://wiki.mozilla.org/Electrolysis#Schedule_and_Status). Также можно на свой страх и риск вручную включить E10S в релизах/бетах (работает, начиная с Firefox 45): <br>
+**A**: [План релизов](https://wiki.mozilla.org/Electrolysis#Schedule_and_Status). С 50 версии должно работать из коробки, если все **установленные** (выключенные тоже считаются) расширения совместимы. Также можно попробовать включить вручную: <br>
 `browser.tabs.remote.autostart -> true` <br>
-`layers.async-pan-zoom.enabled -> true` <br>
 `extensions.e10sBlockedByAddons -> false` <br>
 `extensions.e10sBlocksEnabling -> false` <br>
 Применение требует перезапуска. Проверить работу можно в `about:support -> Multiprocess Windows`. <br>
