@@ -118,7 +118,7 @@ Firefox сохраняет вкладки, закладки, историю, а�
 
 * [FireGestures](https://addons.mozilla.org/en-US/firefox/addon/firegestures/)
 <sup><a href="https://addons.mozilla.org/en-US/firefox/files/browse/438957/file/install.rdf">E10S</a></sup>
-Жесты мышью, мышиными кнопками, колесом и т.п.
+Жесты мышью, мышиными кнопками, колесом и т.п. На жесты можно вешать свои [XPCOM-скрипты](http://www.xuldev.org/firegestures/makescripts.php), как в Custom Buttons.
 
 * [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/)
 <sup><a href="https://github.com/greasemonkey/greasemonkey/blob/master/install.rdf">E10S</a></sup>
