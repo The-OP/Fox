@@ -191,7 +191,7 @@ user_pref("dom.w3c_touch_events.enabled", 0);
 // производителя и модели подключенных к компьютеру геймпадов.
 // https://trac.torproject.org/projects/tor/ticket/13023
 // https://developer.mozilla.org/en-US/docs/Web/Guide/API/Gamepad
-// http://www.w3.org/TR/gamepad/#methods
+// https://www.w3.org/TR/gamepad/#methods
 user_pref("dom.gamepad.enabled", false);
 user_pref("dom.gamepad.non_standard_events.enabled", false);
 user_pref("dom.gamepad.test.enabled", false);
@@ -288,9 +288,9 @@ user_pref("dom.system_update.debug", false);
 // Отключает User Timing API - доступ к высокочастотному таймеру, при помощи которого может быть
 // осуществлено прослушивание процессорного кэша из непривилегированного JS-кода.
 // https://trac.torproject.org/projects/tor/ticket/16336
-// http://www.html5rocks.com/en/tutorials/webperformance/usertiming/
+// https://www.html5rocks.com/en/tutorials/webperformance/usertiming/
 // https://www.linux.org.ru/news/security/11541326
-// http://arxiv.org/pdf/1502.07373v2.pdf
+// https://arxiv.org/pdf/1502.07373v2.pdf
 user_pref("dom.enable_user_timing", false);
 user_pref("dom.performance.enable_user_timing_logging", false);
 
@@ -304,7 +304,7 @@ user_pref("media.webspeech.synth.enabled", false);
 // пользователя получить список IP-адресов в его локальной сети. А также узнать ваш реальный IP
 // за прокси/Tor/VPN. Ломает Firefox Hello.
 // https://bugzilla.mozilla.org/show_bug.cgi?id=959893
-// http://habrahabr.ru/post/215071/
+// https://habrahabr.ru/post/215071/
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_webrtc
 user_pref("media.peerconnection.enabled", false);
 user_pref("media.peerconnection.identity.enabled", false);
@@ -338,7 +338,7 @@ user_pref("media.getusermedia.screensharing.enabled", false);
 user_pref("media.getusermedia.screensharing.allow_on_old_platforms", false);
 // https://hg.mozilla.org/releases/mozilla-esr38/file/7bc0140f0bfe/dom/media/MediaManager.cpp#l135
 user_pref("media.getusermedia.screensharing.allowed_domains", "");
-// http://stackoverflow.com/questions/29291275/navigator-getusermedia-mutes-partially-the-other-sounds-of-the-computer
+// https://stackoverflow.com/questions/29291275/navigator-getusermedia-mutes-partially-the-other-sounds-of-the-computer
 user_pref("media.getusermedia.aec_enabled", false);
 user_pref("media.getusermedia.agc_enabled", false);
 user_pref("media.getusermedia.noise_enabled", false);
@@ -355,7 +355,7 @@ user_pref("media.ondevicechange.fakeDeviceChangeEvent.enabled", false);
 
 // Отключает видеозахват с элемента canvas.
 // https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/captureStream
-// http://www.w3.org/TR/mediacapture-fromelement/
+// https://www.w3.org/TR/mediacapture-fromelement/
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1169126
 user_pref("canvas.capturestream.enabled", false);
 
@@ -551,7 +551,7 @@ user_pref("security.xpconnect.plugin.unrestricted", false);
 user_pref("application.use_ns_plugin_finder", false);
 
 // Отключает встроенный просмотрщик PDF, в котором частенько находят уязвимости.
-// http://habrahabr.ru/company/eset/blog/264619/
+// https://habrahabr.ru/company/eset/blog/264619/
 // https://blog.mozilla.org/security/2015/08/06/firefox-exploit-found-in-the-wild/
 // https://news.ycombinator.com/item?id=10021376
 user_pref("pdfjs.disabled", true);
@@ -565,7 +565,7 @@ user_pref("layout.css.font-loading-api.enabled", false);
 // Отключает Offline App Cache.
 // Демо можно посмотреть тут: http://appcache.offline.technology/demo/index.html мониторя
 // использование через about:cache -> appcache и меняя настройки.
-// http://www.w3.org/TR/offline-webapps/
+// https://www.w3.org/TR/offline-webapps/
 // https://developer.mozilla.org/en-US/docs/Web/HTML/Using_the_application_cache
 user_pref("browser.cache.offline.enable", false);
 user_pref("browser.cache.offline.capacity", 0);
@@ -609,7 +609,7 @@ user_pref("dom.webnotifications.serviceworker.enabled", false);
 // Находится Cache Storage в профиле, по такому пути: storage/default/<домен>/cache/
 // https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage
 // https://bugzilla.mozilla.org/show_bug.cgi?id=940273
-// http://www.w3.org/TR/service-workers/#cache-objects
+// https://www.w3.org/TR/service-workers/#cache-objects
 user_pref("dom.caches.enabled", false);
 
 // Отключает [пока еще находящийся в разработке] Device Storage API, который позволит

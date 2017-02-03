@@ -152,7 +152,7 @@ user_pref("security.ssl3.rsa_des_ede3_sha", false);
 // UPD: В Firefox 51+ значение "2" этой опции обозначает то же, что и "1".
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1302140
 // https://hg.mozilla.org/releases/mozilla-release/rev/43c724bde81c#l3.34
-// http://www.scmagazine.com/mozilla-pulls-back-on-rejecting-sha-1-certs-outright/article/463913/
+// https://www.scmagazine.com/mozilla-pulls-back-on-rejecting-sha-1-certs-outright/article/463913/
 user_pref("security.pki.sha1_enforcement_level", 1);
 
 // Отменять соединения с сайтами, не поддерживающими RFC 5746 (безопасное продление сессии,

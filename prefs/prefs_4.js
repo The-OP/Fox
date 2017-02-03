@@ -11,7 +11,7 @@ user_pref("media.cache_size", 0);
 user_pref("image.cache.size", 0);
 
 // Полностью отключает WebGL.
-// http://www.contextis.com/resources/blog/webgl-new-dimension-browser-exploitation/
+// https://www.contextis.com/resources/blog/webgl-new-dimension-browser-exploitation/
 user_pref("webgl.disabled", true);
 user_pref("webgl.force-enabled", false);
 user_pref("webgl.disable-wgl", true);
@@ -110,7 +110,7 @@ user_pref("browser.display.use_document_fonts", 0);
 // по мере выхода очередных ESR.
 // https://developer.mozilla.org/en-US/docs/Web/HTTP/Gecko_user_agent_string_reference
 // https://developer.mozilla.org/en-US/docs/Web/API/NavigatorID
-// http://www.w3.org/html/wg/drafts/html/master/webappapis.html#the-navigator-object
+// https://www.w3.org/html/wg/drafts/html/master/webappapis.html#the-navigator-object
 // window.navigator.appName
 user_pref("general.appname.override", "Netscape");
 // window.navigator.appVersion

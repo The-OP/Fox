@@ -349,7 +349,7 @@ user_pref("permissions.manager.defaultsUrl", "");
 user_pref("security.ssl.errorReporting.automatic", false);
 
 // Отключает интегрированную поддержку проприетарного сервиса закладок Pocket.
-// http://www.opennet.ru/opennews/art.shtml?num=42245
+// https://www.opennet.ru/opennews/art.shtml?num=42245
 // https://wiki.mozilla.org/QA/Pocket_integration
 user_pref("browser.pocket.enabled", false);
 user_pref("browser.pocket.api", "");
@@ -418,7 +418,7 @@ user_pref("dom.disable_window_open_feature.toolbar", true);
 // сайтов управляется через Preferences -> Advanced -> Network -> Offline Web Content and User Data.
 // Демо можно посмотреть тут: http://appcache.offline.technology/demo/index.html мониторя
 // использование через about:cache -> appcache и меняя настройки.
-// http://www.w3.org/TR/offline-webapps/
+// https://www.w3.org/TR/offline-webapps/
 // https://developer.mozilla.org/en-US/docs/Web/HTML/Using_the_application_cache
 // https://hg.mozilla.org/releases/mozilla-esr38/file/ae7fbd79941b/browser/base/content/browser.js#l6020
 user_pref("browser.offline-apps.notify", true);
@@ -554,7 +554,7 @@ user_pref("network.proxy.autoconfig_url.include_path", false);
 // Запрещает работу WebRTC в режиме P2P, разрешая ее только через сервер третьей стороны, что
 // предотвращает утечку IP-адресов всех сетевых интерфейсов компьютера (подробнее - см. prefs_2).
 // https://wiki.mozilla.org/Media/WebRTC/Privacy
-// http://www.html5rocks.com/en/tutorials/webrtc/infrastructure/
+// https://www.html5rocks.com/en/tutorials/webrtc/infrastructure/
 // https://en.wikipedia.org/wiki/Interactive_Connectivity_Establishment
 user_pref("media.peerconnection.ice.relay_only", true);
 // Разрешает работу WebRTC только на дефолтном сетевом интерфейсе, вследствие чего не
