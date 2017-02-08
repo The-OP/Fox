@@ -75,7 +75,7 @@
 
 * [Cookie Controller](https://addons.mozilla.org/en-US/firefox/addon/cookie-controller/)
 <sup><a href="https://addons.mozilla.org/firefox/files/browse/422548/file/install.rdf">E10S</a></sup>
-Менее удобная чем Cookie Monster штука, но можно использовать на случай длительного затишья в поддержке первого (такое уже бывало).
+Альтернатива Cookie Monster. После установки следует вручную вытащить кнопки на тулбар через Customize. Настройки находятся в меню Tools (Alt+T) -> Cookie Controller.
 
 * [Self-Destructing Cookies](https://addons.mozilla.org/en-US/firefox/addon/self-destructing-cookies/)
 <sup><s><a href="https://addons.mozilla.org/firefox/files/browse/423258/file/install.rdf">E10S</a></s></sup>
