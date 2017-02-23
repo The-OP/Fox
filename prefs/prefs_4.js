@@ -10,6 +10,17 @@ user_pref("browser.cache.memory.capacity", 0);
 user_pref("media.cache_size", 0);
 user_pref("image.cache.size", 0);
 
+// Запрещает браузеру держать кэш сертификатов промежуточных сертификационных центров
+// (intermediate CAs) на диске (кэш в памяти все еще останется). Этот кэш может быть использован
+// для фингерпринтинга.
+// Включение этой настройки может сломать самые разные места как в самом браузере, так и в аддонах.
+// http://www.ghacks.net/2017/02/22/firefox-fingerprinting-using-intermediate-ca-caching/
+// http://www.ghacks.net/2017/02/12/ghacks-net-firefox-user-js-config-0-11-is-out/#li-comment-4137086
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1334485
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1216882
+// https://bugzilla.mozilla.org/show_bug.cgi?id=629558
+user_pref("security.nocertdb", true);
+
 // Полностью отключает WebGL.
 // https://www.contextis.com/resources/blog/webgl-new-dimension-browser-exploitation/
 user_pref("webgl.disabled", true);
