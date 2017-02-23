@@ -95,6 +95,10 @@ Firefox сохраняет вкладки, закладки, историю, а�
 	* <sub>[uBlock Origin vs uBlock](greylist.md#user-content-ublock)</sub>
 	* <sub>[Почему не Adblock Plus?](greylist.md#user-content-adblock-plus)</sub>
 
+* [AdNauseam](https://addons.mozilla.org/en-US/firefox/addon/adnauseam/)
+<sup><a href="https://addons.mozilla.org/en-US/firefox/files/browse/568407/file/install.rdf">E10S</a></sup>
+Форк uBlock, портящий рекламным компаниям статистику путем автоматического "кликания" по всем скрываемым баннерам. По заявлениям разработчиков, это создает помехи желающим отслеживать пользователей.
+
 * [Add Bookmark Here 2](https://addons.mozilla.org/en-US/firefox/addon/add-bookmark-here-2/)
 <sup><a href="https://addons.mozilla.org/en-US/firefox/files/browse/461049/file/install.rdf">E10S</a></sup>
 Решает [проблему](https://bugzilla.mozilla.org/show_bug.cgi?id=423617) с запоминанием папки для добавления закладок по умолчанию и обладает несколькими другими улучшающими работу с закладками функциями.
