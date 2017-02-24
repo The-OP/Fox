@@ -348,6 +348,11 @@ user_pref("permissions.manager.defaultsUrl", "");
 // https://bugzilla.mozilla.org/show_bug.cgi?id=846489
 user_pref("security.ssl.errorReporting.automatic", false);
 
+// Отключает показ нескольких последних созданных закладок в меню закладок.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1248268
+// https://hg.mozilla.org/releases/mozilla-release/rev/f98e3add979e
+user_pref("browser.bookmarks.showRecentlyBookmarked", false);
+
 // Отключает интегрированную поддержку проприетарного сервиса закладок Pocket.
 // https://www.opennet.ru/opennews/art.shtml?num=42245
 // https://wiki.mozilla.org/QA/Pocket_integration
