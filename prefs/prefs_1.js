@@ -348,6 +348,11 @@ user_pref("permissions.manager.defaultsUrl", "");
 // https://bugzilla.mozilla.org/show_bug.cgi?id=846489
 user_pref("security.ssl.errorReporting.automatic", false);
 
+// Отключает показ нескольких последних созданных закладок в меню закладок.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1248268
+// https://hg.mozilla.org/releases/mozilla-release/rev/f98e3add979e
+user_pref("browser.bookmarks.showRecentlyBookmarked", false);
+
 // Отключает интегрированную поддержку проприетарного сервиса закладок Pocket.
 // https://www.opennet.ru/opennews/art.shtml?num=42245
 // https://wiki.mozilla.org/QA/Pocket_integration
@@ -557,6 +562,11 @@ user_pref("network.proxy.autoconfig_url.include_path", false);
 // https://www.html5rocks.com/en/tutorials/webrtc/infrastructure/
 // https://en.wikipedia.org/wiki/Interactive_Connectivity_Establishment
 user_pref("media.peerconnection.ice.relay_only", true);
+// Это обязательно нужно с Firefox 51+, в связке с relay_only или default_address_only.
+// https://tools.ietf.org/html/draft-ietf-rtcweb-ip-handling-01
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1297416
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1304600
+user_pref("media.peerconnection.ice.no_host", true);
 // Разрешает работу WebRTC только на дефолтном сетевом интерфейсе, вследствие чего не
 // происходит раскрытия настоящего IP пользователя, использующего VPN.
 // Пока что не работает вместе с E10S: https://bugzilla.mozilla.org/show_bug.cgi?id=1194259
