@@ -215,6 +215,7 @@ user_pref("media.apple.mp4.enabled", false);
 user_pref("media.windows-media-foundation.use-dxva", false);
 user_pref("media.wmf.enabled", false);
 user_pref("media.wmf.low-latency.enabled", false);
+user_pref("media.wmf.vp9.enabled", false);
 user_pref("media.flac.enabled", false);
 user_pref("media.ogg.flac.enabled", false);
 user_pref("media.directshow.enabled", false);

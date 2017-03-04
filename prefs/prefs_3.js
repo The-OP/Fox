@@ -44,6 +44,9 @@ user_pref("media.autoplay.enabled", false);
 // Отключает API для системных уведомлений из веб-приложений.
 // https://developer.mozilla.org/en-US/docs/Web/API/Notification/Using_Web_Notifications
 user_pref("dom.webnotifications.enabled", false);
+// https://developer.mozilla.org/en-US/docs/Web/API/Notification/requireInteraction
+// https://bugzilla.mozilla.org/show_bug.cgi?id=862395
+user_pref("dom.webnotifications.requireinteraction.enabled", false);
 // Не дает страницам перехватывать и блокировать обращения к контекстному меню. Ломает Google Docs.
 user_pref("dom.event.contextmenu.enabled", false);
 
@@ -101,6 +104,15 @@ user_pref("network.http.spdy.enabled.v3-1", false);
 user_pref("network.http.spdy.enabled.http2", false);
 user_pref("network.http.spdy.allow-push", false);
 user_pref("network.http.spdy.enabled.deps", false);
+
+// Отключает автоматический импорт корневых сертификатов из хранилища ОС. Используется для
+// всяческого MITM - корпоративные прокcи, антивирусы и т.п.
+// https://geektimes.ru/post/263796/
+// https://geektimes.ru/post/266262/
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1265113
+// https://hg.mozilla.org/releases/mozilla-release/rev/d9659c22b3c5
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1298883
+user_pref("security.enterprise_roots.enabled", false);
 
 // Блокировка загрузки незащищенного содержимого на HTTPS-страницах. Если какие-то ресурсы были
 // заблокированы, в адресной строке отображается щит.

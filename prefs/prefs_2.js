@@ -148,6 +148,9 @@ user_pref("browser.search.geoSpecificDefaults.url", "");
 // https://developer.mozilla.org/en-US/Firefox/Releases/43#Miscellaneous
 // https://developer.mozilla.org/en-US/docs/Web/API/Selection
 user_pref("dom.select_events.enabled", false);
+// https://hg.mozilla.org/releases/mozilla-release/rev/4e664a1bdebd
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1309628
+user_pref("dom.select_events.textcontrols.enabled", false);
 // Отключает Clipboard Events, которые позволяют страницам узнавать, какая их часть была скопирована в буфер
 // обмена, подменять скопированное, перехватывать вставку из буфера и реагировать на нее особым образом
 // (например загружать находящуюся в буфере обмена картинку в сообщение почты или чата).
@@ -195,6 +198,7 @@ user_pref("dom.w3c_touch_events.enabled", 0);
 user_pref("dom.gamepad.enabled", false);
 user_pref("dom.gamepad.non_standard_events.enabled", false);
 user_pref("dom.gamepad.test.enabled", false);
+user_pref("dom.gamepad.extensions.enabled", false);
 // Отключает поддержку устройств виртуальной реальности.
 // https://developer.mozilla.org/en-US/Firefox/Releases/36#Interfaces.2FAPIs.2FDOM
 user_pref("dom.vr.enabled", false);
@@ -677,6 +681,12 @@ user_pref("network.http.referer.trimmingPolicy", 2);
 user_pref("network.http.sendRefererHeader", 2);
 // "0=always send, 1=send iff base domains match, 2=send iff hosts match"
 user_pref("network.http.referer.XOriginPolicy", 0);
+// (Firefox 52+) Позволяет контролировать trimming policy только для кросс-доменных запросов.
+// Если значения trimmingPolicy и XOriginTrimmingPolicy не совпадают, будет выбираться наибольшее.
+// "0=full URI, 1=scheme+host+port+path, 2=scheme+host+port"
+// https://hg.mozilla.org/releases/mozilla-release/rev/f90f136b1d03
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1307596
+user_pref("network.http.referer.XOriginTrimmingPolicy", 0);
 // "Controls whether we send HTTPS referres to other HTTPS sites. By default this is enabled for
 // compatibility (see bug 141641)"
 user_pref("network.http.sendSecureXSiteReferrer", true);
