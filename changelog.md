@@ -1,3 +1,9 @@
+#### Firefox 52
+* https://www.mozilla.org/en-US/firefox/52.0/releasenotes/
+* https://www.ghacks.net/2017/03/07/firefox-52-0-released-find-out-what-is-new/
+* https://www.opennet.ru/opennews/art.shtml?num=46155
+* https://www.linux.org.ru/news/mozilla/13270418
+
 #### Firefox 51
 * https://www.mozilla.org/en-US/firefox/51.0/releasenotes/
 * https://www.ghacks.net/2017/01/24/firefox-51-find-out-what-is-new/
