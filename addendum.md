@@ -61,7 +61,7 @@
 <sup><s><a href="https://addons.mozilla.org/firefox/files/browse/287508/file/install.rdf">E10S</a></s></sup>
 Резалка [рефереров](https://en.wikipedia.org/wiki/HTTP_Referer). Можно тонко тюнить, а можно рубить только рефереры при переходе на другой домен (Block (3rd party)), оставляя внутридоменные, что просто, эффективно для 99% случаев и не ломает так много сайтов как полный запрет.
 
-* [CleanLinks](https://addons.mozilla.org/en-US/firefox/addon/clean-links/)
+* [CleanLinks](https://github.com/diegocr/CleanLinks)
 <sup><s><a href="https://github.com/diegocr/CleanLinks/blob/master/install.rdf">E10S</a></s></sup>
 Чистит ссылки от редирект-префиксов Гугла и т.п. Имеет белый список как доменов, так и рэгэкспов, чтобы пропускать ссылки со всякими нужными префиксами вроде auth, ServiceLogin и т.п.
 
