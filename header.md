@@ -58,7 +58,8 @@ Firefox 51+: `media.block-autoplay-until-in-foreground -> true` <br>
 **A:** Тема, использующаяся в Firefox Developer Edition. [Аддон](https://addons.mozilla.org/en-US/firefox/addon/devedition-theme-enabler/), включающий ее на релизных сборках.
 
 1. **Q:** Как копировать ссылки c кириллическим текстом в исходном виде, не закодированном percent-encoding (%D0%9B%D0%B8%D1%81 -> Лис)? <br>
-**A:** `about:config -> network.standard-url.escape-utf8 -> false`
+**A:** Firefox 45: `about:config -> network.standard-url.escape-utf8 -> false` <br>
+Firefox 53+: `about:config -> browser.urlbar.decodeURLsOnCopy -> true`
 
 1. **Q:** Как ускорить прокрутку колесом мыши? <br>
 **A:** `about:config -> mousewheel.min_line_scroll_amount -> 35` <br>
