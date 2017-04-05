@@ -14,9 +14,9 @@
 ## FAQ
 1. **Q:** Проблемы с отрисовкой интерфейса, изображений или видео. Внезапные падения браузера.<br>
 **A:** Пробуйте по очереди: <br>
-1) `about:config -> layers.offmainthreadcomposition.enabled -> false` <br>
-2) `about:config -> layers.acceleration.disabled -> true` <br>
-3) 1 и 2 вместе.  <br>
+(1) `about:config -> layers.offmainthreadcomposition.enabled -> false` <br>
+(2) `about:config -> layers.acceleration.disabled -> true` <br>
+(3) 1 и 2 вместе.  <br>
 Также проблему может решить обновление видеодрайверов либо возврат к более старой версии. Или обновление самого Firefox до беты/откат к ESR.
 
 1. **Q:** Когда будет мультипроцессная версия? <br>
