@@ -38,7 +38,7 @@
 
 ##### Список ломающихся от применения настроек сайтов
 
-* Спуфинг реферера -- Avito.ru (показ телефонов).
+* Спуфинг реферера -- Avito.ru (показ телефонов), сервисы Яндекса (при использовании вместе с Decentraleyes).
 * `dom.event.clipboardevents.enabled` -- GitHub (копирование текста из редактора).
 * `security.ssl.require_safe_negotiation` -- Instagram, многие другие.
 * `dom.indexedDB.enabled` -- Twitter.
