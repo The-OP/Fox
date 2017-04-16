@@ -85,7 +85,8 @@ Firefox сохраняет вкладки, закладки, историю, а�
 <sub>Если вы все же потеряли вкладки и забыли про бэкап, можно попробовать их восстановить, копируя при выключенном браузере каждый файл из `sessionstore-backups` (сначала те, что новее, начиная с `previous.js`) в `sessionstore.js` в профиле, запуская и проверяя.</sub>
 
 ## Аддоны
-<sub>`E10S` - совместимые с Electrolysis расширения, <s>`E10S`</s> - не совместимые, либо работающие через прослойку для совместимости (interposition).</sub>
+<sub>`E10S` - совместимые с Electrolysis расширения, <s>`E10S`</s> - не совместимые, либо работающие через прослойку для совместимости (interposition).<br>
+`WE` - Web Extensions, совместимы с E10S.</sub>
 
 * [uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/)
 <sup><a href="https://github.com/gorhill/uBlock/blob/master/platform/firefox/install.rdf">E10S</a></sup>
@@ -171,6 +172,10 @@ Firefox сохраняет вкладки, закладки, историю, а�
 * [StylRRR](https://addons.mozilla.org/en-US/firefox/addon/stylrrr/)
 <sup><a href="https://addons.mozilla.org/en-US/firefox/files/browse/511362/file/install.rdf">E10S</a></sup>
 Альтернатива Stylish. В отличие от последнего, хранит стили в файлах, а не БД. Поддерживает установку стилей с Userstyles.org (см. скриншоты на AMO), но не их автообновление.
+
+* [Tab counter](https://addons.mozilla.org/en-US/firefox/addon/tabcounter-1/)
+<sup>WE</sup>
+Новый аддон для показа количества открытых вкладок.
 
 * [Tab Counter](https://addons.mozilla.org/en-US/firefox/addon/tab-counter/)
 <sup><s><a href="https://addons.mozilla.org/en-US/firefox/files/browse/409212/file/install.rdf">E10S</a></s></sup>
