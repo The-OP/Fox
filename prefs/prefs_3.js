@@ -105,6 +105,11 @@ user_pref("network.http.spdy.enabled.http2", false);
 user_pref("network.http.spdy.allow-push", false);
 user_pref("network.http.spdy.enabled.deps", false);
 
+// Включает показ Internationalized Domain Names в виде Punycode вместо Unicode, что
+// понижает вероятность попасться на фишинг.
+// https://www.wordfence.com/blog/2017/04/chrome-firefox-unicode-phishing/
+user_pref("network.IDN_show_punycode", true);
+
 // Отключает автоматический импорт корневых сертификатов из хранилища ОС. Используется для
 // всяческого MITM - корпоративные прокcи, антивирусы и т.п.
 // https://geektimes.ru/post/263796/
