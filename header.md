@@ -12,10 +12,12 @@
 * [Серый список аддонов](greylist.md)
 
 ## FAQ
+<sub>Настройки меняются через `about:config`.</sub>
+
 1. **Q:** Проблемы с отрисовкой интерфейса, изображений или видео. Внезапные падения браузера.<br>
 **A:** Пробуйте по очереди: <br>
-(1) `about:config -> layers.offmainthreadcomposition.enabled -> false` <br>
-(2) `about:config -> layers.acceleration.disabled -> true` <br>
+(1) `layers.offmainthreadcomposition.enabled -> false` <br>
+(2) `layers.acceleration.disabled -> true` <br>
 (3) 1 и 2 вместе.  <br>
 Также проблему может решить обновление видеодрайверов либо возврат к более старой версии. Или обновление самого Firefox до беты/откат к ESR.
 
@@ -30,7 +32,7 @@
 
 1. **Q:** О блокировке неподписанных расширений. <br>
 **A:** Начиная с Firefox 48, в официальных релизных и бета-билдах Firefox заблокирована установка не подписанных Mozilla аддонов. Ниже приведены различные решения.
-	* Выпускаются специальные [сборки](https://wiki.mozilla.org/Add-ons/Extension_Signing#Unbranded_Builds), где требование подписей отключается настройкой `about:config -> xpinstall.signatures.required -> false`. Firefox ESR тоже не имеет данной проблемы.
+	* Выпускаются специальные [сборки](https://wiki.mozilla.org/Add-ons/Extension_Signing#Unbranded_Builds), где требование подписей отключается настройкой `xpinstall.signatures.required -> false`. Firefox ESR тоже не имеет данной проблемы.
 	* Есть [хак](addendum.md#user-content-Хак-для-отключения-требования-подписей-аддонов), позволяющий обойти это ограничение даже на официальных сборках.
 	* Если вы используете Linux, вероятно, мейнтейнеры вашего дистрибутива уже собрали Firefox без флага обязательного требования подписей, и его можно отключить вышеописанной настройкой.
 
@@ -43,13 +45,13 @@ Firefox 51+: `media.block-autoplay-until-in-foreground -> true` <br>
 Проигрывание начнется при первом переключении на вкладку с открытым видео или аудио.
 
 1. **Q:** Как отключить предупреждение при переходе сайта в полноэкранный режим в Firefox 43+? <br>
-**A:** `about:config -> full-screen-api.warning.timeout -> 0`
+**A:** `full-screen-api.warning.timeout -> 0`
 
 1. **Q:** Как искать в разных поисковиках через адресную строку? <br>
 **A:** Используя префиксы-кейворды (g Google, w Wikipedia, etc), настраивающиеся в Preferences -> Search даблкликом по ячейкам второй колонки.
 
 1. **Q:** Как отключить беспрефиксный поиск в поисковике по умолчанию через адресную строку? <br>
-**A:** `about:config -> keyword.enabled -> false`
+**A:** `keyword.enabled -> false`
 
 1. **Q:** Как вернуть настройку `browser.newtab.url` в Firefox 41+? <br>
 **A:** [New Tab Override](https://addons.mozilla.org/en-US/firefox/addon/new-tab-override/)
@@ -58,16 +60,16 @@ Firefox 51+: `media.block-autoplay-until-in-foreground -> true` <br>
 **A:** Тема, использующаяся в Firefox Developer Edition. [Аддон](https://addons.mozilla.org/en-US/firefox/addon/devedition-theme-enabler/), включающий ее на релизных сборках.
 
 1. **Q:** Как копировать ссылки c кириллическим текстом в исходном виде, не закодированном percent-encoding (%D0%9B%D0%B8%D1%81 -> Лис)? <br>
-**A:** Firefox 45: `about:config -> network.standard-url.escape-utf8 -> false` <br>
-Firefox 53+: `about:config -> browser.urlbar.decodeURLsOnCopy -> true`
+**A:** Firefox 45: `network.standard-url.escape-utf8 -> false` <br>
+Firefox 53+: `browser.urlbar.decodeURLsOnCopy -> true`
 
 1. **Q:** Как ускорить прокрутку колесом мыши? <br>
-**A:** `about:config -> mousewheel.min_line_scroll_amount -> 35` <br>
+**A:** `mousewheel.min_line_scroll_amount -> 35` <br>
 Значение подбирается по вкусу. Другие твики описаны [здесь](http://12bytes.org/articles/tech/firefox-scroll-tweak).
 
 1. **Q:** Как сделать скриншот всей страницы? <br>
 **A:** Shift-F2: `screenshot --fullpage <имя файла опционально>` <br>
-Также можно использовать кнопку скриншота в Developer Tools (Ctrl+Shift+I), предварительно включив ее в about:config: `devtools.command-button-screenshot.enabled -> true`. Сверхдлинные страницы [не сохраняет](https://bugzilla.mozilla.org/show_bug.cgi?id=766661).
+Также можно использовать кнопку скриншота в Developer Tools (Ctrl+Shift+I), предварительно включив ее: `devtools.command-button-screenshot.enabled -> true`. Сверхдлинные страницы [не сохраняет](https://bugzilla.mozilla.org/show_bug.cgi?id=766661).
 
 1. **Q:** Как уменьшить ширину вкладки, чтобы меньше их прокручивать? <br>
 **A:** При помощи [UserCSS](https://www.ghacks.net/2011/02/02/change-firefoxs-minimum-maximum-tab-width/).
