@@ -57,7 +57,7 @@ Firefox 51+: `media.block-autoplay-until-in-foreground -> true` <br>
 **A:** [New Tab Override](https://addons.mozilla.org/en-US/firefox/addon/new-tab-override/)
 
 1. **Q:** Что за специальная тема для разработчиков? <br>
-**A:** Тема, использующаяся в Firefox Developer Edition. [Аддон](https://addons.mozilla.org/en-US/firefox/addon/devedition-theme-enabler/), включающий ее на релизных сборках.
+**A:** Тема, использующаяся в Firefox Developer Edition. В Firefox 53+ включается через `about:addons`, на вкладке Appearance. [Аддон](https://addons.mozilla.org/en-US/firefox/addon/devedition-theme-enabler/), включающий ее на более ранних релизах.
 
 1. **Q:** Как копировать ссылки c кириллическим текстом в исходном виде, не закодированном percent-encoding (%D0%9B%D0%B8%D1%81 -> Лис)? <br>
 **A:** Firefox 45: `network.standard-url.escape-utf8 -> false` <br>

@@ -173,6 +173,11 @@ user_pref("gfx.font_rendering.opentype_svg.enabled", false);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1173199
 // https://www.torproject.org/projects/torbrowser/design/#other-security
 user_pref("mathml.disabled", true);
+// Отключает потенциально уязвимый парсер SVG.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1216893
+// https://hg.mozilla.org/releases/mozilla-release/rev/0d48c28cc547
+// https://www.torproject.org/projects/torbrowser/design/#other-security
+user_pref("svg.disabled", true);
 // Второй уровень - отключение WebAudio и asm.js.
 user_pref("javascript.options.ion", false);
 // https://www.mozilla.org/en-US/security/advisories/mfsa2015-29/

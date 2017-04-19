@@ -498,6 +498,13 @@ user_pref("devtools.chrome.enabled", false);
 user_pref("devtools.debugger.force-local", true);
 user_pref("devtools.debugger.prompt-connection", true);
 
+// Отключает звук затвора фотоаппарата при снятии скриншота в через Developer Tools.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1257913
+// https://hg.mozilla.org/releases/mozilla-release/rev/e54021050e77
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1325553
+// https://hg.mozilla.org/releases/mozilla-release/rev/47ead489b52e
+user_pref("devtools.screenshot.audio.enabled", false);
+
 // Отключает обнаружение captive portal - подмены всех запрашиваемых пользователем страниц на
 // страницы провайдера. Эта техника используется в местах публичного Wi-Fi и некоторыми операторами
 // для аунтефикации или показа пользователю какой-либо информации (например, о необходимости
@@ -637,6 +644,8 @@ user_pref("dom.fileHandle.enabled", false);
 // https://hg.mozilla.org/releases/mozilla-release/file/a67a1682be8f0327435aaa2f417154330eff0017/dom/quota/StorageManager.cpp#l340
 // https://hg.mozilla.org/releases/mozilla-release/file/a67a1682be8f0327435aaa2f417154330eff0017/dom/workers/WorkerPrefs.h#l36
 user_pref("dom.storageManager.enabled", false);
+// https://hg.mozilla.org/releases/mozilla-release/rev/e2e6505f3fc0
+user_pref("browser.storageManager.enabled", false);
 
 // Запрещает расширение WebGL, позволяющее узнать модель видеокарты пользователя и ее драйвер.
 // https://www.mail-archive.com/dev-platform@lists.mozilla.org/msg14121.html
@@ -692,6 +701,11 @@ user_pref("network.http.referer.XOriginTrimmingPolicy", 0);
 user_pref("network.http.sendSecureXSiteReferrer", true);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1223838#c31
 user_pref("network.http.enablePerElementReferrer", false);
+// 0=no referrer, 1=same origin, 2=strict-origin-when-cross-origin,
+// 3=no-referre-when-downgrade(default)
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1304623
+// https://hg.mozilla.org/releases/mozilla-release/rev/73d0bfecc06b
+user_pref("network.http.referer.userControlPolicy", 3);
 
 // Отключает автоматическое обновление браузера.
 // https://developer.mozilla.org/en-US/Firefox/Enterprise_deployment

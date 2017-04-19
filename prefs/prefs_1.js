@@ -172,6 +172,15 @@ user_pref("urlclassifier.downloadAllowTable", "");
 user_pref("urlclassifier.trackingTable", "");
 user_pref("urlclassifier.trackingWhitelistTable", "");
 user_pref("urlclassifier.disallow_completions", "");
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1307604
+// https://hg.mozilla.org/releases/mozilla-release/file/175e28ba58fcd249fc2db68dcaa800da2ebc506d/toolkit/components/url-classifier/flash-block-lists.rst
+// https://hg.mozilla.org/releases/mozilla-release/rev/81b9af9143f3
+user_pref("urlclassifier.flashAllowTable", "");
+user_pref("urlclassifier.flashAllowExceptTable", "");
+user_pref("urlclassifier.flashTable", "");
+user_pref("urlclassifier.flashExceptTable", "");
+user_pref("urlclassifier.flashSubDocTable", "");
+user_pref("urlclassifier.flashSubDocExceptTable", "");
 
 // Отключает список сайтов, запрещенных в режиме ограниченного профиля / родительского контроля.
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1216723
@@ -322,6 +331,16 @@ user_pref("browser.crashReports.unsubmittedCheck.chancesUntilSuppress", 0);
 // Отключает предложения оценить работу Firefox и отправить пожертвования Mozilla.
 // https://wiki.mozilla.org/Advocacy/heartbeat
 user_pref("browser.selfsupport.url", "");
+
+// Отключает системный аддон Web Compat Reporter, добавляющий в гамбургер-меню кнопку для сообщений
+// о проблемах с отображением сайтов. При нажатии кнопка делает скриншот открытой в текущей вкладке
+// страницы и аплоадит его вместе с адресом страницы на сервер Мозиллы.
+// Аддон включен по умолчанию пока только в Nightly, но, возможно, будет и в бете.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1324062
+// https://hg.mozilla.org/releases/mozilla-release/file/175e28ba58fcd249fc2db68dcaa800da2ebc506d/browser/extensions/webcompat-reporter/bootstrap.js#l30
+user_pref("extensions.webcompat-reporter.enabled", false);
+// https://hg.mozilla.org/releases/mozilla-release/file/175e28ba58fcd249fc2db68dcaa800da2ebc506d/browser/extensions/webcompat-reporter/content/WebCompatReporter.jsm#l28
+user_pref("extensions.webcompat-reporter.newIssueEndpoint", "");
 
 // Отключает установку дефолтных пермишнов (resource://app/defaults/permissions) в Permission Manager.
 // Среди которых есть пермишн install для AMO, из-за чего браузер в AMO -> Themes (со включенным JS)
