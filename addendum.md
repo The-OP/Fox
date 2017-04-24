@@ -66,7 +66,7 @@
 Чистит ссылки от редирект-префиксов Гугла и т.п. Имеет белый список как доменов, так и рэгэкспов, чтобы пропускать ссылки со всякими нужными префиксами вроде auth, ServiceLogin и т.п.
 
 * [Google search link fix](https://addons.mozilla.org/en-US/firefox/addon/google-search-link-fix/)
-<sup><a href="https://addons.mozilla.org/firefox/files/browse/378875/file/install.rdf">E10S</a></sup>
+<sup>WE</sup>
 Более простая альтернатива CleanLinks для тех, кого он по каким-то причинам не устраивает. Работает только на Google, Yandex и Yahoo.
 
 * [Cookie Monster](https://addons.mozilla.org/en-US/firefox/addon/cookie-monster/)
@@ -108,7 +108,7 @@
 Еще один блокировщик редиректов. Развивается в отличие от давно не обновлявшегося NoRedirect.
 
 * [Redirector](https://addons.mozilla.org/en-US/firefox/addon/redirector/)
-<sup><a href="https://addons.mozilla.org/firefox/files/browse/403096/file/install.rdf">E10S</a></sup>
+<sup>WE</sup>
 Позволяет задавать пользовательские редиректы по паттернам или регулярным выражениям.
 
 * [HttpFox](https://addons.mozilla.org/en-US/firefox/addon/httpfox/)
