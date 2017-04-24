@@ -89,6 +89,12 @@
 <sup>E10S</sup>
 Менее актуально с понижением числа пользователей Flash, но все же. Уничтожает [LSO](https://en.wikipedia.org/wiki/Local_shared_object), которые не может заблокировать или уничтожить сам браузер.
 
+* [NoScript](https://addons.mozilla.org/en-US/firefox/addon/noscript/)
+<sup><a href="https://addons.mozilla.org/en-US/firefox/files/browse/541135/file/install.rdf">E10S</a></sup>
+Блокировщик JS с возможностью работы в режиме белого или черного списка. Поможет тем, у кого в простое вкладки с тяжелым JS отжирают ресурсы CPU.
+
+	* **ВАЖНО:** См. [информацию о NoScript в сером списке](greylist.md#user-content-noscript).
+
 * [RequestPolicy Continued](https://addons.mozilla.org/en-US/firefox/addon/requestpolicy-continued/)
 <sup><s><a href="https://addons.mozilla.org/en-US/firefox/files/browse/517331/file/install.rdf">E10S</a></s></sup>
 Резалка кросс-доменных запросов. Можно (и рекомендуется самим автором) использовать в связке с NoScript.
