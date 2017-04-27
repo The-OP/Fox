@@ -28,7 +28,7 @@
 `extensions.e10sBlocksEnabling -> false` <br>
 Применение требует перезапуска. Проверить работу можно в `about:support -> Multiprocess Windows`. <br>
 Если все еще не работает: [`browser.tabs.remote.force-enable -> true`](https://wiki.mozilla.org/Electrolysis#Force_Enable) (не рекомендуется). <br>
-`dom.ipc.processCount` регулирует число процессов (высокое значение даст по процессу на вкладку).
+`dom.ipc.processCount` регулирует число процессов. Хотя лучше пока его [не трогать](https://bugzilla.mozilla.org/show_bug.cgi?id=1352706).
 
 1. **Q:** О блокировке неподписанных расширений. <br>
 **A:** Начиная с Firefox 48, в официальных релизных и бета-билдах Firefox заблокирована установка не подписанных Mozilla аддонов. Ниже приведены различные решения.
