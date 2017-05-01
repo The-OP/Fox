@@ -200,7 +200,7 @@ Firefox сохраняет вкладки, закладки, историю, а�
 Проигрывание видео при помощи связки из [mpv](https://github.com/mpv-player/mpv/) и [youtube-dl](https://github.com/rg3/youtube-dl) вместо принадлежащего сайту HTML5/Flash-плеера. [Список поддерживаемых сайтов](https://github.com/rg3/youtube-dl/blob/master/docs/supportedsites.md).
 
 * [Yet Another Smooth Scrolling](https://addons.mozilla.org/en-US/firefox/addon/yet-another-smooth-scrolling/)
-<sup><s><a href="https://addons.mozilla.org/en-US/firefox/files/browse/429884/file/install.rdf">E10S</a></s></sup>
+<sup>E10S</sup>
 Тонкая настройка прокрутки, включая плавность, скорость и ускорение.
 
 * [Русский словарь для проверки правописания](https://addons.mozilla.org/en-US/firefox/addon/russian-spellchecking-dic-3703/)
