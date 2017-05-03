@@ -129,10 +129,6 @@
 <sup><s><a href="https://addons.mozilla.org/firefox/files/browse/376077/file/install.rdf">E10S</a></s></sup>
 Меняет юзер-агенты по таймеру и с дополнительными фичами, препятствующими фингерпринтингу. Версия с GitHub имеет расширенную функциональность по сравнению с версией с AMO (см. описание на AMO).
 
-* [http-useragent-cleaner](https://addons.mozilla.org/en-US/firefox/addon/http-useragent-cleaner/)
-<sup><s>E10S</s></sup>
-Еще один продвинутый аддон для противодействия фингерпринтингу. Позволяет не только менять юзер-агент, но и заблокировать другие каналы утечки опознавательной информации.
-
 * [CanvasBlocker](https://addons.mozilla.org/en-US/firefox/addon/canvasblocker/)
 <sup><a href="https://addons.mozilla.org/firefox/files/browse/479595/file/install.rdf">E10S</a></sup>
 Предотвращает фингерпринтинг через [анализ особенностей рендеринга элемента &lt;canvas&gt;](https://en.wikipedia.org/wiki/Canvas_fingerprinting), зависящих от ОС, железа, драйверов, шрифтов и т.п. Также см. [Bug 967895](https://bugzilla.mozilla.org/show_bug.cgi?id=967895).
