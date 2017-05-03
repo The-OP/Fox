@@ -155,10 +155,6 @@ Firefox сохраняет вкладки, закладки, историю, а�
 <sup><a href="https://addons.mozilla.org/en-US/firefox/files/browse/581411/file/install.rdf">E10S</a></sup>
 Менеджер сессий.
 
-* [SlyZoom](https://addons.mozilla.org/en-US/firefox/addon/slyzoom/)
-<sup><s><a href="https://addons.mozilla.org/en-US/firefox/files/browse/392208/file/install.rdf">E10S</a></s></sup>
-Позволяет масштабировать страницы с произвольным шагом вместо изкоробочных ±10%, а также задавать масштаб по умолчанию на всех страницах.
-
 * [Stylish](https://addons.mozilla.org/en-US/firefox/addon/stylish/)
 <sup><a href="https://github.com/stylish-userstyles/stylish/blob/master/install.rdf">E10S</a></sup>
 Меняет внешний вид сайтов и самого браузера согласно UserCSS. [Репозиторий](https://userstyles.org) стилей. Также см. [раздел о Stylish](addendum.md#user-content-stylish) в приложении.
