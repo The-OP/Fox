@@ -125,7 +125,6 @@ user_pref("browser.safebrowsing.malware.reportURL", "");
 user_pref("browser.safebrowsing.reportPhishURL", "");
 user_pref("browser.safebrowsing.updateURL", "");
 user_pref("browser.safebrowsing.reportPhishMistakeURL", "");
-user_pref("browser.safebrowsing.reportPhishURL", "");
 user_pref("browser.safebrowsing.reportMalwareMistakeURL", "");
 user_pref("browser.safebrowsing.provider.google.appRepURL", "");
 user_pref("browser.safebrowsing.provider.google.gethashURL", "");
