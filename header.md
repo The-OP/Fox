@@ -144,7 +144,7 @@ Firefox сохраняет вкладки, закладки, историю, а�
 Аддон значительно повышающий удобство работы с историей.
 
 * [Open Tabs Next to Current](https://addons.mozilla.org/en-US/firefox/addon/open-tabs-next-to-current/)
-<sup><s><a href="https://addons.mozilla.org/en-US/firefox/files/browse/366060/file/install.rdf">E10S</a></s></sup>
+<sup>WE</sup>
 Небольшой аддон, позволяющий открывать новую вкладку сразу за текущей.
 
 * [ScrapBook X](https://addons.mozilla.org/en-US/firefox/addon/scrapbook-x/)
