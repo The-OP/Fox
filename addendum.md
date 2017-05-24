@@ -42,7 +42,7 @@
 * `dom.event.clipboardevents.enabled` -- GitHub (копирование текста из редактора).
 * `security.ssl.require_safe_negotiation` -- Instagram, многие другие.
 * `dom.enable_performance` -- pornhub.com (авторизация).
-* `dom.indexedDB.enabled` -- Twitter.
+* `dom.indexedDB.enabled` -- **Violentmonkey** (аддон), Twitter.
 * `security.ssl3.rsa_des_ede3_sha` -- https://login.skype.com/login
 * `geo.enabled` -- citilink.ru (панель фильтров).
 * `general.useragent.override` -- Неправдоподобно выглядящий useragent ломает maps.yandex.ru и много что еще.
