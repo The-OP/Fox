@@ -52,6 +52,15 @@ user_pref("browser.fixup.alternate.enabled", false);
 user_pref("browser.formfill.enable", false);
 user_pref("browser.formfill.saveHttpsForms", false);
 
+// Отключает более продвинутый автозаполнятель форм, планирующийся как системное расширение.
+// https://www.ghacks.net/2017/01/05/browser-autofill-data-may-be-phished/
+// https://www.ghacks.net/2017/05/24/firefoxs-new-form-autofill-is-awesome/
+// https://wiki.mozilla.org/Firefox/Features/Form_Autofill
+// https://hg.mozilla.org/releases/mozilla-release/rev/89a029b06eb1
+user_pref("browser.formautofill.enabled", false);
+// https://hg.mozilla.org/releases/mozilla-release/file/f3b670b8cc32a5b2356cedd923f729e0f495d050/browser/extensions/formautofill/bootstrap.js#l43
+user_pref("browser.formautofill.experimental", false);
+
 // Отключает показ текста пароля по клику на соответствующее поле ввода в попапе, предлагающем
 // сохранить введенный пароль.
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1169702
@@ -210,6 +219,8 @@ user_pref("dom.vr.openvr.enabled", false);
 // https://hg.mozilla.org/releases/mozilla-release/file/970d0cf1c5d9/modules/libpref/init/all.js#l4778
 user_pref("dom.vr.add-test-devices", 0);
 user_pref("dom.vr.osvr.enabled", false);
+user_pref("dom.vr.puppet.enabled", false);
+user_pref("dom.vr.test.enabled", false);
 // Отключает API для телефонных звонков, использующийся в Firefox OS.
 // https://wiki.mozilla.org/WebAPI/Security/WebTelephony
 user_pref("dom.telephony.enabled", false);

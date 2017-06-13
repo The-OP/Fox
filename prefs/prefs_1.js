@@ -141,6 +141,10 @@ user_pref("browser.safebrowsing.provider.google4.lists", "");
 user_pref("browser.safebrowsing.provider.google4.updateURL", "");
 user_pref("browser.safebrowsing.provider.google4.gethashURL", "");
 user_pref("browser.safebrowsing.provider.google4.reportURL", "");
+user_pref("browser.safebrowsing.provider.google.reportMalwareMistakeURL", "");
+user_pref("browser.safebrowsing.provider.google.reportPhishMistakeURL", "");
+user_pref("browser.safebrowsing.provider.google4.reportMalwareMistakeURL", "");
+user_pref("browser.safebrowsing.provider.google4.reportPhishMistakeURL", "");
 
 // Отключает мозилловский анти-трекинговый список, который дублирует функции uBlock с соответствующими
 // подписками и является менее эффективным (т.к. основан на списке от Disconnect).
@@ -224,6 +228,15 @@ user_pref("browser.newtabpage.introShown", true);
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_snippets
 user_pref("browser.aboutHomeSnippets.updateUrl", "");
 
+// Отключает добавление сайтов из Alexa Top 500 в список автодополнения адресной строки при запуске
+// нового профиля с пустой историей.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1340663
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1211726
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1336946
+// https://hg.mozilla.org/releases/mozilla-release/rev/1bf558a9bf87
+// https://hg.mozilla.org/releases/mozilla-release/rev/139038cf6a9c
+user_pref("browser.urlbar.usepreloadedtopurls.enabled", false);
+
 // Отключает новую версию new tab page, которая будет подгружаться с сервера Мозиллы. [Фича еще не
 // готова и не включена по умолчанию.] Сделано это якобы для того, чтобы разработчики могли
 // экспериментировать с функциональностью этой страницы чаще чем происходят релизы браузера.
@@ -239,6 +252,9 @@ user_pref("browser.newtabpage.remote", false);
 user_pref("browser.newtabpage.remote.mode", "dev");
 // https://hg.mozilla.org/releases/mozilla-release/file/c1de04f39fa956cfce83f6065b0e709369215ed5/browser/components/newtab/aboutNewTabService.js#l182
 user_pref("browser.newtabpage.remote.content-signing-test", false);
+// Remote New Tab переименована в Activity Stream в Firefox 54.
+// https://hg.mozilla.org/releases/mozilla-release/rev/e393e6c239cd
+user_pref("browser.newtabpage.activity-stream.enabled", false);
 
 // Отключает проверку при запуске, является ли Firefox браузером по умолчанию.
 // Preferences -> General -> Startup -> Always check if Firefox is your default browser
@@ -340,6 +356,20 @@ user_pref("browser.selfsupport.url", "");
 user_pref("extensions.webcompat-reporter.enabled", false);
 // https://hg.mozilla.org/releases/mozilla-release/file/175e28ba58fcd249fc2db68dcaa800da2ebc506d/browser/extensions/webcompat-reporter/content/WebCompatReporter.jsm#l28
 user_pref("extensions.webcompat-reporter.newIssueEndpoint", "");
+
+// Отключает Pageshot - новый системный аддон для создания скриншотов, тесно интегрированный с
+// онлайн-сервисом screenshots.firefox.com. Аддон посылает на свой сервер различную информацию
+// (в т.ч. уникальный идентификатор пользователя) еще до создания скриншота, уже при выборе
+// области. Информация посылается даже в случае сохранения скриншота на диск, а не на сервер.
+// (Информация перестает посылаться при отключенном datareporting.healthreport.uploadEnabled.)
+// https://wiki.mozilla.org/Firefox/Screenshots
+// https://github.com/mozilla-services/screenshots
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1346825
+// https://hg.mozilla.org/releases/mozilla-release/file/f3b670b8cc32a5b2356cedd923f729e0f495d050/browser/extensions/screenshots/bootstrap.js#l96
+// https://hg.mozilla.org/releases/mozilla-release/file/f3b670b8cc32a5b2356cedd923f729e0f495d050/browser/extensions/screenshots/webextension/background/analytics.js
+// https://hg.mozilla.org/releases/mozilla-release/file/f3b670b8cc32a5b2356cedd923f729e0f495d050/browser/extensions/screenshots/bootstrap.js#l136
+user_pref("extensions.screenshots.disabled", true);
+user_pref("extensions.screenshots.system-disabled", true);
 
 // Отключает установку дефолтных пермишнов (resource://app/defaults/permissions) в Permission Manager.
 // Среди которых есть пермишн install для AMO, из-за чего браузер в AMO -> Themes (со включенным JS)
