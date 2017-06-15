@@ -345,7 +345,22 @@ user_pref("browser.crashReports.unsubmittedCheck.chancesUntilSuppress", 0);
 
 // Отключает предложения оценить работу Firefox и отправить пожертвования Mozilla.
 // https://wiki.mozilla.org/Advocacy/heartbeat
+// https://hg.mozilla.org/releases/mozilla-esr52/file/83471170a11ff4669cd7f0ee76355e09a75ee316/browser/modules/SelfSupportBackend.jsm#l22
+// https://hg.mozilla.org/releases/mozilla-esr52/file/83471170a11ff4669cd7f0ee76355e09a75ee316/browser/modules/SelfSupportBackend.jsm#l99
+user_pref("browser.selfsupport.enabled", false);
 user_pref("browser.selfsupport.url", "");
+
+// Отключает системный аддон Shield Recipe Client, предлагающий пользователям поучаствовать в
+// различных экспериментах и отправить ответы на опросы.
+// Аддон включен пока только в дистрибутив Nightly.
+// https://wiki.mozilla.org/Firefox/Shield
+// https://hg.mozilla.org/releases/mozilla-release/file/b272b74f8f74a444adbcc6f57287c1cc3553d544/browser/extensions/moz.build#l16
+// https://hg.mozilla.org/releases/mozilla-release/file/b272b74f8f74a444adbcc6f57287c1cc3553d544/browser/extensions/shield-recipe-client/bootstrap.js#l30
+// https://hg.mozilla.org/releases/mozilla-release/file/b272b74f8f74a444adbcc6f57287c1cc3553d544/browser/extensions/shield-recipe-client/bootstrap.js#l71
+// https://hg.mozilla.org/releases/mozilla-release/file/b272b74f8f74a444adbcc6f57287c1cc3553d544/browser/extensions/shield-recipe-client/lib/RecipeRunner.jsm#l29
+// https://hg.mozilla.org/releases/mozilla-release/file/b272b74f8f74a444adbcc6f57287c1cc3553d544/browser/extensions/shield-recipe-client/lib/RecipeRunner.jsm#l52
+user_pref("extensions.shield-recipe-client.enabled", false);
+user_pref("extensions.shield-recipe-client.api_url", "");
 
 // Отключает системный аддон Web Compat Reporter, добавляющий в гамбургер-меню кнопку для сообщений
 // о проблемах с отображением сайтов. При нажатии кнопка делает скриншот открытой в текущей вкладке
