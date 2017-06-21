@@ -103,8 +103,8 @@ user_pref("network.cookie.cookieBehavior", 2);
 // пользователя. Объем Indexed DB может значительно превышать объем DOM Storage.
 // https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API
 //
-// "IndexedDB is completely disabled in private browsing mode." --
-// 	https://wiki.mozilla.org/Security/Reviews/Firefox4/IndexedDB_Security_Review
+// "IndexedDB is completely disabled in private browsing mode."
+//     -- https://wiki.mozilla.org/Security/Reviews/Firefox4/IndexedDB_Security_Review
 // Проверить это  можно на примере из MDN, здесь: https://mdn.github.io/to-do-notifications/index.html
 // В обычном окне пример покажет "Database initialised.", в приватном - "Error loading database.", плюс
 // сообщения "TypeError: db is undefined" в консоли.
@@ -113,23 +113,32 @@ user_pref("network.cookie.cookieBehavior", 2);
 // (но _не_ в about:permissions) -> Maintain Offline Storage и очистить там же. Block, равно как и Ask,
 // почему-то не работает для отдельных сайтов (протестировано в Fx39). В about:permissions -> All Sites,
 // Block _работает_ - при его выборе просто выставляется dom.indexedDB.enabled в false.
-// Находится Indexed DB в профиле, по такому пути: storage/default/<домен>/idb/
 //
+// Физически Indexed DB находится в профиле, по такому пути: storage/default/<домен>/idb/
+// https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Browser_storage_limits_and_eviction_criteria#Where_is_the_data_stored
+//
+// _Не_ очищается при Clear Recent History/Clear All History (Ctrl+Shift+Del)
+//   -- https://bugzilla.mozilla.org/show_bug.cgi?id=1047098
+
 // UPD: Начиная с Firefox 35 отключение Indexed DB может сломать многие аддоны:
 // 	https://www.ghacks.net/2015/01/16/fix-add-ons-not-working-in-firefox-35/
 // 	https://adblockplus.org/forum/viewtopic.php?t=27375&start=15
 // UPD: Вышеописанный баг исправили, теперь эта настройка действует только на страницы, и браузер
-// с аддонами не ломает -- https://bugzilla.mozilla.org/show_bug.cgi?id=1079355
+//      с аддонами не ломает -- https://bugzilla.mozilla.org/show_bug.cgi?id=1079355
 // UPD: Но ломает WebIDE (увидеть можно если выключить Indexed DB, перезапустить браузер и
-// попытаться открыть WebIDE - ошибки будут отображены как в нем самом, так и в Browser Console).
+//      попытаться открыть WebIDE - ошибки будут видны как в нем самом, так и в Browser Console).
 // UPD: Использование Indexed DB включили в один из популярных фреймворков и эта настройка стала
-// ломать все больше и больше сайтов.
+//      ломать все больше и больше сайтов.
+// UPD: Теперь отключение Indexed DB может ломать Web Extensions
+//        -- https://bugzilla.mozilla.org/show_bug.cgi?id=1335919
 user_pref("dom.indexedDB.enabled", false);
 user_pref("dom.indexedDB.experimental", false);
 
 // Отключает DOM Storage (и Local Storage, и Session Storage). Ломает многие сайты, поэтому
 // рекомендуется не отключать полностью, а контролировать и чистить соответствующими аддонами.
 // Хранится в файле webappsstore.sqlite в профиле.
+// Очищается только при выборе Clear All History в Ctrl+Shift+Del, _не_ Clear Recent History
+//   -- https://bugzilla.mozilla.org/show_bug.cgi?id=527667
 // https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API
 user_pref("dom.storage.enabled", false);
 
