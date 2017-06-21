@@ -40,9 +40,9 @@
 
 * Спуфинг заголовка Referer -- Avito.ru (показ телефонов), сервисы Яндекса (при использовании вместе с Decentraleyes), qiwi.com (авторизация).
 * `dom.event.clipboardevents.enabled` -- GitHub (копирование текста из редактора).
-* `security.ssl.require_safe_negotiation` -- Instagram, многие другие.
+* `security.ssl.require_safe_negotiation` -- Instagram, Mega.nz, многие другие.
 * `dom.enable_performance` -- pornhub.com (авторизация).
-* `dom.indexedDB.enabled` -- **Violentmonkey** (аддон), Twitter.
+* `dom.indexedDB.enabled` -- **Violentmonkey** ([аддон](https://bugzilla.mozilla.org/show_bug.cgi?id=1335919)), Twitter, Google Drive, Mega.nz.
 * `security.ssl3.rsa_des_ede3_sha` -- https://login.skype.com/login
 * `geo.enabled` -- citilink.ru (панель фильтров).
 * `general.useragent.override` -- Неправдоподобно выглядящий useragent ломает maps.yandex.ru и много что еще.
