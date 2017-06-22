@@ -52,6 +52,11 @@ Tampermonkey выпускается под проприетарной лицен
 uBlock **Origin** - это и есть настоящий uBlock от первоначального автора. То, что сейчас называется uBlock - его форк. Для пропустивших драму - кратко [тут](https://www.opennet.ru/opennews/art.shtml?num=42107). Кроме того, с момента разветвления (версии 0.9.3) разработка Origin идет значительно [активнее](https://github.com/gorhill/uBlock/releases) чем у [форка](https://github.com/chrisaljoudi/uBlock/releases). **UPD:** Форк уже больше года не обновлялся, но на AMO все еще зачем-то присутствует.
 
 
+#### Web of Trust, MyWOT/WOT: Website Reputation Rating
+
+WOT был пойман на [продаже неанонимизированной истории серфинга пользователей](https://www.ghacks.net/2016/11/01/browsing-history-sold/) рекламным компаниям, после чего Mozilla удалила его с AMO. Сейчас разработчики делают вид что раскаялись и исправили это вопиющее нарушение приватности, а аддон снова присутствует на AMO, однако ни о каком доверии им речи идти уже не может абсолютно. Тем более что пункт о передаче собранной с пользователей информации третьим лицам [никуда не делся из Privacy Policy](https://addons.mozilla.org/en-US/firefox/addon/wot-safe-browsing-tool/privacy/).
+
+
 #### YouTube High Definition
 
 Открывает свой официальный сайт при [установке и каждом обновлении](https://addons.mozilla.org/firefox/files/browse/488204/file/bootstrap.js#L511) аддона. Нет никаких настроек для отключения этой навязчивой рекламы.
