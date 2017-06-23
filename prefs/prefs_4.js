@@ -119,7 +119,7 @@ user_pref("network.cookie.cookieBehavior", 2);
 //
 // _Не_ очищается при Clear Recent History/Clear All History (Ctrl+Shift+Del)
 //   -- https://bugzilla.mozilla.org/show_bug.cgi?id=1047098
-
+//
 // UPD: Начиная с Firefox 35 отключение Indexed DB может сломать многие аддоны:
 // 	https://www.ghacks.net/2015/01/16/fix-add-ons-not-working-in-firefox-35/
 // 	https://adblockplus.org/forum/viewtopic.php?t=27375&start=15
@@ -145,6 +145,8 @@ user_pref("dom.storage.enabled", false);
 // Отключает загружаемые сайтами шрифты. Несколько повышает безопасность за счет исключения
 // уязвимостей в парсере шрифтов. Ломает кнопки uBlock. В качестве не ломающей кнопки замены
 // можно добавить правило "no-remote-fonts: * true" (без кавычек) в My rules самого uBlock.
+// Оно же включается чекбоксом Settings -> Block remote fonts в более новых версиях uBlock.
+// Также в uBlock можно сделать белый список сайтов, которым разрешено загружать шрифты.
 user_pref("gfx.downloadable_fonts.enabled", false);
 user_pref("gfx.downloadable_fonts.woff2.enabled", false);
 
