@@ -110,7 +110,7 @@ user_pref("browser.uitour.readerViewTrigger", ".^");
 // https://hg.mozilla.org/releases/mozilla-release/file/b0310cb90fd0/toolkit/components/reader/AboutReader.jsm#l106
 user_pref("narrate.enabled", false);
 
-// Отключает UI-тур по возможностям Australis, Hello и т.п. Эти настроки влияют на UITour.onPageEvent()
+// Отключает UI-тур по возможностям Australis, Hello и т.п. Эти настройки влияют на UITour.onPageEvent()
 // и не действуют на тур по Reader View, который вызывается напрямую через UITour.onLocationChange().
 // https://www.mozilla.org/en-US/firefox/39.0/tour/
 // https://wiki.mozilla.org/Ui_tour/Test_Plan
@@ -518,7 +518,7 @@ user_pref("devtools.screenshot.audio.enabled", false);
 
 // Отключает обнаружение captive portal - подмены всех запрашиваемых пользователем страниц на
 // страницы провайдера. Эта техника используется в местах публичного Wi-Fi и некоторыми операторами
-// для аунтефикации или показа пользователю какой-либо информации (например, о необходимости
+// для аутентификации или показа пользователю какой-либо информации (например, о необходимости
 // пополнить счет). Обнаружение происходит через периодическое скачивание файла с сервера Мозиллы.
 // https://en.wikipedia.org/wiki/Captive_portal
 // https://github.com/vtsatskin/FX-Captive-Portals-Design

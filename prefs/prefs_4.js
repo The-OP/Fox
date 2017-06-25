@@ -62,7 +62,7 @@ user_pref("privacy.resistFingerprinting", true);
 // https://hg.mozilla.org/releases/mozilla-esr38/file/aa2ecb8673b1/docshell/base/nsDocShell.cpp#l11491
 //
 // UPD: В Firefox 47 allow-префы были убраны -- https://bugzilla.mozilla.org/show_bug.cgi?id=1249542
-//      Также, начиная с 47 версии, обнуление maxStateObjectSize  вызывает неработоспособность
+//      Также, начиная с 47 версии, обнуление maxStateObjectSize вызывает неработоспособность
 //      переключения категорий в about:addons и about:preferences.
 user_pref("browser.history.allowPopState", false);
 user_pref("browser.history.allowPushState", false);
