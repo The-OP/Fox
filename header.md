@@ -77,6 +77,9 @@ Firefox 53+: `browser.urlbar.decodeURLsOnCopy -> true`
 1. **Q:** Как вернуть старую поисковую строку/старый диалог настроек браузера? <br>
 **A:** Воспользоваться [Classic Theme Restorer](https://addons.mozilla.org/en-US/firefox/addon/classicthemerestorer/) или [пользовательским стилем](https://userstyles.org/styles/122214/firefox-search-bar-show-engine-names-firefox-43).
 
+1. **Q:** Как вернуть информацию о загрузках, скрытую в Firefox 54? <br>
+**A:** При помощи [UserCSS](https://www.ghacks.net/2017/06/17/restore-download-information-in-firefox/).
+
 #### Профили
 Firefox сохраняет вкладки, закладки, историю, аддоны, настройки и пароли в каталоге, называемом профилем. Можно иметь несколько профилей и даже использовать их одновременно, запуская две и более копии Firefox. Для входа в менеджер профилей следует указать ключи [`-no-remote -P`](https://developer.mozilla.org/en-US/docs/Mozilla/Command_Line_Options). Подробнее [здесь](https://support.mozilla.org/ru/kb/upravlenie-profilyami).
 
