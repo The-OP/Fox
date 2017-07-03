@@ -15,16 +15,12 @@
 <sub>Настройки меняются через `about:config`.</sub>
 
 1. **Q:** Проблемы с отрисовкой интерфейса, изображений или видео. Внезапные падения браузера.<br>
-**A:** Пробуйте по очереди: <br>
-(1) `layers.offmainthreadcomposition.enabled -> false` <br>
-(2) `layers.acceleration.disabled -> true` <br>
-(3) 1 и 2 вместе.  <br>
+**A:** Попробуйте отключить аппаратное ускорение: `layers.acceleration.disabled -> true` <br>
 Также проблему может решить обновление видеодрайверов либо возврат к более старой версии. Или обновление самого Firefox до беты/откат к ESR.
 
 1. **Q:** Когда будет мультипроцессная версия? <br>
 **A**: [План релизов](https://wiki.mozilla.org/Electrolysis#Schedule_and_Status). С 50 версии должно работать из коробки, если все **установленные** (выключенные тоже считаются) расширения совместимы. Также можно попробовать включить вручную: <br>
 `browser.tabs.remote.autostart -> true` <br>
-`extensions.e10sBlockedByAddons -> false` <br>
 `extensions.e10sBlocksEnabling -> false` <br>
 Применение требует перезапуска. Проверить работу можно в `about:support -> Multiprocess Windows`. <br>
 Если все еще не работает: [`browser.tabs.remote.force-enable -> true`](https://wiki.mozilla.org/Electrolysis#Force_Enable) (не рекомендуется). <br>
@@ -40,8 +36,7 @@
 **A:** Кодек VP9 требует мощного процессора. Может помочь отключение `media.mediasource.webm.enabled` - тогда видео будут отдаваться в H.264. Отключение этой настройки не сломает обычные WebM.
 
 1. **Q:** Как запретить проигрывание HTML5-медиа в фоновой вкладке? <br>
-**A:** Firefox до 51: `media.block-play-until-visible -> true` <br>
-Firefox 51+: `media.block-autoplay-until-in-foreground -> true` <br>
+**A:** Firefox 51+: `media.block-autoplay-until-in-foreground -> true` <br>
 Проигрывание начнется при первом переключении на вкладку с открытым видео или аудио.
 
 1. **Q:** Как отключить предупреждение при переходе сайта в полноэкранный режим в Firefox 43+? <br>
@@ -60,8 +55,7 @@ Firefox 51+: `media.block-autoplay-until-in-foreground -> true` <br>
 **A:** Тема, использующаяся в Firefox Developer Edition. В Firefox 53+ включается через `about:addons`, на вкладке Appearance. [Аддон](https://addons.mozilla.org/en-US/firefox/addon/devedition-theme-enabler/), включающий ее на более ранних релизах.
 
 1. **Q:** Как копировать ссылки c кириллическим текстом в исходном виде, не закодированном percent-encoding (%D0%9B%D0%B8%D1%81 -> Лис)? <br>
-**A:** Firefox 45: `network.standard-url.escape-utf8 -> false` <br>
-Firefox 53+: `browser.urlbar.decodeURLsOnCopy -> true`
+**A:** Firefox 53+: `browser.urlbar.decodeURLsOnCopy -> true`
 
 1. **Q:** Как ускорить прокрутку колесом мыши? <br>
 **A:** `mousewheel.min_line_scroll_amount -> 35` <br>
