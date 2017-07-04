@@ -372,20 +372,6 @@ user_pref("extensions.webcompat-reporter.enabled", false);
 // https://hg.mozilla.org/releases/mozilla-release/file/175e28ba58fcd249fc2db68dcaa800da2ebc506d/browser/extensions/webcompat-reporter/content/WebCompatReporter.jsm#l28
 user_pref("extensions.webcompat-reporter.newIssueEndpoint", "");
 
-// Отключает Pageshot - новый системный аддон для создания скриншотов, тесно интегрированный с
-// онлайн-сервисом screenshots.firefox.com. Аддон посылает на свой сервер различную информацию
-// (в т.ч. уникальный идентификатор пользователя) еще до создания скриншота, уже при выборе
-// области. Информация посылается даже в случае сохранения скриншота на диск, а не на сервер.
-// (Информация перестает посылаться при отключенном datareporting.healthreport.uploadEnabled.)
-// https://wiki.mozilla.org/Firefox/Screenshots
-// https://github.com/mozilla-services/screenshots
-// https://bugzilla.mozilla.org/show_bug.cgi?id=1346825
-// https://hg.mozilla.org/releases/mozilla-release/file/f3b670b8cc32a5b2356cedd923f729e0f495d050/browser/extensions/screenshots/bootstrap.js#l96
-// https://hg.mozilla.org/releases/mozilla-release/file/f3b670b8cc32a5b2356cedd923f729e0f495d050/browser/extensions/screenshots/webextension/background/analytics.js
-// https://hg.mozilla.org/releases/mozilla-release/file/f3b670b8cc32a5b2356cedd923f729e0f495d050/browser/extensions/screenshots/bootstrap.js#l136
-user_pref("extensions.screenshots.disabled", true);
-user_pref("extensions.screenshots.system-disabled", true);
-
 // Отключает установку дефолтных пермишнов (resource://app/defaults/permissions) в Permission Manager.
 // Среди которых есть пермишн install для AMO, из-за чего браузер в AMO -> Themes (со включенным JS)
 // скачивает и применяет темы по mouseover, без подтверждения установки.

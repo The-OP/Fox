@@ -8,6 +8,20 @@ user_pref("browser.syncPromoViewsLeftMap", "{\"addons\":0,\"bookmarks\":0,\"pass
 // https://hg.mozilla.org/releases/mozilla-release/rev/f98e3add979e
 user_pref("browser.bookmarks.showRecentlyBookmarked", false);
 
+// Отключает Pageshot - новый системный аддон для создания скриншотов, тесно интегрированный с
+// онлайн-сервисом screenshots.firefox.com. Аддон посылает на свой сервер различную информацию
+// (в т.ч. уникальный идентификатор пользователя) еще до создания скриншота, уже при выборе
+// области. Информация посылается даже в случае сохранения скриншота на диск, а не на сервер.
+// (Информация перестает посылаться при отключенном datareporting.healthreport.uploadEnabled.)
+// https://wiki.mozilla.org/Firefox/Screenshots
+// https://github.com/mozilla-services/screenshots
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1346825
+// https://hg.mozilla.org/releases/mozilla-release/file/f3b670b8cc32a5b2356cedd923f729e0f495d050/browser/extensions/screenshots/bootstrap.js#l96
+// https://hg.mozilla.org/releases/mozilla-release/file/f3b670b8cc32a5b2356cedd923f729e0f495d050/browser/extensions/screenshots/webextension/background/analytics.js
+// https://hg.mozilla.org/releases/mozilla-release/file/f3b670b8cc32a5b2356cedd923f729e0f495d050/browser/extensions/screenshots/bootstrap.js#l136
+user_pref("extensions.screenshots.disabled", true);
+user_pref("extensions.screenshots.system-disabled", true);
+
 // Удаляет 3rd-party cookies после закрытия браузера.
 // http://kb.mozillazine.org/Network.cookie.thirdparty.sessionOnly
 // https://hg.mozilla.org/releases/mozilla-esr45/file/4bd5a188c4236c4d14f9e859aa0ba243480af9bc/netwerk/cookie/nsCookieService.cpp#l117
