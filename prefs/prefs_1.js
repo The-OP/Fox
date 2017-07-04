@@ -397,21 +397,6 @@ user_pref("permissions.manager.defaultsUrl", "");
 // https://bugzilla.mozilla.org/show_bug.cgi?id=846489
 user_pref("security.ssl.errorReporting.automatic", false);
 
-// Отключает интегрированную поддержку проприетарного сервиса закладок Pocket.
-// https://www.opennet.ru/opennews/art.shtml?num=42245
-// https://wiki.mozilla.org/QA/Pocket_integration
-user_pref("browser.pocket.enabled", false);
-user_pref("browser.pocket.api", "");
-user_pref("browser.pocket.site", "");
-user_pref("browser.pocket.oAuthConsumerKey", "");
-user_pref("browser.pocket.enabledLocales", "");
-// Начиная с Firefox 46 перемещено в системный аддон.
-// https://hg.mozilla.org/releases/mozilla-release/file/970d0cf1c5d9/browser/extensions/pocket/bootstrap.js#l33
-user_pref("extensions.pocket.enabled", false);
-user_pref("extensions.pocket.api", "");
-user_pref("extensions.pocket.site", "");
-user_pref("extensions.pocket.oAuthConsumerKey", "");
-
 // Отключает эксперименты - фоновые тесты различных отключенных пока по умолчанию функций (вроде
 // HTTP Pipelining) со сбором телеметрии.
 // https://hg.mozilla.org/releases/mozilla-esr38/file/008aa6494f90/netwerk/protocol/http/nsHttpHandler.cpp#l1406

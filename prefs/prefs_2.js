@@ -22,6 +22,21 @@ user_pref("browser.bookmarks.showRecentlyBookmarked", false);
 user_pref("extensions.screenshots.disabled", true);
 user_pref("extensions.screenshots.system-disabled", true);
 
+// Отключает интегрированную поддержку проприетарного сервиса закладок Pocket.
+// https://www.opennet.ru/opennews/art.shtml?num=42245
+// https://wiki.mozilla.org/QA/Pocket_integration
+user_pref("browser.pocket.enabled", false);
+user_pref("browser.pocket.api", "");
+user_pref("browser.pocket.site", "");
+user_pref("browser.pocket.oAuthConsumerKey", "");
+user_pref("browser.pocket.enabledLocales", "");
+// Начиная с Firefox 46 перемещено в системный аддон.
+// https://hg.mozilla.org/releases/mozilla-release/file/970d0cf1c5d9/browser/extensions/pocket/bootstrap.js#l33
+user_pref("extensions.pocket.enabled", false);
+user_pref("extensions.pocket.api", "");
+user_pref("extensions.pocket.site", "");
+user_pref("extensions.pocket.oAuthConsumerKey", "");
+
 // Удаляет 3rd-party cookies после закрытия браузера.
 // http://kb.mozillazine.org/Network.cookie.thirdparty.sessionOnly
 // https://hg.mozilla.org/releases/mozilla-esr45/file/4bd5a188c4236c4d14f9e859aa0ba243480af9bc/netwerk/cookie/nsCookieService.cpp#l117
