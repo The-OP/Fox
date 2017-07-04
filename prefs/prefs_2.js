@@ -3,6 +3,11 @@
 // https://hg.mozilla.org/releases/mozilla-esr45/file/cd64cd568d3879680838f3de32f5033fbaa409d5/browser/base/content/urlbarBindings.xml#l2730
 user_pref("browser.syncPromoViewsLeftMap", "{\"addons\":0,\"bookmarks\":0,\"passwords\":0}");
 
+// Отключает показ нескольких последних созданных закладок в меню закладок.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1248268
+// https://hg.mozilla.org/releases/mozilla-release/rev/f98e3add979e
+user_pref("browser.bookmarks.showRecentlyBookmarked", false);
+
 // Удаляет 3rd-party cookies после закрытия браузера.
 // http://kb.mozillazine.org/Network.cookie.thirdparty.sessionOnly
 // https://hg.mozilla.org/releases/mozilla-esr45/file/4bd5a188c4236c4d14f9e859aa0ba243480af9bc/netwerk/cookie/nsCookieService.cpp#l117
