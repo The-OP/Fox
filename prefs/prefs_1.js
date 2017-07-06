@@ -590,7 +590,6 @@ user_pref("network.proxy.autoconfig_url.include_path", false);
 // https://wiki.mozilla.org/Media/WebRTC/Privacy
 // https://www.html5rocks.com/en/tutorials/webrtc/infrastructure/
 // https://en.wikipedia.org/wiki/Interactive_Connectivity_Establishment
-user_pref("media.peerconnection.ice.relay_only", true);
 // Это обязательно нужно с Firefox 51+, в связке с relay_only или default_address_only.
 // https://tools.ietf.org/html/draft-ietf-rtcweb-ip-handling-01
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1297416
@@ -598,6 +597,8 @@ user_pref("media.peerconnection.ice.relay_only", true);
 user_pref("media.peerconnection.ice.no_host", true);
 // Разрешает работу WebRTC только на дефолтном сетевом интерфейсе, вследствие чего не
 // происходит раскрытия настоящего IP пользователя, использующего VPN.
-// Пока что не работает вместе с E10S: https://bugzilla.mozilla.org/show_bug.cgi?id=1194259
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1189041
-//user_pref("media.peerconnection.ice.default_address_only", true);
+user_pref("media.peerconnection.ice.default_address_only", true);
+// В качестве альтернативы default_address_only можно использовать relay_only, запрещающий
+// режим P2P в принципе и разрешающий работу WebRTC только через TURN-сервер.
+// user_pref("media.peerconnection.ice.relay_only", true);
