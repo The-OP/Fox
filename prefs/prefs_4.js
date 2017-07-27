@@ -321,3 +321,28 @@ user_pref("extensions.update.enabled", false);
 user_pref("extensions.update.url", "");
 user_pref("extensions.update.background.url", "");
 user_pref("extensions.systemAddon.update.url", "");
+
+// Отключает периодические проверки обновлений браузера.
+// https://developer.mozilla.org/en-US/Firefox/Enterprise_deployment
+// https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_auto-update-checking
+// https://hg.mozilla.org/releases/mozilla-esr52/file/2ebcec6798551c83e5a3566c862a040750fa128a/browser/app/profile/firefox.js#l78
+// Обнулять app.update.url в user.js при помощи user_pref() бесполезно - берется дефолтное значение
+// (его можно изменить через mozilla.cfg - см. раздел Enterprise deployment выше).
+// https://hg.mozilla.org/releases/mozilla-esr52/file/2ebcec6798551c83e5a3566c862a040750fa128a/toolkit/mozapps/update/nsUpdateService.js#l3242
+user_pref("app.update.auto", false);
+// "Whether or not app updates are enabled"
+user_pref("app.update.enabled", false);
+// "Whether or not to attempt using the service for updates."
+user_pref("app.update.service.enabled", false);
+// "At startup, should we check to see if the installation
+//  date is older than some threshold"
+// https://bugzilla.mozilla.org/show_bug.cgi?id=885641#c61
+user_pref("app.update.checkInstallTime", false);
+// "If set to true, the Update Service will present no UI for any event."
+user_pref("app.update.silent", false);
+// "If set to true, the Update Service will apply updates in the background
+//  when it finishes downloading them."
+user_pref("app.update.staging.enabled", false);
+// "If set to true, the hamburger button will show badges for update events."
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1080406
+user_pref("app.update.badge", false);

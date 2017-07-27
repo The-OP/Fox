@@ -752,16 +752,11 @@ user_pref("network.http.enablePerElementReferrer", false);
 // https://hg.mozilla.org/releases/mozilla-release/rev/73d0bfecc06b
 user_pref("network.http.referer.userControlPolicy", 3);
 
-// Отключает автоматическое обновление браузера.
+// Отключает автоматическое обновление браузера. Проверки на наличие новых версий при этом все еще
+// будут происходить, но обновление начнется только после подтверждения пользователем.
 // https://developer.mozilla.org/en-US/Firefox/Enterprise_deployment
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_auto-update-checking
+// https://hg.mozilla.org/releases/mozilla-esr52/file/2ebcec6798551c83e5a3566c862a040750fa128a/browser/app/profile/firefox.js#l116
 user_pref("app.update.auto", false);
-user_pref("app.update.enabled", false);
-user_pref("app.update.service.enabled", false);
-// https://bugzilla.mozilla.org/show_bug.cgi?id=885641#c61
-user_pref("app.update.checkInstallTime", false);
-user_pref("app.update.url", "");
+// "If set to true, the Update Service will present no UI for any event."
 user_pref("app.update.silent", false);
-user_pref("app.update.staging.enabled", false);
-// https://bugzilla.mozilla.org/show_bug.cgi?id=1080406
-user_pref("app.update.badge", false);
