@@ -54,6 +54,10 @@
 <sup><a href="https://addons.mozilla.org/en-us/firefox/files/browse/451140/file/install.rdf">E10S</a></sup>
 Содержит список сайтов, поддерживающих как HTTP, так HTTPS, и автоматически меняет все HTTP-ссылки, ведущие к этим сайтам, на HTTPS. Аддон вернули на AMO, но на всякий случай - [ссылка](https://www.eff.org/https-everywhere/) на официальный сайт. Правила обновляются редко, актуальную версию правил можно получить [на GitHub](https://github.com/EFForg/https-everywhere), там же можно отправить новое правило.
 
+* [MixedContentHunter](https://addons.mozilla.org/en-US/firefox/addon/mixedcontenthunter/)
+<sup>WE</sup>
+Аддон меняет HTTP на HTTPS в запросах ресурсов документом, загруженным через HTTPS. Есть белый список на случай ломки сайта от такого поведения.
+
 * [SSleuth](https://addons.mozilla.org/en-US/firefox/addon/ssleuth/)
 <sup><a href="https://addons.mozilla.org/firefox/files/browse/477284/file/install.rdf">E10S</a></sup>
 ([GitHub](https://github.com/sibiantony/ssleuth)) Показывает информацию об используемых криптопримитивах и фичах TLS/SSL в шифрованных соединениях.
