@@ -94,6 +94,11 @@ user_pref("browser.formfill.saveHttpsForms", false);
 user_pref("browser.formautofill.enabled", false);
 // https://hg.mozilla.org/releases/mozilla-release/file/f3b670b8cc32a5b2356cedd923f729e0f495d050/browser/extensions/formautofill/bootstrap.js#l43
 user_pref("browser.formautofill.experimental", false);
+// Переименовано в Firefox 55.
+// https://hg.mozilla.org/releases/mozilla-release/rev/01a8daf0776f
+user_pref("extensions.formautofill.addresses.enabled", false);
+// https://hg.mozilla.org/releases/mozilla-release/rev/bcb5e1ff13f8
+user_pref("extensions.formautofill.experimental", false);
 
 // Отключает показ текста пароля по клику на соответствующее поле ввода в попапе, предлагающем
 // сохранить введенный пароль.
@@ -155,6 +160,13 @@ user_pref("browser.uitour.enabled", false);
 user_pref("browser.uitour.url", "");
 user_pref("browser.uitour.themeOrigin", "");
 
+// Отключает Onboarding - системный аддон с очередным UI-туром для начинающих, вызывающимся на
+// about:home и about:newtab.
+// https://wiki.mozilla.org/Firefox/Onboarding
+// https://hg.mozilla.org/releases/mozilla-release/file/4502ca8f2f51835179d2462e290a798ae2f39656/browser/extensions/onboarding/README.md
+// https://hg.mozilla.org/releases/mozilla-release/file/4502ca8f2f51835179d2462e290a798ae2f39656/browser/extensions/onboarding/content/onboarding.js#l120
+user_pref("browser.onboarding.enabled", false);
+
 // Отключает геолокацию через сервисы Гугла с присвоением клиентскому компьютеру уникального
 // идентификатора и передачей в Гугл информации о близлежащих точках доступа Wi-Fi.
 // https://www.mozilla.org/en-US/firefox/geolocation/
@@ -168,6 +180,10 @@ user_pref("geo.wifi.scan", false);
 user_pref("geo.cell.scan", false);
 // 20 лет
 user_pref("geo.wifi.timeToWaitBeforeSending", 630720000);
+
+// Отключает геолокацию с использованием GPS-устройств через gpsd.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1250922
+user_pref("geo.provider.use_gpsd", false);
 
 // Отключает геолокацию для применения региональных настроек поиска. Геолокация запрашивается один раз,
 // после чего код страны сохранится в browser.search.countryCode в виде строки "US", "RU", etc. Она не будет
@@ -245,6 +261,7 @@ user_pref("dom.gamepad.extensions.enabled", false);
 // Отключает поддержку устройств виртуальной реальности.
 // https://developer.mozilla.org/en-US/Firefox/Releases/36#Interfaces.2FAPIs.2FDOM
 user_pref("dom.vr.enabled", false);
+user_pref("dom.vr.autoactivate.enabled", false);
 user_pref("dom.vr.cardboard.enabled", false);
 user_pref("dom.vr.oculus.enabled", false);
 user_pref("dom.vr.oculus050.enabled", false);
@@ -462,6 +479,14 @@ user_pref("loop.copy.ticket", 255);
 // https://hg.mozilla.org/releases/mozilla-release/file/8dc18bf5abac/browser/extensions/flyweb/bootstrap.js#l36
 user_pref("dom.flyweb.enabled", false);
 
+// Отключает кнопку "Report Site Issue", появляющуюся при ошибках декодирования медии. Нажатие на
+// эту кнопку отправляет информацию о глючном файле на webcompat.com.
+// Пока только в Nightly: https://hg.mozilla.org/mozilla-central/rev/374eac537a5e
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1343442
+// https://hg.mozilla.org/releases/mozilla-release/file/4502ca8f2f51835179d2462e290a798ae2f39656/browser/base/content/browser-media.js#l236
+// https://hg.mozilla.org/releases/mozilla-release/file/4502ca8f2f51835179d2462e290a798ae2f39656/browser/base/content/browser-media.js#l339
+user_pref("media.decoder-doctor.new-issue-endpoint", "");
+
 // Отключает поддержку Encrypted Media Extensions (DRM для HTML5-видео). Рекомендуется
 // устанавливать EME-free билды Firefox, не содержащие этих модулей. Скачать их можно здесь:
 // https://ftp.mozilla.org/pub/firefox/releases/
@@ -493,6 +518,9 @@ user_pref("media.gmp-eme-adobe.autoupdate", false);
 user_pref("media.gmp-widevinecdm.visible", false);
 user_pref("media.gmp-widevinecdm.enabled", false);
 user_pref("media.gmp-widevinecdm.autoupdate", false);
+// Chromium CDM
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1315850
+user_pref("media.eme.chromium-api.enabled", false);
 
 // Отключает загрузку бинарника H.264-кодека от Cisco (будет использоваться GStreamer).
 // https://hg.mozilla.org/releases/mozilla-esr38/file/0f8338121472/toolkit/modules/GMPUtils.jsm#l70
@@ -706,6 +734,14 @@ user_pref("webgl.enable-debug-renderer-info", false);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1288359
 // https://hg.mozilla.org/releases/mozilla-release/rev/2e3e036ccb2a
 user_pref("dom.webaudio.enabled", false);
+
+// Запрещает запрос HTTP-аутентификации при загрузке ресурсов. Защищает от определенных фишинг-атак.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1357835
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1202421
+// https://bugzilla.mozilla.org/show_bug.cgi?id=647010
+// https://hg.mozilla.org/releases/mozilla-release/file/4502ca8f2f51835179d2462e290a798ae2f39656/modules/libpref/init/all.js#l2074
+user_pref("network.auth.subresource-http-auth-allow", 0);
+user_pref("network.auth.subresource-img-cross-origin-http-auth-allow", false);
 
 // Настройки для HTTP-заголовка Referer (а также DOM-свойства document.referrer), содержащего URL
 // страницы, с которой пользователь перешел по ссылке или, находясь на которой, запросил загрузку

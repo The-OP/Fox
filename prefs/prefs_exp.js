@@ -27,6 +27,10 @@ user_pref("dom.storage.default_quota", 10240);
 
 // Для сверхбольших сессий.
 user_pref("browser.sessionstore.interval", 300000);
+// Интервал отсутствия активности пользователя, через который браузер начнет сохранять сессию не
+// чаще чем раз в час (см. browser.sessionstore.interval.idle).
+// https://hg.mozilla.org/releases/mozilla-release/rev/4d8192b5ac7e
+user_pref("browser.sessionstore.idleDelay", 720000);
 
 // Объем RAM-кэша в килобайтах. Полезно увеличить, если много памяти.
 // http://kb.mozillazine.org/Browser.cache.memory.capacity

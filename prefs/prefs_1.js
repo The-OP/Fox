@@ -1,6 +1,10 @@
 // Минимальный интервал в миллисекундах для записи изменений в сессии на диск. Дефолтные 15 секунд -
 // маловато, особенно для мегабайтных сессий.
 user_pref("browser.sessionstore.interval", 60000);
+// Интервал отсутствия активности пользователя, через который браузер начнет сохранять сессию не
+// чаще чем раз в час (см. browser.sessionstore.interval.idle).
+// https://hg.mozilla.org/releases/mozilla-release/rev/4d8192b5ac7e
+user_pref("browser.sessionstore.idleDelay", 720000);
 
 // Использовать HTTP/1.1 для передачи нескольких файлов, не реконнектясь после каждого.
 user_pref("network.http.pipelining", true);
@@ -175,15 +179,20 @@ user_pref("urlclassifier.downloadAllowTable", "");
 user_pref("urlclassifier.trackingTable", "");
 user_pref("urlclassifier.trackingWhitelistTable", "");
 user_pref("urlclassifier.disallow_completions", "");
+
+// Отключает белый список доменов для Flash. Флэш-контент будет разрешен везде.
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1307604
 // https://hg.mozilla.org/releases/mozilla-release/file/175e28ba58fcd249fc2db68dcaa800da2ebc506d/toolkit/components/url-classifier/flash-block-lists.rst
 // https://hg.mozilla.org/releases/mozilla-release/rev/81b9af9143f3
+// https://hg.mozilla.org/releases/mozilla-release/rev/81b9af9143f3#l2.102
+user_pref("plugins.flashBlock.enabled", false);
 user_pref("urlclassifier.flashAllowTable", "");
 user_pref("urlclassifier.flashAllowExceptTable", "");
 user_pref("urlclassifier.flashTable", "");
 user_pref("urlclassifier.flashExceptTable", "");
 user_pref("urlclassifier.flashSubDocTable", "");
 user_pref("urlclassifier.flashSubDocExceptTable", "");
+user_pref("urlclassifier.flashInfobarTable", "");
 
 // Отключает список сайтов, запрещенных в режиме ограниченного профиля / родительского контроля.
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1216723
@@ -310,7 +319,7 @@ user_pref("datareporting.healthreport.documentServerURI", "");
 // https://wiki.mozilla.org/Privacy/Reviews/Telemetry
 // https://wiki.mozilla.org/Security/Reviews/Firefox6/ReviewNotes/telemetry
 // https://wiki.mozilla.org/Telemetry/Testing#Browser_Prefs
-// https://gecko.readthedocs.org/en/latest/toolkit/components/telemetry/telemetry/preferences.html
+// https://dxr.mozilla.org/mozilla-release/source/toolkit/components/telemetry/docs/internals/preferences.rst
 user_pref("toolkit.telemetry.enabled", false);
 user_pref("toolkit.telemetry.server", "");
 user_pref("toolkit.telemetry.archive.enabled", false);
@@ -322,6 +331,8 @@ user_pref("toolkit.telemetry.unifiedIsOptIn", true);
 // https://hg.mozilla.org/releases/mozilla-beta/file/0f8e1375f717/browser/app/profile/firefox.js#l1904
 // https://hg.mozilla.org/releases/mozilla-beta/file/0f8e1375f717/toolkit/components/telemetry/TelemetryController.jsm#l628
 user_pref("toolkit.telemetry.optoutSample", false);
+user_pref("toolkit.telemetry.newProfilePing.enabled", false);
+user_pref("toolkit.telemetry.shutdownPingSender.enabled", false);
 // Отключает отправку информации о падениях браузера в Mozilla (about:crashes).
 user_pref("breakpad.reportURL", "");
 user_pref("dom.ipc.plugins.flash.subprocess.crashreporter.enabled", false);
@@ -478,6 +489,8 @@ user_pref("offline-apps.allow_by_default", false);
 user_pref("browser.migrate.automigrate.enabled", false);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1297479
 user_pref("browser.migrate.automigrate.ui.enabled", false);
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1361286
+user_pref("browser.migrate.automigrate.inpage.ui.enabled", false);
 
 // Отключает автоматическое скачивание и установку ADB Helper и аддона для удаленной отладки мобильных
 // браузеров при первом запуске WebIDE. Ручная установка через меню WebIDE все еще будет работать.
