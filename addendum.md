@@ -38,7 +38,7 @@
 
 ##### Список ломающихся от применения настроек сайтов
 
-* Спуфинг заголовка Referer -- Avito.ru (показ телефонов), сервисы Яндекса (при использовании вместе с Decentraleyes), qiwi.com (авторизация).
+* Спуфинг заголовка Referer -- Avito.ru (показ телефонов), сервисы Яндекса (при использовании вместе с Decentraleyes), qiwi.com (авторизация), simplenote.com (авторизация).
 * `dom.event.clipboardevents.enabled` -- GitHub (копирование текста из редактора).
 * `security.ssl.require_safe_negotiation` -- Instagram, Mega.nz, многие другие.
 * `dom.enable_performance` -- pornhub.com (авторизация).
