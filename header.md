@@ -74,6 +74,9 @@
 1. **Q:** Как вернуть информацию о загрузках, скрытую в Firefox 54? <br>
 **A:** При помощи [UserCSS](https://www.ghacks.net/2017/06/17/restore-download-information-in-firefox/).
 
+1. **Q:** Как применять свои CSS к интерфейсу браузера в Firefox 57+? <br>
+**A:** Используя [userChrome.css](http://kb.mozillazine.org/UserChrome.css). Его можно редактировать через [Browser Toolbox](https://developer.mozilla.org/en-US/docs/Tools/Browser_Toolbox), чтобы изменения вступали в силу без перезапуска браузера.
+
 #### Профили
 Firefox сохраняет вкладки, закладки, историю, аддоны, настройки и пароли в каталоге, называемом профилем. Можно иметь несколько профилей и даже использовать их одновременно, запуская две и более копии Firefox. Для входа в менеджер профилей следует указать ключи [`-no-remote -P`](https://developer.mozilla.org/en-US/docs/Mozilla/Command_Line_Options). Подробнее [здесь](https://support.mozilla.org/ru/kb/upravlenie-profilyami).
 
