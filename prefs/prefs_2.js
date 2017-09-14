@@ -527,6 +527,9 @@ user_pref("media.eme.chromium-api.enabled", false);
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_openh264-codec
 user_pref("media.gmp-gmpopenh264.autoupdate", false);
 user_pref("media.gmp-gmpopenh264.enabled", false);
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1267495
+// https://hg.mozilla.org/releases/mozilla-esr52/rev/7c1929f35c5d
+user_pref("media.gmp-manager.updateEnabled", false);
 user_pref("media.gmp-provider.enabled", false);
 user_pref("media.gmp-manager.url", "");
 // https://hg.mozilla.org/releases/mozilla-esr38/file/0f8338121472/modules/libpref/init/all.js#l4496
