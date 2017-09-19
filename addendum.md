@@ -147,6 +147,7 @@
 * [No Resource URI Leak](https://addons.mozilla.org/en-US/firefox/addon/no-resource-uri-leak/)
 <sup><a href="https://addons.mozilla.org/firefox/files/browse/454913/file/install.rdf">E10S</a></sup>
 Предотвращает фингерпринтинг по внутренним URL браузера со схемой resource://, запрещая веб-страницам доступ к ним. Может сломать некоторые другие расширения. Подробнее о проблеме: [Ghacks](https://www.ghacks.net/2016/06/12/firefox-resource-leak/), [Bug 863246](https://bugzilla.mozilla.org/show_bug.cgi?id=863246), [Bug 903959](https://bugzilla.mozilla.org/show_bug.cgi?id=903959). Протестировать можно на Browserleaks: https://browserleaks.com/firefox
+<br> **UPD:** В Firefox 57 [баг 863246](https://bugzilla.mozilla.org/show_bug.cgi?id=863246) исправлен, и необходимости в этом расширении больше нет.
 
 * [Privacy Badger](https://addons.mozilla.org/en-US/firefox/addon/privacy-badger17/)
 <sup>WE</sup>
