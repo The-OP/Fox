@@ -77,6 +77,9 @@
 1. **Q:** Как применять свои CSS к интерфейсу браузера в Firefox 57+? <br>
 **A:** Используя [userChrome.css](http://kb.mozillazine.org/UserChrome.css). Его можно редактировать через [Browser Toolbox](https://developer.mozilla.org/en-US/docs/Tools/Browser_Toolbox), чтобы изменения вступали в силу без перезапуска браузера.
 
+1. **Q:** Как иметь отдельные наборы cookies для разных вкладок? <br>
+**A:** При помощи [контейнеров](https://wiki.mozilla.org/Security/Contextual_Identity_Project/Containers), включив их настройкой `privacy.userContext.enabled`.
+
 #### Профили
 Firefox сохраняет вкладки, закладки, историю, аддоны, настройки и пароли в каталоге, называемом профилем. Можно иметь несколько профилей и даже использовать их одновременно, запуская две и более копии Firefox. Для входа в менеджер профилей следует указать ключи [`-no-remote -P`](https://developer.mozilla.org/en-US/docs/Mozilla/Command_Line_Options). Подробнее [здесь](https://support.mozilla.org/ru/kb/upravlenie-profilyami).
 
