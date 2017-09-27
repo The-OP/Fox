@@ -10,6 +10,10 @@ user_pref("browser.cache.memory.capacity", 0);
 user_pref("media.cache_size", 0);
 user_pref("image.cache.size", 0);
 
+// Позволяет устанавливать неподписанные аддоны.
+// https://wiki.mozilla.org/Addons/Extension_Signing
+user_pref("xpinstall.signatures.required", false);
+
 // Запрещает браузеру держать кэш сертификатов промежуточных сертификационных центров
 // (intermediate CAs) на диске (кэш в памяти все еще останется). Этот кэш может быть использован
 // для фингерпринтинга.

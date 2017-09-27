@@ -45,10 +45,6 @@ user_pref("extensions.pocket.oAuthConsumerKey", "");
 // https://hg.mozilla.org/releases/mozilla-esr45/file/4bd5a188c4236c4d14f9e859aa0ba243480af9bc/netwerk/cookie/nsICookieService.idl#l77
 user_pref("network.cookie.thirdparty.sessionOnly", true);
 
-// Позволяет устанавливать неподписанные аддоны.
-// https://wiki.mozilla.org/Addons/Extension_Signing
-user_pref("xpinstall.signatures.required", false);
-
 // Отключает автоматическое снятие скриншотов страниц с сохранением их на диск. Эти скриншоты
 // используются в качестве превью в New Tab Page Tiles и в Ctrl+Tab (browser.ctrlTab.previews).
 // При включенных New Tab Page Tiles и дефолтном значении этой опции, происходит еще и автоматическая
