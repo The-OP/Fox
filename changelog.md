@@ -1,3 +1,9 @@
+#### Firefox 56
+* https://www.mozilla.org/en-US/firefox/56.0/releasenotes/
+* https://www.ghacks.net/2017/09/28/firefox-56-0-find-out-what-is-new/
+* https://www.opennet.ru/opennews/art.shtml?num=47293
+* https://www.linux.org.ru/news/mozilla/13714159
+
 #### Firefox 55
 * https://www.mozilla.org/en-US/firefox/55.0/releasenotes/
 * https://www.ghacks.net/2017/08/07/firefox-55-0-find-out-what-is-new/
