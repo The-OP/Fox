@@ -96,6 +96,20 @@ user_pref("media.webvtt.enabled", false);
 user_pref("webgl.disable-extensions", true);
 user_pref("webgl.min_capability_mode", true);
 
+// Отключает префетч ресурсов, указанных в самом документе через <link rel="preload">.
+// https://w3c.github.io/preload/
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1222633
+// https://hg.mozilla.org/releases/mozilla-release/rev/c0e394b0cba4
+// https://hg.mozilla.org/releases/mozilla-release/rev/09c324e7db4c
+user_pref("network.preload", false);
+
+// Отключает необязательное расширение протокола HTTP/2 ORIGIN, которое несколько снижает
+// безопасность (см. Security Considerations) для уменьшения латентности.
+// https://github.com/httpwg/http-extensions/blob/master/draft-ietf-httpbis-origin-frame.md
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1337791
+// https://hg.mozilla.org/releases/mozilla-release/rev/fbb9934d1a90
+user_pref("network.http.originextension", false);
+
 // SPDY может хранить идентификатор и держит экстремально долгое открытое соединение.
 // https://www.torproject.org/projects/torbrowser/design/#identifier-linkability
 user_pref("network.http.spdy.enabled", false);

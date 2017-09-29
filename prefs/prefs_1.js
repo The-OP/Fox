@@ -40,6 +40,12 @@ user_pref("network.dns.disablePrefetchFromHTTPS", true);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=814169
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_speculative-pre-connections
 user_pref("network.http.speculative-parallel-limit", 0);
+// Отключает предконнект к автодополненным доменам при вводе в адресную строку.
+// https://www.ghacks.net/2017/07/24/disable-preloading-firefox-autocomplete-urls/
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1348275
+// https://hg.mozilla.org/releases/mozilla-release/rev/071beab1c31e
+// https://hg.mozilla.org/releases/mozilla-release/rev/282362cd36e3
+user_pref("browser.urlbar.speculativeConnect.enabled", false);
 
 // Отключает загрузку URL из буфера обмена по нажатию на колесо в Linux, которая мешает при
 // промахах мимо ссылок и случайных кликах по колесу.
@@ -336,6 +342,12 @@ user_pref("toolkit.telemetry.unifiedIsOptIn", true);
 user_pref("toolkit.telemetry.optoutSample", false);
 user_pref("toolkit.telemetry.newProfilePing.enabled", false);
 user_pref("toolkit.telemetry.shutdownPingSender.enabled", false);
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1381490
+// https://hg.mozilla.org/releases/mozilla-release/rev/34617f86887e
+user_pref("toolkit.telemetry.shutdownPingSender.enabledFirstSession", false);
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1120372
+// https://hg.mozilla.org/releases/mozilla-release/rev/ac1b19c47aac
+user_pref("toolkit.telemetry.updatePing.enabled", false);
 // Отключает отправку информации о падениях браузера в Mozilla (about:crashes).
 user_pref("breakpad.reportURL", "");
 user_pref("dom.ipc.plugins.flash.subprocess.crashreporter.enabled", false);
@@ -356,6 +368,9 @@ user_pref("browser.crashReports.unsubmittedCheck.enabled", false);
 user_pref("browser.crashReports.unsubmittedCheck.autoSubmit", false);
 // https://hg.mozilla.org/releases/mozilla-release/file/a67a1682be8f0327435aaa2f417154330eff0017/browser/modules/ContentCrashHandlers.jsm#l511
 user_pref("browser.crashReports.unsubmittedCheck.chancesUntilSuppress", 0);
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1286802#c3
+// https://hg.mozilla.org/releases/mozilla-release/rev/4f2fce5430f3
+user_pref("toolkit.crashreporter.include_context_heap", false);
 
 // Отключает предложения оценить работу Firefox и отправить пожертвования Mozilla.
 // https://wiki.mozilla.org/Advocacy/heartbeat
@@ -526,6 +541,13 @@ user_pref("devtools.inspector.mdnDocsTooltip.enabled", false);
 user_pref("devtools.devedition.promo.enabled", false);
 user_pref("devtools.devedition.promo.shown", true);
 user_pref("devtools.devedition.promo.url", "");
+
+// Отключает предложение попробовать новую панель Grid Inspector в Developer Tools.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1348004
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1355747
+// https://hg.mozilla.org/releases/mozilla-release/rev/bafd78048bd1
+user_pref("devtools.promote.layoutview", 0);
+user_pref("devtools.promote.layoutview.showPromoteBar", false);
 
 // Отключает SSDP, нужный для обнаружения телевизоров и реализации функции Send Video To Device в
 // Firefox для Android. Десктопный Firefox тоже почему-то посылал соответствующие мультикаст-запросы.

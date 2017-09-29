@@ -95,6 +95,19 @@ user_pref("browser.formautofill.experimental", false);
 user_pref("extensions.formautofill.addresses.enabled", false);
 // https://hg.mozilla.org/releases/mozilla-release/rev/bcb5e1ff13f8
 user_pref("extensions.formautofill.experimental", false);
+// https://hg.mozilla.org/releases/mozilla-release/rev/698621d200f7
+// https://hg.mozilla.org/releases/mozilla-release/rev/03cb4db8182b
+// https://hg.mozilla.org/releases/mozilla-release/file/48668c5c603e7ef7a722d4376dea0100baec0a9b/browser/app/profile/firefox.js#l1695
+// https://hg.mozilla.org/releases/mozilla-release/file/48668c5c603e7ef7a722d4376dea0100baec0a9b/browser/extensions/formautofill/bootstrap.js#l53
+user_pref("extensions.formautofill.available", "off");
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1390757
+// https://hg.mozilla.org/releases/mozilla-beta/rev/8fa30f1a3f4d
+user_pref("extensions.formautofill.creditCards.enabled", false);
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1362290
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1340477
+// https://hg.mozilla.org/releases/mozilla-release/rev/01ee56745069
+// https://hg.mozilla.org/releases/mozilla-release/file/48668c5c603e7ef7a722d4376dea0100baec0a9b/browser/extensions/formautofill/bootstrap.js#l89
+user_pref("dom.forms.autocomplete.formautofill", false);
 
 // Отключает показ текста пароля по клику на соответствующее поле ввода в попапе, предлагающем
 // сохранить введенный пароль.
@@ -355,6 +368,11 @@ user_pref("dom.system_update.debug", false);
 // https://arxiv.org/pdf/1502.07373v2.pdf
 user_pref("dom.enable_user_timing", false);
 user_pref("dom.performance.enable_user_timing_logging", false);
+
+// Отключает нестандартное свойство window.performance.timing.timeToNonBlankPaint.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1377251
+// https://hg.mozilla.org/releases/mozilla-release/rev/852607a17f6c
+user_pref("dom.performance.time_to_non_blank_paint.enabled", false);
 
 // Отключает Web Speech API, использующееся для распознавания и синтеза речи.
 // https://wiki.mozilla.org/HTML5_Speech_API

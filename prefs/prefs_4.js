@@ -8,6 +8,13 @@ user_pref("browser.cache.memory.enable", false);
 // http://kb.mozillazine.org/Browser.cache.memory.capacity
 user_pref("browser.cache.memory.capacity", 0);
 user_pref("media.cache_size", 0);
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1371882
+// https://hg.mozilla.org/releases/mozilla-release/rev/0b219d49822a
+// https://hg.mozilla.org/releases/mozilla-release/file/48668c5c603e7ef7a722d4376dea0100baec0a9b/modules/libpref/init/all.js#l332
+user_pref("media.memory_cache_max_size", 0);
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1371882
+// https://hg.mozilla.org/releases/mozilla-release/rev/fe82587013c0
+user_pref("media.memory_caches_combined_limit_kb", 0);
 user_pref("image.cache.size", 0);
 
 // Позволяет устанавливать неподписанные аддоны.
@@ -197,6 +204,9 @@ user_pref("intl.accept_languages", "en-US, en");
 user_pref("general.useragent.locale", "en-US");
 // Использовать локаль из general.useragent.locale, а не установленную в ОС.
 user_pref("intl.locale.matchOS", false);
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1379420
+// https://hg.mozilla.org/releases/mozilla-release/rev/fe0297d33e87
+user_pref("intl.regional_prefs.use_os_locales", false);
 // Отключает возможность определения локали через Date.toLocaleString() - будет использоваться
 // всегда американская. Применяется только после перезапуска браузера. Проверить можно так:
 // LANG=ru_RU.UTF-8 firefox
