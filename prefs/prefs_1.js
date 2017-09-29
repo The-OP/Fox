@@ -278,9 +278,12 @@ user_pref("startup.homepage_override_url", "");
 // Отключает приветственную страницу при первом запуске браузера с новым профилем.
 user_pref("startup.homepage_welcome_url", "");
 user_pref("startup.homepage_welcome_url.additional", "");
-// Отключает замеры времени запуска браузера и уведомление о слишком долгом по его мнению старте.
+// Отключает замеры времени запуска браузера и предложение сбросить профиль для его ускорения.
 // https://hg.mozilla.org/releases/mozilla-esr38/file/f9441895096d/browser/components/nsBrowserGlue.js#l687
 user_pref("browser.slowStartup.notificationDisabled", true);
+// Отключает предложение сбросить профиль, если он не использовался 60 дней.
+// https://hg.mozilla.org/releases/mozilla-esr52/file/d83b50a7822962b639ab8840a2ceb8c1d4c8850a/browser/components/nsBrowserGlue.js#l979
+user_pref("browser.disableResetPrompt", true);
 // Отключает показ URL с описанием функций, связанных с Windows 10, у пользователей последней.
 // https://hg.mozilla.org/releases/mozilla-beta/file/883275447631/browser/components/nsBrowserContentHandler.js#l546
 user_pref("browser.usedOnWindows10", true);
