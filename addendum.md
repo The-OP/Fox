@@ -70,6 +70,10 @@
 <sup><s><a href="https://github.com/diegocr/CleanLinks/blob/master/install.rdf">E10S</a></s></sup>
 Чистит ссылки от редирект-префиксов Гугла и т.п. Имеет белый список как доменов, так и рэгэкспов, чтобы пропускать ссылки со всякими нужными префиксами вроде auth, ServiceLogin и т.п.
 
+* [Skip Redirect](https://addons.mozilla.org/en-US/firefox/addon/skip-redirect/)
+<sup>WE</sup>
+Альтернатива CleanLinks. Также имеет белый список для исключений, позволяющий пропускать ссылки с нужными префиксами.
+
 * [Google search link fix](https://addons.mozilla.org/en-US/firefox/addon/google-search-link-fix/)
 <sup>WE</sup>
 Более простая альтернатива CleanLinks для тех, кого он по каким-то причинам не устраивает. Работает только на Google, Yandex и Yahoo.
