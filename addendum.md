@@ -78,6 +78,10 @@
 <sup>WE</sup>
 Более простая альтернатива CleanLinks для тех, кого он по каким-то причинам не устраивает. Работает только на Google, Yandex и Yahoo.
 
+* [Neat URL](https://addons.mozilla.org/en-US/firefox/addon/neat-url/)
+<sup>WE</sup>
+Чистит ссылки, удаляя из них мусорные параметры вроде utm_source, использующиеся для трекинга. Список параметров настраивается - можно добавлять как глобальные правила, так и для определенных доменов.
+
 * [Cookie Monster](https://addons.mozilla.org/en-US/firefox/addon/cookie-monster/)
 <sup><s>E10S</s></sup>
 Режет cookies и DOM Storage для сайтов, не внесенных в белый список.
