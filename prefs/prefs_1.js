@@ -390,6 +390,10 @@ user_pref("browser.selfsupport.url", "");
 // https://hg.mozilla.org/releases/mozilla-release/file/b272b74f8f74a444adbcc6f57287c1cc3553d544/browser/extensions/shield-recipe-client/lib/RecipeRunner.jsm#l52
 user_pref("extensions.shield-recipe-client.enabled", false);
 user_pref("extensions.shield-recipe-client.api_url", "");
+// Preferences -> Privacy & Security -> Allow Firefox to install and run studies
+// https://hg.mozilla.org/releases/mozilla-release/rev/eee5b1dfb49f
+// https://hg.mozilla.org/releases/mozilla-release/file/49568655692e579b5a9575014ebbf15f15d98c60/browser/extensions/shield-recipe-client/lib/ShieldPreferences.jsm
+user_pref("app.shield.optoutstudies.enabled", false);
 
 // Отключает системный аддон Web Compat Reporter, добавляющий в гамбургер-меню кнопку для сообщений
 // о проблемах с отображением сайтов. При нажатии кнопка делает скриншот открытой в текущей вкладке
