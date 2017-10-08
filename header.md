@@ -130,6 +130,10 @@ Firefox сохраняет вкладки, закладки, историю, а�
 <sup><a href="https://addons.mozilla.org/en-US/firefox/files/browse/438957/file/install.rdf">E10S</a></sup>
 Жесты мышью, мышиными кнопками, колесом и т.п. На жесты можно вешать свои [XPCOM-скрипты](http://www.xuldev.org/firegestures/makescripts.php), как в Custom Buttons.
 
+* [Foxy Gestures](https://addons.mozilla.org/en-US/firefox/addon/foxy-gestures/)
+<sup>WE</sup>
+Наследник FireGestures. Поддерживает установку на жесты юзерскриптов, которым дается доступ к Web Extensions API.
+
 * [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/)
 <sup><a href="https://github.com/greasemonkey/greasemonkey/blob/master/install.rdf">E10S</a></sup>
 Всем известный движок для запуска UserJS. Ссылки на репозитории скриптов [здесь](https://wiki.greasespot.net/User_Script_Hosting).
