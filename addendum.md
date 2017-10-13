@@ -48,10 +48,14 @@
 * `general.useragent.override` -- Неправдоподобно выглядящий useragent ломает maps.yandex.ru и много что еще.
 
 ## Продвинутые аддоны
-<sub>`E10S` - совместимые с Electrolysis расширения, <s>`E10S`</s> - не совместимые, либо работающие через прослойку для совместимости (interposition).</sub>
+<sub>`E10S` - совместимые с Electrolysis расширения. <br>
+<s>`E10S`</s> - не совместимые, либо работающие через прослойку для совместимости (interposition). <br>
+`WE` - Web Extensions, совместимы с E10S. <br>
+`WE, E10S` - есть как Web Extension, так и старая версия расширения, которую можно использовать на Firefox 52 ESR.
+</sub>
 
 * [HTTPS Everywhere](https://addons.mozilla.org/en-us/firefox/addon/https-everywhere/)
-<sup>E10S</sup>
+<sup>WE, E10S</sup>
 Содержит список сайтов, поддерживающих как HTTP, так HTTPS, и автоматически меняет все HTTP-ссылки, ведущие к этим сайтам, на HTTPS. Аддон вернули на AMO, но на всякий случай - [ссылка](https://www.eff.org/https-everywhere/) на официальный сайт. Правила обновляются редко, актуальную версию правил можно получить [на GitHub](https://github.com/EFForg/https-everywhere), там же можно отправить новое правило.
 
 * [MixedContentHunter](https://addons.mozilla.org/en-US/firefox/addon/mixedcontenthunter/)
@@ -75,7 +79,7 @@
 Альтернатива CleanLinks. Также имеет белый список для исключений, позволяющий пропускать ссылки с нужными префиксами.
 
 * [Google search link fix](https://addons.mozilla.org/en-US/firefox/addon/google-search-link-fix/)
-<sup>WE</sup>
+<sup>WE, E10S</sup>
 Более простая альтернатива CleanLinks для тех, кого он по каким-то причинам не устраивает. Работает только на Google, Yandex и Yahoo.
 
 * [Neat URL](https://addons.mozilla.org/en-US/firefox/addon/neat-url/)
@@ -113,7 +117,7 @@
 Резалка кросс-доменных запросов. Можно (и рекомендуется самим автором) использовать в связке с NoScript.
 
 * [uMatrix](https://addons.mozilla.org/en-US/firefox/addon/umatrix/)
-<sup>E10S</sup>
+<sup>WE, E10S</sup>
 Самая многофункциональная из резалок кросс-доменных запросов. Может блокировать запросы в зависимости от типа контента. Также умеет блокировать XHR (отдельно от обычных запросов), скрипты, куки, рефереры, плагины, медиа (HTML5 аудио и видео) и вебсокеты. Документацию еще не перенесли целиком из старого проекта, на котором основан uMatrix, так что если что непонятно, смотреть не только [здесь](https://github.com/gorhill/uMatrix/wiki), но и [здесь](https://github.com/gorhill/httpswitchboard/wiki).
 
 	* <sub>Алгоритм блокирования кук несколько отличается от того, что у Cookie Monster и Cookie Controller - первые два не дают сайтам устанавливать куки, а uMatrix дает ставить, но не дает читать, убирая из всех HTTP-запросов заголовок Cookie (но при этом через document.cookie установленные куки все еще видны), а через некоторое время - подчищает. Также в отличие от CM/CC, uMatrix не умеет запрещать писать в DOM Storage, а может только периодически его очищать.</sub>
@@ -127,7 +131,7 @@
 Еще один блокировщик редиректов. Развивается в отличие от давно не обновлявшегося NoRedirect.
 
 * [Redirector](https://addons.mozilla.org/en-US/firefox/addon/redirector/)
-<sup>WE</sup>
+<sup>WE, E10S</sup>
 Позволяет задавать пользовательские редиректы по паттернам или регулярным выражениям.
 
 * [HttpFox](https://addons.mozilla.org/en-US/firefox/addon/httpfox/)
@@ -143,11 +147,11 @@
 Меняет юзер-агенты по таймеру и с дополнительными фичами, препятствующими фингерпринтингу. Версия с GitHub имеет расширенную функциональность по сравнению с версией с AMO (см. описание на AMO).
 
 * [CanvasBlocker](https://addons.mozilla.org/en-US/firefox/addon/canvasblocker/)
-<sup>E10S</sup>
+<sup>WE, E10S</sup>
 Предотвращает фингерпринтинг через [анализ особенностей рендеринга элемента &lt;canvas&gt;](https://en.wikipedia.org/wiki/Canvas_fingerprinting), зависящих от ОС, железа, драйверов, шрифтов и т.п. Также см. [Bug 967895](https://bugzilla.mozilla.org/show_bug.cgi?id=967895).
 
 * [Decentraleyes](https://addons.mozilla.org/en-US/firefox/addon/decentraleyes/)
-<sup>E10S</sup>
+<sup>WE, E10S</sup>
 Аддон содержит популярные библиотеки (AngularJS, Backbone.js, Dojo, Ember.js, Ext Core, jQuery, jQuery UI, Modernizr, MooTools, Prototype, Scriptaculous, SWFObject, Underscore.js) и предотвращает обращения сайтов за ними ко внешним 3rd-party CDN, предоставляя вместо этого локальные копии.
 
 	* Расширение экспериментальное и может ломать некоторые сайты. Известны проблемы с Yandex.Disk.
@@ -158,7 +162,7 @@
 <br> **UPD:** В Firefox 57 [баг 863246](https://bugzilla.mozilla.org/show_bug.cgi?id=863246) исправлен, и необходимости в этом расширении больше нет.
 
 * [Privacy Badger](https://addons.mozilla.org/en-US/firefox/addon/privacy-badger17/)
-<sup>WE</sup>
+<sup>WE, E10S</sup>
 Аналог Ghostery от EFF. Актуально для тех, кто хочет поставить и забыть, чтоб оно там автоматом боролось с трекингом.
 
 ## Разное
