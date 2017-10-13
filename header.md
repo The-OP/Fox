@@ -94,7 +94,7 @@ Firefox сохраняет вкладки, закладки, историю, а�
 `WE` - Web Extensions, совместимы с E10S.</sub>
 
 * [uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/)
-<sup><a href="https://github.com/gorhill/uBlock/blob/master/platform/firefox/install.rdf">E10S</a></sup>
+<sup>E10S</sup>
 Быстрая и легковесная баннерорезка. Поддерживает подписки ABP, но потребляет значительно меньше процессорного времени и памяти. Подписки включаются в настройках (обычно достаточно EasyList и RU AdList). Element picker, облегчающий создание своих фильтров, уже встроен.
 
 	* <sub>Согласно [исследованию Стэнфорда](https://cyberlaw.stanford.edu/blog/2011/09/tracking-trackers-self-help-tools), баннерорезка с соответствующими подписками (EasyList + EasyPrivacy + Fanboy's Annoyances) по эффективности превосходит Ghostery.</sub>
@@ -102,23 +102,23 @@ Firefox сохраняет вкладки, закладки, историю, а�
 	* <sub>[Почему не Adblock Plus?](greylist.md#user-content-adblock-plus)</sub>
 
 * [AdNauseam](https://addons.mozilla.org/en-US/firefox/addon/adnauseam/)
-<sup><a href="https://addons.mozilla.org/en-US/firefox/files/browse/568407/file/install.rdf">E10S</a></sup>
+<sup>E10S</sup>
 Форк uBlock, портящий рекламным компаниям статистику путем автоматического "кликания" по всем скрываемым баннерам. По заявлениям разработчиков, это создает помехи желающим отслеживать пользователей.
 
 * [Add Bookmark Here 2](https://addons.mozilla.org/en-US/firefox/addon/add-bookmark-here-2/)
-<sup><a href="https://addons.mozilla.org/en-US/firefox/files/browse/461049/file/install.rdf">E10S</a></sup>
+<sup>E10S</sup>
 Решает [проблему](https://bugzilla.mozilla.org/show_bug.cgi?id=423617) с запоминанием папки для добавления закладок по умолчанию и обладает несколькими другими улучшающими работу с закладками функциями.
 
 * [Add to Search Bar](https://addons.mozilla.org/en-US/firefox/addon/add-to-search-bar/)
-<sup><s><a href="https://addons.mozilla.org/en-US/firefox/files/browse/387922/file/install.rdf">E10S</a></s></sup>
+<sup><s>E10S</s></sup>
 Позволяет добавить в поисковую панель Firefox поисковую строку любого сайта.
 
 * [Classic Theme Restorer](https://addons.mozilla.org/en-US/firefox/addon/classicthemerestorer/)
-<sup><a href="https://github.com/Aris-t2/ClassicThemeRestorer/blob/master/xpi/install.rdf">E10S</a></sup>
+<sup>E10S</sup>
 Для нелюбителей Australis, и для тех, кто хочет вернуть старый внешний вид Лиса.
 
 * [Custom Buttons](https://addons.mozilla.org/en-US/firefox/addon/custom-buttons/)
-<sup><s><a href="https://addons.mozilla.org/en-US/firefox/files/browse/414139/file/install.rdf">E10S</a></s></sup>
+<sup><s>E10S</s></sup>
 Разрешает создавать свои кнопки, исполняющие пользовательские скрипты с правами браузера. Удобно, чтобы не писать целый новый аддон для какой-либо мелкой полезности. Есть много готовых кнопок на [официальном форуме](http://custombuttons.sourceforge.net/forum/) и на [форуме Mozilla Russia](https://forum.mozilla-russia.org/viewforum.php?id=34). **UPDATE:** сломан в Firefox 51+, патчи и исправленный аддон доступны [в неофициальном репозитории](https://github.com/SicVolo/firefox-custom-buttons).
 	* **ВАЖНО:** Код кнопок выполняется в контексте браузера, и могут они все то же самое что и расширения (включая полный доступ к ФС). Поэтому лучше ставить только те кнопки, чей код проверен лично вами.
 
@@ -127,7 +127,7 @@ Firefox сохраняет вкладки, закладки, историю, а�
 Помогает против сайтов, блокирующих контекстное меню по правой кнопке мыши.
 
 * [FireGestures](https://addons.mozilla.org/en-US/firefox/addon/firegestures/)
-<sup><a href="https://addons.mozilla.org/en-US/firefox/files/browse/438957/file/install.rdf">E10S</a></sup>
+<sup>E10S</sup>
 Жесты мышью, мышиными кнопками, колесом и т.п. На жесты можно вешать свои [XPCOM-скрипты](http://www.xuldev.org/firegestures/makescripts.php), как в Custom Buttons.
 
 * [Foxy Gestures](https://addons.mozilla.org/en-US/firefox/addon/foxy-gestures/)
@@ -135,7 +135,7 @@ Firefox сохраняет вкладки, закладки, историю, а�
 Наследник FireGestures. Поддерживает установку на жесты юзерскриптов, которым дается доступ к Web Extensions API.
 
 * [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/)
-<sup><a href="https://github.com/greasemonkey/greasemonkey/blob/master/install.rdf">E10S</a></sup>
+<sup>E10S</sup>
 Всем известный движок для запуска UserJS. Ссылки на репозитории скриптов [здесь](https://wiki.greasespot.net/User_Script_Hosting).
 
 	* [Dollchan Extension Tools](https://github.com/SthephanShinkufag/Dollchan-Extension-Tools/). Полезнейший скрипт, значительно повышающий удобство двачевания.
@@ -151,7 +151,7 @@ Firefox сохраняет вкладки, закладки, историю, а�
 Поиск картинок. Поддерживает как передачу ссылки на картинку поисковику, так и закачку туда самой картинки, что полезно для защищенных от хотлинкинга сайтов. После установки нужно импортировать обновленный список поисковиков с сайта автора (инструкция на странице аддона).
 
 * [Norwell History Tools](https://addons.mozilla.org/en-US/firefox/addon/norwell/)
-<sup><s><a href="https://addons.mozilla.org/en-US/firefox/files/browse/298146/file/install.rdf">E10S</a></s></sup>
+<sup><s>E10S</s></sup>
 Аддон значительно повышающий удобство работы с историей.
 
 * [Open Tabs Next to Current](https://addons.mozilla.org/en-US/firefox/addon/open-tabs-next-to-current/)
@@ -159,15 +159,15 @@ Firefox сохраняет вкладки, закладки, историю, а�
 Небольшой аддон, позволяющий открывать новую вкладку сразу за текущей.
 
 * [ScrapBook X](https://addons.mozilla.org/en-US/firefox/addon/scrapbook-x/)
-<sup><s><a href="https://github.com/danny0838/firefox-scrapbook/blob/master/install.rdf">E10S</a></s></sup>
+<sup><s>E10S</s></sup>
 Удобное дополнение для сохранения веб-страниц и создания заметок. Обладает значительно расширенной функциональностью по сравнению с оригинальным ScrapBook.
 
 * [Session Manager](https://addons.mozilla.org/en-US/firefox/addon/session-manager/)
-<sup><a href="https://addons.mozilla.org/en-US/firefox/files/browse/581411/file/install.rdf">E10S</a></sup>
+<sup>E10S</sup>
 Менеджер сессий.
 
 * [Stylish](https://addons.mozilla.org/en-US/firefox/addon/stylish/)
-<sup><a href="https://github.com/stylish-userstyles/stylish/blob/master/install.rdf">E10S</a></sup>
+<sup>E10S</sup>
 Меняет внешний вид сайтов и самого браузера согласно UserCSS. [Репозиторий](https://userstyles.org) стилей. Также см. [раздел о Stylish](addendum.md#user-content-stylish) в приложении.
 
 	* **ВАЖНО:** См. [информацию о Stylish в сером списке](greylist.md#user-content-stylish).
@@ -175,7 +175,7 @@ Firefox сохраняет вкладки, закладки, историю, а�
 	* **ВАЖНО:** Обязательно читайте стили перед установкой. Вставив запрещенное на Userstyles.org свойство **-moz-binding** в стиль Stylish, [можно выполнить JS-код на компьютере пользователя](addendum.md#user-content-Опасность-юзерстилей-с--moz-binding).
 
 * [StylRRR](https://addons.mozilla.org/en-US/firefox/addon/stylrrr/)
-<sup><a href="https://addons.mozilla.org/en-US/firefox/files/browse/511362/file/install.rdf">E10S</a></sup>
+<sup>E10S</sup>
 Альтернатива Stylish. В отличие от последнего, хранит стили в файлах, а не БД. Поддерживает установку стилей с Userstyles.org (см. скриншоты на AMO), но не их автообновление.
 
 * [Tab counter](https://addons.mozilla.org/en-US/firefox/addon/tabcounter-1/)
@@ -183,19 +183,19 @@ Firefox сохраняет вкладки, закладки, историю, а�
 Новый аддон для показа количества открытых вкладок.
 
 * [Tab Counter](https://addons.mozilla.org/en-US/firefox/addon/tab-counter/)
-<sup><s><a href="https://addons.mozilla.org/en-US/firefox/files/browse/409212/file/install.rdf">E10S</a></s></sup>
+<sup><s>E10S</s></sup>
 Показывает количество открытых вкладок.
 
 * [Tab Groups](https://addons.mozilla.org/en-US/firefox/addon/tab-groups-panorama/)
-<sup><a href="https://github.com/Quicksaver/Tab-Groups/blob/master/install.rdf">E10S</a></sup>
+<sup>E10S</sup>
 Панорама вкладок на замену встроенной в браузер, которую удалили в Firefox 45.
 
 * [Tree Style Tab](https://addons.mozilla.org/en-US/firefox/addon/tree-style-tab/)
-<sup><a href="https://github.com/piroor/treestyletab/blob/master/install.rdf">E10S</a></sup>
+<sup>E10S</sup>
 Перемещает вкладки набок, в вертикальную панель и позволяет группировать их в связанные по смыслу деревья. Особенно актуально на широкоформатных мониторах. Для тех, кто хочет открывать больше 3.5 вкладок и удобно управлять ими. Рекомендуется использовать вместе с [этим стилем](https://userstyles.org/styles/71882/tree-style-tab-compact-tabs).
 
 	* [Multiple Tab Handler](https://addons.mozilla.org/en-US/firefox/addon/multiple-tab-handler/)
-	<sup><a href="https://github.com/piroor/multipletab/blob/master/install.rdf">E10S</a></sup>
+	<sup>E10S</sup>
 	Позволяет выделять несколько вкладок и производить с ними разные операции: перемещать, группировать, добавлять в закладки, копировать URL, etc. Полностью совместим с TST.
 
 * [Vertical Toolbar](https://addons.mozilla.org/en-US/firefox/addon/vertical-toolbar/)
@@ -203,7 +203,7 @@ Firefox сохраняет вкладки, закладки, историю, а�
 Панель для кнопок браузера и аддонов. Экономит ценное пространство по вертикали.
 
 * [Watch with MPV](https://addons.mozilla.org/en-US/firefox/addon/watch-with-mpv/)
-<sup><s><a href="https://addons.mozilla.org/en-US/firefox/files/browse/368995/file/install.rdf">E10S</a></s></sup>
+<sup><s>E10S</s></sup>
 Проигрывание видео при помощи связки из [mpv](https://github.com/mpv-player/mpv/) и [youtube-dl](https://github.com/rg3/youtube-dl) вместо принадлежащего сайту HTML5/Flash-плеера. [Список поддерживаемых сайтов](https://github.com/rg3/youtube-dl/blob/master/docs/supportedsites.md).
 
 * [Yet Another Smooth Scrolling](https://addons.mozilla.org/en-US/firefox/addon/yet-another-smooth-scrolling/)
