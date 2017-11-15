@@ -1,3 +1,9 @@
+#### Firefox 57
+* https://www.mozilla.org/en-US/firefox/57.0/releasenotes/
+* https://www.ghacks.net/2017/11/13/firefox-57-release-overview/
+* https://www.opennet.ru/opennews/art.shtml?num=47568
+* https://www.linux.org.ru/news/mozilla/13820252
+
 #### Firefox 56
 * https://www.mozilla.org/en-US/firefox/56.0/releasenotes/
 * https://www.ghacks.net/2017/09/28/firefox-56-0-find-out-what-is-new/
