@@ -241,6 +241,7 @@ user_pref("javascript.options.asmjs", false);
 // https://hacks.mozilla.org/2016/03/a-webassembly-milestone/
 user_pref("javascript.options.wasm", false);
 user_pref("javascript.options.wasm_baselinejit", false);
+user_pref("javascript.options.wasm_ionjit", false);
 // Настройки media.webaudio.enabled больше не существует, поэтому только так.
 user_pref("noscript.forbidMedia", true);
 // Третий уровень - отключение JIT-компилятора, SVG и обработку JavaScript только для HTTPS.
@@ -274,6 +275,7 @@ user_pref("media.windows-media-foundation.use-dxva", false);
 user_pref("media.wmf.enabled", false);
 user_pref("media.wmf.low-latency.enabled", false);
 user_pref("media.wmf.vp9.enabled", false);
+user_pref("media.wmf.amd.vp9.enabled", false);
 user_pref("media.flac.enabled", false);
 user_pref("media.ogg.flac.enabled", false);
 user_pref("media.directshow.enabled", false);

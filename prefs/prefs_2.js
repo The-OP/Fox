@@ -103,6 +103,8 @@ user_pref("extensions.formautofill.available", "off");
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1390757
 // https://hg.mozilla.org/releases/mozilla-beta/rev/8fa30f1a3f4d
 user_pref("extensions.formautofill.creditCards.enabled", false);
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1399382
+user_pref("extensions.formautofill.creditCards.available", false);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1362290
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1340477
 // https://hg.mozilla.org/releases/mozilla-release/rev/01ee56745069
@@ -236,6 +238,10 @@ user_pref("dom.netinfo.enabled", false);
 // Отключает передачу браузером информации о времени начала и окончания загрузки страницы.
 // https://wiki.mozilla.org/Security/Reviews/Firefox/NavigationTimingAPI
 user_pref("dom.enable_performance", false);
+// Отключает Performance Observer API.
+// https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver
+// https://trac.torproject.org/projects/tor/ticket/18597
+user_pref("dom.enable_performance_observer", false);
 // Запрещает отслеживать состояние батареи.
 // https://developer.mozilla.org/en-US/docs/Web/API/BatteryManager
 user_pref("dom.battery.enabled", false);
@@ -727,13 +733,13 @@ user_pref("device.storage.enabled", false);
 user_pref("dom.fileHandle.enabled", false);
 
 // Отключает Storage API - еще один способ для сайтов хранить свои данные на ПК пользователя.
-// Включено пока только в Nightly: https://bugzilla.mozilla.org/show_bug.cgi?id=1304966
 // https://developer.mozilla.org/en-US/docs/Web/API/Storage_API
 // https://storage.spec.whatwg.org/
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1254428
 // https://hg.mozilla.org/releases/mozilla-release/file/a67a1682be8f0327435aaa2f417154330eff0017/dom/quota/StorageManager.cpp#l340
 // https://hg.mozilla.org/releases/mozilla-release/file/a67a1682be8f0327435aaa2f417154330eff0017/dom/workers/WorkerPrefs.h#l36
 user_pref("dom.storageManager.enabled", false);
+// https://developer.mozilla.org/en-US/docs/Web/API/StorageManager
 // https://hg.mozilla.org/releases/mozilla-release/rev/e2e6505f3fc0
 user_pref("browser.storageManager.enabled", false);
 

@@ -155,6 +155,9 @@ user_pref("browser.safebrowsing.provider.google.reportMalwareMistakeURL", "");
 user_pref("browser.safebrowsing.provider.google.reportPhishMistakeURL", "");
 user_pref("browser.safebrowsing.provider.google4.reportMalwareMistakeURL", "");
 user_pref("browser.safebrowsing.provider.google4.reportPhishMistakeURL", "");
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1385484
+// https://hg.mozilla.org/releases/mozilla-release/rev/c3b2fd555480
+user_pref("browser.safebrowsing.passwords.enabled", false);
 
 // Отключает мозилловский анти-трекинговый список, который дублирует функции uBlock с соответствующими
 // подписками и является менее эффективным (т.к. основан на списке от Disconnect).
@@ -185,6 +188,9 @@ user_pref("urlclassifier.downloadAllowTable", "");
 user_pref("urlclassifier.trackingTable", "");
 user_pref("urlclassifier.trackingWhitelistTable", "");
 user_pref("urlclassifier.disallow_completions", "");
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1385484
+// https://hg.mozilla.org/releases/mozilla-release/rev/c3b2fd555480
+user_pref("urlclassifier.passwordAllowTable", "");
 
 // Отключает белый список доменов для Flash. Флэш-контент будет разрешен везде.
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1307604
@@ -270,6 +276,26 @@ user_pref("browser.newtabpage.remote.content-signing-test", false);
 // Remote New Tab переименована в Activity Stream в Firefox 54.
 // https://hg.mozilla.org/releases/mozilla-release/rev/e393e6c239cd
 user_pref("browser.newtabpage.activity-stream.enabled", false);
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1392324
+// https://hg.mozilla.org/releases/mozilla-release/rev/0ae745e100aa
+user_pref("browser.newtabpage.activity-stream.aboutHome.enabled", false);
+// Оключает показ недавно добавленных закладок (Recent Highlights) в меню Library.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1354536
+// https://hg.mozilla.org/releases/mozilla-release/rev/df4f51e18090
+user_pref("browser.library.activity-stream.enabled", false);
+// https://hg.mozilla.org/releases/mozilla-release/file/3702966a64c80e17d01f613b0a464f92695524fc/browser/extensions/activity-stream/lib/ActivityStream.jsm#l120
+user_pref("browser.newtabpage.activity-stream.telemetry", false);
+user_pref("browser.newtabpage.activity-stream.telemetry.ping.endpoint", "");
+// https://hg.mozilla.org/releases/mozilla-release/file/3702966a64c80e17d01f613b0a464f92695524fc/browser/extensions/activity-stream/lib/ActivityStream.jsm#l202
+user_pref("browser.newtabpage.activity-stream.feeds.telemetry", false);
+
+// Отключает PingCentre - новую телеметрию для Activity Stream и Onboarding.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1390249
+// https://hg.mozilla.org/releases/mozilla-release/rev/944ab211fc31
+user_pref("browser.ping-centre.telemetry", false);
+user_pref("browser.ping-centre.log", false);
+user_pref("browser.ping-centre.staging.endpoint", "");
+user_pref("browser.ping-centre.production.endpoint", "");
 
 // Отключает проверку при запуске, является ли Firefox браузером по умолчанию.
 // Preferences -> General -> Startup -> Always check if Firefox is your default browser
@@ -340,6 +366,8 @@ user_pref("toolkit.telemetry.unifiedIsOptIn", true);
 // https://hg.mozilla.org/releases/mozilla-beta/file/0f8e1375f717/browser/app/profile/firefox.js#l1904
 // https://hg.mozilla.org/releases/mozilla-beta/file/0f8e1375f717/toolkit/components/telemetry/TelemetryController.jsm#l628
 user_pref("toolkit.telemetry.optoutSample", false);
+user_pref("toolkit.telemetry.bhrPing.enabled", false);
+user_pref("toolkit.telemetry.firstShutdownPing.enabled", false);
 user_pref("toolkit.telemetry.newProfilePing.enabled", false);
 user_pref("toolkit.telemetry.shutdownPingSender.enabled", false);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1381490

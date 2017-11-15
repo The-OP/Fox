@@ -66,7 +66,7 @@
 Также можно использовать кнопку скриншота в Developer Tools (Ctrl+Shift+I), предварительно включив ее: `devtools.command-button-screenshot.enabled -> true`. Сверхдлинные страницы [не сохраняет](https://bugzilla.mozilla.org/show_bug.cgi?id=766661).
 
 1. **Q:** Как уменьшить ширину вкладки, чтобы меньше их прокручивать? <br>
-**A:** При помощи [UserCSS](https://www.ghacks.net/2011/02/02/change-firefoxs-minimum-maximum-tab-width/).
+**A:** Firefox до 57: при помощи [UserCSS](https://www.ghacks.net/2011/02/02/change-firefoxs-minimum-maximum-tab-width/). Firefox 57+: `browser.tabs.tabMinWidth`
 
 1. **Q:** Как вернуть старую поисковую строку/старый диалог настроек браузера? <br>
 **A:** Воспользоваться [Classic Theme Restorer](https://addons.mozilla.org/en-US/firefox/addon/classicthemerestorer/) или [пользовательским стилем](https://userstyles.org/styles/122214/firefox-search-bar-show-engine-names-firefox-43).
