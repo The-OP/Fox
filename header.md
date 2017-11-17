@@ -75,7 +75,7 @@
 **A:** При помощи [UserCSS](https://www.ghacks.net/2017/06/17/restore-download-information-in-firefox/).
 
 1. **Q:** Как применять свои CSS к интерфейсу браузера в Firefox 57+? <br>
-**A:** Используя [userChrome.css](http://kb.mozillazine.org/UserChrome.css). Его можно редактировать через [Browser Toolbox](https://developer.mozilla.org/en-US/docs/Tools/Browser_Toolbox), чтобы изменения вступали в силу без перезапуска браузера.
+**A:** Используя [userChrome.css](http://kb.mozillazine.org/UserChrome.css). Подробнее - см. [раздел о стилях](addendum.md#user-content-Пользовательские-стили) в приложении.
 
 1. **Q:** Как иметь отдельные наборы cookies для разных вкладок? <br>
 **A:** При помощи [контейнеров](https://wiki.mozilla.org/Security/Contextual_Identity_Project/Containers), включив все настройки `privacy.userContext.*`. После этого в Customize появится новая кнопка для открытия вкладки в контейнере. Опции контейнеров находятся в Preferences -> Privacy.
@@ -119,6 +119,8 @@ Firefox сохраняет вкладки, закладки, историю, а�
 * [Classic Theme Restorer](https://addons.mozilla.org/en-US/firefox/addon/classicthemerestorer/)
 <sup>E10S</sup>
 Для нелюбителей Australis, и для тех, кто хочет вернуть старый внешний вид Лиса.
+
+	* В Firefox 57+ не работает. В качестве альтернативы автор создал [Custom CSS tweaks for Firefox 57+](https://github.com/Aris-t2/CustomCSSforFx).
 
 * [Custom Buttons](https://addons.mozilla.org/en-US/firefox/addon/custom-buttons/)
 <sup><s>E10S</s></sup>

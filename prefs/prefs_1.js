@@ -479,9 +479,6 @@ user_pref("experiments.manifest.uri", "");
 // https://hg.mozilla.org/releases/mozilla-esr45/file/8a94f762f0a35613d967357816141f212f1b8772/netwerk/cache2/CacheObserver.cpp#l194
 user_pref("browser.cache.frecency_experiment", -1);
 
-// Отключает автообновление стилей Stylish -- https://userstyles.org/help/stylish_firefox
-user_pref("extensions.stylish.updatesEnabled", false);
-
 // Отключает список рекомендуемых тем в Customize -> Themes.
 user_pref("lightweightThemes.recommendedThemes", "");
 
