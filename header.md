@@ -80,6 +80,9 @@
 1. **Q:** Как иметь отдельные наборы cookies для разных вкладок? <br>
 **A:** При помощи [контейнеров](https://wiki.mozilla.org/Security/Contextual_Identity_Project/Containers), включив все настройки `privacy.userContext.*`. После этого в Customize появится новая кнопка для открытия вкладки в контейнере. Опции контейнеров находятся в Preferences -> Privacy.
 
+1. **Q:** Куда девается старая история браузинга? <br>
+**A:** Удаляется для улучшения производительности. Причем история ограничена не давностью, а числом записей, так что активные пользователи браузера могут упереться в лимит раньше. Значение вычисляется, исходя из характеристик ПК, и пишется в настройку `places.history.expiration.transient_current_max_pages`. Если вы считаете, что оно слишком низкое, можно установить значение вручную, но в **другой** настройке: `places.history.expiration.max_pages`. Подробнее: [статья](https://developer.mozilla.org/en-US/docs/Mozilla/Tech/Places/Places_Expiration), [настройка](https://hg.mozilla.org/releases/mozilla-release/file/3702966a64c80e17d01f613b0a464f92695524fc/toolkit/components/places/nsPlacesExpiration.js#l44), [сам алгоритм](https://hg.mozilla.org/releases/mozilla-release/file/3702966a64c80e17d01f613b0a464f92695524fc/toolkit/components/places/nsPlacesExpiration.js#l715).
+
 #### Профили
 Firefox сохраняет вкладки, закладки, историю, аддоны, настройки и пароли в каталоге, называемом профилем. Можно иметь несколько профилей и даже использовать их одновременно, запуская две и более копии Firefox. Для входа в менеджер профилей следует указать ключи [`-no-remote -P`](https://developer.mozilla.org/en-US/docs/Mozilla/Command_Line_Options). Подробнее [здесь](https://support.mozilla.org/ru/kb/upravlenie-profilyami).
 
