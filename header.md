@@ -142,6 +142,10 @@ Firefox сохраняет вкладки, закладки, историю, а�
 <sup>WE</sup>
 Наследник FireGestures. Поддерживает установку на жесты юзерскриптов, которым дается доступ к Web Extensions API.
 
+* [FxUI Editor](https://addons.mozilla.org/en-US/firefox/addon/fxui-editor/)
+<sup>WE</sup>
+Графический редактор интерфейса Firefox 57+, генерирущий правила для [userChrome.css](http://kb.mozillazine.org/UserChrome.css).
+
 * [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/)
 <sup>WE, E10S</sup>
 Всем известный движок для запуска UserJS. Ссылки на репозитории скриптов [здесь](https://wiki.greasespot.net/User_Script_Hosting).
