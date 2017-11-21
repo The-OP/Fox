@@ -107,7 +107,7 @@
 Менее актуально с понижением числа пользователей Flash, но все же. Уничтожает [LSO](https://en.wikipedia.org/wiki/Local_shared_object), которые не может заблокировать или уничтожить сам браузер.
 
 * [NoScript](https://addons.mozilla.org/en-US/firefox/addon/noscript/)
-<sup>E10S</sup>
+<sup>WE, E10S</sup>
 Блокировщик JS с возможностью работы в режиме белого или черного списка. Поможет тем, у кого в простое вкладки с тяжелым JS отжирают ресурсы CPU.
 
 	* **ВАЖНО:** См. [информацию о NoScript в сером списке](greylist.md#user-content-noscript).
