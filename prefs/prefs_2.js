@@ -1,3 +1,16 @@
+// Отключает Accessibility Services, используемые голосовыми читалками, лупами и другими
+// приложениями для людей с ограниченными возможностями. Эти сервисы могут мешать работе
+// Electrolysis и вообще негативно влиять на производительность браузера. Причем браузер оставляет
+// E10S выключенным целую неделю спустя даже однократного использования этих сервисов.
+// Preferences -> Privacy & Security -> Prevent accessibility services from accessing your browser
+// https://support.mozilla.org/en-US/kb/accessibility-services
+// https://wiki.mozilla.org/Electrolysis/Accessibility
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1365655
+// https://bugzilla.mozilla.org/show_bug.cgi?id=531850
+// https://bugzilla.mozilla.org/show_bug.cgi?id=761589
+// https://hg.mozilla.org/releases/mozilla-release/file/80c4a4e177ad92c8093036ecd89c13eda7fcfd37/modules/libpref/init/all.js#l925
+user_pref("accessibility.force_disabled", 1);
+
 // Отключает рекламу Sync при установке аддонов, сохранении паролей и редактировании закладок.
 // https://hg.mozilla.org/releases/mozilla-esr45/file/cd64cd568d3879680838f3de32f5033fbaa409d5/browser/base/content/urlbarBindings.xml#l2705
 // https://hg.mozilla.org/releases/mozilla-esr45/file/cd64cd568d3879680838f3de32f5033fbaa409d5/browser/base/content/urlbarBindings.xml#l2730
