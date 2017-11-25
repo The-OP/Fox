@@ -1,3 +1,9 @@
+// Отключает кнопки поисковиков в выпадающем списке под адресной строкой.
+// https://www.ghacks.net/2016/08/09/firefox-one-off-searches-address-bar/
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1180944
+// https://hg.mozilla.org/releases/mozilla-release/rev/474f38fc48be
+user_pref("browser.urlbar.oneOffSearches", false);
+
 // Отключает встроенный менеджер паролей (Preferences -> Security -> Remember passwords for sites).
 // Рекомендуется использовать внешний, например, KeePass. После отключения следует удалить
 // сохраненные пароли, хранящиеся в logins.json в профиле (или через Saved Passwords в GUI).

@@ -43,6 +43,9 @@
 1. **Q:** Как отключить беспрефиксный поиск в поисковике по умолчанию через адресную строку? <br>
 **A:** `keyword.enabled -> false`
 
+1. **Q:** Как отключить кнопки поисковиков в выпадающем списке под адресной строкой? <br>
+**A:** `browser.urlbar.oneOffSearches -> false`
+
 1. **Q:** Как вернуть настройку `browser.newtab.url` в Firefox 41+? <br>
 **A:** [New Tab Override](https://addons.mozilla.org/en-US/firefox/addon/new-tab-override/)
 
