@@ -32,6 +32,22 @@ user_pref("xpinstall.signatures.required", false);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=629558
 user_pref("security.nocertdb", true);
 
+// Отключает встроенный просмотрщик PDF, в котором частенько находят уязвимости.
+// https://habrahabr.ru/company/eset/blog/264619/
+// https://blog.mozilla.org/security/2015/08/06/firefox-exploit-found-in-the-wild/
+// https://news.ycombinator.com/item?id=10021376
+//
+// UPD: В связи с введением sandbox level 3 в Firefox 57 (убедиться можно в about:support#sandbox),
+// который запрещает контент-процессам не только писать, но и читать файлы пользователя, PDF.js
+// теперь безопаснее 3rd-party PDF-просмотрщиков. Поэтому перенесено в четвертую категорию.
+// Отключайте только если думаете, что ваш способ просмотра PDF еще надежнее.
+// https://www.mozilla.org/en-US/firefox/57.0/releasenotes/#changed
+// http://www.morbo.org/2017/11/linux-sandboxing-improvements-in.html
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1308400
+// https://wiki.mozilla.org/Security/Sandbox
+user_pref("pdfjs.disabled", true);
+user_pref("pdfjs.enableWebGL", false);
+
 // Полностью отключает WebGL.
 // https://www.contextis.com/resources/blog/webgl-new-dimension-browser-exploitation/
 user_pref("webgl.disabled", true);
