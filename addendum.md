@@ -103,6 +103,10 @@
 <sup><s>E10S</s></sup>
 Еще один аддон для автоматического удаления cookies и DOM Storage после закрытия использующих их вкладок.
 
+* [Cookie AutoDelete](https://addons.mozilla.org/en-US/firefox/addon/cookie-autodelete/)
+<sup>WE</sup>
+Идейный продолжатель дела Self-Destructing Cookies на Web Extensions.
+
 * [BetterPrivacy](https://addons.mozilla.org/en-US/firefox/addon/betterprivacy/)
 <sup>E10S</sup>
 Менее актуально с понижением числа пользователей Flash, но все же. Уничтожает [LSO](https://en.wikipedia.org/wiki/Local_shared_object), которые не может заблокировать или уничтожить сам браузер.
