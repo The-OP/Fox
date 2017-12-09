@@ -135,6 +135,12 @@ Firefox сохраняет вкладки, закладки, историю, а�
 <sup>WE</sup>
 Помогает против сайтов, блокирующих контекстное меню по правой кнопке мыши.
 
+* [ff2mpv](https://addons.mozilla.org/en-US/firefox/addon/ff2mpv/)
+<sup>WE</sup>
+Проигрывание видео при помощи связки из [mpv](https://github.com/mpv-player/mpv/) и [youtube-dl](https://github.com/rg3/youtube-dl) вместо принадлежащего сайту HTML5/Flash-плеера. [Список поддерживаемых сайтов](https://github.com/rg3/youtube-dl/blob/master/docs/supportedsites.md).
+
+	* Web Extensions не могут запускать приложения напрямую, поэтому требуется однократная ручная установка скрипта-хелпера для аддона. Инструкция и сам хелпер [тут](https://github.com/woodruffw/ff2mpv).
+
 * [FireGestures](https://addons.mozilla.org/en-US/firefox/addon/firegestures/)
 <sup>E10S</sup>
 Жесты мышью, мышиными кнопками, колесом и т.п. На жесты можно вешать свои [XPCOM-скрипты](http://www.xuldev.org/firegestures/makescripts.php), как в Custom Buttons.
@@ -216,10 +222,6 @@ Firefox сохраняет вкладки, закладки, историю, а�
 * [Vertical Toolbar](https://addons.mozilla.org/en-US/firefox/addon/vertical-toolbar/)
 <sup>E10S</sup>
 Панель для кнопок браузера и аддонов. Экономит ценное пространство по вертикали.
-
-* [Watch with MPV](https://addons.mozilla.org/en-US/firefox/addon/watch-with-mpv/)
-<sup><s>E10S</s></sup>
-Проигрывание видео при помощи связки из [mpv](https://github.com/mpv-player/mpv/) и [youtube-dl](https://github.com/rg3/youtube-dl) вместо принадлежащего сайту HTML5/Flash-плеера. [Список поддерживаемых сайтов](https://github.com/rg3/youtube-dl/blob/master/docs/supportedsites.md).
 
 * [Yet Another Smooth Scrolling](https://addons.mozilla.org/en-US/firefox/addon/yet-another-smooth-scrolling/)
 <sup>E10S</sup>
