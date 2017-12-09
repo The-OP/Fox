@@ -199,10 +199,6 @@ Firefox сохраняет вкладки, закладки, историю, а�
 
 * [Tab counter](https://addons.mozilla.org/en-US/firefox/addon/tabcounter-1/)
 <sup>WE</sup>
-Новый аддон для показа количества открытых вкладок.
-
-* [Tab Counter](https://addons.mozilla.org/en-US/firefox/addon/tab-counter/)
-<sup><s>E10S</s></sup>
 Показывает количество открытых вкладок.
 
 * [Tab Groups](https://addons.mozilla.org/en-US/firefox/addon/tab-groups-panorama/)
