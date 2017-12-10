@@ -130,6 +130,11 @@ user_pref("network.http.spdy.enabled.deps", false);
 // https://www.wordfence.com/blog/2017/04/chrome-firefox-unicode-phishing/
 user_pref("network.IDN_show_punycode", true);
 
+// Блокирует аддоны, установленные в браузер сторонними приложениями вроде антивирусов.
+// https://hg.mozilla.org/releases/mozilla-release/file/d47195ec274d20ed53ff0eb0ea2f72f7168f6ad9/toolkit/mozapps/extensions/internal/XPIProvider.jsm#l2106
+// https://hg.mozilla.org/releases/mozilla-release/file/d47195ec274d20ed53ff0eb0ea2f72f7168f6ad9/toolkit/mozapps/extensions/AddonManager.jsm#l3413
+user_pref("extensions.enabledScopes", 1);
+
 // Отключает автоматический импорт корневых сертификатов из хранилища ОС. Используется для
 // всяческого MITM - корпоративные прокcи, антивирусы и т.п.
 // https://geektimes.ru/post/263796/
