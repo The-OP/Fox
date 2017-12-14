@@ -26,10 +26,19 @@ user_pref("browser.sessionhistory.max_total_viewers", 2);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=850607
 user_pref("memory.free_dirty_pages", true);
 
-// Отключает предзагрузку ссылок, на которые по мнению браузера вы собираетесь кликнуть.
+// Отключает предзагрузку документов или ресурсов, которые по мнению разработчика сайта понадобятся
+// пользователю в ближайшем будущем. Указываются они через <link rel="prefetch">, <link rel="next">
+// или HTTP-заголовок Link: (либо <meta http-equiv="Link">) с теми же relation types.
 // https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_link-prefetching
+// https://hg.mozilla.org/releases/mozilla-release/file/d47195ec274d20ed53ff0eb0ea2f72f7168f6ad9/uriloader/prefetch/nsPrefetchService.cpp
 user_pref("network.prefetch-next", false);
+// Отключает предзагрузку документов или ресурсов, указанных через <link rel="preload">.
+// https://w3c.github.io/preload/
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1222633
+// https://hg.mozilla.org/releases/mozilla-release/rev/c0e394b0cba4
+// https://hg.mozilla.org/releases/mozilla-release/rev/09c324e7db4c
+user_pref("network.preload", false);
 // И предварительный резолвинг их доменов тоже.
 // https://developer.mozilla.org/en-US/docs/Web/HTTP/Controlling_DNS_prefetching
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_dns-prefetching
