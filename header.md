@@ -38,7 +38,9 @@
 **A:** `full-screen-api.warning.timeout -> 0`
 
 1. **Q:** Как отключить анимацию затемнения при переходе сайта в полноэкранный режим? <br>
-**A:** `full-screen-api.transition.timeout -> 0`
+**A:** `full-screen-api.transition.timeout -> 0` <br>
+`full-screen-api.transition-duration.enter -> "0 0"` (без кавычек) <br>
+`full-screen-api.transition-duration.leave -> "0 0"` (без кавычек)
 
 1. **Q:** Как искать в разных поисковиках через адресную строку? <br>
 **A:** Используя префиксы-кейворды (g Google, w Wikipedia, etc), настраивающиеся в Preferences -> Search даблкликом по ячейкам второй колонки.
