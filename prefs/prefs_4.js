@@ -169,6 +169,11 @@ user_pref("dom.indexedDB.experimental", false);
 // https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API
 user_pref("dom.storage.enabled", false);
 
+// Запрещает менеджеру пермишнов сохранять их на диск. Все пермишны выданные пользователем
+// различным сайтам (View Page Info -> Permissions) становятся временными, до закрытия браузера.
+// https://hg.mozilla.org/releases/mozilla-release/file/d47195ec274d20ed53ff0eb0ea2f72f7168f6ad9/extensions/cookie/nsPermissionManager.cpp#l931
+user_pref("permissions.memory_only", true);
+
 // Отключает загружаемые сайтами шрифты. Несколько повышает безопасность за счет исключения
 // уязвимостей в парсере шрифтов. Ломает кнопки uBlock. В качестве не ломающей кнопки замены
 // можно добавить правило "no-remote-fonts: * true" (без кавычек) в My rules самого uBlock.
