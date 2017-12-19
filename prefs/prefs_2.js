@@ -38,12 +38,6 @@ user_pref("extensions.screenshots.system-disabled", true);
 // Отключает интегрированную поддержку проприетарного сервиса закладок Pocket.
 // https://www.opennet.ru/opennews/art.shtml?num=42245
 // https://wiki.mozilla.org/QA/Pocket_integration
-user_pref("browser.pocket.enabled", false);
-user_pref("browser.pocket.api", "");
-user_pref("browser.pocket.site", "");
-user_pref("browser.pocket.oAuthConsumerKey", "");
-user_pref("browser.pocket.enabledLocales", "");
-// Начиная с Firefox 46 перемещено в системный аддон.
 // https://hg.mozilla.org/releases/mozilla-release/file/970d0cf1c5d9/browser/extensions/pocket/bootstrap.js#l33
 user_pref("extensions.pocket.enabled", false);
 user_pref("extensions.pocket.api", "");
@@ -152,9 +146,6 @@ user_pref("social.whitelist", "");
 user_pref("social.share.activationPanelEnabled", false);
 user_pref("social.shareDirectory", "");
 
-// Отключает Reading List, портированный с версии для Android.
-// https://wiki.mozilla.org/CloudServices/Reading_List
-user_pref("browser.readinglist.enabled", false);
 // Отключает Reader View
 // https://wiki.mozilla.org/QA/Reader_view
 user_pref("reader.parse-on-load.enabled", false);
@@ -201,7 +192,6 @@ user_pref("geo.wifi.uri", "");
 // https://hg.mozilla.org/releases/mozilla-esr38/file/7bc0140f0bfe/dom/system/NetworkGeolocationProvider.js#l21
 // https://hg.mozilla.org/releases/mozilla-esr38/file/7bc0140f0bfe/dom/system/NetworkGeolocationProvider.js#l233
 user_pref("geo.wifi.scan", false);
-user_pref("geo.cell.scan", false);
 // 20 лет
 user_pref("geo.wifi.timeToWaitBeforeSending", 630720000);
 
@@ -290,19 +280,12 @@ user_pref("dom.gamepad.extensions.enabled", false);
 // https://developer.mozilla.org/en-US/Firefox/Releases/36#Interfaces.2FAPIs.2FDOM
 user_pref("dom.vr.enabled", false);
 user_pref("dom.vr.autoactivate.enabled", false);
-user_pref("dom.vr.cardboard.enabled", false);
 user_pref("dom.vr.oculus.enabled", false);
-user_pref("dom.vr.oculus050.enabled", false);
 user_pref("dom.vr.poseprediction.enabled", false);
 user_pref("dom.vr.openvr.enabled", false);
-// https://hg.mozilla.org/releases/mozilla-release/file/970d0cf1c5d9/modules/libpref/init/all.js#l4778
-user_pref("dom.vr.add-test-devices", 0);
 user_pref("dom.vr.osvr.enabled", false);
 user_pref("dom.vr.puppet.enabled", false);
 user_pref("dom.vr.test.enabled", false);
-// Отключает API для телефонных звонков, использующийся в Firefox OS.
-// https://wiki.mozilla.org/WebAPI/Security/WebTelephony
-user_pref("dom.telephony.enabled", false);
 // Отключает Presentation API, использующийся для взаимодействия веб-страниц с проектором.
 // https://w3c.github.io/presentation-api/
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1080474
@@ -361,17 +344,9 @@ user_pref("dom.push.serverURL", "");
 user_pref("dom.push.userAgentID", "");
 // https://hg.mozilla.org/releases/mozilla-beta/file/e549349b8d66/modules/libpref/init/all.js#l4237
 user_pref("dom.push.connection.enabled", false);
-user_pref("dom.push.adaptive.enabled", false);
-user_pref("dom.push.udp.wakeupEnabled", false);
 // https://hg.mozilla.org/releases/mozilla-beta/file/00bcc10b3bdc/modules/libpref/init/all.js#l4445
 // https://hg.mozilla.org/releases/mozilla-beta/file/00bcc10b3bdc/dom/push/PushRecord.jsm#l59
 user_pref("dom.push.maxQuotaPerSubscription", 0);
-
-// Отключает Simple Push API - нестандартную альтернативу Push API от Mozilla. В данный момент
-// используется только на Firefox OS, но возможно будет портировано и на десктопную версию.
-// https://wiki.mozilla.org/Security/Reviews/SimplePush
-user_pref("services.push.enabled", false);
-user_pref("services.push.serverURL", "");
 
 // Отключает SystemUpdate API, использующийся в Firefox OS.
 // https://wiki.mozilla.org/WebAPI/SystemUpdateAPI
@@ -457,51 +432,6 @@ user_pref("media.ondevicechange.fakeDeviceChangeEvent.enabled", false);
 // https://www.w3.org/TR/mediacapture-fromelement/
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1169126
 user_pref("canvas.capturestream.enabled", false);
-
-// Отключает Firefox Hello.
-// https://wiki.mozilla.org/Loop/Data_Collection
-// https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_firefox-hello
-user_pref("loop.enabled", false);
-user_pref("loop.textChat.enabled", false);
-user_pref("loop.server", "");
-user_pref("loop.debug.twoWayMediaTelemetry", false);
-user_pref("loop.contextInConversations.enabled", false);
-user_pref("loop.gettingStarted.url", "");
-user_pref("loop.learnMoreUrl", "");
-user_pref("loop.legal.ToS_url", "");
-user_pref("loop.legal.privacy_url", "");
-user_pref("loop.support_url", "");
-// Отключает появляющееся раз в 6 месяцев окно с предложением оставить отзыв о работе Hello.
-// https://hg.mozilla.org/releases/mozilla-beta/file/00bcc10b3bdc/browser/components/loop/content/js/conversationAppStore.js#l54
-// https://hg.mozilla.org/releases/mozilla-beta/file/00bcc10b3bdc/browser/components/loop/content/js/conversation.js#l47
-// 2015-11-04, 00:00 UTC
-user_pref("loop.feedback.dateLastSeenSec", 1446595200);
-// 20 лет
-user_pref("loop.feedback.periodSec", 630720000);
-user_pref("loop.feedback.formURL", "");
-user_pref("loop.feedback.manualFormURL", "");
-// https://hg.mozilla.org/releases/mozilla-release/file/5b66df4523cf/browser/components/loop/modules/LoopRooms.jsm#l198
-user_pref("loop.linkClicker.url", "");
-user_pref("loop.facebook.shareUrl", "");
-user_pref("loop.facebook.appId", "");
-user_pref("loop.facebook.enabled", false);
-user_pref("loop.facebook.fallbackUrl", "");
-user_pref("loop.conversationPopOut.enabled", false);
-// Отключает отправку в Google Analytics доменов тех ссылок, которые были заданы в теме дискуссии
-// при создании room в Hello ("context URL"[1]). Отправляются только домены из белого списка[2].
-// https://bugzilla.mozilla.org/show_bug.cgi?id=1211542
-// https://bugzilla.mozilla.org/show_bug.cgi?id=1261467
-// https://hg.mozilla.org/releases/mozilla-release/file/970d0cf1c5d9/browser/extensions/loop/chrome/content/modules/LoopRooms.jsm#l975
-// [1]: https://wiki.mozilla.org/Loop/Architecture/Context
-// [2]: https://hg.mozilla.org/releases/mozilla-release/file/4f87a2517f36/browser/extensions/loop/chrome/content/modules/DomainWhitelist.jsm#l17
-user_pref("loop.logDomains", false);
-// https://hg.mozilla.org/releases/mozilla-release/file/b0310cb90fd0/browser/extensions/loop/bootstrap.js#l392
-user_pref("loop.copy.showLimit", 0);
-user_pref("loop.copy.shown", true);
-// https://hg.mozilla.org/releases/mozilla-release/file/b0310cb90fd0/browser/extensions/loop/bootstrap.js#l1226
-user_pref("loop.copy.throttler", "");
-// https://hg.mozilla.org/releases/mozilla-release/file/b0310cb90fd0/browser/extensions/loop/bootstrap.js#l1285
-user_pref("loop.copy.ticket", 255);
 
 // Отключает FlyWeb - новый системный аддон, предназначенный для взаимодействия с IoT-устройствами.
 // (В Firefox 49 присутствуют только некоторые части дополнения.)
@@ -664,8 +594,6 @@ user_pref("plugin.scan.WindowsMediaPlayer", "30000.0");
 user_pref("plugin.allowed_types", " ");
 // http://kb.mozillazine.org/Issues_related_to_plugins#Plugin_location
 user_pref("plugins.load_appdir_plugins", false);
-// https://support.mozilla.org/en-US/questions/833109
-user_pref("plugins.update.url", "");
 // Запрещает яваскриптам обращаться к плагинам.
 user_pref("security.xpconnect.plugin.unrestricted", false);
 user_pref("application.use_ns_plugin_finder", false);
@@ -703,8 +631,6 @@ user_pref("offline-apps.allow_by_default", false);
 // https://github.com/slightlyoff/ServiceWorker
 // https://serviceworke.rs/
 user_pref("dom.serviceWorkers.enabled", false);
-user_pref("dom.serviceWorkers.interception.enabled", false);
-user_pref("dom.serviceWorkers.interception.opaque.enabled", false);
 user_pref("dom.serviceWorkers.openWindow.enabled", false);
 // https://hg.mozilla.org/releases/mozilla-release/file/7eabe4d30cde/modules/libpref/init/all.js#l163
 // https://hg.mozilla.org/releases/mozilla-release/file/7eabe4d30cde/dom/workers/ServiceWorkerManager.cpp#l2593
@@ -787,7 +713,7 @@ user_pref("network.auth.subresource-img-cross-origin-http-auth-allow", false);
 // вместо URL ссылающейся на них страницы. Альтернатива - запрет посылки Referer при кросс-доменных
 // запросах (XOriginPolicy -> 1), но это ломает некоторые защиты от хотлинкинга.
 // PS: Здесь нет опечаток в словах, обозначающих реферер. Заголовок - Referer с тремя "r", свойство
-// DOM - с четырьмя "r", настройки Firefox кроме двух нижних - с тремя "r", две - с четырьмя.
+// DOM - с четырьмя "r", настройки Firefox кроме одной - с тремя "r", одна - с четырьмя.
 // https://en.wikipedia.org/wiki/HTTP_referer
 // https://en.wikipedia.org/wiki/Hotlinking
 // https://hg.mozilla.org/releases/mozilla-esr38/file/0f8338121472/modules/libpref/init/all.js#l1216
@@ -806,9 +732,6 @@ user_pref("network.http.referer.XOriginPolicy", 0);
 // https://hg.mozilla.org/releases/mozilla-release/rev/f90f136b1d03
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1307596
 user_pref("network.http.referer.XOriginTrimmingPolicy", 0);
-// "Controls whether we send HTTPS referres to other HTTPS sites. By default this is enabled for
-// compatibility (see bug 141641)"
-user_pref("network.http.sendSecureXSiteReferrer", true);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1223838#c31
 user_pref("network.http.enablePerElementReferrer", false);
 // 0=no referrer, 1=same origin, 2=strict-origin-when-cross-origin,

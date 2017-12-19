@@ -53,8 +53,6 @@ user_pref("pdfjs.enableWebGL", false);
 user_pref("webgl.disabled", true);
 user_pref("webgl.force-enabled", false);
 user_pref("webgl.disable-wgl", true);
-// https://bugzilla.mozilla.org/show_bug.cgi?id=1232864
-user_pref("webgl.enable-prototype-webgl2", false);
 user_pref("webgl.webgl2-compat-mode", false);
 user_pref("webgl.enable-webgl2", false);
 
@@ -75,26 +73,6 @@ user_pref("pointer-lock-api.prefixed.enabled", false);
 // https://hg.mozilla.org/releases/mozilla-release/file/3dcde73ca237dd579e1599f635f3cc994afc1346/layout/style/test/chrome/bug418986-2.js
 // https://hg.mozilla.org/releases/mozilla-release/file/3dcde73ca237dd579e1599f635f3cc994afc1346/dom/events/test/bug418986-3.js
 user_pref("privacy.resistFingerprinting", true);
-
-// Отключает History API, позволяющее добавлять в историю back/forward вкладки элементы, состоящие
-// из URL и ассоциированных с ними state objects с произвольными данными. Последние сохраняются при
-// перезапусках браузера (structuredCloneState в recovery.js), если включено восстановление сессии.
-// Когда пользователь снова загрузит вкладку с соответствующим элементом истории или перейдет по
-// back/forward на него, вкладка сможет прочитать сохраненный объект из window.history.state.
-// Объекты привязываются именно к элементам истории back/forward вкладки, поэтому прочитать их
-// может только установившая их вкладка, а не любая другая с таким же URL.
-// К сожалению, присваивать maxStateObjectSize 0, не отключая History API целиком, бесполезно - при
-// этом pushState и replaceState, даже с null вместо state object, будут выбрасывать исключения.
-// https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Manipulating_the_browser_history
-// https://hg.mozilla.org/releases/mozilla-esr38/file/aa2ecb8673b1/docshell/base/nsDocShell.cpp#l11491
-//
-// UPD: В Firefox 47 allow-префы были убраны -- https://bugzilla.mozilla.org/show_bug.cgi?id=1249542
-//      Также, начиная с 47 версии, обнуление maxStateObjectSize вызывает неработоспособность
-//      переключения категорий в about:addons и about:preferences.
-user_pref("browser.history.allowPopState", false);
-user_pref("browser.history.allowPushState", false);
-user_pref("browser.history.allowReplaceState", false);
-user_pref("browser.history.maxStateObjectSize", 0);
 
 // Отключает применение к посещенным ссылкам стилей с селектором :visited, что предотвращает
 // возможность выяснить, какие URL есть у пользователя в истории браузера. Главную уязвимость с
@@ -277,19 +255,13 @@ user_pref("media.mediasource.enabled", false);
 user_pref("media.mediasource.mp4.enabled", false);
 user_pref("media.mediasource.webm.enabled", false);
 user_pref("media.mediasource.webm.audio.enabled", false);
-user_pref("media.mediasource.format-reader.webm", false);
-// Отключает декодирование мультимедиа через GStreamer.
-user_pref("media.gstreamer.enabled", false);
 // Отключает поддержку соответствующих форматов/кодеков.
-user_pref("media.format-reader.webm", false);
-user_pref("media.format-reader.ogg", false);
 user_pref("media.mp4.enabled", false);
 user_pref("media.ogg.enabled", false);
 user_pref("media.opus.enabled", false);
 user_pref("media.webm.enabled", false);
 user_pref("media.raw.enabled", false);
 user_pref("media.wave.enabled", false);
-user_pref("media.wave.decoder.enabled", false);
 user_pref("media.apple.mp3.enabled", false);
 user_pref("media.apple.mp4.enabled", false);
 user_pref("media.windows-media-foundation.use-dxva", false);
@@ -326,12 +298,6 @@ user_pref("extensions.blocklist.itemURL", "");
 // новый бэкэнд под названием Kinto.
 // https://wiki.mozilla.org/Firefox/Go_Faster#III:_Kinto
 // https://wiki.mozilla.org/Firefox/Kinto
-// https://hg.mozilla.org/releases/mozilla-release/file/c1de04f39fa956cfce83f6065b0e709369215ed5/toolkit/mozapps/extensions/nsBlocklistService.js#l632
-user_pref("services.kinto.update_enabled", false);
-// https://hg.mozilla.org/releases/mozilla-release/file/c1de04f39fa956cfce83f6065b0e709369215ed5/services/common/kinto-updater.js
-user_pref("services.kinto.base", "data:application/json,{\"data\":[]}");
-user_pref("services.kinto.changes.path", "");
-
 // Переименованы в Firefox 49: https://hg.mozilla.org/releases/mozilla-release/rev/c6c57d394549
 // https://hg.mozilla.org/releases/mozilla-release/file/c6c57d394549/toolkit/mozapps/extensions/nsBlocklistService.js#l633
 user_pref("services.blocklist.update_enabled", false);

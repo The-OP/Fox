@@ -131,18 +131,12 @@ user_pref("network.security.ports.banned", "4444,9050,9051");
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1186772
 // https://blog.mozilla.org/security/2014/07/23/improving-malware-detection-in-firefox/
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_anti-phishing-list-updating
-user_pref("browser.safebrowsing.enabled", false);
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_anti-malware-list-updating
 user_pref("browser.safebrowsing.malware.enabled", false);
 user_pref("browser.safebrowsing.downloads.enabled", false);
 user_pref("browser.safebrowsing.downloads.remote.enabled", false);
 user_pref("browser.safebrowsing.downloads.remote.url", "");
-// https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_anti-malware-list-updating
-user_pref("browser.safebrowsing.appRepURL", "");
-user_pref("browser.safebrowsing.gethashURL", "");
-user_pref("browser.safebrowsing.malware.reportURL", "");
 user_pref("browser.safebrowsing.reportPhishURL", "");
-user_pref("browser.safebrowsing.updateURL", "");
 user_pref("browser.safebrowsing.reportPhishMistakeURL", "");
 user_pref("browser.safebrowsing.reportMalwareMistakeURL", "");
 user_pref("browser.safebrowsing.provider.google.appRepURL", "");
@@ -175,7 +169,6 @@ user_pref("browser.safebrowsing.passwords.enabled", false);
 // https://hg.mozilla.org/releases/mozilla-beta/file/00bcc10b3bdc/browser/base/content/browser-trackingprotection.js
 user_pref("privacy.trackingprotection.enabled", false);
 user_pref("privacy.trackingprotection.pbmode.enabled", false);
-user_pref("browser.polaris.enabled", false);
 user_pref("privacy.trackingprotection.introURL", "");
 // https://hg.mozilla.org/releases/mozilla-release/file/970d0cf1c5d9/browser/components/preferences/in-content/privacy.js#l19
 user_pref("privacy.trackingprotection.ui.enabled", false);
@@ -214,12 +207,6 @@ user_pref("urlclassifier.flashExceptTable", "");
 user_pref("urlclassifier.flashSubDocTable", "");
 user_pref("urlclassifier.flashSubDocExceptTable", "");
 user_pref("urlclassifier.flashInfobarTable", "");
-
-// Отключает список сайтов, запрещенных в режиме ограниченного профиля / родительского контроля.
-// https://bugzilla.mozilla.org/show_bug.cgi?id=1216723
-// https://bugzilla.mozilla.org/show_bug.cgi?id=1222377
-user_pref("browser.safebrowsing.forbiddenURIs.enabled", false);
-user_pref("urlclassifier.forbiddenTable", "");
 
 // Отключает список Tracking Protection, содержащий адреса тех SWF с популярных сайтов, которые были
 // замечены в попытках получить список шрифтов или совершить другие подозрительные действия.
@@ -325,10 +312,6 @@ user_pref("browser.slowStartup.notificationDisabled", true);
 // Отключает предложение сбросить профиль, если он не использовался 60 дней.
 // https://hg.mozilla.org/releases/mozilla-esr52/file/d83b50a7822962b639ab8840a2ceb8c1d4c8850a/browser/components/nsBrowserGlue.js#l979
 user_pref("browser.disableResetPrompt", true);
-// Отключает показ URL с описанием функций, связанных с Windows 10, у пользователей последней.
-// https://hg.mozilla.org/releases/mozilla-beta/file/883275447631/browser/components/nsBrowserContentHandler.js#l546
-user_pref("browser.usedOnWindows10", true);
-user_pref("browser.usedOnWindows10.introURL", "");
 // Отключает модуль LaterRun, предназначенный для показа новым пользователям различной справочной
 // информации при энном запуске браузера.
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1200639
@@ -348,16 +331,13 @@ user_pref("extensions.getAddons.cache.enabled", false);
 // Отключает телеметрию.
 // https://support.mozilla.org/en-US/kb/firefox-health-report-understand-your-browser-perf
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_diagnostics
-user_pref("datareporting.healthreport.service.enabled", false);
 user_pref("datareporting.healthreport.uploadEnabled", false);
 // https://hg.mozilla.org/releases/mozilla-beta/file/00bcc10b3bdc/services/datareporting/policy.jsm#l366
 user_pref("datareporting.policy.dataSubmissionEnabled", false);
-user_pref("datareporting.policy.dataSubmissionEnabled.v2", false);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1324049
 // https://hg.mozilla.org/releases/mozilla-release/rev/03358dc42d00
 user_pref("datareporting.policy.firstRunURL", "");
 user_pref("datareporting.healthreport.about.reportUrl", "");
-user_pref("datareporting.healthreport.about.reportUrlUnified", "");
 user_pref("datareporting.healthreport.documentServerURI", "");
 // https://www.mozilla.org/en-US/privacy/firefox/#telemetry
 // https://wiki.mozilla.org/Privacy/Reviews/Telemetry
@@ -369,12 +349,6 @@ user_pref("toolkit.telemetry.server", "");
 user_pref("toolkit.telemetry.archive.enabled", false);
 // https://wiki.mozilla.org/Unified_Telemetry
 user_pref("toolkit.telemetry.unified", false);
-// Это должно быть true.
-// https://hg.mozilla.org/releases/mozilla-beta/file/0f8e1375f717/toolkit/components/telemetry/TelemetryController.jsm#l669
-user_pref("toolkit.telemetry.unifiedIsOptIn", true);
-// https://hg.mozilla.org/releases/mozilla-beta/file/0f8e1375f717/browser/app/profile/firefox.js#l1904
-// https://hg.mozilla.org/releases/mozilla-beta/file/0f8e1375f717/toolkit/components/telemetry/TelemetryController.jsm#l628
-user_pref("toolkit.telemetry.optoutSample", false);
 user_pref("toolkit.telemetry.bhrPing.enabled", false);
 user_pref("toolkit.telemetry.firstShutdownPing.enabled", false);
 user_pref("toolkit.telemetry.newProfilePing.enabled", false);
@@ -510,7 +484,6 @@ user_pref("dom.disable_window_open_feature.menubar", true);
 user_pref("dom.disable_window_open_feature.minimizable", true);
 user_pref("dom.disable_window_open_feature.personalbar", true);
 user_pref("dom.disable_window_open_feature.resizable", true);
-user_pref("dom.disable_window_open_feature.scrollbars", true);
 user_pref("dom.disable_window_open_feature.status", true);
 user_pref("dom.disable_window_open_feature.titlebar", true);
 user_pref("dom.disable_window_open_feature.toolbar", true);
@@ -619,16 +592,6 @@ user_pref("gfx.layerscope.port", 100000);
 // Настройки security.ssl3.* содержат строку "ssl3" по историческим причинам, а на деле управляют
 // и поведнием TLS, в чем можно убедиться здесь: https://www.ssllabs.com/ssltest/viewMyClient.html
 
-// "As of 2015, there is speculation that some state cryptologic agencies may possess the capability
-// to break RC4 even when used in the TLS protocol. Mozilla and Microsoft recommend disabling
-// RC4 where possible." -- https://en.wikipedia.org/wiki/RC4
-// https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-2566
-// https://community.qualys.com/blogs/securitylabs/2013/03/19/rc4-in-tls-is-broken-now-what
-// https://bugzilla.mozilla.org/show_bug.cgi?id=999544
-user_pref("security.ssl3.ecdhe_ecdsa_rc4_128_sha", false);
-user_pref("security.ssl3.ecdhe_rsa_rc4_128_sha", false);
-user_pref("security.ssl3.rsa_rc4_128_md5", false);
-user_pref("security.ssl3.rsa_rc4_128_sha", false);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1138882
 user_pref("security.tls.unrestricted_rc4_fallback", false);
 

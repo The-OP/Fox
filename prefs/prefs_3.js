@@ -36,8 +36,6 @@ user_pref("network.cookie.cookieBehavior", 1);
 user_pref("browser.sessionstore.privacy_level", 2);
 
 // Запрещает проигрывание HTML5-медиа в фоновой вкладке до первого переключения на нее.
-user_pref("media.block-play-until-visible", true);
-// Переименовано в Firefox 51.
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1262053
 // https://hg.mozilla.org/releases/mozilla-release/rev/ab7f9029b66a
 user_pref("media.block-autoplay-until-in-foreground", true);
@@ -94,9 +92,6 @@ user_pref("media.play-stand-alone", false);
 // позволяет использовать HTML5-проигрыватель вместо Flash на видео, встроенных по старому образцу.
 // https://bugzilla.mozilla.org/show_bug.cgi?id=769117
 user_pref("plugins.rewrite_youtube_embeds", false);
-
-// Отключает Web Video Text Tracks (субтитры для тега video).
-user_pref("media.webvtt.enabled", false);
 
 // Запрещает передачу сайтам подробной информации о графических возможностях системы.
 user_pref("webgl.disable-extensions", true);
