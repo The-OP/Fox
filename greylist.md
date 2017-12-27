@@ -37,6 +37,11 @@ ABP нехорош не только своими [продажными acceptab
 NoScript с настройками по умолчанию периодически посылает запрос на свой сервер для определения IP компьютера пользователя с целью защиты его от DNS rebinding. Утверждается, что никакой статистики на стороне сервера при этом не ведется. Информация об этой функциональности вместе со способом ее отключения приведена в [Privacy Policy аддона](https://addons.mozilla.org/en-US/firefox/addon/noscript/privacy/).
 
 
+#### OneTab
+
+Распространяется под [проприетарной лицензией](https://addons.mozilla.org/en-US/firefox/addon/onetab/license/1.25) и имеет обфусцированный исходный код. Что кроме очевидных недостатков еще и создает опасность [vendor lock-in](https://en.wikipedia.org/wiki/Vendor_lock-in) в случае появления необходимости экспортировать свои данные из формата этого расширения сторонними средствами. Также, при работе [сливает в Гугл домены вкладок](https://addons.mozilla.org/en-US/firefox/addon/onetab/privacy/) для получения фавиконок.
+
+
 #### Stylish
 
 Оригинальный разработчик Stylish продал сам аддон и userstyles.org[[1]](https://www.ghacks.net/2017/01/04/major-stylish-add-on-changes-in-regards-to-privacy/). Новый владелец поспешил монетизировать проект - анонсировал партнерство с рекламной компанией[[2]](https://forum.userstyles.org/discussion/53233/announcement-to-the-community) и уже встроил зонд в Stylish для Chrome, посылающий ему посещенные пользователем URL[[3]](https://www.ghacks.net/2017/01/04/major-stylish-add-on-changes-in-regards-to-privacy/#comment-4084542)[[4]](https://forum.userstyles.org/discussion/comment/109446/#Comment_109446).
