@@ -119,6 +119,7 @@ user_pref("network.http.spdy.enabled.deps", false);
 user_pref("network.IDN_show_punycode", true);
 
 // Блокирует аддоны, установленные в браузер сторонними приложениями вроде антивирусов.
+// В Linux заблокирует также аддоны, установленные через системный пакетный менеджер.
 // https://hg.mozilla.org/releases/mozilla-release/file/d47195ec274d20ed53ff0eb0ea2f72f7168f6ad9/toolkit/mozapps/extensions/internal/XPIProvider.jsm#l2106
 // https://hg.mozilla.org/releases/mozilla-release/file/d47195ec274d20ed53ff0eb0ea2f72f7168f6ad9/toolkit/mozapps/extensions/AddonManager.jsm#l3413
 user_pref("extensions.enabledScopes", 1);
