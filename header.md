@@ -83,6 +83,9 @@
 1. **Q:** Куда девается старая история браузинга? <br>
 **A:** Удаляется для улучшения производительности. Причем история ограничена не давностью, а числом записей, так что активные пользователи браузера могут упереться в лимит раньше. Значение вычисляется, исходя из характеристик ПК, и пишется в настройку `places.history.expiration.transient_current_max_pages`. Если вы считаете, что оно слишком низкое, можно установить значение вручную, но в **другой** настройке: `places.history.expiration.max_pages`. Подробнее: [статья](https://developer.mozilla.org/en-US/docs/Mozilla/Tech/Places/Places_Expiration), [настройка](https://hg.mozilla.org/releases/mozilla-release/file/3702966a64c80e17d01f613b0a464f92695524fc/toolkit/components/places/nsPlacesExpiration.js#l44), [сам алгоритм](https://hg.mozilla.org/releases/mozilla-release/file/3702966a64c80e17d01f613b0a464f92695524fc/toolkit/components/places/nsPlacesExpiration.js#l715).
 
+1. **Q:** Как добавить поисковик в браузер? <br>
+**A:** Экспортировать встроенные [скриптом](https://gist.github.com/nohamelin/6af8907ca2dd90a9c870629c396c9521), создать по их образу и подобию новый файл в формате [OpenSearch](https://developer.mozilla.org/en-US/docs/Web/OpenSearch), затем импортировать другим [скриптом](https://gist.github.com/nohamelin/8e2e1b50dc7d97044992ae981487c6ec).
+
 #### Профили
 Firefox сохраняет вкладки, закладки, историю, аддоны, настройки и пароли в каталоге, называемом профилем. Можно иметь несколько профилей и даже использовать их одновременно, запуская две и более копии Firefox. Для входа в менеджер профилей следует указать ключи [`-no-remote -P`](https://developer.mozilla.org/en-US/docs/Mozilla/Command_Line_Options). Подробнее [здесь](https://support.mozilla.org/ru/kb/upravlenie-profilyami).
 
