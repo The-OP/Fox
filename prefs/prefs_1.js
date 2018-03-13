@@ -275,7 +275,7 @@ user_pref("browser.newtabpage.activity-stream.enabled", false);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1392324
 // https://hg.mozilla.org/releases/mozilla-release/rev/0ae745e100aa
 user_pref("browser.newtabpage.activity-stream.aboutHome.enabled", false);
-// Оключает показ недавно добавленных закладок (Recent Highlights) в меню Library.
+// Отключает показ недавно добавленных закладок (Recent Highlights) в меню Library.
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1354536
 // https://hg.mozilla.org/releases/mozilla-release/rev/df4f51e18090
 user_pref("browser.library.activity-stream.enabled", false);
